@@ -1,0 +1,170 @@
+% Doc: LaTeX Template for TRMs by Espressif
+% P?: marks a preamble setting (or important notice) number
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{chip-spec-settings}[LaTeX package defining a chip specific preamble for TRM]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% P1: Define Variables %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% If using a variable in text, follow it with {},
+% otherwise a following space will be deleted by LaTeX
+% Example: \chipname{} is a new product from Espressif.
+
+% >>> Name of chip <<<
+\newcommand\chipname{ESP32-S3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% P2: Doc Version Parameters %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% >>> Document version number <<<
+\newcommand\docversion{1.5}
+% >>> Text before doc version number <<<
+% English
+\newcommand\docversionprefixEN{Version }
+% Chinese
+\newcommand\docversionprefixCN{版本 }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% P3: Doc feedback link %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Generate on espressif.com and enter here
+% >>> English document ID <<<
+\newcommand\feedbackDocENID{5421}
+% >>> Chinese document ID <<<
+\newcommand\feedbackDocCNID{5422}
+
+% Code below generates the link to Doc feedback page
+% using the entered document ID and doc version number
+\newcommand\feedbacklink{%
+https://www.espressif.com/\GetTranslation{doclang}/company/documents/documentation_feedback?docId=\GetTranslation{docid}&sections=&version=\docversion
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%% P4: ToDo Notes %%%
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[table]{xcolor}
+\newif\ifshowtodos
+% Show existing ToDo notes in this project?
+% 'Show' - Uncomment; 'Hide' - Comment out
+%\showtodostrue
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% P5: Watermark %%%
+%%%%%%%%%%%%%%%%%%%%%
+\newif\ifwatermark
+
+% Add watermark?
+% 'YES' - uncomment line below; 'NO' - comment out
+%\watermarktrue
+
+\ifwatermark
+    \definecolor{watermark}{rgb}{0.83, 0.83, 0.83}
+    \usepackage{draftwatermark}
+    \SetWatermarkAngle{45}
+    \SetWatermarkColor{watermark}
+    \SetWatermarkFontSize{3.5cm}
+    % Update watermark text if needed
+    \SetWatermarkText{PRELIMINARY}
+\fi %\ifwatermark
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% Document flow %%%
+%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2.5cm]{geometry}
+\geometry{a4paper}
+
+\usepackage{comment}
+% Enables display of landscape pages in PDF
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{graphicx}
+% Create index
+%\usepackage{makeidx}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% P6: Headers and Footers %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+% Header
+\fancypagestyle{plain}{%
+  \fancyhead{}%
+  \fancyhead[R]{\Navigation}  
+  \fancyhead[L]{%
+    \nouppercase{%
+      \ %
+      \normalsize\leftmark
+    }%
+  }%
+}
+\pagestyle{plain}
+
+% Footer
+\lfoot{\GetTranslation{company}}
+%\cfoot{\thepage \\ \href{\feedbacklink}{\small{Submit Documentation Feedback}}}
+\cfoot{\thepage \\ \href{\feedbacklink}{\small{\GetTranslation{sendfeedback}}}}
+\rfoot{\chipname{} TRM (\GetTranslation{docversionprefix}\docversion{})}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% P7: Latest Documents %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[forget,nolinks]{qrcode}
+
+% >>> Link to the latest version of this document <<<
+% DO NOT FORGET to escape all special chars in URLs, such as \verb+\_, \#, \?+, etc.
+% English
+\newcommand\docpathlatestEN{%
+    https://www.espressif.com/documentation/esp32-s3\_technical\_reference\_manual\_en.pdf%
+}
+% Chinese
+\newcommand\docpathlatestCN{%
+    https://www.espressif.com/documentation/esp32-s3\_technical\_reference\_manual\_cn.pdf%
+}
+
+
+%%%%%%%%%%%%%%%%%
+%%% Listings %%%%
+%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}
+% Code highlighting style definition based on
+% https://tex.stackexchange.com/questions/57121/latex-source-code-listing
+\lstset{%
+    basicstyle=\small\ttfamily,
+    language={[LaTeX]TeX}, numbers=left, numberstyle=\tiny, % number style
+    breaklines=true,
+    xleftmargin=8mm,
+    backgroundcolor=\color{gray!5},
+    frameround=fttt,escapeinside=??,
+    morekeywords={% Give key words here keywords
+        maketitle,
+        subsection, subsubsection, paragraph,
+        multirow, multicolumn, makecell,
+        rowcolor,
+        endhead, endfirsthead,
+        endfoot, endlastfoot,
+        tnote,
+        TopicLine, Topic, TopicSetVPos, TopicSetContinuationCode,
+        hyperref, hypertarget,
+        DeclareFloatingEnvironment, AtBeginDocument
+    },
+    keywordstyle=\color[rgb]{0,0,1},                    % keywords
+    commentstyle=\color[rgb]{0.133,0.545,0.133},    % comments
+    stringstyle=\color[rgb]{0.627,0.126,0.941}  % strings
+}%

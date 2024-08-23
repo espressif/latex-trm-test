@@ -1,0 +1,229 @@
+\phantomsection
+\chapter*{Revision History}\label{revision-history}
+\markboth{\it{Revision History}}{\Navigation}
+\addcontentsline{toc}{chapter}{Revision History}
+
+\begin{longtable}[l]{ | m{2cm} | m{1.5cm} | m{12cm} | } \hline
+
+    \rowcolor{lightgray}
+    Date & Version & \hypertarget{Release notes}{Release notes}\\\hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{\bfseries Cont'd from previous page}\\\hline
+    \rowcolor{lightgray}
+    Date & Version & Release notes\\\hline
+    \endhead
+
+    \multicolumn{3}{r}{\textbf{Cont'd on next page}}\\
+    \endfoot
+
+    \endlastfoot
+
+    % table contents
+    % 2022-xx-xx     & v1.1  &
+    % Updated the following chapters:
+    % \begin{itemize}
+    %     \item Chapter \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}
+    %     \item Chapter \ref{mod:usbotg} \textit{\nameref{mod:usbotg}}
+    % \end{itemize}
+    % \\\hline
+    2024- & v1.6 &
+    Updated the following chapters:
+        \begin{itemize}
+            \item Chapter \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}:
+                \begin{itemize}
+                    \item Updated the description of predefined power modes %TRMC6-42193
+                    \item Added a note about EXT1 under Table \ref{tab:lpm-wakeup-source} %DOC-8414
+                \end{itemize}
+            \item Chapter \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}}: Updated the description of Hold feature %DOC-7326
+            \item Chapter \ref{mod:sensor} \textit{\nameref{mod:sensor}}: Removed descriptions about the internal voltage/signal in SAR ADC2 measurement %DOC-7966
+        \end{itemize}
+    \\\hline
+    2024-4-18 & v1.5 &
+    Updated the following chapters:
+        \begin{itemize}
+            \item Chapter \ref{mod:dma} \textit{\nameref{mod:dma}}: Updated the descriptions of suc\_eof and the EOF flag %DOC-5478
+            \item Chapter \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}}: Updated the drive strength of GPIO17 and GPIO18 %DOC-7383
+            \item Chapter \ref{mod:digsig} \textit{\nameref{mod:digsig}} and Chapter \ref{mod:bootctrl} \textit{\nameref{mod:bootctrl}}: Fixed some typos %DOC-7472 %DOC-7629
+            \item Chapter \ref{mod:uart} \textit{\nameref{mod:uart}}: Updated descriptions about clearing the wake\_up signal %DOC-7076
+            \item Chapter \ref{mod:ledpwm} \textit{\nameref{mod:ledpwm}}: Updated the lowest resolution in Table \ref{tab:ledc-common-freq-res}  %DOC-7304
+        \end{itemize}
+    \\\hline
+    2024-01-30      & v1.4  &
+    Updated the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:pie} \textit{\nameref{mod:pie}}: Added data exchange instruction list to Section \ref{chp:pie_instruction_simple_introduction}; Added descriptions for LD.QR, ST.QR, and MV.QR instructions; Fixed two typos; %DOC-6202;%DOC-5679;%DOC-6560
+        \item Chapter \ref{mod:efuse} \textit{\nameref{mod:efuse}}: Updated the description of \hyperref[fielddesc:EFUSEPINPOWERSELECTION]{EFUSE\_PIN\_POWER\_SELECTION} %DOC-5591
+        \item Chapter \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}}: Removed Debug Assist from Table \ref{tab:sysmem-base-address}; Updated the description in Section \ref{PadHold} and Table \ref{tab:io_mux_reg_summary} %DOC-5892 %DOC-6733 %DOC-6563
+        \item Chapter \ref{mod:bootctrl} \textit{\nameref{mod:bootctrl}}: Added SPI Download Boot mode and renamed Download Boot mode to Joint Download mode in Section \ref{sec:bootModeControl}; Provided more details about how FUSE\_DIS\_FORCE\_DOWNLOAD and EFUSE\_DIS\_DOWNLOAD\_MODE control chip boot mode %DOC-5916 %DOC-5892
+        \item Chapter \ref{mod:intmtrx} \textit{\nameref{mod:intmtrx}}: Removed the ASSIST\_DEBUG\_INTR interrupt source %DOC-6562
+        \item Chapter \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}: Updated the description of register \hyperref[fielddesc:RTCCNTLWDTWKEY]{RTC\_CNTL\_WDT\_WKEY}%DOC-6760
+        \item Chapter \ref{mod:timg} \textit{\nameref{mod:timg}}: Updated the description of \hyperref[fielddesc:TIMGWDTCLKPRESCALE]{TIMG\_WDT\_CLK\_PRESCALE} % DOC-5697
+        \item Chapter \ref{mod:permctrl} \textit{\nameref{mod:permctrl}}: removed the description of access configuration for Debug Assist  %DOC-6562
+        \item Chapter \ref{mod:sysreg} \textit{\nameref{mod:sysreg}}: Improved the description of \hyperref[fielddesc:SYSTEMCONTROLCORE1MESSAGE]{SYSTEM\_CONTROL\_CORE\_1\_MESSAGE}% DOC-5769
+        \item Chapter \ref{mod:uart} \textit{\nameref{mod:uart}}: Updated the number of rising edges required to generate the wake\_up signal %DOC-7076
+        \item Chapter \ref{mod:i2c} \textit{\nameref{mod:i2c}}: Updated the descriptions of \hyperref[regdesc:I2CCOMD0REG]{I2C\_COMD0\_REG}, \hyperref[fielddesc:I2CSDAFORCEOUT]{I2C\_SDA\_FORCE\_OUT} and \hyperref[fielddesc:I2CSCLFORCEOUT]{I2C\_SCL\_FORCE\_OUT}  %DOC-6428, DOC-6511
+        \item Chapter \ref{mod:mcpwm} \textit{\nameref{mod:mcpwm}}: Added one note about Count-Up-Down mode configuration %DOC-7080
+    \end{itemize}
+    Added Section \hyperref[interrupt-config-registers]{\textit{Interrupt Configuration Registers}}
+
+    \\\hline
+    2023-07-04 & v1.3 &
+    Updated the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:ulp} \textit{\nameref{mod:ulp}}: Added op\_code for RTC I2C instructions; Added more register fields into \hyperref[regdesc:SENSSARI2CCTRLREG]{SENS\_SAR\_I2C\_CTRL\_REG}; Fixed a typo; Added Section Interrupt Handling %DOC-4933 DOC-5089
+        \item Chapter \ref{mod:dma} \textit{\nameref{mod:dma}}: Updated the descriptions of the GDMA\_IN\_SUC\_EOF\_CH\regindex{n}\_INT interrupt and the GDMA\_INLINK\_DSCR\_ADDR\_CH\regindex{n} field % DOC-4730
+        \item Chapter \ref{mod:sysmem} \textit{\nameref{mod:sysmem}}: Updated Table \ref{tab:sysmem-base-address} and Figure \ref{fig:sysmem-address-mapping_structure} %DOC-5109
+        \item Chapter \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}}: Updated the description of  \hyperref[fielddesc:IOMUXPADPOWERCTRL]{IO\_MUX\_PAD\_POWER\_CTRL} %DOC-5593
+        \item Chapters \ref{mod:permctrl} \textit{\nameref{mod:permctrl}} and \ref{mod:sysreg} \textit{\nameref{mod:sysreg}}: Updated register prefix APB\_CTRL to SYSCON % DOC-5455
+        \item Chapter \ref{mod:uart} \textit{\nameref{mod:uart}}: Updated Figure \nameref{fig:uart-arch-overview}, Figure \nameref{fig:one-uart-structure}, and Figure \nameref{fig:uart-flow-control}; Updated the maximum length of stop bits and related descriptions %DOC-4826
+        \item Chapter \ref{mod:usbotg} \textit{\nameref{mod:usbotg}}: Added a note on how to access USB OTG registers %DOC-5008
+        \item Chapter \ref{mod:usbserialjtag} \textit{\nameref{mod:usbserialjtag}}: Added the specific pull-up values configured by the \hyperref[fielddesc:USBSERIALJTAGPULLUPVALUE]{USB\_SERIAL\_JTAG\_PULLUP\_VALUE} bit
+        \item Chapter \ref{mod:sensor} \textit{\nameref{mod:sensor}}: Updated the pattern table indexes in Figure \ref{fig:pattern-tab-1} and Figure \ref{fig:pattern-tab-2}
+    \end{itemize}
+    Added Section \hyperref[programming-reserved-field]{\textit{Programming Reserved Register Field}}
+    \\\hline
+    2023-03-02        & v1.2  &
+    Updated the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:sysmem} \textit{\nameref{mod:sysmem}}: Updated the description for Internal ROM 1 in Section \ref{other:sysmem-internal-ROM-1} \textit{\nameref{other:sysmem-internal-ROM-1}}
+        %\item Chapter \ref{mod:efuse} \textit{\nameref{mod:efuse}}: Fixed a typo %DOC-4232 (Mo: included in "other minor updates")
+        \item Chapter \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}: Removed UART as a reject to sleep cause %DOC-4335  %DOC-3662
+        \item Chapter \ref{mod:timg} \textit{\nameref{mod:timg}}: Updated the procedures to read the timer's value  %DOC-3634
+        \item Chapter \ref{mod:sysreg} \textit{\nameref{mod:sysreg}}: Added descriptions about the \hyperref[regdesc:SYSTEMPERIPRSTEN0REG]{SYSTEM\_PERIP\_RST\_EN0\_REG} and \hyperref[regdesc:SYSTEMPERIPCLKEN0REG]{SYSTEM\_PERIP\_CLK\_EN0\_REG} registers%DOC-4548
+        \item Chapter \ref{mod:uart} \textit{\nameref{mod:uart}}: Added descriptions about the break condition %DOC-3633
+        \item Chapter \ref{mod:usbserialjtag} \textit{\nameref{mod:usbserialjtag}}: Added descriptions about IO pad state change in USB-OTG download mode%doc-4373
+        \item Chapter \ref{mod:ledpwm} \textit{\nameref{mod:ledpwm}}: Added the formula to calculate duty cycle resolution and Table  \textit{\nameref{tab:ledc-common-freq-res}} %DOC-3480
+        \item Chapter \ref{mod:sensor} \textit{\nameref{mod:sensor}}: Added descriptions about the \hyperref[regdesc:APBSARADCAPBSARADC1DATASTATUSREG]{APB\_SARADC\_APB\_SARADC1\_DATA\_STATUS\_REG} register, updated the description about the \hyperref[fielddesc:SENSFORCEXPDSAR]{SENS\_FORCE\_XPD\_SAR} field, and added a note about the touch sensor limitation
+    \end{itemize}
+    Other minor updates
+    \\\hline
+    2022-10-31         & v1.1  &
+    Updated the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:pie} \textit{\nameref{mod:pie}}
+        \item Chapter \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+        \item Chapter \ref{mod:sensor} \textit{\nameref{mod:sensor}}%DOC-3564
+    \end{itemize}
+    Updated the \hyperref[glossary]{Glossary} section
+    \\\hline
+    2022-09-08         & v1.0  &
+    Added the following chapter:
+    \begin{itemize}
+        \item Chapter \ref{mod:pie} \textit{\nameref{mod:pie}}
+    \end{itemize}
+    Updated the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:intmtrx} \textit{\nameref{mod:intmtrx}}
+        \item Chapter \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+        \item Chapter \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}} %doc3469
+        \item Chapter \ref{mod:rng} \textit{\nameref{mod:rng}} % doc-3469
+        \item Chapter \ref{mod:usbotg} \textit{\nameref{mod:usbotg}} %
+    \end{itemize}
+    \\\hline
+    2022-08-04     & v0.8  &
+    Added the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:i2s} \textit{\nameref{mod:i2s}}
+        \item Chapter \ref{mod:spi} \textit{\nameref{mod:spi}}
+    \end{itemize}
+    Updated the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:efuse} \textit{\nameref{mod:efuse}} %doc-3121
+        \item Chapter \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}} %register description about w1ts/w1tc
+    \end{itemize}
+    \\\hline
+    2022-06-30     & v0.7  &
+    Added the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:sensor} \textit{\nameref{mod:sensor}}
+        \item Chapter \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}
+    \end{itemize}
+    Updated the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:sysmem} \textit{\nameref{mod:sysmem}}
+        \item Updated clock names:
+        \begin{itemize}
+        \item FOSC\_CLK: renamed as RC\_FAST\_CLK
+        \item FOSC\_DIV\_CLK: renamed as RC\_FAST\_DIV\_CLK
+        \item RTC\_CLK: renamed as RC\_SLOW\_CLK
+        \item SLOW\_CLK: renamed as RTC\_SLOW\_CLK
+        \item FAST\_CLK: renamed as RTC\_FAST\_CLK
+        \item PLL\_80M\_CLK: renamed as PLL\_F80M\_CLK
+        \item PLL\_160M\_CLK: renamed as PLL\_F160M\_CLK
+        \item PLL\_240M\_CLK: renamed as PLL\_D2\_CLK%doc-3141
+    \end{itemize}
+    \end{itemize}
+    \\\hline
+    2022-06-01     & v0.6  &
+    Updated the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:dma} \textit{\nameref{mod:dma}}
+        \item Chapter \ref{mod:efuse} \textit{\nameref{mod:efuse}} %DOC-2901
+        \item Chapter \ref{mod:bootctrl} \textit{\nameref{mod:bootctrl}}
+    \end{itemize}
+    \\\hline
+    2022-04-06     & v0.5  &
+    Added the following chapters:
+    \begin{itemize}
+        \item Chapter \ref{mod:permctrl} \textit{\nameref{mod:permctrl}}
+        \item Chapter \ref{mod:wctrl} \textit{\nameref{mod:wctrl}}
+    \end{itemize}
+    Updated the following chapter:
+    \begin{itemize}
+        \item Chapter \ref{mod:sysmem} \textit{\nameref{mod:sysmem}}
+    \end{itemize}
+    \\\hline
+
+    2022-02-24    & v0.4  &
+    Added Chapter \ref{mod:camlcdctrl} \textit{\nameref{mod:camlcdctrl}}
+
+    Updated the following chapters:
+        \begin{itemize}
+            \item Chapter \ref{mod:ulp} \textit{\nameref{mod:ulp}} %DOC-2517, DOC-2516, DOC-2710, DOC-2611
+            \item Chapter \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+            \item Chapter \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}} %DOC-2730
+            \item Chapter \ref{mod:resclk} \textit{\nameref{mod:resclk}}
+            \item Chapter \ref{mod:bootctrl} \textit{\nameref{mod:bootctrl}} %DOC-2569
+            \item Chapter \ref{mod:usbotg} \textit{\nameref{mod:usbotg}}
+             \end{itemize}
+    \\\hline
+    2021-12-16 & v0.3 &
+    Added the following chapters:
+        \begin{itemize}
+            \item Chapter \ref{mod:ulp} \textit{\nameref{mod:ulp}}
+            \item Chapter \ref{mod:dma} \textit{\nameref{mod:dma}}
+            \item Chapter \ref{mod:systimer} \textit{\nameref{mod:systimer}}
+            \item Chapter \ref{mod:glitch} \textit{\nameref{mod:glitch}}
+            \item Chapter \ref{mod:i2c} \textit{\nameref{mod:i2c}}
+            \item Chapter \ref{mod:mcpwm} \textit{\nameref{mod:mcpwm}}
+            \item Chapter \ref{mod:rmt} \textit{\nameref{mod:rmt}}
+        \end{itemize}
+    Updated the following chapters:
+        \begin{itemize}
+            \item Chapter \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+            \item Chapter \ref{mod:rsa} \textit{\nameref{mod:rsa}}
+            \item Chapter \ref{mod:hmac} \textit{\nameref{mod:hmac}}
+            \item Chapter \ref{mod:digsig} \textit{\nameref{mod:digsig}}
+        \end{itemize}
+    \\\hline
+
+    2021-09-30      & v0.2 &
+
+            Added the following chapters:
+            \begin{itemize}
+                \item Chapter \ref{mod:sysreg} \textit{\nameref{mod:sysreg}}
+                \item Chapter \ref{mod:hmac} \textit{\nameref{mod:hmac}}
+                \item Chapter \ref{mod:extmemencr} \textit{\nameref{mod:extmemencr}}
+                \item Chapter \ref{mod:uart} \textit{\nameref{mod:uart}}
+                \item Chapter \ref{mod:usbserialjtag} \textit{\nameref{mod:usbserialjtag}}
+            \end{itemize}
+            Updated the following Chapters:
+            \begin{itemize}
+                \item Chapter \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+                \item Chapter \ref{mod:twai} \textit{\nameref{mod:twai}}
+            \end{itemize}
+
+            \\\hline
+    2021-07-09 & v0.1 & Preliminary release\\\hline
+\end{longtable}

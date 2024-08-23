@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% For complete instructions:                                         %%%
+%%% 1. Go to https://www.overleaf.com/project/60e2ed1aefb70e595778b04b %%%
+%%% 2. Compile readme-general.tex                                      %%%
+%%% 3. See Section "Initial Checks"                                    %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Warning for projects with undefined docprojtype %%%
+
+% Check if the variable docprojtype has been added to the project
+% to mark the project type for conditional inclusion of content, etc.
+\ifcsname docprojtype\endcsname%
+
+    % Check if the variable docprojtype is assigned a defined document project name
+    \ifthenelse{%
+      \equal{\docprojtype}{chip-datasheet} \OR
+      \equal{\docprojtype}{trm} \OR
+      \equal{\docprojtype}{hdg} \OR
+      \equal{\docprojtype}{mod-datasheet} \OR
+      \equal{\docprojtype}{errata}
+    }{%
+    % The variable docprojtype has been assigned a defined document project name
+    % Proceed compilation.
+    }{%
+    % The variable docprojtype has NOT been assigned a defined document project name
+    \begin{tiplisting}
+      In your \texttt{preamble-....sty}, assign one of the following values to \texttt{docprojtype}, depending on your document type:
+      \begin{itemize}
+        \item \texttt{chip-datasheet}
+        \item \texttt{trm}
+        \item \texttt{hdg}
+        \item \texttt{mod-datasheet}
+        \item \texttt{errata}
+      \end{itemize}
+    \end{tiplisting}
+    \errmessage{The variable 'docprojtype' has an unauthorized value}
+    \stop
+    }%
+
+\else
+    % The variable docprojtype has not been added to the project
+    \begin{tiplisting}
+      The code block below defines the variable \texttt{docprojtype} to mark document project type for conditional inclusion of content, etc.
+      \begin{enumerate}
+        \item \textbf{Insert the code block below} into your \texttt{preamble-....sty}.
+        \item \textbf{Assign one of the following values} to \texttt{docprojtype}, depending on your document type:
+	    \begin{itemize}
+	        \item \texttt{chip-datasheet}
+	        \item \texttt{trm}
+	        \item \texttt{hdg}
+	        \item \texttt{mod-datasheet}
+	        \item \texttt{errata}
+	    \end{itemize}
+      \end{enumerate}
+
+	    Example:
+
+\begin{lstlisting}[numbers=none]
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% System Variables %%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+% >>> Variable to mark document project type
+%      for conditional inclusion of content, etc. <<<
+\newcommand\docprojtype{<assign doc type>}
+\end{lstlisting}
+
+    \end{tiplisting}
+
+    \errmessage{Define the variable 'docprojtype'}
+    \stop
+
+\fi% \docprojtype

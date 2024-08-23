@@ -1,0 +1,30 @@
+\phantomsection
+\chapter*{中断配置寄存器}\label{interrupt-config-registers}
+\markboth{\it{中断配置寄存器}}{\Navigation}
+\addcontentsline{toc}{chapter}{中断配置寄存器}
+
+大部分外设的内部中断源都有以下配置寄存器：
+
+\begin{itemize}
+    \item \textbf{RAW}（原始状态）寄存器：该寄存器指示原始中断状态，每个位对应一个内部中断源。当中断源触发时，其 RAW 位为 1。
+    
+    \item \textbf{ENA}（使能）寄存器：该寄存器用于启用或禁用内部中断源，每个位对应一个内部中断源。
+    
+    通过操作 ENA 寄存器，可以根据需要屏蔽或取消屏蔽某个内部中断源。当中断源被屏蔽（禁用）时，它不会生成中断信号，但仍可以从 RAW 寄存器中读取其值。
+    
+    \item \textbf{ST}（状态）寄存器：该寄存器指示中断源的屏蔽状态，每个位对应一个内部中断源。ST 位为 1 代表 RAW 位和 ENA 位都为 1，即中断源已生成且未被屏蔽。RAW 位和 ENA 位的值为其他组合时，ST 位为 0。
+    
+    ENA/RAW/ST 寄存器的配置见表 \ref{tab:int-raw-st-ena}。
+
+    \item \textbf{CLR}（清除）寄存器：CLR 寄存器负责清除内部中断源。写 1 将清除该位对应的中断源。
+\end{itemize}
+
+\begin{longtable}{ | l | l | l | }
+\caption{ENA/RAW/ST 寄存器的配置} \label{tab:int-raw-st-ena}
+\\ \hline
+\rowcolor{lightgray}
+\textbf{ENA 位的值} & \textbf{RAW 位的值}  &  \textbf{ST 位的值}\\ \hline
+0 & 忽略 & 0 \\ \hline
+\multirow{2}*{1} &  0 & 0 \\ \cline{2-3}
+ &  1 & 1 \\ \hline
+\end{longtable}

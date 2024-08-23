@@ -1,0 +1,41 @@
+\phantomsection
+\chapter*{如何配置寄存器的保留域}\label{programming-reserved-field}
+\markboth{\it{如何配置寄存器的保留域}}{\Navigation}
+\addcontentsline{toc}{chapter}{如何配置寄存器的保留域}
+
+\phantomsection
+\section*{概述}
+\addcontentsline{toc}{section}{概述}
+
+寄存器的保留域指的是寄存器中不对用户开放、或者配置为非默认值时会导致不可预测的结果的域。
+
+\phantomsection
+\section*{如何配置保留域}
+\addcontentsline{toc}{section}{如何配置保留域}
+
+保留域的值不能修改。由于写寄存器时必须整体写，不能只写部分域，因此，在写带有保留域的寄存器时需要特别注意，只能采用以下两种方式：
+
+\begin{enumerate}
+\item 读取寄存器的值，仅修改需要配置的域，然后将修改后的值以及其他未修改的值一起写回寄存器，这样保留域的值就会保持不变。
+
+\noindent 或者
+
+\item 仅修改需要配置的域，然后将保留域的默认值写回寄存器。默认值即寄存器图表中的“Reset”值。例如，\hyperref[fig:registerX]{寄存器 X} 中 Field\_A 的默认值为 1。
+\end{enumerate}
+
+\begin{register}{H}{寄存器 X}{地址}\label{fig:registerX}
+\regfield{(reserved)}{12}{20}{000000000000}%
+\regfield{Field\_C}{4}{16}{{0000}}%
+\regfield{(reserved)}{14}{2}{00000000000000}%
+\regfield{Field\_B}{1}{1}{{0}}%
+\regfield{Field\_A}{1}{0}{{1}}%
+\reglabel{Reset}\regnewline%
+
+\end{register}
+
+假设您要将 \hyperref[fig:registerX]{寄存器 X} 的 Field\_A、Field\_B 和 Field\_C 设置为 0x0、0x1 和 0x2，您可以：
+
+\begin{itemize}
+\item 使用第 1 种方式，修改这三个域的值，然后把读到的值写回寄存器。假设寄存器读取的值为 0x0000\_0003，修改三个域的值后，将值 0x0002\_0002 写入寄存器。
+\item 使用第 2 种方式，修改这三个域的值，然后把保留域的默认值写回寄存器，即把 0x0002\_0002 写入寄存器。
+\end{itemize}

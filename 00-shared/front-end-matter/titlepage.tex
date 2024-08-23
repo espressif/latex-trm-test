@@ -1,0 +1,46 @@
+\begin{titlepage}
+
+
+\newgeometry{left=0cm,right=0cm,bottom=0cm}
+
+\begin{flushleft}
+{\color{myred}\rule{30pt}{2.7cm}}
+    \hspace{0.2cm}
+    \begin{minipage}[b]{18cm}
+    {\fontsize{36}{48}\textbf{\chipname{}}}
+    \vspace{\baselineskip}
+    \vfill
+    {\fontsize{28}{18}\textbf{\color{mygrayy}\GetTranslation{doctype}}}\smallskip
+    \hspace{0.2cm}
+    {\fontsize{18}{8}\textbf{\color{mygrayy}\GetTranslation{docversionprefix}\docversion{}}}
+    \end{minipage}
+\end{flushleft}
+
+\vspace{48em}
+
+\begin{flushright}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north west, 
+        xshift=16.5cm, 
+        yshift=5.5cm]
+        at (current page.south west) 
+        {\includegraphics[height=2.2cm]{esp-logo-standard-vertical.pdf}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[anchor=north west, 
+            xshift=20cm, 
+            yshift=5.5cm] 
+            at (current page.south west) 
+            {\color{myred}\rule{30pt}{2.2cm}};
+    \end{tikzpicture}    
+\end{flushright}
+
+\vspace{9em}
+
+\centerline{www.espressif.com}
+
+
+\end{titlepage}
+
+\restoregeometry
+\clearpage

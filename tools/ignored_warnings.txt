@@ -1,0 +1,649 @@
+# False positives in 00-shared/
+
+Check spaces [('}', '功能'), ('}', '功能')] in file:preface__CN.tex, language:en_cn on line:    \item 您还可以通过文档左侧的\textbf{书签}，从文中的任何位置直接跳转至另一个章节。注意，本文档已设置默认打开\textbf{书签}功能，但一些 PDF 阅读器或浏览器会忽略此设置。因此，如果您无法找到\textbf{书签}功能，请尝试以下方法：
+
+Check spaces [('}', '是一组控制系统复位')] in file:glossary-reg__CN.tex, language:en_cn on line:SYSREG  & \textbf{系统寄存器}是一组控制系统复位、存储器、时钟、软件中断、电源管理、时钟门控等的寄存器。 \\
+
+Check spaces [('}', '是一种')] in file:glossary-reg__CN.tex, language:en_cn on line:NMI     & \textbf{非屏蔽中断}是一种 CPU 指令无法禁用或忽略的硬件中断。出现此类中断说明发生严重错误。 \\
+
+Check spaces [('}', '面向使用')] in file:preface__CN.tex, language:en_cn on line:{\bfseries \chipname{} \GetTranslation{doctype}}面向使用 \chipname{} 系列产品进行底层软件开发的人员，介绍了 \chipname{} 系列产品中内置的硬件模块，包括概述、功能列表、硬件架构、编程指南、寄存器列表等信息。
+
+Check spaces [('}', '功能')] in file:preface__CN.tex, language:en_cn on line:        \item 配置您的 PDF 阅读器，使其默认打开\textbf{书签}功能。
+
+# False positives in ESP32-P4/
+
+Check spaces on unit measurements ['PWM0A'] in file:57-MCPWM-reg-summ__EN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNFORCEREG]{MCPWM\_GEN0\_FORCE\_REG} & Permissives to force PWM0A and PWM0B outputs by software & 0x004C & R/W \\ \hline
+╰─-------------> ['PWM0A']  on  line 32 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__EN.tex
+
+Check spaces on unit measurements ['PWM0A'] in file:57-MCPWM-reg-summ__EN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNAREG]{MCPWM\_GEN0\_A\_REG} & Actions triggered by events on PWM0A & 0x0050 & R/W \\ \hline
+╰─-------------> ['PWM0A']  on  line 33 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__EN.tex
+
+Check spaces on unit measurements ['PWM0A'] in file:57-MCPWM-reg-summ__EN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMFHNCFG0REG]{MCPWM\_FH0\_CFG0\_REG} & Actions on PWM0A and PWM0B trip events & 0x0068 & R/W \\ \hline
+╰─-------------> ['PWM0A']  on  line 39 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__EN.tex
+
+Check spaces on unit measurements ['PWM1A'] in file:57-MCPWM-reg-summ__EN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNFORCEREG]{MCPWM\_GEN1\_FORCE\_REG} & Permissives to force PWM1A and PWM1B outputs by software & 0x0084 & R/W \\ \hline
+╰─-------------> ['PWM1A']  on  line 48 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__EN.tex
+
+Check spaces on unit measurements ['PWM1A'] in file:57-MCPWM-reg-summ__EN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNAREG]{MCPWM\_GEN1\_A\_REG} & Actions triggered by events on PWM1A & 0x0088 & R/W \\ \hline
+╰─-------------> ['PWM1A']  on  line 49 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__EN.tex
+
+Check spaces on unit measurements ['PWM1A'] in file:57-MCPWM-reg-summ__EN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMFHNCFG0REG]{MCPWM\_FH1\_CFG0\_REG} & Actions on PWM1A and PWM1B trip events & 0x00A0 & R/W \\ \hline
+╰─-------------> ['PWM1A']  on  line 55 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__EN.tex
+
+Check spaces on unit measurements ['PWM2A'] in file:57-MCPWM-reg-summ__EN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNFORCEREG]{MCPWM\_GEN2\_FORCE\_REG} & Permissives to force PWM2A and PWM2B outputs by software & 0x00BC & R/W \\ \hline
+╰─-------------> ['PWM2A']  on  line 64 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__EN.tex
+
+Check spaces on unit measurements ['PWM2A'] in file:57-MCPWM-reg-summ__EN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNAREG]{MCPWM\_GEN2\_A\_REG} & Actions triggered by events on PWM2A & 0x00C0 & R/W \\ \hline
+╰─-------------> ['PWM2A']  on  line 65 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__EN.tex
+
+Check spaces on unit measurements ['PWM2A'] in file:57-MCPWM-reg-summ__EN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMFHNCFG0REG]{MCPWM\_FH2\_CFG0\_REG} & Actions on PWM2A and PWM2B trip events & 0x00D8 & R/W \\ \hline
+╰─-------------> ['PWM2A']  on  line 71 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__EN.tex
+
+Check spaces on unit measurements ['PWM0A'] in file:57-MCPWM-reg-summ__CN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNFORCEREG]{MCPWM\_GEN0\_FORCE\_REG} & 软件强制 PWM0A 和 PWM0B 输 出 & 0x004C & R/W \\ \hline
+╰─-------------> ['PWM0A']  on  line 43 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__CN.tex
+
+Check spaces on unit measurements ['PWM0A'] in file:57-MCPWM-reg-summ__CN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNAREG]{MCPWM\_GEN0\_A\_REG} & PWM0A 输出上事件触发的操作 & 0x0050 &  R/W \\ \hline
+╰─-------------> ['PWM0A']  on  line 44 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__CN.tex
+
+Check spaces on unit measurements ['PWM0A'] in file:57-MCPWM-reg-summ__CN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMFHNCFG0REG]{MCPWM\_FH0\_CFG0\_REG} & 故障事件中 PWM0A 和 PWM0B 上的操作 & 0x0068 &  R/W \\ \hline
+╰─-------------> ['PWM0A']  on  line 50 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__CN.tex
+
+Check spaces on unit measurements ['PWM1A'] in file:57-MCPWM-reg-summ__CN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNFORCEREG]{MCPWM\_GEN1\_FORCE\_REG} & 软件强制 PWM1A 和 PWM1B 输 出 &  0x0084 & R/W \\ \hline
+╰─-------------> ['PWM1A']  on  line 59 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__CN.tex
+
+Check spaces on unit measurements ['PWM1A'] in file:57-MCPWM-reg-summ__CN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNAREG]{MCPWM\_GEN1\_A\_REG} & PWM1A 输出上的事件触发的操作 & 0x0088 &  R/W \\ \hline
+╰─-------------> ['PWM1A']  on  line 60 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__CN.tex
+
+Check spaces on unit measurements ['PWM1A'] in file:57-MCPWM-reg-summ__CN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMFHNCFG0REG]{MCPWM\_FH1\_CFG0\_REG} & 故障事件中 PWM1A 和 PWM1B 输出上的操作 & 0x00A0 & R/W \\ \hline
+╰─-------------> ['PWM1A']  on  line 66 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__CN.tex
+
+Check spaces on unit measurements ['PWM2A'] in file:57-MCPWM-reg-summ__CN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNFORCEREG]{MCPWM\_GEN2\_FORCE\_REG} & 软件强制 PWM2A 和 PWM2B 输 出 &  0x00BC & R/W \\ \hline
+╰─-------------> ['PWM2A']  on  line 75 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__CN.tex
+
+Check spaces on unit measurements ['PWM2A'] in file:57-MCPWM-reg-summ__CN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMGENNAREG]{MCPWM\_GEN2\_A\_REG} & PWM2A 输出上的事件触发的操作 & 0x00C0 &  R/W \\ \hline
+╰─-------------> ['PWM2A']  on  line 76 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__CN.tex
+
+Check spaces on unit measurements ['PWM2A'] in file:57-MCPWM-reg-summ__CN.tex, language:en_cn on line:\hyperref[regdesc:MCPWMFHNCFG0REG]{MCPWM\_FH2\_CFG0\_REG} & 故障事件中 PWM2A 和 PWM2B 输出上的操作 & 0x00D8 & R/W \\ \hline
+╰─-------------> ['PWM2A']  on  line 82 in file ./ESP32-P4/57-MCPWM/57-MCPWM-reg-summ__CN.tex
+
+Check spaces around parentheses e(h) in file:04-ULP__CN.tex, language:en_cn on line:低功耗 CPU 实现了时钟周期计数器 \hyperref[regdesc:LPMCYCLEH]{mcycle(h)}、指令计数器 \hyperref[regdesc:LPMINSTRETH]{minstret(h)} 以及 10 个事件计数器 \hyperref[regdesc:LPMHPMCOUNTER]{mhpmcounter\regindex{n}(\regindex{n}:3-12)} 。时钟周期计数器和指令计数器始终可用且为 64 位 ，其余性能计数器为 40 位。
+╰─-------------> e(h)  on  line 404 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses t(h) in file:04-ULP__CN.tex, language:en_cn on line:低功耗 CPU 实现了时钟周期计数器 \hyperref[regdesc:LPMCYCLEH]{mcycle(h)}、指令计数器 \hyperref[regdesc:LPMINSTRETH]{minstret(h)} 以及 10 个事件计数器 \hyperref[regdesc:LPMHPMCOUNTER]{mhpmcounter\regindex{n}(\regindex{n}:3-12)} 。时钟周期计数器和指令计数器始终可用且为 64 位 ，其余性能计数器为 40 位。
+╰─-------------> t(h)  on  line 404 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses T(9) in file:04-ULP__CN.tex, language:en_cn on line:    BIT(9) & LP IO & 该唤醒源使用 LP IO 的中断状态寄存器信号，详情请见章节  \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}} \\\hline
+╰─-------------> T(9)  on  line 567 in file ESP32-P4/04-ULP__CN.tex
+
+Check redundant spaces [('(9) ', '&')] in file:04-ULP__CN.tex, language:en_cn on line:    BIT(9) & LP IO & 该唤醒源使用 LP IO 的中断状态寄存器信号，详情请见章节  \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}} \\\hline
+╰─-------------> [('(9) ', '&')]  on  line 567 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses T(10) in file:04-ULP__CN.tex, language:en_cn on line:    BIT(10) & LP UART & LP UART 接收一定数量的 RX 脉冲，需要使能 REG\_UART\_WAKEUP\_EN，详情请见章节 \ref{mod:uart} \textit{\nameref{mod:uart}} \\\hline
+╰─-------------> T(10)  on  line 568 in file ESP32-P4/04-ULP__CN.tex
+
+Check redundant spaces [('(10) ', '&')] in file:04-ULP__CN.tex, language:en_cn on line:    BIT(10) & LP UART & LP UART 接收一定数量的 RX 脉冲，需要使能 REG\_UART\_WAKEUP\_EN，详情请见章节 \ref{mod:uart} \textit{\nameref{mod:uart}} \\\hline
+╰─-------------> [('(10) ', '&')]  on  line 568 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses T(13) in file:04-ULP__CN.tex, language:en_cn on line:    BIT(13) & RTC 定时器 & 使用 RTC 定时器的 target 0 超时中断控制，详情请见章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}} \\\hline
+╰─-------------> T(13)  on  line 569 in file ESP32-P4/04-ULP__CN.tex
+
+Check redundant spaces [('(13) ', '&')] in file:04-ULP__CN.tex, language:en_cn on line:    BIT(13) & RTC 定时器 & 使用 RTC 定时器的 target 0 超时中断控制，详情请见章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}} \\\hline
+╰─-------------> [('(13) ', '&')]  on  line 569 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses T(14) in file:04-ULP__CN.tex, language:en_cn on line:    BIT(14) & 欠压检测 & 发生欠压时，可唤醒 LP CPU，详情请见章节 \ref{mod:brownout} \textit{\nameref{mod:brownout}} \\\hline
+╰─-------------> T(14)  on  line 570 in file ESP32-P4/04-ULP__CN.tex
+
+Check redundant spaces [('(14) ', '&')] in file:04-ULP__CN.tex, language:en_cn on line:    BIT(14) & 欠压检测 & 发生欠压时，可唤醒 LP CPU，详情请见章节 \ref{mod:brownout} \textit{\nameref{mod:brownout}} \\\hline
+╰─-------------> [('(14) ', '&')]  on  line 570 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses T(17) in file:04-ULP__CN.tex, language:en_cn on line:    BIT(17) & ETM & 可接收来自 ETM 的唤醒源，详情请见章节 \ref{mod:evntaskmatrix} \textit{\nameref{mod:evntaskmatrix}} \\\hline
+╰─-------------> T(17)  on  line 571 in file ESP32-P4/04-ULP__CN.tex
+
+Check redundant spaces [('(17) ', '&')] in file:04-ULP__CN.tex, language:en_cn on line:    BIT(17) & ETM & 可接收来自 ETM 的唤醒源，详情请见章节 \ref{mod:evntaskmatrix} \textit{\nameref{mod:evntaskmatrix}} \\\hline
+╰─-------------> [('(17) ', '&')]  on  line 571 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses T(18) in file:04-ULP__CN.tex, language:en_cn on line:    BIT(18) & RTC 定时器 & 使用 RTC 定时器的 target 1 超时中断控制，详情请见章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}} \\\hline
+╰─-------------> T(18)  on  line 572 in file ESP32-P4/04-ULP__CN.tex
+
+Check redundant spaces [('(18) ', '&')] in file:04-ULP__CN.tex, language:en_cn on line:    BIT(18) & RTC 定时器 & 使用 RTC 定时器的 target 1 超时中断控制，详情请见章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}} \\\hline
+╰─-------------> [('(18) ', '&')]  on  line 572 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses T(19) in file:04-ULP__CN.tex, language:en_cn on line:    BIT(19) & LP I2S 音频 & I2S 接受到固定音频，可唤醒 LP CPU，详情请见章节 \ref{mod:i2s} \textit{\nameref{mod:i2s}}\\\hline
+╰─-------------> T(19)  on  line 573 in file ESP32-P4/04-ULP__CN.tex
+
+Check redundant spaces [('(19) ', '&')] in file:04-ULP__CN.tex, language:en_cn on line:    BIT(19) & LP I2S 音频 & I2S 接受到固定音频，可唤醒 LP CPU，详情请见章节 \ref{mod:i2s} \textit{\nameref{mod:i2s}}\\\hline
+╰─-------------> [('(19) ', '&')]  on  line 573 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses T(22) in file:04-ULP__CN.tex, language:en_cn on line:    BIT(22) & 寄存器 \hyperref[fielddesc:PMUHPTRIGGERLP]{PMU\_HP\_TRIGGER\_LP} & 通过主核置位寄存器 \hyperref[fielddesc:PMUHPTRIGGERLP]{PMU\_HP\_TRIGGER\_LP} 可唤醒低功耗 CPU，置位 REG\_HP\_SW\_TRIGGER\_INT\_CLR 可清除唤醒源\\\hline
+╰─-------------> T(22)  on  line 574 in file ESP32-P4/04-ULP__CN.tex
+
+Check redundant spaces [('(22) ', '&')] in file:04-ULP__CN.tex, language:en_cn on line:    BIT(22) & 寄存器 \hyperref[fielddesc:PMUHPTRIGGERLP]{PMU\_HP\_TRIGGER\_LP} & 通过主核置位寄存器 \hyperref[fielddesc:PMUHPTRIGGERLP]{PMU\_HP\_TRIGGER\_LP} 可唤醒低功耗 CPU，置位 REG\_HP\_SW\_TRIGGER\_INT\_CLR 可清除唤醒源\\\hline
+╰─-------------> [('(22) ', '&')]  on  line 574 in file ESP32-P4/04-ULP__CN.tex
+
+Check spaces around parentheses e(h) in file:04-ULP__EN.tex, language:en_cn on line:The LP CPU implements one clock cycle counter \hyperref[regdesc:LPMCYCLE]{mcycle(h)}, one instruction counter \hyperref[regdesc:LPMINSTRET]{minstret(h)}, and ten event counters \hyperref[regdesc:LPMHPMCOUNTER]{mhpmcounter\regindex{n}(\regindex{n}:3-12)}. The clock cycle counter and instruction counter are always available and each is 64-bit wide. The performance counters are 40-bit wide each.
+╰─-------------> e(h)  on  line 349 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces around parentheses t(h) in file:04-ULP__EN.tex, language:en_cn on line:The LP CPU implements one clock cycle counter \hyperref[regdesc:LPMCYCLE]{mcycle(h)}, one instruction counter \hyperref[regdesc:LPMINSTRET]{minstret(h)}, and ten event counters \hyperref[regdesc:LPMHPMCOUNTER]{mhpmcounter\regindex{n}(\regindex{n}:3-12)}. The clock cycle counter and instruction counter are always available and each is 64-bit wide. The performance counters are 40-bit wide each.
+╰─-------------> t(h)  on  line 349 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces around parentheses T(9) in file:04-ULP__EN.tex, language:en_cn on line:    BIT(9)  & LP IO & The LP CPU can be waken up by the LP IO interrupt status register signal. For more information, please refer to Chapter \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}}. \\\hline
+╰─-------------> T(9)  on  line 493 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces around parentheses T(10) in file:04-ULP__EN.tex, language:en_cn on line:    BIT(10)  & LP UART & The LP CPU can be waken up when the LP UART receives a certain number of RX pulses. REG\_UART\_WAKEUP\_EN needs to be enabled. For more information, please refer to Chapter \ref{mod:uart} \textit{\nameref{mod:uart}}. \\\hline
+╰─-------------> T(10)  on  line 494 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces around parentheses T(13) in file:04-ULP__EN.tex, language:en_cn on line:    BIT(13) & RTC timer & The LP CPU can be waken up by the RTC timer target 0 timeout interrupt. For more information, please refer to Chapter \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}. \\\hline
+╰─-------------> T(13)  on  line 495 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces around parentheses T(14) in file:04-ULP__EN.tex, language:en_cn on line:    BIT(14) & Brownout detection & The LP CPU can be waken up when a brownout occurs. For more information, please refer to Chapter \ref{mod:brownout} \textit{\nameref{mod:brownout}}. \\\hline
+╰─-------------> T(14)  on  line 496 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces around parentheses T(17) in file:04-ULP__EN.tex, language:en_cn on line:    BIT(17)  & ETM &  The LP CPU can be waken up by the ETM task. For more information, please refer to Chapter \ref{mod:evntaskmatrix} \textit{\nameref{mod:evntaskmatrix}}. \\\hline
+╰─-------------> T(17)  on  line 497 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces around parentheses T(18) in file:04-ULP__EN.tex, language:en_cn on line:    BIT(18) & RTC timer & The LP CPU can be waken up by the RTC timer target 0 timeout interrupt. For more information, please refer to Chapter \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}. \\\hline
+╰─-------------> T(18)  on  line 498 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces around parentheses T(19) in file:04-ULP__EN.tex, language:en_cn on line:    BIT(19) & LP I2S audio & The LP CPU can be waken up when the predefined audio is received via I2S. For more details, please refer to Chapter \ref{mod:i2s} \textit{\nameref{mod:i2s}}.\\\hline
+╰─-------------> T(19)  on  line 499 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces around parentheses T(22) in file:04-ULP__EN.tex, language:en_cn on line:    BIT(22)  & \hyperref[fielddesc:PMUHPTRIGGERLP]{PMU\_HP\_TRIGGER\_LP} register & The HP CPU sets the register \hyperref[fielddesc:PMUHPTRIGGERLP]{PMU\_HP\_TRIGGER\_LP} to wake up the LP CPU, and sets REG\_HP\_SW\_TRIGGER\_INT\_CLR to clear this wake-up source.\\\hline
+╰─-------------> T(22)  on  line 500 in file ESP32-P4/04-ULP__EN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV444  $\rightarrow$ (601) RGB888 & 3 & 1 & 2 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 496 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV444  $\rightarrow$ (709) RGB888 & 3 & 1 & 2 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 497 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV422-MIPI  $\rightarrow$ (601) RGB888 & 1 & 1 & 2 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 498 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV422-MIPI  $\rightarrow$ (709) RGB888 & 1 & 1 & 2 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 499 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV420 $\rightarrow$ (601) RGB888/RGB565 & 0 & 1 & 1/0 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 526 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV422 $\rightarrow$ (601) RGB888/RGB565 & 0 & 1 & 1/0 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 527 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV444 $\rightarrow$ (601) RGB888/RGB565 & 2 & 1 & 1/0 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 528 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV420 $\rightarrow$ (709) RGB888/RGB565 & 0 & 1 & 1/0 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 529 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV422 $\rightarrow$ (709) RGB888/RGB565 & 0 & 1 & 1/0 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 530 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__CN.tex, language:en_cn on line:    YUV444 $\rightarrow$ (709) RGB888/RGB565 & 2 & 1 & 1/0 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 531 in file ESP32-P4/07-2DDMA__CN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV444  $\rightarrow$ (601) RGB888 & 3 & 1 & 2 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 552 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV444  $\rightarrow$ (709) RGB888 & 3 & 1 & 2 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 553 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV422-MIPI  $\rightarrow$ (601) RGB888 & 1 & 1 & 2 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 554 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV422-MIPI  $\rightarrow$ (709) RGB888 & 1 & 1 & 2 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 555 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV420 $\rightarrow$ (601) RGB888/RGB565 & 0 & 1 & 1/0 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 582 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV422 $\rightarrow$ (601) RGB888/RGB565 & 0 & 1 & 1/0 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 583 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces on unit measurements ['12A', '1E712A', '8112A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV444 $\rightarrow$ (601) RGB888/RGB565 & 2 & 1 & 1/0 & 12A & C86D999 & 1E712A & 21E4F30 & 8112A & BAD3000 \\ \hline
+╰─-------------> ['12A', '1E712A', '8112A']  on  line 584 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV420 $\rightarrow$ (709) RGB888/RGB565 & 0 & 1 & 1/0 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 585 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV422 $\rightarrow$ (709) RGB888/RGB565 & 0 & 1 & 1/0 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 586 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces on unit measurements ['12A', '1F252A', '8752A'] in file:07-2DDMA__EN.tex, language:en_cn on line:    YUV444 $\rightarrow$ (709) RGB888/RGB565 & 2 & 1 & 1/0 & 12A & C21E5CB & 1F252A & 1338778 & 8752A & B7D0800 \\ \hline
+╰─-------------> ['12A', '1F252A', '8752A']  on  line 587 in file ESP32-P4/07-2DDMA__EN.tex
+
+Check spaces around parentheses p(x) in file:09-EFUSE__CN.tex, language:en_cn on line:BLOCK1 \verb+~+ BLOCK10 使用 RS (44, 32) 编码方式，最多支持自动校正 6 个字节。本文 RS (44, 32) 使用的本源多项式为 \(p(x)=x^8+x^4+x^3+x^2+1\)。
+╰─-------------> p(x)  on  line 201 in file ESP32-P4/09-EFUSE__CN.tex
+
+Check spaces around parentheses (x)= in file:09-EFUSE__CN.tex, language:en_cn on line:BLOCK1 \verb+~+ BLOCK10 使用 RS (44, 32) 编码方式，最多支持自动校正 6 个字节。本文 RS (44, 32) 使用的本源多项式为 \(p(x)=x^8+x^4+x^3+x^2+1\)。
+╰─-------------> (x)=  on  line 201 in file ESP32-P4/09-EFUSE__CN.tex
+
+Check spaces on unit measurements ['0x5A5A'] in file:09-EFUSE__CN.tex, language:en_cn on line:\item 配置寄存器 \hyperref[regdesc:EFUSECONFREG]{EFUSE\_CONF\_REG} 的 \hyperref[fielddesc:EFUSEOPCODE]{EFUSE\_OP\_CODE} 位域为 0x5A5A。
+╰─-------------> ['0x5A5A']  on  line 277 in file ESP32-P4/09-EFUSE__CN.tex
+
+Check spaces around parentheses p(x) in file:09-EFUSE__EN.tex, language:en_cn on line:BLOCK1 \verb+~+ BLOCK10 use RS (44, 32) coding scheme that supports up to 6 bytes of automatic error correction. The primitive polynomial of RS (44, 32) is \(p(x)=x^8+x^4+x^3+x^2+1\).
+╰─-------------> p(x)  on  line 192 in file ESP32-P4/09-EFUSE__EN.tex
+
+Check spaces around parentheses (x)= in file:09-EFUSE__EN.tex, language:en_cn on line:BLOCK1 \verb+~+ BLOCK10 use RS (44, 32) coding scheme that supports up to 6 bytes of automatic error correction. The primitive polynomial of RS (44, 32) is \(p(x)=x^8+x^4+x^3+x^2+1\).
+╰─-------------> (x)=  on  line 192 in file ESP32-P4/09-EFUSE__EN.tex
+
+Check spaces on unit measurements ['0x5A5A'] in file:09-EFUSE__EN.tex, language:en_cn on line:\item Configure the field \hyperref[fielddesc:EFUSEOPCODE]{EFUSE\_OP\_CODE} of register \hyperref[regdesc:EFUSECONFREG]{EFUSE\_CONF\_REG} to 0x5A5A.
+╰─-------------> ['0x5A5A']  on  line 268 in file ESP32-P4/09-EFUSE__EN.tex
+
+Check spaces [('}', '并不是所有的')] in file:11-IOMUXGPIO__CN.tex, language:en_cn on line:    {\bfseries 注意：}并不是所有的 HP 外设信号都有有效的 \hyperref[fielddesc:GPIOSIGNINSEL]{GPIO\_SIG\regindex{y}\_IN\_SEL} 位，即有些外设信号只能通过 HP GPIO 交换矩阵接收外部输入信号。
+╰─-------------> [('}', '并不是所有的')]  on  line 333 in file ESP32-P4/11-IOMUXGPIO__CN.tex
+
+Check spaces around parentheses E(z) in file:11-IOMUXGPIO__CN.tex, language:en_cn on line:E(z) 为量化误差，X(z) 为输入。\\
+╰─-------------> E(z)  on  line 450 in file ESP32-P4/11-IOMUXGPIO__CN.tex
+
+Check spaces around parentheses X(z) in file:11-IOMUXGPIO__CN.tex, language:en_cn on line:E(z) 为量化误差，X(z) 为输入。\\
+╰─-------------> X(z)  on  line 450 in file ESP32-P4/11-IOMUXGPIO__CN.tex
+
+Check spaces [('}', '中管脚定义章节')] in file:11-IOMUXGPIO__CN.tex, language:en_cn on line:GPIO 管脚供电请参考\textit{\href{https://www.espressif.com/sites/default/files/documentation/esp32-p4_datasheet_en.pdf}{《\chipname{} 技术规格书》}}中管脚定义章节。所有管脚均可用于将芯片从 Light-sleep 中唤醒，但仅有 VDDPST1 域中的管脚 (GPIO0 \verb+~+ GPIO15) 可用于将芯片从 Deep-sleep 唤醒。
+╰─-------------> [('}', '中管脚定义章节')]  on  line 693 in file ESP32-P4/11-IOMUXGPIO__CN.tex
+
+Check spaces [('}', '列缩写的含义')] in file:11-IOMUXGPIO__CN.tex, language:en_cn on line:请查看章节\hyperref[glossary-access-types]{\textit{寄存器的访问类型}}，了解\textbf{访问}列缩写的含义。
+╰─-------------> [('}', '列缩写的含义')]  on  line 936 in file ESP32-P4/11-IOMUXGPIO__CN.tex
+
+Check spaces [('}', '列缩写的含义')] in file:11-IOMUXGPIO__CN.tex, language:en_cn on line:请查看章节\hyperref[glossary-access-types]{\textit{寄存器的访问类型}}，了解\textbf{访问}列缩写的含义。
+╰─-------------> [('}', '列缩写的含义')]  on  line 943 in file ESP32-P4/11-IOMUXGPIO__CN.tex
+
+Check spaces [('}', '列缩写的含义')] in file:11-IOMUXGPIO__CN.tex, language:en_cn on line:请查看章节\hyperref[glossary-access-types]{\textit{寄存器的访问类型}}，了解\textbf{访问}列缩写的含义。
+╰─-------------> [('}', '列缩写的含义')]  on  line 952 in file ESP32-P4/11-IOMUXGPIO__CN.tex
+
+Check spaces [('}', '列缩写的含义')] in file:11-IOMUXGPIO__CN.tex, language:en_cn on line:请查看章节\hyperref[glossary-access-types]{\textit{寄存器的访问类型}}，了解\textbf{访问}列缩写的含义。
+╰─-------------> [('}', '列缩写的含义')]  on  line 960 in file ESP32-P4/11-IOMUXGPIO__CN.tex
+
+Check spaces [('}', '列缩写的含义')] in file:11-IOMUXGPIO__CN.tex, language:en_cn on line:请查看章节\hyperref[glossary-access-types]{\textit{寄存器的访问类型}}，了解\textbf{访问}列缩写的含义。
+╰─-------------> [('}', '列缩写的含义')]  on  line 969 in file ESP32-P4/11-IOMUXGPIO__CN.tex
+
+Check spaces around parentheses E(z) in file:11-IOMUXGPIO__EN.tex, language:en_cn on line:E(z) is quantization error and X(z) is the input.\\
+╰─-------------> E(z)  on  line 458 in file ESP32-P4/11-IOMUXGPIO__EN.tex
+
+Check spaces around parentheses X(z) in file:11-IOMUXGPIO__EN.tex, language:en_cn on line:E(z) is quantization error and X(z) is the input.\\
+╰─-------------> X(z)  on  line 458 in file ESP32-P4/11-IOMUXGPIO__EN.tex
+
+Check spaces [('}', '映射至')] in file:24-LPMAILBOX__CN.tex, language:en_cn on line:MB\_LP\_INTR 直接映射至 LP CPU（见章节 \ref{mod:ulp} \textit{\textcolor{red}{\nameref{mod:ulp}}}），MB\_HP\_INTR 可通过\href{mod:intmtrx}{中断矩阵}映射至 HP CPU0/1。
+╰─-------------> [('}', '映射至')]  on  line 123 in file ESP32-P4/24-LPMAILBOX__CN.tex
+
+Check spaces [('}', '将其映射至')] in file:24-LPMAILBOX__CN.tex, language:en_cn on line:    \item\hyperref[tab:lpmailbox-int-sources]{MB\_LP\_INTR} 同样可以作为 HP CPU\regindex{x} 的外部中断源，可通过\href{mod:intmtrx}{中断矩阵}将其映射至 HP CPU\regindex{x}。
+╰─-------------> [('}', '将其映射至')]  on  line 138 in file ESP32-P4/24-LPMAILBOX__CN.tex
+
+Check spaces [('}', '将')] in file:24-LPMAILBOX__CN.tex, language:en_cn on line:    \item 当 LP 信箱控制器需要为 HP CPU0 和 HP CPU1 分配不同的中断源时，可通过\href{mod:intmtrx}{中断矩阵}将 \hyperref[tab:lpmailbox-int-sources]{MB\_HP\_INTR} 和 \hyperref[tab:lpmailbox-int-sources]{MB\_LP\_INTR} 分别映射至 HP CPU0 和 HP CPU1。
+╰─-------------> [('}', '将')]  on  line 139 in file ESP32-P4/24-LPMAILBOX__CN.tex
+
+Check spaces [('}', '此处')] in file:26-AES__CN.tex, language:en_cn on line:\phantom{aaaaaaa}此处，$X_{1}$、$X_{2}$、$\cdots$、$X_{n-1}$ 的长度均为 128 比特，而 $X_{n}$ 的长度为 {\it{t}} (0<=$t$<=127)。\\
+╰─-------------> [('}', '此处')]  on  line 480 in file ESP32-P4/26-AES__CN.tex
+
+Check spaces [('}', '如果')] in file:26-AES__CN.tex, language:en_cn on line:\phantom{aaaaaaa}如果 ${\it{t}} = 0$，则\\
+╰─-------------> [('}', '如果')]  on  line 481 in file ESP32-P4/26-AES__CN.tex
+
+Check spaces [('}', '如果')] in file:26-AES__CN.tex, language:en_cn on line:\phantom{aaaaaaa}如果 $0<{\it{t}} <= 127$，定义 $X_{n}^{*}$ 块的长度为 128 比特，且 $X_{n}^{*} = X_{n} || 0^{128-{\it{t}}}$，则\\
+╰─-------------> [('}', '如果')]  on  line 483 in file ESP32-P4/26-AES__CN.tex
+
+Check English spaces ['0<'] in file:26-AES__EN.tex, language:en_cn on line:\phantom{aaaaaaaa}Here, the lengths of $X_{1}, X_{2}, \cdots, X_{n-1}$ all equal to 128 bits, and the length of $X_{n}$ is {\it{t}} (0<={\it{t}}<=127).\\
+╰─-------------> ['0<']  on  line 503 in file ESP32-P4/26-AES__EN.tex
+
+Check English spaces ['0<'] in file:26-AES__EN.tex, language:en_cn on line:\phantom{aaaaaaaa}If $0<{\it{t}} <= 127$, define a 128-bit block, $X_{n}^{*}$, and let $X_{n}^{*} = X_{n} || 0^{128-{\it{t}}}$, then\\
+╰─-------------> ['0<']  on  line 506 in file ESP32-P4/26-AES__EN.tex
+
+Check Chinese characters ['链表'] in file:26-AES__EN.tex, language:en_cn on line:    \item Select one of DMA channels to connect with AES, configure the DMA linked list, and then start DMA. For details, please refer to Chapter \ref{mod:dma} \textit{\nameref{mod:dma}}.\\
+╰─-------------> ['链表']  on  line 573 in file ESP32-P4/26-AES__EN.tex
+
+Check Chinese characters ['根据需要'] in file:26-AES__EN.tex, language:en_cn on line:        \item Configure the \hyperref[regdesc:AESINTENAREG]{AES\_INT\_ENA\_REG} register to enable or disable the interrupt function.\\
+╰─-------------> ['根据需要']  on  line 602 in file ESP32-P4/26-AES__EN.tex
+
+Check English spaces ['1<', 't<'] in file:30-SHA__EN.tex, language:en_cn on line:        \item If $1<=t<=9$, then $t\_length=7'h48$ and $t\_string$ is padded in the following format:\\
+╰─-------------> ['1<', 't<']  on  line 241 in file ESP32-P4/30-SHA__EN.tex
+
+Check English spaces ['10<', 't<'] in file:30-SHA__EN.tex, language:en_cn on line:        \item If $10<=t<=99$, then $t\_length=7'h50$ and $t\_string$ is padded in the following format:\\
+╰─-------------> ['10<', 't<']  on  line 251 in file ESP32-P4/30-SHA__EN.tex
+
+Check English spaces ['100<', 't<'] in file:30-SHA__EN.tex, language:en_cn on line:        \item If $100<=t<512$, then $t\_length=7'h58$ and $t\_string$ is padded in the following format:\\
+╰─-------------> ['100<', 't<']  on  line 262 in file ESP32-P4/30-SHA__EN.tex
+
+Check spaces [('}', '非常重要')] in file:32-ECDSA__CN.tex, language:en_cn on line:        \item 私钥 $d$ 为在 1 到 $n$-1 之间随机选择的整数。注意，这里必须确保私钥是真正随机的（不可预测或复制）。因此，使用一个安全的\textit{\nameref{mod:rng}}非常重要。
+╰─-------------> [('}', '非常重要')]  on  line 158 in file ESP32-P4/32-ECDSA__CN.tex
+
+Check spaces on unit measurements ['4K'] in file:36-JPEGCODEC__CN.tex, language:en_cn on line:            \item 静态图像压缩最大支持 4K 分辨率
+╰─-------------> ['4K']  on  line 205 in file ESP32-P4/36-JPEGCODEC__CN.tex
+
+Check spaces on unit measurements ['4K'] in file:36-JPEGCODEC__CN.tex, language:en_cn on line:        \item 静态图像解码最大支持 4K 分辨率
+╰─-------------> ['4K']  on  line 227 in file ESP32-P4/36-JPEGCODEC__CN.tex
+
+Check spaces on unit measurements ['4K'] in file:36-JPEGCODEC__EN.tex, language:en_cn on line:        \item still image compression: up to 4K resolution
+╰─-------------> ['4K']  on  line 209 in file ESP32-P4/36-JPEGCODEC__EN.tex
+
+Check spaces on unit measurements ['4K'] in file:36-JPEGCODEC__EN.tex, language:en_cn on line:        \item still image decoding: up to 4K resolution
+╰─-------------> ['4K']  on  line 236 in file ESP32-P4/36-JPEGCODEC__EN.tex
+
+Check spaces around dash/slash [' / '] in file:38-PPA__EN.tex, language:en_cn on line:    \item $Cout = (Cb*Ab*(1-Af) + Cf*Af) / (Ab + Af - Ab*Af)$
+╰─-------------> [' / ']  on  line 501 in file ESP32-P4/38-PPA__EN.tex
+
+Check spaces around parentheses (R)S in file:45-I2C__EN.tex, language:en_cn on line:    \item Command controller (CMD\_Controller): generate (R)START, STOP, WRITE, READ, and END commands
+╰─-------------> (R)S  on  line 127 in file ESP32-P4/45-I2C__EN.tex
+
+Check spaces [('}', '时')] in file:48-I2S__CN.tex, language:en_cn on line:在 I2S\regindex{0} \textbf{启用 PCM-to-PDM 转换器}时，可以将 GDMA 中的 PCM 数据转为 PDM 数据，并按照 PDM 信号格式输出，配置 \hyperref[fielddesc:I2SPCM2PDMCONVEN]{I2S\_PCM2PDM\_CONV\_EN} 启动该转换器。PCM-to-PDM 转换器的寄存器配置如下：
+╰─-------------> [('}', '时')]  on  line 705 in file ESP32-P4/48-I2S__CN.tex
+
+Check spaces [('}', '为')] in file:48-I2S__CN.tex, language:en_cn on line:配置完成后，假定存储器中的数据\textbf{经过数据格式控制之后}为：
+╰─-------------> [('}', '为')]  on  line 760 in file ESP32-P4/48-I2S__CN.tex
+
+Check spaces [('}', '时')] in file:48-I2S__CN.tex, language:en_cn on line:在 I2S\regindex{0} \textbf{启用 PDM-to-PCM 转换器}时，可以将接收的 PDM 数据转为 PCM 数据，再进行数据控制。配置 \hyperref[fielddesc:I2SRXPDM2PCMEN]{I2S\regindex{0}\_RX\_PDM2PCM\_EN} 启用该转换器。PDM-to-PCM 转换器的寄存器配置如下：
+╰─-------------> [('}', '时')]  on  line 864 in file ESP32-P4/48-I2S__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[0]：传输中断\\
+╰─-------------> [('位', '[')]  on  line 195 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[2]：传输缓冲区不可用\\
+╰─-------------> [('位', '[')]  on  line 196 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[6]：接收中断\\
+╰─-------------> [('位', '[')]  on  line 197 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[14]：提前接收中断\\
+╰─-------------> [('位', '[')]  on  line 198 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[1]：传输进程停止\\
+╰─-------------> [('位', '[')]  on  line 201 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[3]：传输 Jabber 超时\\
+╰─-------------> [('位', '[')]  on  line 202 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[4]：接收 FIFO 溢出\\
+╰─-------------> [('位', '[')]  on  line 203 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[5]：传输下溢\\
+╰─-------------> [('位', '[')]  on  line 204 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[7]：接收缓冲区不可用\\
+╰─-------------> [('位', '[')]  on  line 205 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[8]：接收进程停止\\
+╰─-------------> [('位', '[')]  on  line 206 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[9]：接收看门狗超时\\
+╰─-------------> [('位', '[')]  on  line 207 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[10]：提前传输中断\\
+╰─-------------> [('位', '[')]  on  line 208 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[13]：致命总线错误\\
+╰─-------------> [('位', '[')]  on  line 209 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:当此位为 1 时，主机拥有传输列表中的下一个描述符，并且 DMA 无法获取该描述符。传输被暂停。位[22:20] 表示传输进程的状态转换。\\
+╰─-------------> [('位', '[')]  on  line 253 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[0]：传输中断\\
+╰─-------------> [('位', '[')]  on  line 382 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[2]：传输缓冲区不可用\\
+╰─-------------> [('位', '[')]  on  line 383 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[6]：接收中断\\
+╰─-------------> [('位', '[')]  on  line 384 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[14]：提前接收中断\\
+╰─-------------> [('位', '[')]  on  line 385 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[1]：传输进程停止\\
+╰─-------------> [('位', '[')]  on  line 388 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[3]：传输 Jabber 超时\\
+╰─-------------> [('位', '[')]  on  line 389 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[4]：接收 FIFO 溢出\\
+╰─-------------> [('位', '[')]  on  line 390 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[5]：传输下溢\\
+╰─-------------> [('位', '[')]  on  line 391 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[7]：接收缓冲区不可用\\
+╰─-------------> [('位', '[')]  on  line 392 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[8]：接收进程停止\\
+╰─-------------> [('位', '[')]  on  line 393 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[9]：接收看门狗超时\\
+╰─-------------> [('位', '[')]  on  line 394 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[10]：提前传输中断\\
+╰─-------------> [('位', '[')]  on  line 395 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[13]：致命总线错误\\(R/W)
+╰─-------------> [('位', '[')]  on  line 396 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '['), ('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[30] 根据 位[29:28] 的值指定将哪个 MAC 地址寄存器（0 或 1）用于源地址插入或替换。\\
+╰─-------------> [('位', '['), ('位', '[')]  on  line 536 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[29:28]：\\
+╰─-------------> [('位', '[')]  on  line 537 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[30]：\\
+╰─-------------> [('位', '[')]  on  line 541 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('阈值应始终小于位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:阈值应始终小于位[31:16] 中配置的暂停时间。例如，如果 PT = 100H（256 个时隙时间），PLT = 01，则在第一个暂停帧传输后的 228 (256 - 28) 个时隙时间后自动传输第二个暂停帧。(R/W)
+╰─-------------> [('阈值应始终小于位', '[')]  on  line 795 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('标记的位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:1：启用。使用 12 位 VLAN 标识符进行比较和过滤，而不是完整的 16 位 VLAN 标记。 VLAN 标记的位[11:0] 与接收到的 VLAN 标记帧中的相应字段进行比较。(R/W)
+╰─-------------> [('标记的位', '[')]  on  line 829 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:当 ETV 位置 1 时，仅使用 VID（位[11:0]）进行比较。\\
+╰─-------------> [('位', '[')]  on  line 831 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('地址', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:\item [MAC\_ADDRESS0\_HI] 配置第一个 6 字节 MAC 地址[47:32] 的高 16 位。\\MAC 使用此字段来过滤接收的帧并将 MAC 地址插入传输流控制 (PAUSE) 帧中。(R/W)
+╰─-------------> [('地址', '[')]  on  line 1092 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[29]：EMACADDR1HIGH\_REG[15:8]\\
+╰─-------------> [('位', '[')]  on  line 1124 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[28]：EMACADDR1HIGH\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1125 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[27]：EMACADDR1LOW\_REG[31:24]\\
+╰─-------------> [('位', '[')]  on  line 1126 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[24]：EMACADDR1LOW\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1127 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('地址', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:\item [MAC\_ADDRESS1\_HI] 配置第二个 6 字节 MAC 地址[47:32] 的高 16 位。(R/W)
+╰─-------------> [('地址', '[')]  on  line 1129 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[29]：EMACADDR2HIGH\_REG[15:8]\\
+╰─-------------> [('位', '[')]  on  line 1161 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[28]：EMACADDR2HIGH\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1162 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[27]：EMACADDR2LOW\_REG[31:24]\\
+╰─-------------> [('位', '[')]  on  line 1163 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[24]：EMACADDR2LOW\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1164 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('地址', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:\item [MAC\_ADDRESS2\_HI] 配置第三个 6 字节 MAC 地址[47:32] 的高 16 位。(R/W)
+╰─-------------> [('地址', '[')]  on  line 1166 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[29]：EMACADDR3HIGH\_REG[15:8]\\
+╰─-------------> [('位', '[')]  on  line 1197 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[28]：EMACADDR3HIGH\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1198 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[27]：EMACADDR3LOW\_REG[31:24]\\
+╰─-------------> [('位', '[')]  on  line 1199 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[24]：EMACADDR3LOW\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1200 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('地址', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:\item [MAC\_ADDRESS3\_HI] 配置第四个 6 字节 MAC 地址[47:32] 的高 16 位。(R/W)
+╰─-------------> [('地址', '[')]  on  line 1202 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[29]：EMACADDR4HIGH\_REG[15:8]\\
+╰─-------------> [('位', '[')]  on  line 1233 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[28]：EMACADDR4HIGH\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1234 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[27]：EMACADDR4LOW\_REG[31:24]\\
+╰─-------------> [('位', '[')]  on  line 1235 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[24]：EMACADDR4LOW\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1236 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('地址', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:\item [MAC\_ADDRESS4\_HI] 配置第五个 6 字节 MAC 地址[47:32] 的高 16 位。(R/W)
+╰─-------------> [('地址', '[')]  on  line 1238 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[29]：EMACADDR5HIGH\_REG[15:8]\\
+╰─-------------> [('位', '[')]  on  line 1269 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[28]：EMACADDR5HIGH\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1270 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[27]：EMACADDR5LOW\_REG[31:24]\\
+╰─-------------> [('位', '[')]  on  line 1271 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[24]：EMACADDR5LOW\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1272 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:\item [MAC\_ADDRESS5\_HI] 配置第七个 6 字节 MAC 地址的高 16 位[47:32]。(R/W)
+╰─-------------> [('位', '[')]  on  line 1274 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[29]：EMACADDR6HIGH\_REG[15:8]\\
+╰─-------------> [('位', '[')]  on  line 1304 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[28]：EMACADDR6HIGH\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1305 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[27]：EMACADDR6LOW\_REG[31:24]\\
+╰─-------------> [('位', '[')]  on  line 1306 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[24]：EMACADDR6LOW\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1307 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:\item [MAC\_ADDRESS6\_HI] 配置第七个 6 字节 MAC 地址的高 16 位[47:32]。(R/W)
+╰─-------------> [('位', '[')]  on  line 1309 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[29]：EMACADDR7HIGH\_REG[15:8]\\
+╰─-------------> [('位', '[')]  on  line 1340 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[28]：EMACADDR7HIGH\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1341 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[27]：EMACADDR7LOW\_REG[31:24]\\
+╰─-------------> [('位', '[')]  on  line 1342 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[24]：EMACADDR7LOW\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1343 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('地址', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:\item [MAC\_ADDRESS7\_HI] 配置第八个 6 字节 MAC 地址[47:32] 的高 16 位。 (R/W)
+╰─-------------> [('地址', '[')]  on  line 1345 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[29]：EMACADDRH8IGH\_REG[15:8]\\
+╰─-------------> [('位', '[')]  on  line 1375 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[28]：EMACADDR8HIGH\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1376 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[27]：EMACADDR8LOW\_REG[31:24]\\
+╰─-------------> [('位', '[')]  on  line 1377 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('位', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:位[24]：EMACADDR8LOW\_REG[7:0]\\
+╰─-------------> [('位', '[')]  on  line 1378 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces [('地址', '[')] in file:53-ETHERNETMAC-reg__CN.tex, language:en_cn on line:\item [MAC\_ADDRESS8\_HI] 配置第九个 6 字节 MAC 地址[47:32] 的高 16 位。 (R/W)
+╰─-------------> [('地址', '[')]  on  line 1380 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__CN.tex
+
+Check spaces around parentheses (G)M in file:53-ETHERNETMAC-reg__EN.tex, language:en_cn on line:\item [PAUSE\_TIME] Configures the value to be used in the Pause Time field in the transmit control frame. If the Pause Time bits is configured to be double-synchronized to the (G)MII clock domain, then consecutive writes to this register should be performed only after at least four clock cycles in the destination clock domain. (R/W)
+╰─-------------> (G)M  on  line 777 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__EN.tex
+
+Check spaces around parentheses G(x) in file:53-ETHERNETMAC-reg__EN.tex, language:en_cn on line:G(x) = x$^\text{16}$ + x$^\text{15}$ + x$^\text{2}$ + 1\\
+╰─-------------> G(x)  on  line 936 in file ESP32-P4/53-ETHERNETMAC/53-ETHERNETMAC-reg__EN.tex
+
+Check spaces [('}', '标志和'), ('}', '标志')] in file:54-TWAI-error-frame__CN.tex, language:en_cn on line:    错误标志 & 错误标志包括两种形式:\hyperref[table_item:active_err]{主动错误}标志和\hyperref[table_item:passive_err]{被动错误}标志，主动错误标志由 6 个显性位组成，被动错误标志由 6 个隐性位组成（被其他节点的显性位优先仲裁时除外）。处于主动错误状态的节点发送主动错误标志，处于被动错误状态的节点发送被动错误标志。
+╰─-------------> [('}', '标志和'), ('}', '标志')]  on  line 23 in file ESP32-P4/54-TWAI/tables/54-TWAI-error-frame__CN.tex
+
+Check redundant spaces [('(SS) ', '&')] in file:54-TWAI-seg-of-a-nominal-bit-time__CN.tex, language:en_cn on line:    同步段 (SS) & SS（同步段）的长度为 1 个时间定额。若所有节点都同步，则位边沿发生时应位于该段内。
+╰─-------------> [('(SS) ', '&')]  on  line 22 in file ESP32-P4/54-TWAI/tables/54-TWAI-seg-of-a-nominal-bit-time__CN.tex
+
+Check redundant spaces [('(PBS1) ', '&')] in file:54-TWAI-seg-of-a-nominal-bit-time__CN.tex, language:en_cn on line:    缓冲时期段 1 (PBS1) & PBS1 的长度可为 1 \verb+~+ 16 个时间定额，用于补偿网络中的物理延迟时间。可通过增加 PBS1 的长度来实现同步。
+╰─-------------> [('(PBS1) ', '&')]  on  line 24 in file ESP32-P4/54-TWAI/tables/54-TWAI-seg-of-a-nominal-bit-time__CN.tex
+
+Check redundant spaces [('(PBS2) ', '&')] in file:54-TWAI-seg-of-a-nominal-bit-time__CN.tex, language:en_cn on line:    缓冲时期段 2 (PBS2) & PBS2 的长度可为 1 \verb+~+ 8 个时间定额，用于补偿节点中的信息处理时间。可通过缩短 PBS2 的长度来实现同步。
+╰─-------------> [('(PBS2) ', '&')]  on  line 26 in file ESP32-P4/54-TWAI/tables/54-TWAI-seg-of-a-nominal-bit-time__CN.tex
+
+Check spaces around dash/slash [' / '] in file:57-MCPWM-reg__EN.tex, language:en_cn on line:\label{fielddesc:MCPWMCHOPPERNDUTY}\item [MCPWM\_CHOPPER\regindex{n}\_DUTY] Configures carrier duty. Duty = PWM\_CARRIER\regindex{n}\_DUTY / 8. (R/W)
+╰─-------------> [' / ']  on  line 486 in file ESP32-P4/57-MCPWM/57-MCPWM-reg__EN.tex
+
+Check spaces [('}', '下')] in file:58-RMT__CN.tex, language:en_cn on line:为保证传输数据的正确性，需要先启动 GDMA，在 GDMA 通道已经接收到数据后，再启动 RMT 发送。\hyperref[sec:normal-tx-mode]{普通发送模式}下，GDMA 写满通道 3 的 RAM 后会触发 \hyperref[fielddesc:RMTAPBMEMWRERRCHN]{RMT\_APB\_MEM\_WR\_ERR\_CH3}。使能 \hyperref[fielddesc:RMTMEMTXWRAPENCHN]{RMT\_MEM\_TX\_WRAP\_EN\_CH3} 后，不需要软件进行乒乓操作就可以连续发送大于一个 block 的数据，但要保证通道准备发送数据前 GDMA 已经将待发送数据准备好，否则可能会发出与期望不符的数据。
+╰─-------------> [('}', '下')]  on  line 232 in file ESP32-P4/58-RMT__CN.tex
+
+Check spaces [('}', '下')] in file:58-RMT__CN.tex, language:en_cn on line:\hyperref[sec:normal-rx-mode]{普通接收模式}下，GDMA 读到通道 7 RAM 大小的数据后就会触发 \hyperref[fielddesc:RMTAPBMEMRDERRCHM]{RMT\_APB\_MEM\_RD\_ERR\_CH7}，之后收到的数会被丢弃。使能 \hyperref[fielddesc:RMTMEMRXWRAPENCHM]{RMT\_MEM\_TX\_WRAP\_EN\_CH7} 后，不需要软件进行乒乓操作就可以连续接收大于一个 block 的数据。如果通道 7 的 RAM 接收满后 GDMA 还没有接收，新收到的数据会替换上一个数据。
+╰─-------------> [('}', '下')]  on  line 236 in file ESP32-P4/58-RMT__CN.tex
+
+Check spaces around parentheses (ETM)- in file:62-TMPSEN__EN.tex, language:en_cn on line:\item Support for Event Task Matrix (ETM)-related events and tasks
+╰─-------------> (ETM)-  on  line 99 in file ESP32-P4/62-TMPSEN__EN.tex
+
+Check spaces [('}', '在此模式下')] in file:39-CAMLCDCTRL__CN.tex, language:en_cn on line:    \item \textbf{Camera 从机接收模式：}在此模式下，Camera 模块作为通讯接收方输入控制信号。
+╰─-------------> [('}', '在此模式下')]  on  line 156 in file ESP32-P4/39-CAMLCDCTRL__CN.tex
+
+Check spaces [('}', '在此模式下')] in file:39-CAMLCDCTRL__CN.tex, language:en_cn on line:    \item \textbf{Camera 主机接收模式：}在此模式下，Camera 模块向从机发送时钟信号，从机收到时钟信号后向 Camera 模块发送数据。
+╰─-------------> [('}', '在此模式下')]  on  line 157 in file ESP32-P4/39-CAMLCDCTRL__CN.tex
+
+Check spaces [('}', '在此模式下')] in file:39-CAMLCDCTRL__CN.tex, language:en_cn on line:    \item \textbf{LCD 主机发送模式：}在此模式下，LCD 模块作为通讯发起方向从机发送控制信号。
+╰─-------------> [('}', '在此模式下')]  on  line 158 in file ESP32-P4/39-CAMLCDCTRL__CN.tex
+
+Syntax check found 1 issue(s) in ESP32-P4/21-PERMCTRL__CN.tex
+
+Check spaces on unit measurements ['4K'] in file:21-PERMCTRL__CN.tex, language:en_cn on line:寄存器模块 \nameref{sec:permctrl-reg-dma} 中提供了 32 组可配置地址区间 (\hyperref[fielddesc:PMSDMAREGIONNLOW]{PMS\_DMA\_REGION\regindex{n}\_LOW\_REG} \verb+~+ \hyperref[fielddesc:PMSDMAREGIONNHIGH]{PMS\_DMA\_REGION\regindex{n}\_HIGH\_REG}, \regindex{n} = 0 \verb+~+ 31)，控制所有 DMA 主机的访问地址空间。配置该地址区间时，由于地址最小以 4K 字节对齐，故低 12 位为 0。
+╰─-------------> ['4K']  on  line 274 in file ESP32-P4/21-PERMCTRL__CN.tex
+
+Syntax check found 1 issue(s) in ESP32-P4/21-PERMCTRL__EN.tex
+
+Check spaces on unit measurements ['4K'] in file:21-PERMCTRL__EN.tex, language:en_cn on line:The register group \nameref{sec:permctrl-reg-dma} provides 32 sets of registers (\hyperref[fielddesc:PMSDMAREGIONNLOW]{PMS\_DMA\_REGION\regindex{n}\_LOW\_REG} \verb+~+ \hyperref[fielddesc:PMSDMAREGIONNHIGH]{PMS\_DMA\_REGION\regindex{n}\_HIGH\_REG}, \regindex{n} = 0 \verb+~+ 31) to configure address ranges for DMA masters to access. Note that since the address must be aligned to 4K bytes, the lowest 12 bits are set to 0.
+╰─-------------> ['4K']  on  line 260 in file ESP32-P4/21-PERMCTRL__EN.tex
+
+Syntax check found 2 issue(s) in ESP32-P4/30-SHA__CN.tex
+
+Check spaces around parentheses =(t/10) in file:30-SHA__CN.tex, language:en_cn on line:        其中，$t_0=t\%10$，$t_1=(t/10)\%10$，$t_2=t/100$。
+╰─-------------> =(t/10)  on  line 270 in file ESP32-P4/30-SHA__CN.tex
+
+Check spaces around parentheses p(t/32) in file:30-SHA__CN.tex, language:en_cn on line:        \item[2] SHA-512/{\it{t}} 运算标准使用的寄存器与 {\it{t}} 的取值有关。{\it{x}}+1 代表用于存储 {\it{t}} 位信息摘要的 32 位寄存器个数，因此 {\it{x}} = \begin{math}roundup(t/32)\end{math}-1。举例：
+╰─-------------> p(t/32)  on  line 507 in file ESP32-P4/30-SHA__CN.tex
+
+Syntax check found 2 issue(s) in ESP32-P4/30-SHA__EN.tex
+
+Check spaces around parentheses =(t/10) in file:30-SHA__EN.tex, language:en_cn on line:        where, $t_0=t\%10$, $t_1=(t/10)\%10$, and $t_2=t/100$.
+╰─-------------> =(t/10)  on  line 269 in file ESP32-P4/30-SHA__EN.tex
+
+Check spaces around parentheses p(t/32) in file:30-SHA__EN.tex, language:en_cn on line:        \item[2] The registers used for SHA-512/{\it{t}} algorithm depend on the value of \begin{math}t\end{math}. {\it{x}}+1 indicates the number of 32-bit registers used to store {\it{t}} bits of message digest, so that {\it{x}} = \begin{math}roundup(t/32)\end{math}-1. For example:
+╰─-------------> p(t/32)  on  line 501 in file ESP32-P4/30-SHA__EN.tex
+
+Syntax check found 1 issue(s) in ESP32-P4/31-DIGSIG__CN.tex
+
+Check redundant spaces [('(s-t) ', '\\')] in file:31-DIGSIG__CN.tex, language:en_cn on line:       一个长度为 \begin{math}s\end{math} 位的位串，要求 \begin{math}s\end{math} 为 8 的整数倍。如果 \begin{math}x\end{math} 是一个数 (\begin{math}x\end{math} < 2\begin{math}^s\end{math})， 那么其在位串中遵循小端字节序。\begin{math}x\end{math} 可以是一个变量，例如 \begin{math}[Y]_{4096}\end{math}，或一个十六进制的常数，比如 [0x0C]\begin{math}_{8}\end{math}。根据需要，\begin{math}[x]_{t}\end{math} 右边可以加上\begin{math} (s-t) \end{math} 个 0，使字串长度扩展成 \begin{math}s\end{math} 位，得到 \begin{math}[x]_{s}\end{math}。例如：
+╰─-------------> [('(s-t) ', '\\')]  on  line 126 in file ESP32-P4/31-DIGSIG__CN.tex
+
+Syntax check found 2 issue(s) in ESP32-P4/34-RNG__CN.tex
+
+Check spaces [('}', '和')] in file:34-RNG__CN.tex, language:en_cn on line:系统可以从随机数发生器的寄存器 \hyperref[regdesc:LPSYSREGRNGDATAREG]{LPSYSREG\_RNG\_DATA\_REG} 中读取随机数，每个读到的 32 位随机数都是真随机数，噪声源为系统中的\textbf{热噪声}和\textbf{异步时钟}。
+╰─-------------> [('}', '和')]  on  line 104 in file ESP32-P4/34-RNG__CN.tex
+
+Check spaces [('}', '可以来自')] in file:34-RNG__CN.tex, language:en_cn on line:    \item \textbf{热噪声}可以来自 SAR ADC。当芯片的 SAR ADC 工作时，就会产生比特流，并通过异或 (XOR) 逻辑运算作为随机数种子进入随机数生成器。
+╰─-------------> [('}', '可以来自')]  on  line 107 in file ESP32-P4/34-RNG__CN.tex
+
+Syntax check found 1 issue(s) in ESP32-P4/36-JPEGCODEC__CN.tex
+
+Check spaces [('}', '所示')] in file:36-JPEGCODEC__CN.tex, language:en_cn on line:            \item 将 (X，Y) 配置为起始图像块的第一个像素坐标。根据原始图像格式和待压缩图像的格式，hb 和 vb 有一定限制，如表\ref{tab:en_hb_vb}所示：
+╰─-------------> [('}', '所示')]  on  line 711 in file ESP32-P4/36-JPEGCODEC__CN.tex
+
+Syntax check found 1 issue(s) in ESP32-P4/45-I2C__CN.tex
+
+Check spaces around parentheses (R)S in file:45-I2C__CN.tex, language:en_cn on line:    \item 命令控制器 CMD\_Controller：产生 (R)START、STOP、WRITE、READ 和 END 指令
+╰─-------------> (R)S  on  line 135 in file ESP32-P4/45-I2C__CN.tex
+
+Syntax check found 2 issue(s) in ESP32-P4/54-TWAI__CN.tex
+
+Check spaces [('}', '中的首个和第二个位上检测到显性位')] in file:54-TWAI__CN.tex, language:en_cn on line:    \item 在\hyperref[table_item:ifg]{间歇域}中的首个和第二个位上检测到显性位。
+╰─-------------> [('}', '中的首个和第二个位上检测到显性位')]  on  line 252 in file ESP32-P4/54-TWAI__CN.tex
+
+Check spaces [('}', '与'), ('}', '与'), ('}', '遵守以下规则')] in file:54-TWAI__CN.tex, language:en_cn on line:为解决相位误差，有两种同步方式，\textbf{硬同步}与\textbf{再同步}。\textbf{硬同步}与\textbf{再同步}遵守以下规则：
+╰─-------------> [('}', '与'), ('}', '与'), ('}', '遵守以下规则')]  on  line 391 in file ESP32-P4/54-TWAI__CN.tex

@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% For complete instructions:                                         %%%
+%%% 1. Go to https://www.overleaf.com/project/60e2ed1aefb70e595778b04b %%%
+%%% 2. Compile readme-general.tex                                      %%%
+%%% 3. See Section "Updating Disclaimer and Copyright Notice"          %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+\thispagestyle{empty}
+
+\newcommand*{\myhref}[2]{%
+\hypersetup{urlcolor=myred}\href{#1}{#2}}
+
+\makeatletter
+\setlength{\@fpbot}{0pt}
+\makeatother
+
+\newcolumntype{M}{@{}>{\columncolor{white}[0pt][0pt]}c}
+
+\begin{table}
+\def\arraystretch{1.2}
+\begin{tabular}{c}
+\setlength{\extrarowheight}{7pt}
+
+\begin{minipage}[c]{16.7cm}
+    \begin{tabular}{l}
+        \hspace{-0.35cm}
+        \includegraphics[width=6cm,valign=b,clip]{esp-logo-standard-horizontal.pdf}
+        \vspace{0.6cm}
+    \end{tabular}
+\end{minipage} \\
+
+\begin{minipage}[c]{16.7cm}
+    \linespread{1.2}
+
+    \textbf{\large 免责声明和版权公告}
+    \vspace{0.4em}
+    
+    \small
+    
+    本文档中的信息，包括供参考的 URL 地址，如有变更，恕不另行通知。
+    \vspace{0.4em}
+    
+    本文档可能引用了第三方的信息，所有引用的信息均为“按现状”提供，乐鑫不对信息的准确性、真实性做任何保证。
+    \vspace{0.4em}
+    
+    乐鑫不对本文档的内容做任何保证，包括内容的适销性、是否适用于特定用途，也不提供任何其他乐鑫提案、规格书或样品在他处提到的任何保证。
+    \vspace{0.4em}
+    
+    乐鑫不对本文档是否侵犯第三方权利做任何保证，也不对使用本文档内信息导致的任何侵犯知识产权的行为负责。本文档在此未以禁止反言或其他方式授予任何知识产权许可，不管是明示许可还是暗示许可。
+    \vspace{0.4em}
+    
+    Wi-Fi 联盟成员标志归 Wi-Fi 联盟所有。蓝牙标志是 Bluetooth SIG 的注册商标。
+    \vspace{0.4em}
+    
+    文档中提到的所有商标名称、商标和注册商标均属其各自所有者的财产，特此声明。
+    \vspace{0.4em}
+    
+    \textbf{版权归 © \the\year{} 乐鑫信息科技（上海）股份有限公司。保留所有权利。}
+    \vspace{0.4em}
+
+    \textbf{\myhref{https://www.espressif.com/}{www.espressif.com}}
+\end{minipage}
+
+\end{tabular}
+\end{table}

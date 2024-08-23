@@ -1,0 +1,68 @@
+\phantomsection
+\chapter*{Glossary}\label{glossary}
+\markboth{\it{Glossary}}{\Navigation}
+\addcontentsline{toc}{chapter}{Glossary}
+
+\phantomsection
+\section*{Abbreviations for Peripherals}
+\addcontentsline{toc}{section}{Abbreviations for Peripherals}
+
+\begin{longtable}[c]{ R{3cm} p{12cm} }
+
+AES     & AES (Advanced Encryption Standard) Accelerator \\
+BOOTCTRL & Chip Boot Control \\ %newly added
+DS      & Digital Signature\\ %newly added
+DMA     & DMA (Direct Memory Access) Controller \\
+eFuse   & eFuse Controller \\ 
+% EMAC  & Ethernet MAC (delete it as it is not included in the name conventions of ESP32-S3-TRM)
+HMAC    & HMAC (Hash-based Message Authentication Code) Accelerator \\ %newly added
+I2C     & I2C (Inter-Integrated Circuit) Controller \\ %changed from  I²C 
+I2S     & I2S (Inter-IC Sound) Controller \\ %changed from I²S
+LEDC    & LED Control PWM (Pulse Width Modulation)\\ %changed from LED_PWM controller
+MCPWM   & Motor Control PWM (Pulse Width Modulation) \\ 
+%MMU    & Memory Management Unit (delete it as it is not included in the name conventions of ESP32-S3-TRM)
+%MPU    & Memory Protection Unit (delete it as it is not included in the name conventions of ESP32-S3-TRM)
+PCNT & Pulse Count Controller \\
+% PERI  & Peripheral (Although it is not included in the name conventions, I am not sure whether it should be retained or not )
+% PID   & Process Identifier (Although it is not included in the name conventions, I am not sure whether it should be retained or not  )
+RMT     & Remote Control Peripheral \\
+RNG     & Random Number Generator \\
+RSA     & RSA (Rivest Shamir Adleman) Accelerator \\
+% RTC   & Real Time Controller (Although it is not included in the name conventions, I am not sure whether it should be retained or not  )
+SDHOST  & SD/MMC Host Controller \\ %changed from SDMMC to SDHOST
+SHA     & SHA (Secure Hash Algorithm) Accelerator \\
+SPI     & SPI (Serial Peripheral Interface) Controller \\
+SYSTIMER & System Timer \\ %newly added
+TIMG    & Timer Group \\
+TWAI    & Two-wire Automotive Interface \\ %newly added
+UART    & UART (Universal Asynchronous Receiver-Transmitter) Controller \\ 
+ULP Coprocessor & Ultra-low-power Coprocessor \\ %changed from ULP Co-processor to ULP Coprocessor
+USB OTG & USB On-The-Go \\ %newly added
+WDT & Watchdog Timers \\ 
+% XTWDT & XTAL32 Watchdog Timer\\ remove this line 
+
+\end{longtable}
+
+%%% Registers %%%
+
+% Include sections
+% - Abbreviations Related to Registers
+% - Access Types for Registers
+
+\input{glossary-reg__EN}
+
+% \subsection*{Abbreviations for Registers}
+% \phantomsection
+% \addcontentsline{toc}{subsection}{Abbreviations for Registers}
+
+% \begin{longtable}[c]{ R{3cm} p{12cm} }
+
+% ISO     & Isolation. When a module is power down, its output pins will be stuck in unknown state (some middle voltage). "ISO" registers will control to isolate its output pins to be a determined value, so it will not affect the status of other working modules which are not power down.\\
+% NMI     & Non-maskable interrupt. \\
+% REG     & Register.\\
+% R/W     & Read/write. Software can read and write to these bits. \\
+% RO      & Read-only. Software can only read these bits. \\
+% SYSREG  & System Registers \\ %newly added
+% WO      & Write-only. Software can only write to these bits.\\
+
+% \end{longtable}

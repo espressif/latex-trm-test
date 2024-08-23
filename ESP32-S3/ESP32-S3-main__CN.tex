@@ -1,0 +1,196 @@
+% Font "FandolSong-Regular" used by ctex does not have GSUB table.
+% It causes warnings that do not affect compilation and can be ignored.
+\PassOptionsToPackage{quiet}{fontspec}
+
+\documentclass[openany, 10pt]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Find  10-readme-for-trm-repo.tex at:        %%%
+%%% https://www.overleaf.com/read/bwdjvfjksvjy/ %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% >>> R?: marks a repo project setting number or important notice
+
+% >>> R1: Configure chip-specific settings <<<
+\usepackage{chip-spec-settings}
+
+% Imports packages and global formatting settings
+\usepackage{preamble-trm-repo}
+
+% Allow Chinese typesetting
+\usepackage{ctex}
+
+% >>> R2: In file below, comment out the modules already included into
+% this project to avoid warnings for multiple label definitions <<<
+\myexternaldocument{temp-labels-cn}
+
+% Make text left-aligned and allow latex to break pages naturally, comment out for full justification
+\raggedright
+\raggedbottom
+
+% Keep commented out!
+% >>> Only uncomment to generate the list of added hypertargets <<<
+%\toggletrue{addedhypertargets}
+
+
+\begin{document}
+
+\selectlanguage{chinese}
+\setchineseformatting
+
+% Initial checks make sure that all variables for cross-project shared
+% content are configured correctly. If not, guidance will be provided.
+\input{initial-checks}
+
+\input{titlepage}
+\clearpage
+\input{preface__CN}
+\clearpage
+% \input{glance__CN}
+
+\tableofcontents
+\clearpage
+\listoftables
+\clearpage
+\listoffigures
+
+% >>> R3: List all todo notes from the current project? <<<
+% 'Yes' - uncomment the lines below; 'No' - comment out
+% Don't forget to deactivate before publishing
+%\todototoc
+%\listoftodos
+%{\let\clearpage\relax \listofdonetodos}
+
+
+% Included modules
+% Uncomment to include
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Module Group: System %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \part{微处理器和主机}
+
+% % Note: Updates may be necessary based on the specific SoC. For instance, Xtensa-based SoCs lack CPU descriptions, and certain SoCs may omit processor instruction extensions.
+
+% 该部分介绍构成芯片系统的基本要素，包括超低功耗协处理器架构、CPU 的扩展指令、直接内存访问 (DMA) 控制器等。
+
+% \subfileinclude{08-PIE__CN}
+% \subfileinclude{26-ULP__CN}
+% \subfileinclude{16-DMA__CN}
+
+% \part{存储器组织结构}
+
+% 该部分详细描述系统的存储器组织结构，例如 RAM、ROM、eFuse 和外部存储器的组织和映射，为理解与存储器相关的子系统提供了框架。
+
+% \subfileinclude{09-SYSMEM__CN}
+% \subfileinclude{07-eFuse__CN}
+
+% \part{系统组件}
+
+% % Note: Tailor the description based on the specific components present in the SoC.
+
+% 该部分介绍芯片的系统级功能，包括系统启动、时钟、GPIO、定时器、看门狗、中断处理、低功耗管理以及各种系统寄存器。
+
+% \subfileinclude{21-IOMUXGPIO__CN}
+% \subfileinclude{02-RESCLK__CN}
+% \subfileinclude{35-BOOTCTRL__CN}
+% \subfileinclude{22-INTMTRX__CN}
+% \subfileinclude{28-LOWPOWM__CN}
+% \subfileinclude{34-SYSTIMER__CN}
+% \subfileinclude{14-TIMG__CN}
+% \subfileinclude{15-WDT__CN}
+% \subfileinclude{37-XTWDT__CN}
+% \subfileinclude{10-PERMCTRL__CN}
+% \subfileinclude{38-WCTRL__CN}
+% \subfileinclude{23-SYSREG__CN}
+
+% \part{加密和安全组件}
+
+% 该部分专门介绍芯片的安全功能，包括 SHA、AES 等加密加速器，数字签名、随机数生成、加密/解密算法等安全特性，展示了芯片在加密和安全数据处理方面的性能。
+
+% \subfileinclude{27-SHA__CN}
+% \subfileinclude{30-AES__CN}
+% \subfileinclude{31-RSA__CN}
+% \subfileinclude{29-HMAC__CN}
+% \subfileinclude{13-DIGSIG__CN}
+% \subfileinclude{33-EXTMEMENCR__CN}
+% \subfileinclude{36-GLITCH__CN}
+% \subfileinclude{06-RNG__CN}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Module Group: Peripherals %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\part{通讯接口}
+
+% Note: Update the description based on the actual components implemented in the SoC, e.g., some SoCs do not have RMT.
+
+该部分涉及系统的连接性，介绍各种带有通讯接口的模块，如 I2C、I2S、SPI、UART、USB 等，同时还包括其他用于遥控、电机控制、LED 控制等功能的信号生成接口。
+
+% \subfileinclude{12-UART__CN}
+\subfileinclude{01-I2C__CN}
+\subfileinclude{03-I2S__CN}
+% \subfileinclude{04-CAMLCDCTRL__CN}
+% \subfileinclude{24-SPI__CN}
+% \subfileinclude{32-TWAI__CN}
+% \subfileinclude{11-USBOTG__CN}
+% \subfileinclude{39-USBSERIALJTAG__CN}
+% \subfileinclude{18-SDHOST__CN}
+% \subfileinclude{19-LEDPWM__CN}
+% \subfileinclude{17-MCPWM__CN}
+% \subfileinclude{05-RMT__CN}
+% \subfileinclude{20-PCNT__CN}
+
+% \part{模拟信号处理}
+
+% % Note: Tailor the description based on the actual components implemented in the SoC.
+
+% 该部分描述了与模数转换、片上传感器以及温度感应等功能相关的模块，展示了系统在处理模拟信号方面的性能。
+
+% \subfileinclude{25-SENSOR__CN}
+
+
+%%%%%%%%%%%%%%%%
+%%% Appendix %%%
+%%%%%%%%%%%%%%%%
+
+\part{附录}\label{appendix}
+
+附录部分包括以下内容：
+
+\begin{itemize}
+    \item \hyperref[sec:resources]{\textit{相关文档和资源}}
+    \item \hyperref[glossary]{\textit{词汇列表}}
+    \item \hyperref[programming-reserved-field]{\textit{如何配置寄存器的保留域}}
+    \item \hyperref[interrupt-config-registers]{\textit{中断配置寄存器}}
+    \item \hyperref[revision-history]{\textit{修订历史}}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Related Documentation and Resources %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\input{resources__CN}
+
+\clearpage
+\input{glossary__CN}
+
+\clearpage
+\input{programming-reserved-field__CN}
+
+\clearpage
+\input{interrupt_config_registers__CN}
+
+\clearpage
+\input{revision-history__CN}
+
+\clearpage
+\input{disclaimer-copyright__CN}
+
+\end{document}

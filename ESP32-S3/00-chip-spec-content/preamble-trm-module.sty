@@ -1,0 +1,583 @@
+% Doc: LaTeX Template for TRMs by Espressif
+% Author: Kirill
+% Version: 2021-03-10 v1.1.1
+% See Changelog down below
+
+% P?: marks a preamble setting (or important notice) number
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preamble-trm-module}[LaTeX package defining a TRM preamble]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% P1: Define Variables %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% If using a variable in text, follow it with {},
+% otherwise a following space will be deleted by LaTeX
+% Example: \chipname{} is a new product from Espressif.
+% >>> Name of chip <<<
+\newcommand\chipname{ESP32-S3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%% P2: ToDo Notes %%%
+%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[table]{xcolor}
+\newif\ifshowtodos
+% Show existing ToDo notes in this project?
+% 'Show' - Uncomment; 'Hide' - Comment out
+\showtodostrue
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% P3: Watermark %%%
+%%%%%%%%%%%%%%%%%%%%%
+% Uncomment the lines below to add a watermark
+%\usepackage{draftwatermark}
+%\SetWatermarkAngle{45}
+%\SetWatermarkColor{gray!80!cyan!30}
+%\SetWatermarkFontSize{3.5cm}
+%\SetWatermarkText{DRAFT INTERNAL}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Refs to Other .tex Files %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Helper code for external references to pull
+% missing labels from their .tex documents
+% https://www.overleaf.com/learn/how-to/Cross_referencing_with_the_xr_package_in_Overleaf
+\usepackage{xr}
+%\usepackage{hyperref}
+\makeatletter
+\newcommand*{\addFileDependency}[1]{
+  \typeout{(#1)}
+  \@addtofilelist{#1}
+  \IfFileExists{#1}{}{\typeout{No file #1.}}
+}
+\makeatother
+
+\newcommand*{\myexternaldocument}[1]{
+    \externaldocument{#1}
+    \addFileDependency{#1.tex}
+    \addFileDependency{#1.aux}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Overleaf or ShareLaTeX used? %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Determine version of TeXLive used
+% https://tex.stackexchange.com/questions/96570/automatically-determine-which-texlive-version-is-being-used
+\usepackage{catchfile}
+\makeatletter
+\begingroup
+\CatchFileDef{\banner}{|"kpsewhich plain.tex"}{}
+\def\extractfrombanner#1/20#2#3/#4\extractfrombanner{%
+  \gdef\TeXLiveVersion{20#2#3}%
+}
+\expandafter\extractfrombanner\banner\extractfrombanner
+\endgroup
+
+% Knowing that Espressif's ShareLateX uses TeXLiVE 2016 and
+% Overleaf uses 2019/2020, compare values
+% https://tex.stackexchange.com/questions/451053/how-test-value-of-a-command-with-ifthenelse-and-equal
+\usepackage{ifthen}
+\ifthenelse{\equal{\TeXLiveVersion}{2016}}
+  {% True case
+   \newcommand{\editorUsed}{ShareLaTeX}
+  }
+  {% False case
+   \newcommand{\editorUsed}{Overleaf}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% Document flow %%%
+%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2.5cm]{geometry}
+\geometry{a4paper}
+
+\usepackage{comment}
+% Enables display of landscape pages in PDF
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{graphicx}
+% Create index
+%\usepackage{makeidx}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Headers and Footers %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+% Header
+\renewcommand{\headrulewidth}{0.5pt}
+\lhead{\nouppercase\leftmark}
+
+% Footer
+\cfoot{\thepage}
+\lfoot{\GetTranslation{company}}
+\rfoot{\chipname{} TRM}
+
+
+%%%%%%%%%%%%
+%%% Text %%%
+%%%%%%%%%%%%
+
+% Begin paragraphs with an empty line rather than an indent
+\usepackage[parfill]{parskip}
+
+% Section begins on new page
+\newcommand{\sectionbreak}{\clearpage}
+
+% Line spacing
+%\usepackage{setspace}
+% Change line spacing to one-and-a-half (double-spacing is 1.6)
+\linespread{1.3}
+
+% Produces Lorem Ipsum dummy text
+\usepackage{lipsum}
+
+\usepackage{verbatim}
+\usepackage{minted}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{amstext}
+%\usepackage{mathtools}
+%\usepackage{latexsym}
+
+% Defines new hyphen and dash commands that do not disrupt hyphenation.
+% To allow line breaks at the hyphen/dash, use word\-/word (RISC\-/V)
+% To prevent line breaks at the hyphen/dash, use word\=/word (RISC\=/V)
+% https://stackoverflow.com/questions/2193307/how-do-i-get-latex-to-hyphenate-a-word-that-contains-a-dash
+\usepackage[shortcuts]{extdash}
+
+\usepackage{listings}
+% Code highlighting style definition based on
+% https://tex.stackexchange.com/questions/57121/latex-source-code-listing
+\lstset{%
+    basicstyle=\small\ttfamily,
+    language={[LaTeX]TeX}, numbers=left, numberstyle=\tiny, % number style
+    breaklines=true,
+    xleftmargin=8mm,
+    backgroundcolor=\color{gray!5},
+    frameround=fttt,escapeinside=??,
+    morekeywords={% Give key words here keywords
+        maketitle,
+        subsection, subsubsection, paragraph,
+        multirow, multicolumn, makecell,
+        rowcolor,
+        endhead, endfirsthead,
+        endfoot, endlastfoot,
+        tnote,
+        TopicLine, Topic, TopicSetVPos, TopicSetContinuationCode,
+        hyperref, hypertarget,
+        DeclareFloatingEnvironment, AtBeginDocument
+    },
+    keywordstyle=\color[rgb]{0,0,1},                    % keywords
+    commentstyle=\color[rgb]{0.133,0.545,0.133},    % comments
+    stringstyle=\color[rgb]{0.627,0.126,0.941}  % strings
+}%
+
+\usepackage{morewrites}
+\usepackage[hashEnumerators = true, % if true, enables use of hash symbols (#) as ordered item list markers
+            smartEllipses = false, % if true, converts three dots into a proper ellipsis
+            pipeTables = true, % if true, enables the php Markdown table syntax extension
+            %hybrid = true, % if true, you can use LaTeX commands along with markdown
+                            % not recommended as the aim is to allow engineers to
+                            % include existing markdown content and not mix both
+            %html = true, % if true, html tags are stripped, otherwise tags are preserved
+                          % in any case, html tags are ignored by compiler
+            fencedCode = true, % if true, turns code inside ``` ... ``` into a code block
+                               % you can also use indents to achieve the same effect
+            underscores = false, % if true, underscores interpreted as italics marker
+                                 % keep false and use asterisks for italics marker instead
+            codeSpans = true, % if true, backticks interpreted as monospace font marker
+           ]{markdown}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Todo Notes (code) %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% For settings, see code block "P2: ToDo Notes" above
+
+% If-else statement for todo notes
+\ifshowtodos
+   \usepackage[colorinlistoftodos,prependcaption]{todonotes}
+\else
+   \usepackage[disable, colorinlistoftodos,prependcaption]{todonotes}
+\fi
+
+\newcommand{\todoattention}[2][]{\todo[inline,color=red!80, #1]{#2}}
+\newcommand{\todoreminder}[2][]{\todo[inline,linecolor=yellow!95, #1]{#2}}
+
+% Mark \todo notes as done by adding a strikethrough and grey color, see also
+% https://tex.stackexchange.com/questions/386300/a-way-to-check-off-todonotes
+%\newcommand{\tododone}[2][]{\todo[inline,color=gray!20,textcolor=gray!70,bordercolor=gray!60, #1]{\sout{#2}}}
+
+% Mark \todo notes as done by adding a strikethrough, grey color, and
+% place such todos in the list "Todo resolved"
+\usepackage{newfloat}% for listof
+\makeatletter
+% If option 'disable' is activated, define empty commands
+  \if@todonotes@disabled%
+    \newcommand{\listofdonetodos}[1][]{}
+    \newcommand{\tododone}[1]{}
+  \else
+    % Otherwise, define proper commands \todonote and listofdonetodos
+    \DeclareFloatingEnvironment[fileext=tdod,listname={Todo resolved}]{donetodo}
+    \newcommand{\tododone}[1]{\todo[inline,nolist,color=gray!20,textcolor=gray!70,bordercolor=gray!60]{\sout{#1}}\addcontentsline{tdod}{donetodo}{\sout{#1}}}
+  \fi % \if@todonotes@disabled
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Figure and table numbering %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Allow double numbering
+\usepackage{chngcntr}
+% Load hyperref after chngcntr to avoid incorrect links
+%\usepackage{hyperref}
+\usepackage[bookmarksopen=true,bookmarksnumbered=true]{hyperref}
+% Set counters to be reset when section counter is incremented
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+%Set period (by default ':') for number/caption separator
+\usepackage[font={bf}]{caption}
+\captionsetup{labelsep=period}
+%Set dash for section/counter separator
+\renewcommand{\thefigure}{\thesection{}-\arabic{figure}}
+\renewcommand{\thetable}{\thesection{}-\arabic{table}}
+
+
+%%%%%%%%%%%%%%
+%%% Tables %%%
+%%%%%%%%%%%%%%
+
+\usepackage[table]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tabulary}
+\usepackage{tabu}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{makecell}
+\usepackage{longtable}
+% Produces cell with diagonal line
+%\usepackage{diagbox}
+
+%\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+% Adds table notes to tabular
+\usepackage{threeparttable}
+% Adds table notes to longtable
+\usepackage{threeparttablex}
+% Add borders around table notes
+% see https://tex.stackexchange.com/questions/560386/add-table-borders-around-notes-created-with-package-threeparttablex
+%\patchcmd\insertTableNotes{{c}}{{|c|}}{}{}
+
+\usepackage{etoolbox}
+
+% Checks TeXLive version and decides if to include code
+\ifthenelse{\equal{\TeXLiveVersion}{2016}}
+    {% True case
+    }
+    {% False case
+       \usepackage{topiclongtable}
+    }
+
+% Declare \nobreakhline - macros that
+% combines \hline and \nopagebreak, see
+% https://tex.stackexchange.com/questions/6350/how-to-disable-pagebreak-on-hline-in-longtable
+\makeatletter
+\def\nobreakhline{%
+  \noalign{\ifnum0=`}\fi
+    \penalty\@M
+    \futurelet\@let@token\LT@@nobreakhline}
+\def\LT@@nobreakhline{%
+  \ifx\@let@token\hline
+    \global\let\@gtempa\@gobble
+    \gdef\LT@sep{\penalty\@M\vskip\doublerulesep}% <-- change here
+  \else
+    \global\let\@gtempa\@empty
+    \gdef\LT@sep{\penalty\@M\vskip-\arrayrulewidth}% <-- change here
+  \fi
+  \ifnum0=`{\fi}%
+  \multispan\LT@cols
+     \unskip\leaders\hrule\@height\arrayrulewidth\hfill\cr
+  \noalign{\LT@sep}%
+  \multispan\LT@cols
+     \unskip\leaders\hrule\@height\arrayrulewidth\hfill\cr
+  \noalign{\penalty\@M}%
+  \@gtempa}
+\makeatother
+
+% Commands declared below allow you to specify
+% fixed column width and alignment, see
+% https://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
+% example: \begin{tabular}{| L{3cm} | C{3cm} | R{3cm} |}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+%%%%%%%%%%%%%%
+%%% Colors %%%
+%%%%%%%%%%%%%%
+
+\usepackage{color}
+
+\definecolor{myred}{RGB}{229, 32, 26}
+\definecolor{mygrayy}{RGB}{127, 127, 127}
+\definecolor{myblack}{RGB}{64, 64, 64}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+
+
+%%%%%%%%%%%%%%%%%%
+%%% Hyperlinks %%%
+%%%%%%%%%%%%%%%%%%
+
+\usepackage[normalem]{ulem}
+\usepackage{lastpage}
+
+% https://tex.stackexchange.com/questions/165178/nameref-hyperref-evaluating-counter-instead-of-section-name
+\usepackage{nameref}% loads gettitlestring
+\GetTitleStringSetup{expand}
+
+% Corrects issues with compatibility of XeLaTeX and
+% hyperref to create hypertargets for browser links
+\special{dvipdfmx:config C 0x0010}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {LochmaraColor},
+}
+\makeatletter
+\begingroup
+  \catcode`\$=6 %
+  \catcode`\#=12 %
+  \gdef\href@split$1#$2#$3\\$4{%
+    \hyper@@link{$1}{$2}{\uline{$4}}% or \underline
+    \endgroup
+  }%
+\endgroup
+
+
+%%%%%%%%%%%
+%%% TOC %%%
+%%%%%%%%%%%
+
+% Define colors for table of contents
+% http://tex.stackexchange.com/questions/110253/what-the-first-argument-for-lsubsection-actually-is
+\definecolor{LochmaraColor}{HTML}{1020A0}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\makeatletter
+
+% PCNote: This is where we change the spacing for table of contents. The first {Xpt} for the numbering space, the second {Xpt} for the title spacing
+\renewcommand{\l@section}[2]{\vspace{14pt}\@dottedtocline{2}{0pt}{30pt}{\LARGE\bfseries\textcolor{LochmaraColor}{#1}}{#2}}
+\renewcommand{\l@subsection}[2]{\@dottedtocline{2}{0pt}{30pt}{\textcolor{LochmaraColor}{#1}}{#2}}
+\renewcommand{\l@subsubsection}[2]{\@dottedtocline{2}{30pt}{35pt}{\textcolor{LochmaraColor}{#1}}{#2}}
+\renewcommand{\l@paragraph}[2]{\@dottedtocline{2}{65pt}{45pt}{\textcolor{LochmaraColor}{#1}}{#2}}
+\renewcommand{\@dotsep}{10000}
+\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{3em}} % adapt the second value to your needs
+\let\l@table\l@figure
+\makeatother
+
+
+%%%%%%%%%%%%%%%%
+%%% Headings %%%
+%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}
+
+% Define spacing for section, subsection and subsubsection
+% http://tex.stackexchange.com/questions/108684/spacing-before-and-after-section-titles
+
+%\titlespacing*{\section}{0pt}{6pt plus 0pt minus 0pt}{12pt plus 0pt minus 0pt}
+%\titlespacing*{\subsection}{0pt}{12pt plus 0pt minus 0pt}{0pt}
+%\titlespacing*{\subsubsection}{0pt}{12pt plus 0pt minus 0pt}{0pt}
+%\titlespacing*{\paragraph}    {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing*{\subparagraph} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% Define section, subsection and subsubsection font size and color
+\definecolor{AllportsColor}{HTML}{A02010}
+
+\titleformat{\section}
+{\color{AllportsColor}\LARGE\bfseries}{\thesection}{1em}{}
+
+\titleformat*{\subsection}
+{\color{AllportsColor}\Large\bfseries}
+
+\titleformat*{\subsubsection}
+{\color{AllportsColor}\large\bfseries}
+
+\titleformat{\paragraph}
+{\color{AllportsColor}\large\bfseries}{\theparagraph}{1em}{}
+
+\titleformat{\subparagraph}
+  {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+
+%%%%%%%%%%%%%%%%%%%
+%%% Framed Text %%%
+%%%%%%%%%%%%%%%%%%%
+
+\usepackage{framed}
+\usepackage[framemethod=TikZ]{mdframed}
+\definecolor{shadecolor}{gray}{0.85}
+%\usepackage{flowfram}
+
+% Lists Objective-C code inside of a blue border
+\definecolor{BaliHaiColor}{HTML}{7CA1B3}
+\newminted[objclisting]{objective-c}{tabsize=4, fontsize=\footnotesize}
+\usemintedstyle{xcode}
+\BeforeBeginEnvironment{objclisting}{\footnotesize\mdframed[middlelinewidth=0.5pt, middlelinecolor=BaliHaiColor, skipabove=15pt]}%
+\AfterEndEnvironment{objclisting}{\endmdframed\vspace{12pt}\normalsize}
+
+% Lists Swift code inside of a blue border
+\definecolor{BaliHaiColor}{HTML}{7CA1B3}
+\newminted[swiftlisting]{swift}{tabsize=4, fontsize=\footnotesize}
+\usemintedstyle{xcode}
+\BeforeBeginEnvironment{swiftlisting}{\footnotesize\mdframed[middlelinewidth=0.5pt, middlelinecolor=BaliHaiColor, skipabove=15pt]}%
+\AfterEndEnvironment{swiftlisting}{\endmdframed\vspace{12pt}\normalsize}
+\newminted[swiftlisting2]{swift}{tabsize=4, fontsize=\footnotesize,bgcolor=bg}
+\usemintedstyle{xcode}
+\definecolor{bg}{rgb}{0.85,0.85,0.85}
+\BeforeBeginEnvironment{swiftlisting2}{\footnotesize\mdframed[middlelinewidth=0.5pt, middlelinecolor=BaliHaiColor, skipabove=15pt]}%
+\AfterEndEnvironment{swiftlisting2}{\endmdframed\vspace{12pt}\normalsize}
+
+% Lists text inside yellow border
+\definecolor{GoldenDreamColor}{HTML}{1020A0}
+\newenvironment{tiplisting}
+{\small\mdframed[middlelinewidth=0.5pt, middlelinecolor=GoldenDreamColor, skipabove=15pt]{\textbf{\GetTranslation{framedtxtnote}\\*}}}
+{\endmdframed\vspace{12pt}\normalsize}
+
+% Lists text inside a blue border
+\definecolor{MatisseColor}{HTML}{236AB2}
+\newenvironment{importantlisting}
+{\mdframed[middlelinewidth=0.5pt, middlelinecolor=MatisseColor, skipabove=15pt]{\textbf{{\color{AllportsColor} \GetTranslation{framedtxtnotice}}}}}
+{\endmdframed\vspace{12pt}\normalsize}
+
+% Inline monospaced text
+\definecolor{TundoraColor}{HTML}{444444}
+\newcommand{\inlinecode}[1]{{\textcolor{TundoraColor}{\texttt{#1}}}}
+
+
+%%%%%%%%%%%%%
+%%% Fonts %%%
+%%%%%%%%%%%%%
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+
+\setmainfont{MaisonNeue}[
+  Path          = ./00-shared/fonts/,
+  Extension     = .otf,
+  UprightFont   = *-Light,
+  ItalicFont    = *-LightItalic,
+  BoldFont      = *-Medium,
+]
+
+\setmonofont{MaisonNeueMono-Regular.otf}[
+  Path          = ./00-shared/fonts/,
+  Scale         = MatchLowercase,
+]
+
+% Specify a distinct font for table notes
+\newfontfamily\notefont{HelveticaNeue-Light.otf}[
+  Path          = ./00-shared/fonts/
+]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% English/Chinese Translations %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Add English/Chinese translations, see
+% https://tex.stackexchange.com/questions/554276/using-ctex-and-translations-packages-together
+
+% Checks TeXLive version and decides if to include code
+\ifthenelse{\equal{\TeXLiveVersion}{2016}}
+    {% True case
+    }
+    {% False case
+       \usepackage[english]{babel}
+       \babelprovide[import]{chinese}
+    }
+
+\usepackage{translations}
+\DeclareLanguage{chinese}
+\input{./00-shared/config/dict-en-cn}
+
+
+%%%%%%%%%%%%
+%%% Misc %%%
+%%%%%%%%%%%%
+
+\usepackage{register}
+% Provide index of register names and fields in different color
+\newcommand{\regindex}[1] {\textcolor{red}{\it{#1}}}
+
+% Draw directory trees
+\usepackage{forest}
+\usepackage{dirtree}
+
+% Packages below are included for TRM ulp co-processor.
+\usepackage[endianness=big, bitwidth=1.3em]{bytefield}
+\bytefieldsetup{boxformatting={\centering}}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+% Override the default bullet point setting coming with the font Maison Neue
+\usepackage{enumitem}
+\setlist[itemize,1]{label=$\bullet$}
+
+% Redefine the command for table notes to address invalid
+% superscript letters and commas coming with Maison Neue
+\renewcommand\tnote[1]{%
+  {\ensuremath{^{\mbox{\notefont\footnotesize#1}}}}%
+}
+
+
+%%%%%%%%%%%%%%%%%
+%%% Changelog %%%
+%%%%%%%%%%%%%%%%%
+
+% 2021-03-10 v1.1.1
+% - Added the package extdash to define non-breakable hyphens (RISC-V)
+
+% 2020-11-11 v1.1.0
+% - Preamble is expanded and improved using the ideas developed for module datasheet repo preamble
+% - Both language versions are now stored in the same TRM module project
+% - All instructions are moved into a separate project
+
+% 2020-07-16 v1.0.1
+% - Minor updates, added draft-template-cn.tex
+
+% 2020-07-16 v1.0.0
+% - Drastically improved file organization and introduction of naming conventions
+% - Structure of all files is now much more concise, transparent, and intuitive
+% - All files that users work with can be compiled separately
+% - Project documentation is considerably improved, added guidelines for LaTeX usage
+% - Automated handling of labels for missing modules, virtually no oversight required
+
+% 2013-??-?? v0.1
+% Initial Template
+% % XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+% Apple Documentation Style - Latex Template
+% https://github.com/wnagrodzki/AppleDocumentationStyleLatexTemplate
+% Wojciech Nagrodzki 2013

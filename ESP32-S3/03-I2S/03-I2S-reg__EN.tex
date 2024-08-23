@@ -1,0 +1,557 @@
+\begin{register}{H}{I2S\_INT\_RAW\_REG}{0x{}000C}\label{regdesc:I2SINTRAWREG}
+\regfield{(reserved)}{28}{4}{0000000000000000000000000000}%
+\regfield{I2S\_TX\_HUNG\_INT\_RAW}{1}{3}{{0}}%
+\regfield{I2S\_RX\_HUNG\_INT\_RAW}{1}{2}{{0}}%
+\regfield{I2S\_TX\_DONE\_INT\_RAW}{1}{1}{{0}}%
+\regfield{I2S\_RX\_DONE\_INT\_RAW}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXDONEINTRAW}\item [I2S\_RX\_DONE\_INT\_RAW] The raw interrupt status bit for \hyperref[int:I2STXHUNGINT]{I2S\_RX\_DONE\_INT} interrupt.  (RO/WTC/SS)
+\label{fielddesc:I2STXDONEINTRAW}\item [I2S\_TX\_DONE\_INT\_RAW] The raw interrupt status bit for \hyperref[int:I2STXHUNGINT]{I2S\_TX\_DONE\_INT} interrupt. (RO/WTC/SS)
+\label{fielddesc:I2SRXHUNGINTRAW}\item [I2S\_RX\_HUNG\_INT\_RAW] The raw interrupt status bit for \hyperref[int:I2STXHUNGINT]{I2S\_RX\_HUNG\_INT} interrupt. (RO/WTC/SS)
+\label{fielddesc:I2STXHUNGINTRAW}\item [I2S\_TX\_HUNG\_INT\_RAW] The raw interrupt status bit for \hyperref[int:I2STXHUNGINT]{I2S\_TX\_HUNG\_INT} interrupt. (RO/WTC/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_INT\_ST\_REG}{0x{}0010}\label{regdesc:I2SINTSTREG}
+\regfield{(reserved)}{28}{4}{0000000000000000000000000000}%
+\regfield{I2S\_TX\_HUNG\_INT\_ST}{1}{3}{{0}}%
+\regfield{I2S\_RX\_HUNG\_INT\_ST}{1}{2}{{0}}%
+\regfield{I2S\_TX\_DONE\_INT\_ST}{1}{1}{{0}}%
+\regfield{I2S\_RX\_DONE\_INT\_ST}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXDONEINTST}\item [I2S\_RX\_DONE\_INT\_ST]  The masked interrupt status bit for \hyperref[int:I2STXHUNGINT]{I2S\_RX\_DONE\_INT} interrupt. (RO)
+\label{fielddesc:I2STXDONEINTST}\item [I2S\_TX\_DONE\_INT\_ST] The masked interrupt status bit for \hyperref[int:I2STXHUNGINT]{I2S\_TX\_DONE\_INT} interrupt. (RO)
+\label{fielddesc:I2SRXHUNGINTST}\item [I2S\_RX\_HUNG\_INT\_ST] The masked interrupt status bit for \hyperref[int:I2STXHUNGINT]{I2S\_RX\_HUNG\_INT} interrupt. (RO)
+\label{fielddesc:I2STXHUNGINTST}\item [I2S\_TX\_HUNG\_INT\_ST] The masked interrupt status bit for \hyperref[int:I2STXHUNGINT]{I2S\_TX\_HUNG\_INT} interrupt. (RO)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_INT\_ENA\_REG}{0x{}0014}\label{regdesc:I2SINTENAREG}
+\regfield{(reserved)}{28}{4}{0000000000000000000000000000}%
+\regfield{I2S\_TX\_HUNG\_INT\_ENA}{1}{3}{{0}}%
+\regfield{I2S\_RX\_HUNG\_INT\_ENA}{1}{2}{{0}}%
+\regfield{I2S\_TX\_DONE\_INT\_ENA}{1}{1}{{0}}%
+\regfield{I2S\_RX\_DONE\_INT\_ENA}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXDONEINTENA}\item [I2S\_RX\_DONE\_INT\_ENA] The interrupt enable bit for \hyperref[int:I2STXHUNGINT]{I2S\_RX\_DONE\_INT} interrupt.  (R/W)
+\label{fielddesc:I2STXDONEINTENA}\item [I2S\_TX\_DONE\_INT\_ENA]  The interrupt enable bit for \hyperref[int:I2STXHUNGINT]{I2S\_TX\_DONE\_INT} interrupt. (R/W)
+\label{fielddesc:I2SRXHUNGINTENA}\item [I2S\_RX\_HUNG\_INT\_ENA] The interrupt enable bit for \hyperref[int:I2STXHUNGINT]{I2S\_RX\_HUNG\_INT} interrupt. (R/W)
+\label{fielddesc:I2STXHUNGINTENA}\item [I2S\_TX\_HUNG\_INT\_ENA] The interrupt enable bit for \hyperref[int:I2STXHUNGINT]{I2S\_TX\_HUNG\_INT} interrupt. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_INT\_CLR\_REG}{0x{}0018}\label{regdesc:I2SINTCLRREG}
+\regfield{(reserved)}{28}{4}{0000000000000000000000000000}%
+\regfield{I2S\_TX\_HUNG\_INT\_CLR}{1}{3}{{0}}%
+\regfield{I2S\_RX\_HUNG\_INT\_CLR}{1}{2}{{0}}%
+\regfield{I2S\_TX\_DONE\_INT\_CLR}{1}{1}{{0}}%
+\regfield{I2S\_RX\_DONE\_INT\_CLR}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXDONEINTCLR}\item [I2S\_RX\_DONE\_INT\_CLR] Set this bit to clear \hyperref[int:I2STXHUNGINT]{I2S\_RX\_DONE\_INT} interrupt. (WT)
+\label{fielddesc:I2STXDONEINTCLR}\item [I2S\_TX\_DONE\_INT\_CLR] Set this bit to clear \hyperref[int:I2STXHUNGINT]{I2S\_TX\_DONE\_INT} interrupt. (WT)
+\label{fielddesc:I2SRXHUNGINTCLR}\item [I2S\_RX\_HUNG\_INT\_CLR] Set this bit to clear \hyperref[int:I2STXHUNGINT]{I2S\_RX\_HUNG\_INT} interrupt. (WT)
+\label{fielddesc:I2STXHUNGINTCLR}\item [I2S\_TX\_HUNG\_INT\_CLR] Set this bit to clear \hyperref[int:I2STXHUNGINT]{I2S\_TX\_HUNG\_INT} interrupt. (WT)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{\textcolor{red}{I2S\_RX\_CONF\_REG}}{0x{}0020}\label{regdesc:I2SRXCONFREG}
+\regfield{(reserved)}{9}{23}{000000000}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_PDM\_SINC\_DSR\_16\_EN}}{1}{22}{{0}}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_PDM2PCM\_EN}}{1}{21}{{0}}%
+\regfield{I2S\_RX\_PDM\_EN}{1}{20}{{0}}%
+\regfield{I2S\_RX\_TDM\_EN}{1}{19}{{0}}%
+\regfield{I2S\_RX\_BIT\_ORDER}{1}{18}{{0}}%
+\regfield{I2S\_RX\_WS\_IDLE\_POL}{1}{17}{{0}}%
+\regfield{I2S\_RX\_24\_FILL\_EN}{1}{16}{{0}}%
+\regfield{I2S\_RX\_LEFT\_ALIGN}{1}{15}{{1}}%
+\regfield{I2S\_RX\_STOP\_MODE}{2}{13}{{0}}%
+\regfield{I2S\_RX\_PCM\_BYPASS}{1}{12}{{1}}%
+\regfield{I2S\_RX\_PCM\_CONF}{2}{10}{{0x{}1}}%
+\regfield{I2S\_RX\_MONO\_FST\_VLD}{1}{9}{{1}}%
+\regfield{I2S\_RX\_UPDATE}{1}{8}{{0}}%
+\regfield{I2S\_RX\_BIG\_ENDIAN}{1}{7}{{0}}%
+\regfield{(reserved)}{1}{6}{0}%
+\regfield{I2S\_RX\_MONO}{1}{5}{{0}}%
+\regfield{(reserved)}{1}{4}{0}%
+\regfield{I2S\_RX\_SLAVE\_MOD}{1}{3}{{0}}%
+\regfield{I2S\_RX\_START}{1}{2}{{0}}%
+\regfield{I2S\_RX\_FIFO\_RESET}{1}{1}{{0}}%
+\regfield{I2S\_RX\_RESET}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXRESET}\item [I2S\_RX\_RESET] Set this bit to reset RX unit. (WT)
+\label{fielddesc:I2SRXFIFORESET}\item [I2S\_RX\_FIFO\_RESET] Set this bit to reset RX FIFO. (WT)
+\label{fielddesc:I2SRXSTART}\item [I2S\_RX\_START] Set this bit to start receiving data. (R/W)
+\label{fielddesc:I2SRXSLAVEMOD}\item [I2S\_RX\_SLAVE\_MOD] Set this bit to enable slave RX mode. (R/W)
+\label{fielddesc:I2SRXMONO}\item [I2S\_RX\_MONO] Set this bit to enable RX unit in mono mode. (R/W)
+\label{fielddesc:I2SRXBIGENDIAN}\item [I2S\_RX\_BIG\_ENDIAN] I2S RX byte endian. 1: low address data is saved to high address. 0: low address data is saved to low address. (R/W)
+\label{fielddesc:I2SRXUPDATE}\item [I2S\_RX\_UPDATE] Set 1 to update I2S RX registers from APB clock domain to I2S RX clock domain. This bit will be cleared by hardware after register update is done. (R/W/SC)
+\label{fielddesc:I2SRXMONOFSTVLD}\item [I2S\_RX\_MONO\_FST\_VLD] 1: The first channel data value is valid in I2S RX mono mode.   0: The second channel data value is valid in I2S RX mono mode. (R/W)
+\label{fielddesc:I2SRXPCMCONF}\item [I2S\_RX\_PCM\_CONF] I2S RX compress/decompress configuration bit. 0 (atol): A-Law decompress, 1 (ltoa): A-Law compress, 2 (utol): $\mu$-Law decompress, 3 (ltou): $\mu$-Law compress. (R/W)
+\label{fielddesc:I2SRXPCMBYPASS}\item [I2S\_RX\_PCM\_BYPASS] Set this bit to bypass Compress/Decompress module for received data. (R/W)
+\label{fielddesc:I2SRXSTOPMODE}\item [I2S\_RX\_STOP\_MODE] 0: I2S RX stops only when I2S\_RX\_START is cleared. 1: I2S RX stops when I2S\_RX\_START is 0 or in\_suc\_eof is 1. 2: I2S RX stops when I2S\_RX\_STAR is 0 or RX FIFO is full. (R/W)
+\label{fielddesc:I2SRXLEFTALIGN}\item [I2S\_RX\_LEFT\_ALIGN] 1: I2S RX left alignment mode. 0: I2S RX right alignment mode. (R/W)
+\label{fielddesc:I2SRX24FILLEN}\item [I2S\_RX\_24\_FILL\_EN] 1: store 24-bit channel data to 32 bits (Extra bits are filled with zeros). 0: store 24-bit channel data to 24 bits. (R/W)
+\label{fielddesc:I2SRXWSIDLEPOL}\item [I2S\_RX\_WS\_IDLE\_POL] 0: WS remains low when receiving left channel data, and remains high when receiving right channel data. 1: WS remains high when receiving left channel data, and remains low when receiving right channel data. (R/W)
+\label{fielddesc:I2SRXBITORDER}\item [I2S\_RX\_BIT\_ORDER] I2S RX bit order. 1: the lowest bit is received first. 0: the highest bit is received first. (R/W)
+\item [Continued on the next page...]
+\end{reglist}\end{regdesc}
+\end{register}
+
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{\textcolor{red}{I2S\_RX\_CONF\_REG}}{0x{}0020}
+\begin{regdesc}\begin{reglist}
+\item [Continued from the previous page...]
+\label{fielddesc:I2SRXTDMEN}\item [I2S\_RX\_TDM\_EN] 1: Enable I2S TDM RX mode. 0: Disable I2S TDM RX mode. (R/W)
+\label{fielddesc:I2SRXPDMEN}\item [I2S\_RX\_PDM\_EN] 1: Enable I2S PDM RX mode. 0: Disable I2S PDM RX mode. (R/W)
+\label{fielddesc:I2SRXPDM2PCMEN}\item [\textcolor{red}{I2S\_RX\_PDM2PCM\_EN (for I2S0 only)}] 1: Enable PDM-to-PCM RX mode. 0: Disable PDM-to-PCM RX mode. (R/W)
+\label{fielddesc:I2SRXPDMSINCDSR16EN}\item [\textcolor{red}{I2S\_RX\_PDM\_SINC\_DSR\_16\_EN (for I2S0 only)}] Configure the down sampling rate of PDM RX filter group1 module. 1: The down sampling rate is 128. 0: down sampling rate is 64. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RX\_CONF1\_REG}{0x{}0028}\label{regdesc:I2SRXCONF1REG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_RX\_MSB\_SHIFT}{1}{29}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN\_BITS}{5}{24}{{0x{}f}}%
+\regfield{I2S\_RX\_HALF\_SAMPLE\_BITS}{6}{18}{{0x{}f}}%
+\regfield{I2S\_RX\_BITS\_MOD}{5}{13}{{0x{}f}}%
+\regfield{I2S\_RX\_BCK\_DIV\_NUM}{6}{7}{{6}}%
+\regfield{I2S\_RX\_TDM\_WS\_WIDTH}{7}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXTDMWSWIDTH}\item [I2S\_RX\_TDM\_WS\_WIDTH] The width of rx\_ws\_out (WS default level) in TDM mode is (I2S\_RX\_TDM\_WS\_WIDTH + 1) * T\_BCK. (R/W)
+\label{fielddesc:I2SRXBCKDIVNUM}\item [I2S\_RX\_BCK\_DIV\_NUM] Configure the divider of BCK in RX mode. Note this divider must not be configured to 1. (R/W)
+\label{fielddesc:I2SRXBITSMOD}\item [I2S\_RX\_BITS\_MOD] Configure the valid data bit length of I2S RX channel. 7: all the valid channel data is in 8-bit mode. 15: all the valid channel data is in 16-bit mode. 23: all the valid channel data is in 24-bit mode. 31: all the valid channel data is in 32-bit mode. (R/W)
+%Set the bits to configure the valid data bit length of I2S receiver channel. 7: all the valid channel data is in 8-bit-mode. 15: all the valid channel data is in 16-bit-mode. 23: all the valid channel data is in 24-bit-mode. 31:all the valid channel data is in 32-bit-mode. (R/W)
+\label{fielddesc:I2SRXHALFSAMPLEBITS}\item [I2S\_RX\_HALF\_SAMPLE\_BITS] I2S RX half sample bits. This value x 2 is equal to the BCK cycles in one WS period. (R/W)
+\label{fielddesc:I2SRXTDMCHANBITS}\item [I2S\_RX\_TDM\_CHAN\_BITS] Configure RX bit number for each channel in TDM mode. Bit number expected = this value + 1. (R/W)
+\label{fielddesc:I2SRXMSBSHIFT}\item [I2S\_RX\_MSB\_SHIFT] Control the timing between WS signal and the MSB of data. 1: WS signal changes one BCK clock earlier. 0: Align at rising edge.  (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RX\_CLKM\_CONF\_REG}{0x{}0030}\label{regdesc:I2SRXCLKMCONFREG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_MCLK\_SEL}{1}{29}{{0}}%
+\regfield{I2S\_RX\_CLK\_SEL}{2}{27}{{0}}%
+\regfield{I2S\_RX\_CLK\_ACTIVE}{1}{26}{{0}}%
+\regfield{(reserved)}{18}{8}{000000000000000000}%
+\regfield{I2S\_RX\_CLKM\_DIV\_NUM}{8}{0}{{2}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXCLKMDIVNUM}\item [I2S\_RX\_CLKM\_DIV\_NUM] Integral I2S RX clock divider value. (R/W)
+\label{fielddesc:I2SRXCLKACTIVE}\item [I2S\_RX\_CLK\_ACTIVE] Clock enable signal of I2S RX unit. (R/W)
+\label{fielddesc:I2SRXCLKSEL}\item [I2S\_RX\_CLK\_SEL] Select clock source for I2S RX unit. 0: XTAL\_CLK. 1: PLL\_D2\_CLK. 2: PLL\_F160M\_CLK. 3: I2S\_MCLK\_in. (R/W)
+\label{fielddesc:I2SMCLKSEL}\item [I2S\_MCLK\_SEL] 0: Use I2S TX unit clock as I2S\_MCLK\_OUT. 1: Use I2S RX unit clock as I2S\_MCLK\_OUT. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{\textcolor{red}{I2S\_TX\_PCM2PDM\_CONF\_REG (For I2S0 Only)}}{0x{}0040}\label{regdesc:I2STXPCM2PDMCONFREG}
+\regfield{(reserved)}{6}{26}{000000}%
+\regfield{I2S\_PCM2PDM\_CONV\_EN}{1}{25}{{0}}%
+\regfield{I2S\_TX\_PDM\_DAC\_MODE\_EN}{1}{24}{{0}}%
+\regfield{I2S\_TX\_PDM\_DAC\_2OUT\_EN}{1}{23}{{0}}%
+%\regfield{I2S\_TX\_PDM\_SIGMADELTA\_DITHER}{1}{22}{{1}}%
+%\regfield{I2S\_TX\_PDM\_SIGMADELTA\_DITHER2}{1}{21}{{0}}%
+%\regfield{I2S\_TX\_PDM\_SIGMADELTA\_IN\_SHIFT}{2}{19}{{0x{}1}}%
+%\regfield{I2S\_TX\_PDM\_SINC\_IN\_SHIFT}{2}{17}{{0x{}1}}%
+%\regfield{I2S\_TX\_PDM\_LP\_IN\_SHIFT}{2}{15}{{0x{}1}}%
+%\regfield{I2S\_TX\_PDM\_HP\_IN\_SHIFT}{2}{13}{{0x{}1}}%
+\regfield{I2S\_TX\_PDM\_PRESCALE}{18}{5}{{0x{}0}}%
+\regfield{I2S\_TX\_PDM\_SINC\_OSR2}{4}{1}{{0x{}2}}%
+\regfield{(reserved)}{1}{0}{0}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXPDMSINCOSR2}\item [I2S\_TX\_PDM\_SINC\_OSR2] I2S TX PDM OSR value. (R/W)
+%\label{fielddesc:I2STXPDMPRESCALE}\item [I2S\_TX\_PDM\_PRESCALE] I2S TX PDM prescale for sigmadelta (R/W)
+%\label{fielddesc:I2STXPDMHPINSHIFT}\item [I2S\_TX\_PDM\_HP\_IN\_SHIFT] I2S TX PDM sigmadelta scale shift number: 0:/2 , 1:x1 , 2:x2 , 3: x4 (R/W)
+%\label{fielddesc:I2STXPDMLPINSHIFT}\item [I2S\_TX\_PDM\_LP\_IN\_SHIFT] I2S TX PDM sigmadelta scale shift number: 0:/2 , 1:x1 , 2:x2 , 3: x4 (R/W)
+%\label{fielddesc:I2STXPDMSINCINSHIFT}\item [I2S\_TX\_PDM\_SINC\_IN\_SHIFT] I2S TX PDM sigmadelta scale shift number: 0:/2 , 1:x1 , 2:x2 , 3: x4 (R/W)
+%\label{fielddesc:I2STXPDMSIGMADELTAINSHIFT}\item [I2S\_TX\_PDM\_SIGMADELTA\_IN\_SHIFT] I2S TX PDM sigmadelta scale shift number: 0:/2 , 1:x1 , 2:x2 , 3: x4 (R/W)
+%\label{fielddesc:I2STXPDMSIGMADELTADITHER2}\item [I2S\_TX\_PDM\_SIGMADELTA\_DITHER2] I2S TX PDM sigmadelta dither2 value (R/W)
+%\label{fielddesc:I2STXPDMSIGMADELTADITHER}\item [I2S\_TX\_PDM\_SIGMADELTA\_DITHER] I2S TX PDM sigmadelta dither value (R/W)
+\label{fielddesc:I2STXPDMDAC2OUTEN}\item [I2S\_TX\_PDM\_DAC\_2OUT\_EN] 0: 1-line DAC output mode. 1: 2-line DAC output mode. Only valid when I2S\_TX\_PDM\_DAC\_MODE\_EN is set. (R/W)
+\label{fielddesc:I2STXPDMDACMODEEN}\item [I2S\_TX\_PDM\_DAC\_MODE\_EN] 0: 1-line PDM output mode. 1: DAC output mode. (R/W)
+\label{fielddesc:I2SPCM2PDMCONVEN}\item [I2S\_PCM2PDM\_CONV\_EN] Enable bit for I2S TX PCM-to-PDM conversion. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{\textcolor{red}{I2S\_TX\_PCM2PDM\_CONF1\_REG (For I2S0 Only)}}{0x{}0044}\label{regdesc:I2STXPCM2PDMCONF1REG}
+\regfield{(reserved)}{6}{26}{000000}%
+%\regfield{I2S\_TX\_IIR\_HP\_MULT12\_0}{3}{23}{{7}}%
+%\regfield{I2S\_TX\_IIR\_HP\_MULT12\_5}{3}{20}{{7}}%
+\regfield{I2S\_TX\_PDM\_FS}{10}{10}{{480}}%
+\regfield{(reserved)}{10}{0}{{960}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+%\label{fielddesc:I2STXPDMFP}\item [I2S\_TX\_PDM\_FP] I2S TX PDM Fp (R/W)
+\label{fielddesc:I2STXPDMFS}\item [I2S\_TX\_PDM\_FS] I2S PDM TX upsampling parameter.  (R/W)
+%\label{fielddesc:I2STXIIRHPMULT125}\item [I2S\_TX\_IIR\_HP\_MULT12\_5] The fourth parameter of PDM TX IIR\_HP filter stage 2 is (504 + I2S\_TX\_IIR\_HP\_MULT12\_5[2:0]) (R/W)
+%\label{fielddesc:I2STXIIRHPMULT120}\item [I2S\_TX\_IIR\_HP\_MULT12\_0] The fourth parameter of PDM TX IIR\_HP filter stage 1 is (504 + I2S\_TX\_IIR\_HP\_MULT12\_0[2:0]) (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RX\_TDM\_CTRL\_REG}{0x{}0050}\label{regdesc:I2SRXTDMCTRLREG}
+\regfield{(reserved)}{12}{20}{000000000000}%
+\regfield{I2S\_RX\_TDM\_TOT\_CHAN\_NUM}{4}{16}{{0x{}0}}%
+\regfield{I2S\_RX\_TDM\_CHAN15\_EN}{1}{15}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN14\_EN}{1}{14}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN13\_EN}{1}{13}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN12\_EN}{1}{12}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN11\_EN}{1}{11}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN10\_EN}{1}{10}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN9\_EN}{1}{9}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN8\_EN}{1}{8}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN7\_EN}{1}{7}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN6\_EN}{1}{6}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN5\_EN}{1}{5}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN4\_EN}{1}{4}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN3\_EN}{1}{3}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN2\_EN}{1}{2}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN1\_EN}{1}{1}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN0\_EN}{1}{0}{{1}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXTDMPDMCHAN0EN}\item [I2S\_RX\_TDM\_PDM\_CHAN0\_EN]  1: Enable the valid data input of I2S RX TDM or PDM channel 0. 0: Disable. Channel 0 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN1EN}\item [I2S\_RX\_TDM\_PDM\_CHAN1\_EN]  1: Enable the valid data input of I2S RX TDM or PDM channel 1. 0: Disable. Channel 1 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN2EN}\item [I2S\_RX\_TDM\_PDM\_CHAN2\_EN]  1: Enable the valid data input of I2S RX TDM or PDM channel 2. 0: Disable. Channel 2 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN3EN}\item [I2S\_RX\_TDM\_PDM\_CHAN3\_EN]  1: Enable the valid data input of I2S RX TDM or PDM channel 3. 0: Disable. Channel 3 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN4EN}\item [I2S\_RX\_TDM\_PDM\_CHAN4\_EN]  1: Enable the valid data input of I2S RX TDM or PDM channel 4. 0: Disable. Channel 4 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN5EN}\item [I2S\_RX\_TDM\_PDM\_CHAN5\_EN]  1: Enable the valid data input of I2S RX TDM or PDM channel 5. 0: Disable. Channel 5 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN6EN}\item [I2S\_RX\_TDM\_PDM\_CHAN6\_EN]  1: Enable the valid data input of I2S RX TDM or PDM channel 6. 0: Disable. Channel 6 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN7EN}\item [I2S\_RX\_TDM\_PDM\_CHAN7\_EN]  1: Enable the valid data input of I2S RX TDM or PDM channel 7. 0: Disable. Channel 0 only inputs 7. (R/W)
+\label{fielddesc:I2SRXTDMCHAN8EN}\item [I2S\_RX\_TDM\_CHAN8\_EN]  1: Enable the valid data input of I2S RX TDM channel 8. 0: Disable. Channel 8 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMCHAN9EN}\item [I2S\_RX\_TDM\_CHAN9\_EN] 1: Enable the valid data input of I2S RX TDM channel 9. 0: Disable. Channel 9 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMCHAN10EN}\item [I2S\_RX\_TDM\_CHAN10\_EN] 1: Enable the valid data input of I2S RX TDM channel 10. 0: Disable. Channel 10 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMCHAN11EN}\item [I2S\_RX\_TDM\_CHAN11\_EN] 1: Enable the valid data input of I2S RX TDM channel 11. 0: Disable. Channel 11 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMCHAN12EN}\item [I2S\_RX\_TDM\_CHAN12\_EN] 1: Enable the valid data input of I2S RX TDM channel 12. 0: Disable. Channel 12 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMCHAN13EN}\item [I2S\_RX\_TDM\_CHAN13\_EN] 1: Enable the valid data input of I2S RX TDM channel 13. 0: Disable. Channel 13 only inputs 0. (R/W)
+\item [Continued on the next page...]
+\end{reglist}\end{regdesc}
+\end{register}
+
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{I2S\_RX\_TDM\_CTRL\_REG}{0x{}0050}
+\begin{regdesc}\begin{reglist}
+\item [Continued from the previous page...]
+\label{fielddesc:I2SRXTDMCHAN14EN}\item [I2S\_RX\_TDM\_CHAN14\_EN] 1: Enable the valid data input of I2S RX TDM channel 14. 0: Disable. Channel 14 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMCHAN15EN}\item [I2S\_RX\_TDM\_CHAN15\_EN] 1: Enable the valid data input of I2S RX TDM channel 15. 0: Disable. Channel 15 only inputs 0. (R/W)
+\label{fielddesc:I2SRXTDMTOTCHANNUM}\item [I2S\_RX\_TDM\_TOT\_CHAN\_NUM] The total number of channels in use in I2S RX TDM mode.  Total channel number in use = this value + 1. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RXEOF\_NUM\_REG}{0x{}0064}\label{regdesc:I2SRXEOFNUMREG}
+\regfield{(reserved)}{20}{12}{00000000000000000000}%
+\regfield{I2S\_RX\_EOF\_NUM}{12}{0}{{0x{}40}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXEOFNUM}\item [I2S\_RX\_EOF\_NUM] The bit length of RX data is (I2S\_RX\_BITS\_MOD + 1) * (I2S\_RX\_EOF\_NUM + 1). Once the length of received data reaches such bit length, an in\_suc\_eof interrupt is triggered in the configured DMA RX channel. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_CONF\_REG}{0x{}0024}\label{regdesc:I2STXCONFREG}
+\regfield{(reserved)}{4}{28}{0000}%
+\regfield{I2S\_SIG\_LOOPBACK}{1}{27}{{0}}%
+\regfield{I2S\_TX\_CHAN\_MOD}{3}{24}{{0}}%
+\regfield{(reserved)}{3}{21}{000}%
+\regfield{I2S\_TX\_PDM\_EN}{1}{20}{{0}}%
+\regfield{I2S\_TX\_TDM\_EN}{1}{19}{{0}}%
+\regfield{I2S\_TX\_BIT\_ORDER}{1}{18}{{0}}%
+\regfield{I2S\_TX\_WS\_IDLE\_POL}{1}{17}{{0}}%
+\regfield{I2S\_TX\_24\_FILL\_EN}{1}{16}{{0}}%
+\regfield{I2S\_TX\_LEFT\_ALIGN}{1}{15}{{1}}%
+\regfield{(reserved)}{1}{14}{0}%
+\regfield{I2S\_TX\_STOP\_EN}{1}{13}{{1}}%
+\regfield{I2S\_TX\_PCM\_BYPASS}{1}{12}{{1}}%
+\regfield{I2S\_TX\_PCM\_CONF}{2}{10}{{0x{}0}}%
+\regfield{I2S\_TX\_MONO\_FST\_VLD}{1}{9}{{1}}%
+\regfield{I2S\_TX\_UPDATE}{1}{8}{{0}}%
+\regfield{I2S\_TX\_BIG\_ENDIAN}{1}{7}{{0}}%
+\regfield{I2S\_TX\_CHAN\_EQUAL}{1}{6}{{0}}%
+\regfield{I2S\_TX\_MONO}{1}{5}{{0}}%
+\regfield{(reserved)}{1}{4}{0}%
+\regfield{I2S\_TX\_SLAVE\_MOD}{1}{3}{{0}}%
+\regfield{I2S\_TX\_START}{1}{2}{{0}}%
+\regfield{I2S\_TX\_FIFO\_RESET}{1}{1}{{0}}%
+\regfield{I2S\_TX\_RESET}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXRESET}\item [I2S\_TX\_RESET] Set this bit to reset TX unit. (WT)
+\label{fielddesc:I2STXFIFORESET}\item [I2S\_TX\_FIFO\_RESET] Set this bit to reset TX FIFO. (WT)
+\label{fielddesc:I2STXSTART}\item [I2S\_TX\_START] Set this bit to start transmitting data. (R/W)
+\label{fielddesc:I2STXSLAVEMOD}\item [I2S\_TX\_SLAVE\_MOD] Set this bit to enable slave TX mode. (R/W)
+\label{fielddesc:I2STXMONO}\item [I2S\_TX\_MONO] Set this bit to enable TX unit in mono mode. (R/W)
+\label{fielddesc:I2STXCHANEQUAL}\item [I2S\_TX\_CHAN\_EQUAL] 1: The left channel data is equal to right channel data in I2S TX mono mode or TDM mode. 0: The invalid channel data is I2S\_SINGLE\_DATA in I2S TX mono mode or TDM mode. (R/W)
+\label{fielddesc:I2STXBIGENDIAN}\item [I2S\_TX\_BIG\_ENDIAN] I2S TX byte endian. 1: low address data is saved to high address. 0: low address data is saved to low address. (R/W)
+\label{fielddesc:I2STXUPDATE}\item [I2S\_TX\_UPDATE] Set 1 to update I2S TX registers from APB clock domain to I2S TX clock domain. This bit will be cleared by hardware after register update is done. (R/W/SC)
+\label{fielddesc:I2STXMONOFSTVLD}\item [I2S\_TX\_MONO\_FST\_VLD] 1: The first channel data is valid in I2S TX mono mode. 0: The second channel data is valid in I2S TX mono mode. (R/W)
+\label{fielddesc:I2STXPCMCONF}\item [I2S\_TX\_PCM\_CONF] I2S TX compress/decompress configuration bits. 0 (atol): A-Law decompress, 1 (ltoa): A-Law compress, 2 (utol): $\mu$-Law decompress, 3 (ltou): $\mu$-Law compress. (R/W)
+\label{fielddesc:I2STXPCMBYPASS}\item [I2S\_TX\_PCM\_BYPASS] Set this bit to bypass Compress/Decompress module for transmitted data. (R/W)
+\label{fielddesc:I2STXSTOPEN}\item [I2S\_TX\_STOP\_EN] Set this bit to stop outputting BCK signal and WS signal when TX FIFO is empty. (R/W)
+\label{fielddesc:I2STXLEFTALIGN}\item [I2S\_TX\_LEFT\_ALIGN] 1: I2S TX left alignment mode. 0: I2S TX right alignment mode. (R/W)
+\label{fielddesc:I2STX24FILLEN}\item [I2S\_TX\_24\_FILL\_EN] 1: Send 32 bits in 24-bit channel data mode. Extra bits are filled with zeros. 0: Send 24 bits in 24-bit channel data mode. (R/W)
+\label{fielddesc:I2STXWSIDLEPOL}\item [I2S\_TX\_WS\_IDLE\_POL] 0: WS remains low when sending left channel data, and remains high when sending right channel data. 1: WS remains high when sending left channel data, and remains low when sending right channel data. (R/W)
+\label{fielddesc:I2STXBITORDER}\item [I2S\_TX\_BIT\_ORDER] I2S TX bit endian. 1: the lowest bit is sent first. 0: the highest bit is sent first. (R/W)
+\label{fielddesc:I2STXTDMEN}\item [I2S\_TX\_TDM\_EN] 1: Enable I2S TDM TX mode. 0: Disable I2S TDM TX mode. (R/W)
+
+\item [Continued on the next page...]
+\end{reglist}\end{regdesc}
+\end{register}
+
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{I2S\_TX\_CONF\_REG}{0x{}0024}
+\begin{regdesc}\begin{reglist}
+\item [Continued from the previous page...]
+
+\label{fielddesc:I2STXPDMEN}\item [I2S\_TX\_PDM\_EN] 1: Enable I2S PDM TX mode. 0: Disable I2S PDM TX mode. (R/W)
+\label{fielddesc:I2STXCHANMOD}\item [I2S\_TX\_CHAN\_MOD] I2S TX channel configuration bits. For more information, see Table \ref{table:TX_PDM_DATA}. (R/W)
+\label{fielddesc:I2SSIGLOOPBACK}\item [I2S\_SIG\_LOOPBACK] Enable signal loop back mode with TX unit and RX unit sharing the same WS and BCK signals. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_CONF1\_REG}{0x{}002C}\label{regdesc:I2STXCONF1REG}
+\regfield{(reserved)}{1}{31}{0}%
+\regfield{I2S\_TX\_BCK\_NO\_DLY}{1}{30}{{1}}%
+\regfield{I2S\_TX\_MSB\_SHIFT}{1}{29}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN\_BITS}{5}{24}{{0x{}f}}%
+\regfield{I2S\_TX\_HALF\_SAMPLE\_BITS}{6}{18}{{0x{}f}}%
+\regfield{I2S\_TX\_BITS\_MOD}{5}{13}{{0x{}f}}%
+\regfield{I2S\_TX\_BCK\_DIV\_NUM}{6}{7}{{6}}%
+\regfield{I2S\_TX\_TDM\_WS\_WIDTH}{7}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXTDMWSWIDTH}\item [I2S\_TX\_TDM\_WS\_WIDTH] The width of tx\_ws\_out (WS default level) in TDM mode is (I2S\_TX\_TDM\_WS\_WIDTH + 1) * T\_BCK. (R/W)
+\label{fielddesc:I2STXBCKDIVNUM}\item [I2S\_TX\_BCK\_DIV\_NUM] Configure the divider of BCK in TX mode. Note this divider must not be configured to 1. (R/W)
+\label{fielddesc:I2STXBITSMOD}\item [I2S\_TX\_BITS\_MOD] Set the bits to configure the valid data bit length of I2S TX channel. 7: all the valid channel data is in 8-bit mode. 15: all the valid channel data is in 16-bit mode. 23: all the valid channel data is in 24-bit mode. 31: all the valid channel data is in 32-bit mode. (R/W)
+\label{fielddesc:I2STXHALFSAMPLEBITS}\item [I2S\_TX\_HALF\_SAMPLE\_BITS] I2S TX half sample bits. This value x 2 is equal to the BCK cycles in one WS period. (R/W)
+\label{fielddesc:I2STXTDMCHANBITS}\item [I2S\_TX\_TDM\_CHAN\_BITS] Configure TX bit number for each channel in TDM mode. Bit number expected = this value + 1. (R/W)
+\label{fielddesc:I2STXMSBSHIFT}\item [I2S\_TX\_MSB\_SHIFT] Control the timing between WS signal and the MSB of data. 1: WS signal changes one BCK clock earlier. 0: Align at rising edge. (R/W)
+\label{fielddesc:I2STXBCKNODLY}\item [I2S\_TX\_BCK\_NO\_DLY] 1: BCK is not delayed to generate rising/falling edge in master mode. 0: BCK is delayed to generate rising/falling edge in master mode. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_CLKM\_CONF\_REG}{0x{}0034}\label{regdesc:I2STXCLKMCONFREG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_CLK\_EN}{1}{29}{{0}}%
+\regfield{I2S\_TX\_CLK\_SEL}{2}{27}{{0}}%
+\regfield{I2S\_TX\_CLK\_ACTIVE}{1}{26}{{0}}%
+\regfield{(reserved)}{18}{8}{000000000000000000}%
+\regfield{I2S\_TX\_CLKM\_DIV\_NUM}{8}{0}{{2}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXCLKMDIVNUM}\item [I2S\_TX\_CLKM\_DIV\_NUM] Integral I2S TX clock divider value. (R/W)
+\label{fielddesc:I2STXCLKACTIVE}\item [I2S\_TX\_CLK\_ACTIVE] I2S TX unit clock enable signal. (R/W)
+\label{fielddesc:I2STXCLKSEL}\item [I2S\_TX\_CLK\_SEL] Select clock clock for I2S TX unit. 0: XTAL\_CLK. 1: PLL\_D2\_CLK. 2: PLL\_F160M\_CLK. 3: I2S\_MCLK\_in. (R/W)
+\label{fielddesc:I2SCLKEN}\item [I2S\_CLK\_EN] Set this bit to enable clock gate. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_TDM\_CTRL\_REG}{0x{}0054}\label{regdesc:I2STXTDMCTRLREG}
+\regfield{(reserved)}{11}{21}{00000000000}%
+\regfield{I2S\_TX\_TDM\_SKIP\_MSK\_EN}{1}{20}{{0}}%
+\regfield{I2S\_TX\_TDM\_TOT\_CHAN\_NUM}{4}{16}{{0x{}0}}%
+\regfield{I2S\_TX\_TDM\_CHAN15\_EN}{1}{15}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN14\_EN}{1}{14}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN13\_EN}{1}{13}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN12\_EN}{1}{12}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN11\_EN}{1}{11}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN10\_EN}{1}{10}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN9\_EN}{1}{9}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN8\_EN}{1}{8}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN7\_EN}{1}{7}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN6\_EN}{1}{6}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN5\_EN}{1}{5}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN4\_EN}{1}{4}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN3\_EN}{1}{3}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN2\_EN}{1}{2}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN1\_EN}{1}{1}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN0\_EN}{1}{0}{{1}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXTDMCHAN0EN}\item [I2S\_TX\_TDM\_CHAN0\_EN] 1: Enable the valid data output of I2S TX TDM channel 0. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN1EN}\item [I2S\_TX\_TDM\_CHAN1\_EN] 1: Enable the valid data output of I2S TX TDM channel 1. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN2EN}\item [I2S\_TX\_TDM\_CHAN2\_EN] 1: Enable the valid data output of I2S TX TDM channel 2. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN3EN}\item [I2S\_TX\_TDM\_CHAN3\_EN] 1: Enable the valid data output of I2S TX TDM channel 3. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN4EN}\item [I2S\_TX\_TDM\_CHAN4\_EN] 1: Enable the valid data output of I2S TX TDM channel 4. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN5EN}\item [I2S\_TX\_TDM\_CHAN5\_EN] 1: Enable the valid data output of I2S TX TDM channel 5. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN6EN}\item [I2S\_TX\_TDM\_CHAN6\_EN] 1: Enable the valid data output of I2S TX TDM channel 6. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN7EN}\item [I2S\_TX\_TDM\_CHAN7\_EN] 1: Enable the valid data output of I2S TX TDM channel 7. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN8EN}\item [I2S\_TX\_TDM\_CHAN8\_EN] 1: Enable the valid data output of I2S TX TDM channel 8. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN9EN}\item [I2S\_TX\_TDM\_CHAN9\_EN] 1: Enable the valid data output of I2S TX TDM channel 9. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+
+\item [Continued on the next page...]
+\end{reglist}\end{regdesc}
+\end{register}
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{I2S\_TX\_TDM\_CTRL\_REG}{0x{}0054}
+\begin{regdesc}\begin{reglist}
+\item [Continued from the previous page...]
+
+\label{fielddesc:I2STXTDMCHAN10EN}\item [I2S\_TX\_TDM\_CHAN10\_EN] 1: Enable the valid data output of I2S TX TDM channel 10. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN11EN}\item [I2S\_TX\_TDM\_CHAN11\_EN] 1: Enable the valid data output of I2S TX TDM channel 11. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN12EN}\item [I2S\_TX\_TDM\_CHAN12\_EN] 1: Enable the valid data output of I2S TX TDM channel 12. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN13EN}\item [I2S\_TX\_TDM\_CHAN13\_EN] 1: Enable the valid data output of I2S TX TDM channel 13. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN14EN}\item [I2S\_TX\_TDM\_CHAN14\_EN] 1: Enable the valid data output of I2S TX TDM channel 14. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMCHAN15EN}\item [I2S\_TX\_TDM\_CHAN15\_EN] 1: Enable the valid data output of I2S TX TDM channel 15. 0: Channel TX data is controlled by \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} and \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA}. See Section \ref{sec:tdm-channel-mode}. (R/W)
+\label{fielddesc:I2STXTDMTOTCHANNUM}\item [I2S\_TX\_TDM\_TOT\_CHAN\_NUM] Set the total number of channels in use in I2S TX TDM mode. Total channel number in use = this value + 1. (R/W)
+\label{fielddesc:I2STXTDMSKIPMSKEN}\item [I2S\_TX\_TDM\_SKIP\_MSK\_EN] When DMA TX buffer stores the data of (I2S\_TX\_TDM\_TOT\_CHAN\_NUM + 1) channels, and only the data of the enabled channels is sent, then this bit should be set. Clear it when all the data stored in DMA TX buffer is for enabled channels. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RX\_CLKM\_DIV\_CONF\_REG}{0x{}0038}\label{regdesc:I2SRXCLKMDIVCONFREG}
+\regfield{(reserved)}{4}{28}{0000}%
+\regfield{I2S\_RX\_CLKM\_DIV\_YN1}{1}{27}{{0}}%
+\regfield{I2S\_RX\_CLKM\_DIV\_X}{9}{18}{{0x{}0}}%
+\regfield{I2S\_RX\_CLKM\_DIV\_Y}{9}{9}{{0x{}1}}%
+\regfield{I2S\_RX\_CLKM\_DIV\_Z}{9}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXCLKMDIVZ}\item [I2S\_RX\_CLKM\_DIV\_Z] For b <= a/2, the value of I2S\_RX\_CLKM\_DIV\_Z is b. For b > a/2, the value of I2S\_RX\_CLKM\_DIV\_Z is (a - b). (R/W)
+\label{fielddesc:I2SRXCLKMDIVY}\item [I2S\_RX\_CLKM\_DIV\_Y] For b <= a/2, the value of I2S\_RX\_CLKM\_DIV\_Y is (a\%b). For b > a/2, the value of I2S\_RX\_CLKM\_DIV\_Y is (a\%(a - b)). (R/W)
+\label{fielddesc:I2SRXCLKMDIVX}\item [I2S\_RX\_CLKM\_DIV\_X] For b <= a/2, the value of I2S\_RX\_CLKM\_DIV\_X is floor(a/b) - 1. For b > a/2, the value of I2S\_RX\_CLKM\_DIV\_X is floor(a/(a - b)) - 1. (R/W)
+\label{fielddesc:I2SRXCLKMDIVYN1}\item [I2S\_RX\_CLKM\_DIV\_YN1] For b <= a/2, the value of I2S\_RX\_CLKM\_DIV\_YN1 is 0. For b > a/2, the value of I2S\_RX\_CLKM\_DIV\_YN1 is 1. (R/W)
+\end{reglist}\end{regdesc}
+\vspace{-2em}
+\begin{tiplisting}
+``a" and ``b" represent the denominator and the numerator of fractional divider, respectively. For more information, see Section \ref{The Clock of I2S Module}.
+\end{tiplisting}
+\end{register}
+
+
+\begin{register}{H}{\textcolor{red}{I2S\_RX\_TIMING\_REG}}{0x{}0058}\label{regdesc:I2SRXTIMINGREG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_RX\_BCK\_IN\_DM}{2}{28}{{0x{}0}}%
+\regfield{(reserved)}{2}{26}{00}%
+\regfield{I2S\_RX\_WS\_IN\_DM}{2}{24}{{0x{}0}}%
+\regfield{(reserved)}{2}{22}{00}%
+\regfield{I2S\_RX\_BCK\_OUT\_DM}{2}{20}{{0x{}0}}%
+\regfield{(reserved)}{2}{18}{00}%
+\regfield{I2S\_RX\_WS\_OUT\_DM}{2}{16}{{0x{}0}}%
+\regfield{(reserved)}{2}{14}{00}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_SD3\_IN\_DM}}{2}{12}{{0x{}0}}%
+\regfield{(reserved)}{2}{10}{00}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_SD2\_IN\_DM}}{2}{8}{{0x{}0}}%
+\regfield{(reserved)}{2}{6}{00}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_SD1\_IN\_DM}}{2}{4}{{0x{}0}}%
+\regfield{(reserved)}{2}{2}{00}%
+\regfield{I2S\_RX\_SD\_IN\_DM}{2}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXSDINDM}\item [I2S\_RX\_SD\_IN\_DM] The delay mode of I2S RX SD input signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2SRXSD1INDM}\item [\textcolor{red}{I2S\_RX\_SD1\_IN\_DM (for I2S0 only)}] The delay mode of I2S RX SD1 input signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2SRXSD2INDM}\item [\textcolor{red}{I2S\_RX\_SD2\_IN\_DM (for I2S0 only)}] The delay mode of I2S RX SD2 input signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2SRXSD3INDM}\item [\textcolor{red}{I2S\_RX\_SD3\_IN\_DM (for I2S0 only)}] The delay mode of I2S RX SD3 input signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2SRXWSOUTDM}\item [I2S\_RX\_WS\_OUT\_DM] The delay mode of I2S RX WS output signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2SRXBCKOUTDM}\item [I2S\_RX\_BCK\_OUT\_DM] The delay mode of I2S RX BCK output signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2SRXWSINDM}\item [I2S\_RX\_WS\_IN\_DM] The delay mode of I2S RX WS input signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2SRXBCKINDM}\item [I2S\_RX\_BCK\_IN\_DM] The delay mode of I2S RX BCK input signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_CLKM\_DIV\_CONF\_REG}{0x{}003C}\label{regdesc:I2STXCLKMDIVCONFREG}
+\regfield{(reserved)}{4}{28}{0000}%
+\regfield{I2S\_TX\_CLKM\_DIV\_YN1}{1}{27}{{0}}%
+\regfield{I2S\_TX\_CLKM\_DIV\_X}{9}{18}{{0x{}0}}%
+\regfield{I2S\_TX\_CLKM\_DIV\_Y}{9}{9}{{0x{}1}}%
+\regfield{I2S\_TX\_CLKM\_DIV\_Z}{9}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXCLKMDIVZ}\item [I2S\_TX\_CLKM\_DIV\_Z] For b <= a/2, the value of I2S\_TX\_CLKM\_DIV\_Z is b. For b > a/2, the value of I2S\_TX\_CLKM\_DIV\_Z is (a - b). (R/W)
+\label{fielddesc:I2STXCLKMDIVY}\item [I2S\_TX\_CLKM\_DIV\_Y] For b <= a/2, the value of I2S\_TX\_CLKM\_DIV\_Y is (a\%b). For b > a/2, the value of I2S\_TX\_CLKM\_DIV\_Y is (a\%(a - b)). (R/W)
+\label{fielddesc:I2STXCLKMDIVX}\item [I2S\_TX\_CLKM\_DIV\_X] For b <= a/2, the value of I2S\_TX\_CLKM\_DIV\_X is floor(a/b) - 1. For b > a/2, the value of I2S\_TX\_CLKM\_DIV\_X is floor(a/(a - b)) - 1. (R/W)
+\label{fielddesc:I2STXCLKMDIVYN1}\item [I2S\_TX\_CLKM\_DIV\_YN1] For b <= a/2, the value of I2S\_TX\_CLKM\_DIV\_YN1 is 0. For b > a/2, the value of I2S\_TX\_CLKM\_DIV\_YN1 is 1. (R/W)
+\end{reglist}\end{regdesc}
+\vspace{-2em}
+\begin{tiplisting}
+``a" and ``b" represent the denominator and the numerator of fractional divider, respectively. For more information, see Section \ref{The Clock of I2S Module}.
+\end{tiplisting}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_TIMING\_REG}{0x{}005C}\label{regdesc:I2STXTIMINGREG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_TX\_BCK\_IN\_DM}{2}{28}{{0x{}0}}%
+\regfield{(reserved)}{2}{26}{00}%
+\regfield{I2S\_TX\_WS\_IN\_DM}{2}{24}{{0x{}0}}%
+\regfield{(reserved)}{2}{22}{00}%
+\regfield{I2S\_TX\_BCK\_OUT\_DM}{2}{20}{{0x{}0}}%
+\regfield{(reserved)}{2}{18}{00}%
+\regfield{I2S\_TX\_WS\_OUT\_DM}{2}{16}{{0x{}0}}%
+\regfield{(reserved)}{10}{6}{0000000000}%
+\regfield{I2S\_TX\_SD1\_OUT\_DM}{2}{4}{{0x{}0}}%
+\regfield{(reserved)}{2}{2}{00}%
+\regfield{I2S\_TX\_SD\_OUT\_DM}{2}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXSDOUTDM}\item [I2S\_TX\_SD\_OUT\_DM] The delay mode of I2S TX SD output signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2STXSD1OUTDM}\item [I2S\_TX\_SD1\_OUT\_DM] The delay mode of I2S TX SD1 output signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2STXWSOUTDM}\item [I2S\_TX\_WS\_OUT\_DM] The delay mode of I2S TX WS output signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2STXBCKOUTDM}\item [I2S\_TX\_BCK\_OUT\_DM] The delay mode of I2S TX BCK output signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2STXWSINDM}\item [I2S\_TX\_WS\_IN\_DM] The delay mode of I2S TX WS input signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\label{fielddesc:I2STXBCKINDM}\item [I2S\_TX\_BCK\_IN\_DM] The delay mode of I2S TX BCK input signal. 0: bypass. 1: delay by rising edge. 2: delay by falling edge. 3: not used. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_LC\_HUNG\_CONF\_REG}{0x{}0060}\label{regdesc:I2SLCHUNGCONFREG}
+\regfield{(reserved)}{20}{12}{00000000000000000000}%
+\regfield{I2S\_LC\_FIFO\_TIMEOUT\_ENA}{1}{11}{{1}}%
+\regfield{I2S\_LC\_FIFO\_TIMEOUT\_SHIFT}{3}{8}{{0}}%
+\regfield{I2S\_LC\_FIFO\_TIMEOUT}{8}{0}{{0x{}10}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SLCFIFOTIMEOUT}\item [I2S\_LC\_FIFO\_TIMEOUT] \hyperref[int:I2STXHUNGINT]{I2S\_TX\_HUNG\_INT} or \hyperref[int:I2STXHUNGINT]{I2S\_RX\_HUNG\_INT} interrupt will be triggered when FIFO hung counter is equal to this value. (R/W)
+\label{fielddesc:I2SLCFIFOTIMEOUTSHIFT}\item [I2S\_LC\_FIFO\_TIMEOUT\_SHIFT] The bits are used to scale tick counter threshold. The tick counter is reset when counter value >= 88000/2$^{I2S\_LC\_FIFO\_TIMEOUT\_SHIFT}$. (R/W)
+\label{fielddesc:I2SLCFIFOTIMEOUTENA}\item [I2S\_LC\_FIFO\_TIMEOUT\_ENA] The enable bit for FIFO timeout. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_CONF\_SIGLE\_DATA\_REG}{0x{}0068}\label{regdesc:I2SCONFSIGLEDATAREG}
+\regfield{I2S\_SINGLE\_DATA}{32}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SSINGLEDATA}\item [I2S\_SINGLE\_DATA] The configured constant channel data to be sent out. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_STATE\_REG}{0x{}006C}\label{regdesc:I2SSTATEREG}
+\regfield{(reserved)}{31}{1}{0000000000000000000000000000000}%
+\regfield{I2S\_TX\_IDLE}{1}{0}{{1}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXIDLE}\item [I2S\_TX\_IDLE] 1: I2S TX unit is in idle state. 0: I2S TX unit is working. (RO)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_DATE\_REG}{0x{}0080}\label{regdesc:I2SDATEREG}
+\regfield{(reserved)}{4}{28}{0000}%
+\regfield{I2S\_DATE}{28}{0}{{0x{}2009070}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SDATE}\item [I2S\_DATE] Version control register. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+

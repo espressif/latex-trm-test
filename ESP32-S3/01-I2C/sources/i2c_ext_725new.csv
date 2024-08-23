@@ -1,0 +1,293 @@
+Address;RegName;Clk;Rst;Port ;NonReg; Public ; Signal;BitPos;Default;SW(R/W);HW(W);MCU(W);MISC;Description;Enum_Name;Enum_Value;Min_Value;Max_Value;RegName_Chg_0;RepeatName;RepeatNum;GroupName;CSV_Version
+0x0000;I2C_SCL_LOW_PERIOD_REG;pclk;reset_n;;;;;;;;;;;"Configures the low level width of the SCL
+Clock";;;;;;;;Timing registers;1.1
+;;;;;;;;[31:9];23'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_low_period;[8:0];9'b0;R/W;;;;This register is used to configure for how long SCL remains low in master mode, in I2C module clock cycles. ;;;;;I2C_SCL_LOW_PERIOD;;;;
+0x0004;I2C_CTR_REG;pclk;reset_n;;;;;;;;;;;Transmission setting;;;;;;;;Configuration registers;
+;;;;;;;;[31:13];19'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_slv_tx_auto_start_en;[12];1'b0;R/W;;;;This is the enable bit for slave to send data automatically.;;;;;I2C_SLV_TX_AUTO_START_EN;;;;
+;;;;;;;reg_conf_upgate;[11];1'b0;WT;;;;synchronization bit;;;;;I2C_CONF_UPGATE;;;;
+;;;;;;;reg_fsm_rst;[10];1'b0;WT;;;;This register is used to reset the SCL FSM.;;;;;I2C_FSM_RST;;;;
+;;;;;;;reg_arbitration_en;[9];1'b1;R/W;;;;This is the enable bit for arbitration_lost.;;;;;I2C_ARBITRATION_EN;;;;
+;;;;Not;;;reg_clk_en;[8];1'b0;R/W;;;;Reserved;;;;;I2C_CLK_EN;;;;
+;;;;;;;reg_rx_lsb_first;[7];1'h0;R/W;;;;"This bit is used to control the storage mode for received data.
+1: receive data from the least significant bit;
+0: receive data from the most significant bit.";;;;;I2C_RX_LSB_FIRST;;;;
+;;;;;;;reg_tx_lsb_first;[6];1'b0;R/W;;;;"This bit is used to control the sending mode for data needing to be sent. 
+1: send data from the least significant bit;
+0: send data from the most significant bit.";;;;;I2C_TX_LSB_FIRST;;;;
+;;;;;;;reg_trans_start;[5];1'b0;WT;;;;Set this bit to start sending the data in TX FIFO. ;;;;;I2C_TRANS_START;;;;
+;;;;;;;reg_ms_mode;[4];1'b0;R/W;;;;"Set this bit to configure the module as an I2C Master. Clear this bit to configure the
+module as an I2C Slave. ";;;;;I2C_MS_MODE;;;;
+;;;;;;;reg_rx_full_ack_level;[3];1'b1;R/W;;;;This register is used to configure the ACK value that need to sent by master when the rx_fifo_cnt has reached the threshold.;;;;;I2C_RX_FULL_ACK_LEVEL;;;;
+;;;;;;;reg_sample_scl_level;[2];1'b0;R/W;;;;"This register is used to select the sample mode.
+1: sample SDA data on the SCL low level.
+0: sample SDA data on the SCL high level.";;;;;I2C_SAMPLE_SCL_LEVEL;;;;
+;;;;;;;reg_scl_force_out;[1];1'b1;R/W;;;;"0: direct output; 1: open drain output.";;;;;I2C_SCL_FORCE_OUT;;;;
+;;;;;;;reg_sda_force_out;[0];1'b1;R/W;;;;"0: direct output; 1: open drain output.";;;;;I2C_SDA_FORCE_OUT;;;;
+0x0008;I2C_SR_REG;pclk;reset_n;;;;;;;;;;;Describe I2C work status.;;;;;;;;Status registers;
+;;;;;;;;[31];1'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_state_last;[30:28];3'b0;RO;;;;"This field indicates the states of the state machine used to produce SCL.
+0: Idle; 1: Start; 2: Negative edge; 3: Low; 4: Positive edge; 5: High; 6: Stop";;;;;I2C_SCL_STATE_LAST;;;;
+;;;;;;;;[27];1'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_main_state_last;[26:24];3'b0;RO;;;;"This field indicates the states of the I2C module state machine. 
+0: Idle; 1: Address shift; 2: ACK address; 3: Rx data; 4: Tx data; 5: Send ACK; 6: Wait ACK";;;;;I2C_SCL_MAIN_STATE_LAST;;;;
+;;;;;;;reg_txfifo_cnt;[23:18];6'b0;RO;;;;This field stores the amount of received data in RAM. ;;;;;I2C_TXFIFO_CNT;;;;
+;;;;;;;;[17:16];2'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_stretch_cause;[15:14];2'h3;RO;;;;The cause of stretching SCL low in slave mode. 0:  stretching SCL low at the beginning of I2C read data state. 1: stretching SCL low when I2C Tx FIFO is empty in slave mode. 2: stretching SCL low when I2C Rx FIFO is full in slave mode.;;;;;I2C_STRETCH_CAUSE;;;;
+;;;;;;;reg_rxfifo_cnt;[13:8];6'b0;RO;;;;This field represents the amount of data needed to be sent. ;;;;;I2C_RXFIFO_CNT;;;;
+;;;;;;;;[7];1'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;;[6];1'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_slave_addressed;[5];1'b0;RO;;;;"When configured as an I2C Slave, and the address sent by the master is
+equal to the address of the slave, then this bit will be of high level.";;;;;I2C_SLAVE_ADDRESSED;;;;
+;;;;;;;reg_bus_busy;[4];1'b0;RO;;;;"1: the I2C bus is busy transferring data; 0: the I2C bus is in idle state. ";;;;;I2C_BUS_BUSY;;;;
+;;;;;;;reg_arb_lost;[3];1'b0;RO;;;;When the I2C controller loses control of SCL line, this register changes to 1.;;;;;I2C_ARB_LOST;;;;
+;;;;;;;;[2];1'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_slave_rw;[1];1'b0;RO;;;;"When in slave mode, 1: master reads from slave; 0: master writes to slave.";;;;;I2C_SLAVE_RW;;;;
+;;;;;;;reg_resp_rec;[0];1'b0;RO;;;;The received ACK value in master mode or slave mode. 0: ACK, 1: NACK.;;;;;I2C_RESP_REC;;;;
+0x000c;I2C_TO_REG;pclk;reset_n;;;;;;;;;;;Setting timeout control for receiving data.;;;;;;;;Configuration registers;
+;;;;;;;;[31:6];26'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_time_out_en;[5];1'b0;R/W;;;;This is the enable bit for timeout control.;;;;;I2C_TIME_OUT_EN;;;;
+;;;;;;;reg_time_out_value;[4:0];5'h10;R/W;;;;"This register is used to configure the timeout for receiving a data bit in APB
+clock cycles. ";;;;;I2C_TIME_OUT_VALUE;;;;
+0x0010;I2C_SLAVE_ADDR_REG;pclk;reset_n;;;;;;;;;;;Local slave address setting;;;;;;;;Configuration registers;
+;;;;;;;reg_addr_10bit_en;[31];1'b0;R/W;;;;This field is used to enable the slave 10-bit addressing mode in master mode. ;;;;;I2C_ADDR_10BIT_EN;;;;
+;;;;;;;;[30:15];16'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_slave_addr;[14:0];15'b0;R/W;;;;When configured as an I2C Slave, this field is used to configure the slave address.;;;;;I2C_SLAVE_ADDR;;;;
+0x0014;I2C_FIFO_ST_REG;pclk;reset_n;;;;;;;;;;;FIFO status register.;;;;;;;;Status registers;
+;;;;;;;;[31:30];2'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_slave_rw_point;[29:22];8'b0;RO;;;;The received data in I2C slave mode.;;;;;I2C_SLAVE_RW_POINT;;;;
+;;;;;;;;[21];1'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;;[20];1'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_txfifo_waddr;[19:15];5'b0;RO;;;;This is the offset address of APB bus writing to TX FIFO.;;;;;I2C_TXFIFO_WADDR;;;;
+;;;;;;;reg_txfifo_raddr;[14:10];5'b0;RO;;;;This is the offset address of I2C module reading from TX FIFO.;;;;;I2C_TXFIFO_RADDR;;;;
+;;;;;;;reg_rxfifo_waddr;[9:5];5'b0;RO;;;;This is the offset address of I2C module receiving data and writing to RX FIFO.;;;;;I2C_RXFIFO_WADDR;;;;
+;;;;;;;reg_rxfifo_raddr;[4:0];5'b0;RO;;;;This is the offset address of the APB reading from RX FIFO.;;;;;I2C_RXFIFO_RADDR;;;;
+0x0018;I2C_FIFO_CONF_REG;pclk;reset_n;;;;;;;;;;;FIFO configuration register.;;;;;;;;Configuration registers;
+;;;;;;;;[31:27];5'h0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;;[26];1'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;;[25:20];6'h0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;;[19:15];5'h0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_fifo_prt_en;[14];1'b1;R/W;;;;The control enable bit of FIFO pointer in non-fifo access mode. This bit controls the valid bits and the interrupts of tx/rx_fifo overflow, underflow, full and empty.;;;;;I2C_FIFO_PRT_EN;;;;
+;;;;;;;reg_tx_fifo_rst;[13];1'b0;R/W;;;;Set this bit to reset TX FIFO.;;;;;I2C_TX_FIFO_RST;;;;
+;;;;;;;reg_rx_fifo_rst;[12];1'b0;R/W;;;;Set this bit to reset RX FIFO.;;;;;I2C_RX_FIFO_RST;;;;
+;;;;;;;reg_fifo_addr_cfg_en;[11];1'b0;R/W;;;;When this bit is set to 1, the byte received after the I2C address byte represents the offset address in the I2C Slave RAM. ;;;;;I2C_FIFO_ADDR_CFG_EN;;;;
+;;;;;;;reg_nonfifo_en;[10];1'b0;R/W;;;;Set this bit to enable APB non-FIFO access. ;;;;;I2C_NONFIFO_EN;;;;
+;;;;;;;reg_txfifo_wm_thrhd;[9:5];5'h4;R/W;;;;The watermark threshold of TX FIFO in non-FIFO access mode. When reg_reg_fifo_prt_en is 1 and  TX FIFO counter is smaller than reg_txfifo_wm_thrhd[4:0], reg_txfifo_wm_int_raw bit will be valid. ;;;;;I2C_TXFIFO_WM_THRHD;;;;
+;;;;;;;reg_rxfifo_wm_thrhd;[4:0];5'hb;R/W;;;;The watermark threshold of RX FIFO in non-FIFO access mode. When reg_reg_fifo_prt_en is 1 and rx FIFO counter is bigger than reg_rxfifo_wm_thrhd[4:0], reg_rxfifo_wm_int_raw bit will be valid. ;;;;;I2C_RXFIFO_WM_THRHD;;;;
+0x001c;I2C_DATA_REG;pclk;reset_n;;;;;;;;;;;Rx FIFO read data.;;;;;;;;Status registers;
+;;;;;;;;[31:8];24'h0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_fifo_rdata;[7:0];8'b0;RO;;;;The value of rx FIFO read data.;;;;;I2C_FIFO_RDATA;;;;
+0x0020;I2C_INT_RAW_REG;pclk;reset_n;;;;;;;;;;INT_RAW;Raw interrupt status;;;;;;;;Interrupt registers;
+;;;;;;;;[31:17];15'b0;RO;;;;Reserved;;;;;;;;;
+;;;;Not;;;reg_slave_stretch_int_raw;[16];1'b0;R/WTC/SS;reg_slave_stretch/1'b1;1'b0;;The raw interrupt bit for I2C_SLAVE_STRETCH_INT interrupt.;;;;;I2C_SLAVE_STRETCH_INT_RAW;;;;
+;;;;Not;;;reg_det_start_int_raw;[15];1'b0;R/WTC/SS;reg_det_start_pls/1'b1;1'b0;;The raw interrupt bit for I2C_DET_START_INT interrupt.;;;;;I2C_DET_START_INT_RAW;;;;
+;;;;Not;;;reg_scl_main_st_to_int_raw;[14];1'b0;R/WTC/SS;reg_scl_main_st_to/1'b1;1'b0;;The raw interrupt bit for I2C_SCL_MAIN_ST_TO_INT interrupt.;;;;;I2C_SCL_MAIN_ST_TO_INT_RAW;;;;
+;;;;Not;;;reg_scl_st_to_int_raw;[13];1'b0;R/WTC/SS;reg_scl_st_to/1'b1;1'b0;;The raw interrupt bit for I2C_SCL_ST_TO_INT interrupt.;;;;;I2C_SCL_ST_TO_INT_RAW;;;;
+;;;;Not;;;reg_rxfifo_udf_int_raw;[12];1'b0;R/WTC/SS;reg_rxfifo_udf/1'b1;1'b0;;The raw interrupt bit for I2C_RXFIFO_UDF_INT  interrupt.;;;;;I2C_RXFIFO_UDF_INT_RAW;;;;
+;;;;Not;;;reg_txfifo_ovf_int_raw;[11];1'b0;R/WTC/SS;reg_txfifo_ovf/1'b1;1'b0;;The raw interrupt bit for I2C_TXFIFO_OVF_INT interrupt.;;;;;I2C_TXFIFO_OVF_INT_RAW;;;;
+;;;;Not;;;reg_nack_int_raw;[10];1'b0;R/WTC/SS;reg_nack_in_bus/1'b1;1'b0;;The raw interrupt bit for I2C_SLAVE_STRETCH_INT interrupt.;;;;;I2C_NACK_INT_RAW;;;;
+;;;;Not;;;reg_trans_start_int_raw;[9];1'b0;R/WTC/SS;reg_trans_start_pos/1'b1;1'b0;;The raw interrupt bit for the I2C_TRANS_START_INT interrupt.;;;;;I2C_TRANS_START_INT_RAW;;;;
+;;;;Not;;;reg_time_out_int_raw;[8];1'b0;R/WTC/SS;reg_time_out/1'b1;1'b0;;The raw interrupt bit for the I2C_TIME_OUT_INT interrupt. ;;;;;I2C_TIME_OUT_INT_RAW;;;;
+;;;;Not;;;reg_trans_complete_int_raw;[7];1'b0;R/WTC/SS;reg_trans_complete/1'b1;1'b0;;The raw interrupt bit for the I2C_TRANS_COMPLETE_INT interrupt.;;;;;I2C_TRANS_COMPLETE_INT_RAW;;;;
+;;;;Not;;;reg_mst_txfifo_udf_int_raw;[6];1'b0;R/WTC/SS;reg_mst_txfifo_udf/1'b1;1'b0;;The raw interrupt bit for I2C_TRANS_COMPLETE_INT interrupt.;;;;;I2C_MST_TXFIFO_UDF_INT_RAW;;;;
+;;;;Not;;;reg_arbitration_lost_int_raw;[5];1'b0;R/WTC/SS;reg_arbitration_lost_pos/1'b1;1'b0;;The raw interrupt bit for the I2C_ARBITRATION_LOST_INT interrupt. ;;;;;I2C_ARBITRATION_LOST_INT_RAW;;;;
+;;;;Not;;;reg_byte_trans_done_int_raw;[4];1'b0;R/WTC/SS;reg_byte_trans_done/1'b1;1'b0;;The raw interrupt bit for the I2C_END_DETECT_INT interrupt. ;;;;;I2C_BYTE_TRANS_DONE_INT_RAW;;;;
+;;;;Not;;;reg_end_detect_int_raw;[3];1'b0;R/WTC/SS;reg_end_detect/1'b1;1'b0;;The raw interrupt bit for the I2C_END_DETECT_INT interrupt. ;;;;;I2C_END_DETECT_INT_RAW;;;;
+;;;;Not;;;reg_rxfifo_ovf_int_raw;[2];1'b0;R/WTC/SS;reg_rxfifo_ovf/1'b1;1'b0;;The raw interrupt bit for I2C_RXFIFO_OVF_INT interrupt.;;;;;I2C_RXFIFO_OVF_INT_RAW;;;;
+;;;;Not;;;reg_txfifo_wm_int_raw;[1];1'b1;R/WTC/SS;reg_txfifo_wm_int/1'b1;1'b0;;The raw interrupt bit for I2C_TXFIFO_WM_INT interrupt.;;;;;I2C_TXFIFO_WM_INT_RAW;;;;
+;;;;Not;;;reg_rxfifo_wm_int_raw;[0];1'b0;R/WTC/SS;reg_rxfifo_wm_int/1'b1;1'b0;;The raw interrupt bit for I2C_RXFIFO_WM_INT interrupt.;;;;;I2C_RXFIFO_WM_INT_RAW;;;;
+0x0024;I2C_INT_CLR_REG;pclk;reset_n;;;;;;;;;;;Interrupt clear bits;;;;;;;;Interrupt registers;
+;;;;;;;;[31:17];15'b0;RO;;;;Reserved;;;;;;;;;
+;;;;Not;;;reg_slave_stretch_int_clr;[16];1'b0;WT;;;;Set this bit to clear I2C_SLAVE_STRETCH_INT interrupt.;;;;;I2C_SLAVE_STRETCH_INT_CLR;;;;
+;;;;Not;;;reg_det_start_int_clr;[15];1'b0;WT;;;;Set this bit to clear I2C_DET_START_INT interrupt.;;;;;I2C_DET_START_INT_CLR;;;;
+;;;;Not;;;reg_scl_main_st_to_int_clr;[14];1'b0;WT;;;;Set this bit to clear I2C_SCL_MAIN_ST_TO_INT interrupt.;;;;;I2C_SCL_MAIN_ST_TO_INT_CLR;;;;
+;;;;Not;;;reg_scl_st_to_int_clr;[13];1'b0;WT;;;;Set this bit to clear I2C_SCL_ST_TO_INT interrupt.;;;;;I2C_SCL_ST_TO_INT_CLR;;;;
+;;;;Not;;;reg_rxfifo_udf_int_clr;[12];1'b0;WT;;;;Set this bit to clear I2C_RXFIFO_UDF_INT  interrupt.;;;;;I2C_RXFIFO_UDF_INT_CLR;;;;
+;;;;Not;;;reg_txfifo_ovf_int_clr;[11];1'b0;WT;;;;Set this bit to clear I2C_TXFIFO_OVF_INT interrupt.;;;;;I2C_TXFIFO_OVF_INT_CLR;;;;
+;;;;Not;;;reg_nack_int_clr;[10];1'b0;WT;;;;Set this bit to clear I2C_SLAVE_STRETCH_INT interrupt.;;;;;I2C_NACK_INT_CLR;;;;
+;;;;Not;;;reg_trans_start_int_clr;[9];1'b0;WT;;;;Set this bit to clear the I2C_TRANS_START_INT interrupt.;;;;;I2C_TRANS_START_INT_CLR;;;;
+;;;;Not;;;reg_time_out_int_clr;[8];1'b0;WT;;;;Set this bit to clear the I2C_TIME_OUT_INT interrupt. ;;;;;I2C_TIME_OUT_INT_CLR;;;;
+;;;;Not;;;reg_trans_complete_int_clr;[7];1'b0;WT;;;;Set this bit to clear the I2C_TRANS_COMPLETE_INT interrupt.;;;;;I2C_TRANS_COMPLETE_INT_CLR;;;;
+;;;;Not;;;reg_mst_txfifo_udf_int_clr;[6];1'b0;WT;;;;Set this bit to clear I2C_TRANS_COMPLETE_INT interrupt.;;;;;I2C_MST_TXFIFO_UDF_INT_CLR;;;;
+;;;;Not;;;reg_arbitration_lost_int_clr;[5];1'b0;WT;;;;Set this bit to clear the I2C_ARBITRATION_LOST_INT interrupt. ;;;;;I2C_ARBITRATION_LOST_INT_CLR;;;;
+;;;;Not;;;reg_byte_trans_done_int_clr;[4];1'b0;WT;;;;Set this bit to clear the I2C_END_DETECT_INT interrupt. ;;;;;I2C_BYTE_TRANS_DONE_INT_CLR;;;;
+;;;;Not;;;reg_end_detect_int_clr;[3];1'b0;WT;;;;Set this bit to clear the I2C_END_DETECT_INT interrupt. ;;;;;I2C_END_DETECT_INT_CLR;;;;
+;;;;Not;;;reg_rxfifo_ovf_int_clr;[2];1'b0;WT;;;;Set this bit to clear I2C_RXFIFO_OVF_INT interrupt.;;;;;I2C_RXFIFO_OVF_INT_CLR;;;;
+;;;;Not;;;reg_txfifo_wm_int_clr;[1];1'b0;WT;;;;Set this bit to clear I2C_TXFIFO_WM_INT interrupt.;;;;;I2C_TXFIFO_WM_INT_CLR;;;;
+;;;;Not;;;reg_rxfifo_wm_int_clr;[0];1'b0;WT;;;;Set this bit to clear I2C_RXFIFO_WM_INT interrupt.;;;;;I2C_RXFIFO_WM_INT_CLR;;;;
+0x0028;I2C_INT_ENA_REG;pclk;reset_n;;;;;;;;;;;Interrupt enable bits;;;;;;;;Interrupt registers;
+;;;;;;;;[31:17];15'b0;RO;;;;Reserved;;;;;;;;;
+;;;;Not;;;reg_slave_stretch_int_ena;[16];1'b0;R/W;;;;The raw interrupt bit for I2C_SLAVE_STRETCH_INT interrupt.;;;;;I2C_SLAVE_STRETCH_INT_ENA;;;;
+;;;;Not;;;reg_det_start_int_ena;[15];1'b0;R/W;;;;The raw interrupt bit for I2C_DET_START_INT interrupt.;;;;;I2C_DET_START_INT_ENA;;;;
+;;;;Not;;;reg_scl_main_st_to_int_ena;[14];1'b0;R/W;;;;The raw interrupt bit for I2C_SCL_MAIN_ST_TO_INT interrupt.;;;;;I2C_SCL_MAIN_ST_TO_INT_ENA;;;;
+;;;;Not;;;reg_scl_st_to_int_ena;[13];1'b0;R/W;;;;The raw interrupt bit for I2C_SCL_ST_TO_INT interrupt.;;;;;I2C_SCL_ST_TO_INT_ENA;;;;
+;;;;Not;;;reg_rxfifo_udf_int_ena;[12];1'b0;R/W;;;;The raw interrupt bit for I2C_RXFIFO_UDF_INT  interrupt.;;;;;I2C_RXFIFO_UDF_INT_ENA;;;;
+;;;;Not;;;reg_txfifo_ovf_int_ena;[11];1'b0;R/W;;;;The raw interrupt bit for I2C_TXFIFO_OVF_INT interrupt.;;;;;I2C_TXFIFO_OVF_INT_ENA;;;;
+;;;;Not;;;reg_nack_int_ena;[10];1'b0;R/W;;;;The raw interrupt bit for I2C_SLAVE_STRETCH_INT interrupt.;;;;;I2C_NACK_INT_ENA;;;;
+;;;;Not;;;reg_trans_start_int_ena;[9];1'b0;R/W;;;;The raw interrupt bit for the I2C_TRANS_START_INT interrupt.;;;;;I2C_TRANS_START_INT_ENA;;;;
+;;;;Not;;;reg_time_out_int_ena;[8];1'b0;R/W;;;;The raw interrupt bit for the I2C_TIME_OUT_INT interrupt. ;;;;;I2C_TIME_OUT_INT_ENA;;;;
+;;;;Not;;;reg_trans_complete_int_ena;[7];1'b0;R/W;;;;The raw interrupt bit for the I2C_TRANS_COMPLETE_INT interrupt.;;;;;I2C_TRANS_COMPLETE_INT_ENA;;;;
+;;;;Not;;;reg_mst_txfifo_udf_int_ena;[6];1'b0;R/W;;;;The raw interrupt bit for I2C_TRANS_COMPLETE_INT interrupt.;;;;;I2C_MST_TXFIFO_UDF_INT_ENA;;;;
+;;;;Not;;;reg_arbitration_lost_int_ena;[5];1'b0;R/W;;;;The raw interrupt bit for the I2C_ARBITRATION_LOST_INT interrupt. ;;;;;I2C_ARBITRATION_LOST_INT_ENA;;;;
+;;;;Not;;;reg_byte_trans_done_int_ena;[4];1'b0;R/W;;;;The raw interrupt bit for the I2C_END_DETECT_INT interrupt. ;;;;;I2C_BYTE_TRANS_DONE_INT_ENA;;;;
+;;;;Not;;;reg_end_detect_int_ena;[3];1'b0;R/W;;;;The raw interrupt bit for the I2C_END_DETECT_INT interrupt. ;;;;;I2C_END_DETECT_INT_ENA;;;;
+;;;;Not;;;reg_rxfifo_ovf_int_ena;[2];1'b0;R/W;;;;The raw interrupt bit for I2C_RXFIFO_OVF_INT interrupt.;;;;;I2C_RXFIFO_OVF_INT_ENA;;;;
+;;;;Not;;;reg_txfifo_wm_int_ena;[1];1'b0;R/W;;;;The raw interrupt bit for I2C_TXFIFO_WM_INT interrupt.;;;;;I2C_TXFIFO_WM_INT_ENA;;;;
+;;;;Not;;;reg_rxfifo_wm_int_ena;[0];1'b0;R/W;;;;The raw interrupt bit for I2C_RXFIFO_WM_INT interrupt.;;;;;I2C_RXFIFO_WM_INT_ENA;;;;
+0x002c;I2C_INT_STATUS_REG;pclk;reset_n;;;;;;;;;;INT_ST;Status of captured I2C communication events;;;;;;;;Interrupt registers;
+;;;;;;;;[31:17];15'b0;RO;;;;Reserved;;;;;;;;;
+;;;;Not;;;reg_slave_stretch_int_st;[16];1'b0;RO;;;;The masked interrupt status bit for I2C_SLAVE_STRETCH_INT interrupt.;;;;;I2C_SLAVE_STRETCH_INT_ST;;;;
+;;;;Not;;;reg_det_start_int_st;[15];1'b0;RO;;;;The masked interrupt status bit for I2C_DET_START_INT interrupt.;;;;;I2C_DET_START_INT_ST;;;;
+;;;;Not;;;reg_scl_main_st_to_int_st;[14];1'b0;RO;;;;The masked interrupt status bit for I2C_SCL_MAIN_ST_TO_INT interrupt.;;;;;I2C_SCL_MAIN_ST_TO_INT_ST;;;;
+;;;;Not;;;reg_scl_st_to_int_st;[13];1'b0;RO;;;;The masked interrupt status bit for I2C_SCL_ST_TO_INT interrupt.;;;;;I2C_SCL_ST_TO_INT_ST;;;;
+;;;;Not;;;reg_rxfifo_udf_int_st;[12];1'b0;RO;;;;The masked interrupt status bit for I2C_RXFIFO_UDF_INT  interrupt.;;;;;I2C_RXFIFO_UDF_INT_ST;;;;
+;;;;Not;;;reg_txfifo_ovf_int_st;[11];1'b0;RO;;;;The masked interrupt status bit for I2C_TXFIFO_OVF_INT interrupt.;;;;;I2C_TXFIFO_OVF_INT_ST;;;;
+;;;;Not;;;reg_nack_int_st;[10];1'b0;RO;;;;The masked interrupt status bit for I2C_SLAVE_STRETCH_INT interrupt.;;;;;I2C_NACK_INT_ST;;;;
+;;;;Not;;;reg_trans_start_int_st;[9];1'b0;RO;;;;The masked interrupt status bit for the I2C_TRANS_START_INT interrupt.;;;;;I2C_TRANS_START_INT_ST;;;;
+;;;;Not;;;reg_time_out_int_st;[8];1'b0;RO;;;;The masked interrupt status bit for the I2C_TIME_OUT_INT interrupt. ;;;;;I2C_TIME_OUT_INT_ST;;;;
+;;;;Not;;;reg_trans_complete_int_st;[7];1'b0;RO;;;;The masked interrupt status bit for the I2C_TRANS_COMPLETE_INT interrupt.;;;;;I2C_TRANS_COMPLETE_INT_ST;;;;
+;;;;Not;;;reg_mst_txfifo_udf_int_st;[6];1'b0;RO;;;;The masked interrupt status bit for I2C_TRANS_COMPLETE_INT interrupt.;;;;;I2C_MST_TXFIFO_UDF_INT_ST;;;;
+;;;;Not;;;reg_arbitration_lost_int_st;[5];1'b0;RO;;;;The masked interrupt status bit for the I2C_ARBITRATION_LOST_INT interrupt. ;;;;;I2C_ARBITRATION_LOST_INT_ST;;;;
+;;;;Not;;;reg_byte_trans_done_int_st;[4];1'b0;RO;;;;The masked interrupt status bit for the I2C_END_DETECT_INT interrupt. ;;;;;I2C_BYTE_TRANS_DONE_INT_ST;;;;
+;;;;Not;;;reg_end_detect_int_st;[3];1'b0;RO;;;;The masked interrupt status bit for the I2C_END_DETECT_INT interrupt. ;;;;;I2C_END_DETECT_INT_ST;;;;
+;;;;Not;;;reg_rxfifo_ovf_int_st;[2];1'b0;RO;;;;The masked interrupt status bit for I2C_RXFIFO_OVF_INT interrupt.;;;;;I2C_RXFIFO_OVF_INT_ST;;;;
+;;;;Not;;;reg_txfifo_wm_int_st;[1];1'b0;RO;;;;The masked interrupt status bit for I2C_TXFIFO_WM_INT interrupt.;;;;;I2C_TXFIFO_WM_INT_ST;;;;
+;;;;Not;;;reg_rxfifo_wm_int_st;[0];1'b0;RO;;;;The masked interrupt status bit for I2C_RXFIFO_WM_INT interrupt.;;;;;I2C_RXFIFO_WM_INT_ST;;;;
+0x0030;I2C_SDA_HOLD_REG;pclk;reset_n;;;;;;;;;;;Configures the hold time after a negative SCL edge.;;;;;;;;Timing registers;
+;;;;;;;;[31:9];23'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_sda_hold_time;[8:0];9'b0;R/W;;;;"This register is used to configure the time to hold the data after the negative
+edge of SCL, in I2C module clock cycles. ";;;;;I2C_SDA_HOLD_TIME;;;;
+0x0034;I2C_SDA_SAMPLE_REG;pclk;reset_n;;;;;;;;;;;Configures the sample time after a positive SCL edge.;;;;;;;;Timing registers;
+;;;;;;;;[31:9];23'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_sda_sample_time;[8:0];9'b0;R/W;;;;This register is used to configure for how long SDA is sampled, in I2C module clock cycles. ;;;;;I2C_SDA_SAMPLE_TIME;;;;
+0x0038;I2C_SCL_HIGH_PERIOD_REG;pclk;reset_n;;;;;;;;;;;Configures the high level width of SCL;;;;;;;;Timing registers;
+;;;;;;;;[31:16];16'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_wait_high_period;[15:9];7'b0;R/W;;;;This register is used to configure for the SCL_FSM's waiting period for SCL high level in master mode, in I2C module clock cycles. ;;;;;I2C_SCL_WAIT_HIGH_PERIOD;;;;
+;;;;;;;reg_scl_high_period;[8:0];9'b0;R/W;;;;This register is used to configure for how long SCL remains high in master mode, in I2C module clock cycles. ;;;;;I2C_SCL_HIGH_PERIOD;;;;
+0x0040;I2C_SCL_START_HOLD_REG;pclk;reset_n;;;;;;;;;;;Configures the delay between the SDA and SCL negative edge for a start condition;;;;;;;;Timing registers;
+;;;;;;;;[31:9];23'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_start_hold_time;[8:0];9'b1000;R/W;;;;"This register is used to configure the time between the negative edge
+of SDA and the negative edge of SCL for a START condition, in I2C module clock cycles. ";;;;;I2C_SCL_START_HOLD_TIME;;;;
+0x0044;I2C_SCL_RSTART_SETUP_REG;pclk;reset_n;;;;;;;;;;;"Configures the delay between the positive
+edge of SCL and the negative edge of SDA";;;;;;;;Timing registers;
+;;;;;;;;[31:9];23'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_rstart_setup_time;[8:0];9'b1000;R/W;;;;"This register is used to configure the time between the positive
+edge of SCL and the negative edge of SDA for a RSTART condition, in I2C module clock cycles. ";;;;;I2C_SCL_RSTART_SETUP_TIME;;;;
+0x0048;I2C_SCL_STOP_HOLD_REG;pclk;reset_n;;;;;;;;;;;"Configures the delay after the SCL clock
+edge for a STOP condition";;;;;;;;Timing registers;
+;;;;;;;;[31:9];23'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_stop_hold_time;[8:0];9'b1000;R/W;;;;"This register is used to configure the delay after the STOP condition,
+in I2C module clock cycles. ";;;;;I2C_SCL_STOP_HOLD_TIME;;;;
+0x004C;I2C_SCL_STOP_SETUP_REG;pclk;reset_n;;;;;;;;;;;"Configures the delay between the SDA and
+SCL positive edge for a STOP condition";;;;;;;;Timing registers;
+;;;;;;;;[31:9];23'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_stop_setup_time;[8:0];9'b1000;R/W;;;;"This register is used to configure the time between the positive edge
+of SCL and the positive edge of SDA, in I2C module clock cycles. ";;;;;I2C_SCL_STOP_SETUP_TIME;;;;
+0x0050;I2C_FILTER_CFG_REG;pclk;reset_n;;;;;;;;;;;SCL and SDA filter configuration register;;;;;;;;Configuration registers;
+;;;;;;;;[31:10];22'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_sda_filter_en;[9];1'b1;R/W;;;;This is the filter enable bit for SDA. ;;;;;I2C_SDA_FILTER_EN;;;;
+;;;;;;;reg_scl_filter_en;[8];1'b1;R/W;;;;This is the filter enable bit for SCL. ;;;;;I2C_SCL_FILTER_EN;;;;
+;;;;;;;reg_sda_filter_thres;[7:4];4'b0;R/W;;;;"When a pulse on the SDA input has smaller width than this register value
+in I2C module clock cycles, the I2C controller will ignore that pulse. ";;;;;I2C_SDA_FILTER_THRES;;;;
+;;;;;;;reg_scl_filter_thres;[3:0];4'b0;R/W;;;;"When a pulse on the SCL input has smaller width than this register value
+in I2C module clock cycles, the I2C controller will ignore that pulse. ";;;;;I2C_SCL_FILTER_THRES;;;;
+0x0054;I2C_CLK_CONF_REG;pclk;reset_n;;;;;;;;;;;I2C CLK configuration register;;;;;;;;Configuration registers;
+;;;;;;;;[31:22];10'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_sclk_active;[21];1'b1;R/W;;;;The clock switch for I2C module.;;;;;I2C_SCLK_ACTIVE;;;;
+;;;;;;;reg_sclk_sel;[20];1'b0;R/W;;;;"The clock selection for I2C module: 0-XTAL;1-CLK_8MHz.";;;;;I2C_SCLK_SEL;;;;
+;;;;;;;reg_sclk_div_b;[19:14];6'b0;R/W;;;;the denominator of the fractional part of the fractional divisor for I2C module.;;;;;I2C_SCLK_DIV_B;;;;
+;;;;;;;reg_sclk_div_a;[13:8];6'b0;R/W;;;;the numerator of the fractional part of the fractional divisor for I2C module.;;;;;I2C_SCLK_DIV_A;;;;
+;;;;;;;reg_sclk_div_num;[7:0];8'b0;R/W;;;;the integral part of the fractional divisor for I2C module.;;;;;I2C_SCLK_DIV_NUM;;;;
+0x0058;I2C_COMD0_REG;pclk;reset_n;;;;;;;;;;;I2C command register 0;;;;;;;;Command registers;
+;;;;Not;;;reg_command0_done;[31];1'b0;R/W/SS;cmd0_done/1'b1;;;"When command 0 is done in I2C Master mode, this bit changes to high
+level. ";;;;;I2C_COMMAND0_DONE;;;;
+;;;;;;;;[30:14];17'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_command0;[13:0];14'b0;R/W;;;;"This is the content of command 0. It consists of three parts: 
+op_code is the command, 0: RSTART; 1: WRITE; 2: READ; 3: STOP; 4: END.
+Byte_num represents the number of bytes that need to be sent or received.
+ack_check_en, ack_exp and ack are used to control the ACK bit. See I2C cmd structure for more
+Information.";;;;;I2C_COMMAND0;;;;
+0x005C;I2C_COMD1_REG;pclk;reset_n;;;;;;;;;;;I2C command register 1;;;;;;;;Command registers;
+;;;;Not;;;reg_command1_done;[31];1'b0;R/W/SS;cmd1_done/1'b1;;;"When command 1 is done in I2C Master mode, this bit changes to high
+level. ";;;;;I2C_COMMAND1_DONE;;;;
+;;;;;;;;[30:14];17'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_command1;[13:0];14'b0;R/W;;;;"This is the content of command 1. It consists of three parts: 
+op_code is the command, 0: RSTART; 1: WRITE; 2: READ; 3: STOP; 4: END.
+Byte_num represents the number of bytes that need to be sent or received.
+ack_check_en, ack_exp and ack are used to control the ACK bit. See I2C cmd structure for more
+Information.";;;;;I2C_COMMAND1;;;;
+0x0060;I2C_COMD2_REG;pclk;reset_n;;;;;;;;;;;I2C command register 2;;;;;;;;Command registers;
+;;;;Not;;;reg_command2_done;[31];1'b0;R/W/SS;cmd2_done/1'b1;;;"When command 2 is done in I2C Master mode, this bit changes to high
+Level.";;;;;I2C_COMMAND2_DONE;;;;
+;;;;;;;;[30:14];17'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_command2;[13:0];14'b0;R/W;;;;"This is the content of command 2. It consists of three parts: 
+op_code is the command, 0: RSTART; 1: WRITE; 2: READ; 3: STOP; 4: END.
+Byte_num represents the number of bytes that need to be sent or received.
+ack_check_en, ack_exp and ack are used to control the ACK bit. See I2C cmd structure for more
+Information.";;;;;I2C_COMMAND2;;;;
+0x0064;I2C_COMD3_REG;pclk;reset_n;;;;;;;;;;;I2C command register 3;;;;;;;;Command registers;
+;;;;Not;;;reg_command3_done;[31];1'b0;R/W/SS;cmd3_done/1'b1;;;"When command 3 is done in I2C Master mode, this bit changes to high
+level. ";;;;;I2C_COMMAND3_DONE;;;;
+;;;;;;;;[30:14];17'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_command3;[13:0];14'b0;R/W;;;;"This is the content of command 3. It consists of three parts: 
+op_code is the command, 0: RSTART; 1: WRITE; 2: READ; 3: STOP; 4: END.
+Byte_num represents the number of bytes that need to be sent or received.
+ack_check_en, ack_exp and ack are used to control the ACK bit. See I2C cmd structure for more
+Information.";;;;;I2C_COMMAND3;;;;
+0x0068;I2C_COMD4_REG;pclk;reset_n;;;;;;;;;;;I2C command register 4;;;;;;;;Command registers;
+;;;;Not;;;reg_command4_done;[31];1'b0;R/W/SS;cmd4_done/1'b1;;;"When command 4 is done in I2C Master mode, this bit changes to high
+level. ";;;;;I2C_COMMAND4_DONE;;;;
+;;;;;;;;[30:14];17'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_command4;[13:0];14'b0;R/W;;;;"This is the content of command 4. It consists of three parts: 
+op_code is the command, 0: RSTART; 1: WRITE; 2: READ; 3: STOP; 4: END.
+Byte_num represents the number of bytes that need to be sent or received.
+ack_check_en, ack_exp and ack are used to control the ACK bit. See I2C cmd structure for more
+Information.";;;;;I2C_COMMAND4;;;;
+0x006C;I2C_COMD5_REG;pclk;reset_n;;;;;;;;;;;I2C command register 5;;;;;;;;Command registers;
+;;;;Not;;;reg_command5_done;[31];1'b0;R/W/SS;cmd5_done/1'b1;;;When command 5 is done in I2C Master mode, this bit changes to high level. ;;;;;I2C_COMMAND5_DONE;;;;
+;;;;;;;;[30:14];17'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_command5;[13:0];14'b0;R/W;;;;"This is the content of command 5. It consists of three parts:
+op_code is the command, 0: RSTART; 1: WRITE; 2: READ; 3: STOP; 4: END.
+Byte_num represents the number of bytes that need to be sent or received.
+ack_check_en, ack_exp and ack are used to control the ACK bit. See I2C cmd structure for more
+Information.";;;;;I2C_COMMAND5;;;;
+0x0070;I2C_COMD6_REG;pclk;reset_n;;;;;;;;;;;I2C command register 6;;;;;;;;Command registers;
+;;;;Not;;;reg_command6_done;[31];1'b0;R/W/SS;cmd6_done/1'b1;;;When command 6 is done in I2C Master mode, this bit changes to high level. ;;;;;I2C_COMMAND6_DONE;;;;
+;;;;;;;;[30:14];17'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_command6;[13:0];14'b0;R/W;;;;"This is the content of command 6. It consists of three parts: 
+op_code is the command, 0: RSTART; 1: WRITE; 2: READ; 3: STOP; 4: END.
+Byte_num represents the number of bytes that need to be sent or received.
+ack_check_en, ack_exp and ack are used to control the ACK bit. See I2C cmd structure for more
+Information.";;;;;I2C_COMMAND6;;;;
+0x0074;I2C_COMD7_REG;pclk;reset_n;;;;;;;;;;;I2C command register 7;;;;;;;;Command registers;
+;;;;Not;;;reg_command7_done;[31];1'b0;R/W/SS;cmd7_done/1'b1;;;When command 7 is done in I2C Master mode, this bit changes to high level.;;;;;I2C_COMMAND7_DONE;;;;
+;;;;;;;;[30:14];17'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_command7;[13:0];14'b0;R/W;;;;"This is the content of command 7. It consists of three parts: 
+op_code is the command, 0: RSTART; 1: WRITE; 2: READ; 3: STOP; 4: END.
+Byte_num represents the number of bytes that need to be sent or received.
+ack_check_en, ack_exp and ack are used to control the ACK bit. See I2C cmd structure for more
+Information.";;;;;I2C_COMMAND7;;;;
+0x0078;I2C_SCL_ST_TIME_OUT_REG;pclk;reset_n;;;;;;;;;;;SCL status timeout register;;;;;;;;Timing registers;
+;;;;;;;;[31:5];27'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_st_to_reg;[4:0];5'h10;R/W;;;;The threshold value of SCL_FSM state unchanged period. It should be more than 23.;;;;;I2C_SCL_ST_TO_I2C;;;;
+0x007c;I2C_SCL_MAIN_ST_TIME_OUT_REG;pclk;reset_n;;;;;;;;;;;SCL main status timeout register;;;;;;;;Timing registers;
+;;;;;;;;[31:5];27'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_scl_main_st_to_reg;[4:0];5'h10;R/W;;;;The threshold value of SCL_MAIN_FSM state unchanged period.nIt should be o more than 23.;;;;;I2C_SCL_MAIN_ST_TO_I2C;;;;
+0x0080;I2C_SCL_SP_CONF_REG;pclk;reset_n;;;;;;;;;;;Power configuration register ;;;;;;;;Configuration registers;
+;;;;;;;;[31:8];24'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_sda_pd_en;[7];1'b0;R/W;;;;The power down enable bit for the I2C output SDA line. 1: Power down. 0: Not power down. Set reg_sda_force_out and reg_sda_pd_en to 1 to stretch SDA low.;;;;;I2C_SDA_PD_EN;;;;
+;;;;;;;reg_scl_pd_en;[6];1'b0;R/W;;;;The power down enable bit for the I2C output SCL line. 1: Power down. 0: Not power down. Set reg_scl_force_out and reg_scl_pd_en to 1 to stretch SCL low.;;;;;I2C_SCL_PD_EN;;;;
+;;;;;;;reg_scl_rst_slv_num;[5:1];5'b0;R/W;;;;Configure the pulses of SCL generated in I2C master mode. Valid when reg_scl_rst_slv_en is 1.;;;;;I2C_SCL_RST_SLV_NUM;;;;
+;;;;;;;reg_scl_rst_slv_en;[0];1'b0;R/W;scl_rst_slv_clr/1'b0;;;When I2C master is IDLE, set this bit to send out SCL pulses. The number of pulses equals to reg_scl_rst_slv_num[4:0].;;;;;I2C_SCL_RST_SLV_EN;;;;
+0x0084;I2C_SCL_STRETCH_CONF_REG;pclk;reset_n;;;;;;;;;;;Set SCL stretch of I2C slave;;;;;;;;Configuration registers;
+;;;;;;;;[31:12];20'b0;RO;;;;Reserved;;;;;;;;;
+;;;;;;;reg_slave_scl_stretch_clr;[11];1'b0;WT;;;;Set this bit to clear the I2C slave SCL stretch function.;;;;;I2C_SLAVE_SCL_STRETCH_CLR;;;;
+;;;;;;;reg_slave_scl_stretch_en;[10];1'b0;R/W;;;;The enable bit for slave SCL stretch function. 1: Enable. 0: Disable. The SCL output line will be stretched low when reg_slave_scl_stretch_en is 1 and stretch event happens. The stretch cause can be seen in reg_stretch_cause.;;;;;I2C_SLAVE_SCL_STRETCH_EN;;;;
+;;;;;;;reg_stretch_protect_num;[9:0];10'b0;R/W;;;;Configure the period of I2C slave stretching SCL line.;;;;;I2C_STRETCH_PROTECT_NUM;;;;
+0x00F8;I2C_DATE_REG;pclk;reset_n;;;;;;;;;;;Version register;;;;;;;;Version register;
+;;;;Not;;;reg_date;[31:0];32'h20030501;R/W;;;;This is the the version register.;;;;;I2C_DATE;;;;
+0x0100;I2C_TXFIFO_START_ADDR_REG;pclk;reset_n;Not;;N/A;;;;;;;;I2C TXFIFO base address register;;;;;;;;Address register;
+;;;;Not;;N/A;reg_txfifo_start_addr;[31:0];32'b0;RO;;;;This is the I2C TX FIFO first address.;;;;;I2C_TXFIFO_START_ADDR;;;;
+0x0180;I2C_RXFIFO_START_ADDR_REG;pclk;reset_n;Not;;N/A;;;;;;;;I2C RXFIFO base address register;;;;;;;;Address register;
+;;;;Not;;N/A;reg_rxfifo_start_addr;[31:0];32'b0;RO;;;;This is the I2C RX FIFO first address.;;;;;I2C_RXFIFO_START_ADDR;;;;

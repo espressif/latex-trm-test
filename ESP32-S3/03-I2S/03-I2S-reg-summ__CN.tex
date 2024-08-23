@@ -1,0 +1,38 @@
+
+
+\begin{longtable}{ | p{4.9cm} | p{7cm} | p{1.5cm} | p{1.5cm} | p{1cm} | }
+\hline\rowcolor{lightgray}
+\textbf{名称} & \textbf{描述} &  \textbf{I2S0 地址} & \textbf{I2S1 地址} & \textbf{访问} \\ \hline
+\endhead
+\multicolumn{5}{|l|}{\textbf{中断寄存器}} \\ \hline
+\hyperref[regdesc:I2SINTRAWREG]{I2S\_INT\_RAW\_REG} & 原始中断寄存器 & 0x{}000C & 0x{}000C & RO/WTC/SS \\ \hline
+\hyperref[regdesc:I2SINTSTREG]{I2S\_INT\_ST\_REG} & 中断状态寄存器 & 0x{}0010 & 0x{}0010 & RO \\ \hline
+\hyperref[regdesc:I2SINTENAREG]{I2S\_INT\_ENA\_REG} & 中断使能寄存器 & 0x{}0014 & 0x{}0014 & R/W \\ \hline
+\hyperref[regdesc:I2SINTCLRREG]{I2S\_INT\_CLR\_REG} & 中断清除寄存器 & 0x{}0018 & 0x{}0018 & WT \\ \hline
+\multicolumn{5}{|l|}{\textbf{RX/TX控制和配置寄存器}} \\ \hline
+\hyperref[regdesc:I2SRXCONFREG]{\textcolor{red}{I2S\_RX\_CONF\_REG}} & RX 配置寄存器 & 0x{}0020 & 0x{}0020 & varies \\ \hline
+\hyperref[regdesc:I2SRXCONF1REG]{I2S\_RX\_CONF1\_REG} & RX 配置寄存器 1 & 0x{}0028 & 0x{}0028 &R/W \\ \hline
+\hyperref[regdesc:I2SRXCLKMCONFREG]{I2S\_RX\_CLKM\_CONF\_REG} & RX 时钟配置寄存器 & 0x{}0030 & 0x{}0030 & R/W \\ \hline
+\hyperref[regdesc:I2STXPCM2PDMCONFREG]{\textcolor{red}{I2S\_TX\_PCM2PDM\_CONF\_REG}} & TX PCM-to-PDM 配置寄存器 & 0x{}0040 & --- &R/W \\ \hline
+\hyperref[regdesc:I2STXPCM2PDMCONF1REG]{\textcolor{red}{I2S\_TX\_PCM2PDM\_CONF1\_REG}} & TX PCM-to-PDM 配置寄存器 & 0x{}0044 & --- &R/W \\ \hline
+\hyperref[regdesc:I2SRXTDMCTRLREG]{I2S\_RX\_TDM\_CTRL\_REG} & TX TDM 模式控制寄存器 & 0x{}0050 & 0x{}0050 &R/W \\ \hline
+\hyperref[regdesc:I2SRXEOFNUMREG]{I2S\_RXEOF\_NUM\_REG} & RX 数据大小控制寄存器 & 0x{}0064 & 0x{}0064 &R/W \\ \hline
+%\multicolumn{5}{|l|}{\textbf{TX Control and configuration registers}} \\ \hline
+\hyperref[regdesc:I2STXCONFREG]{I2S\_TX\_CONF\_REG} & TX 配置寄存器 & 0x{}0024 & 0x{}0024 & varies \\ \hline
+\hyperref[regdesc:I2STXCONF1REG]{I2S\_TX\_CONF1\_REG} & TX 配置寄存器 1 & 0x{}002C & 0x{}002C & R/W \\ \hline
+\hyperref[regdesc:I2STXCLKMCONFREG]{I2S\_TX\_CLKM\_CONF\_REG} & TX 时钟配置寄存器 & 0x{}0034 & 0x{}0034 & R/W \\ \hline
+\hyperref[regdesc:I2STXTDMCTRLREG]{I2S\_TX\_TDM\_CTRL\_REG} & TX TDM 模式控制寄存器 & 0x{}0054 & 0x{}0054 & R/W \\ \hline
+\multicolumn{5}{|l|}{\textbf{RX 时序和时钟寄存器}} \\ \hline
+\hyperref[regdesc:I2SRXCLKMDIVCONFREG]{I2S\_RX\_CLKM\_DIV\_CONF\_REG} & RX 时钟分频配置寄存器 & 0x{}0038 & 0x{}0038 & R/W \\ \hline
+\hyperref[regdesc:I2SRXTIMINGREG]{\textcolor{red}{I2S\_RX\_TIMING\_REG}} & RX 时序控制寄存器 & 0x{}0058 & 0x{}0058 & R/W \\ \hline
+\multicolumn{5}{|l|}{\textbf{TX 时序和时钟寄存器}} \\ \hline
+\hyperref[regdesc:I2STXCLKMDIVCONFREG]{I2S\_TX\_CLKM\_DIV\_CONF\_REG} & TX 时钟分频配置寄存器 & 0x{}003C & 0x{}003C & R/W \\ \hline
+\hyperref[regdesc:I2STXTIMINGREG]{I2S\_TX\_TIMING\_REG} & TX 时序控制寄存器 & 0x{}005C & 0x{}005C & R/W \\ \hline
+\multicolumn{5}{|l|}{\textbf{控制和配置寄存器}} \\ \hline
+\hyperref[regdesc:I2SLCHUNGCONFREG]{I2S\_LC\_HUNG\_CONF\_REG} & 超时配置寄存器 & 0x{}0060 & 0x{}0060 & R/W \\ \hline
+\hyperref[regdesc:I2SCONFSIGLEDATAREG]{I2S\_CONF\_SIGLE\_DATA\_REG} & single 数据寄存器 & 0x{}0068 & 0x{}0068 & R/W \\ \hline
+\multicolumn{5}{|l|}{\textbf{TX 状态寄存器}} \\ \hline
+\hyperref[regdesc:I2SSTATEREG]{I2S\_STATE\_REG} & TX 状态寄存器 & 0x{}006C & 0x{}006C & RO \\ \hline
+\multicolumn{5}{|l|}{\textbf{版本寄存器}} \\ \hline
+\hyperref[regdesc:I2SDATEREG]{I2S\_DATE\_REG} & 版本控制寄存器 & 0x{}0080 & 0x{}0080 & R/W \\ \hline
+\end{longtable}

@@ -1,0 +1,143 @@
+\documentclass{article}
+
+% Added hyperref to use \nameref
+\usepackage{hyperref}
+
+% Enable Chinese typesetting
+\usepackage{ctex}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Temporary Labels for             %%%
+%%% TRM Parts Outside of This Module %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The labels below serve as temporary anchors for parts of the TRM outside of this module.
+
+% The section "Standard Temporary Labels" lists labels for all TRM module titles and for the Base Address table.
+
+% You can also add your own custom temporary label to other parts of the TRM outside of this module. For this, see Section "Custom Temporary Labels" below.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Standard Temporary Labels %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% >>> Comment out the label for this project's TRM module
+%     to avoid the warning of multiple label definitions <<<
+
+%\chapter{I2C 控制器 (I2C) [to be added later]}\label{mod:i2c}
+% \chapter{复位和时钟 [to be added later]}\label{mod:resclk}
+%\chapter{I2S 控制器 (I2S) [to be added later]}\label{mod:i2s}
+% \chapter{Camera 与 LCD 控制器 (CAM-LCD) [to be added later]}\label{mod:camlcdctrl}
+% \chapter{红外遥控 (RMT) [to be added later]}\label{mod:rmt}
+% \chapter{随机数发生器 (RNG) [to be added later]}\label{mod:rng}
+% \chapter{eFuse 控制器 (eFuse) [to be added later]}\label{mod:efuse}
+% \chapter{处理器指令拓展 (PIE) [to be added later]}\label{mod:pie}
+% \chapter{系统和存储器 [to be added later]}\label{mod:sysmem}
+%    Table: 基地址\label{tab:sysmem-base-address}
+% \chapter{权限控制 (PMS) [to be added later]}\label{mod:permctrl}
+% \chapter{USB OTG (USB) [to be added later]}\label{mod:usbotg}
+% \chapter{UART 控制器 (UART) [to be added later]}\label{mod:uart}
+% \chapter{数字签名 (DS) [to be added later]}\label{mod:digsig}
+% \chapter{定时器组 (TIMG) [to be added later]}\label{mod:timg}
+% \chapter{看门狗定时器 (WDT) [to be added later]}\label{mod:wdt}
+% \chapter{通用 DMA 控制器 (DMA) [to be added later]}\label{mod:dma}
+% \chapter{电机控制 PWM (MCPWM) [to be added later]}\label{mod:mcpwm}
+% \chapter{SD/MMC 主机控制器 (SDHOST) [to be added later]}\label{mod:sdhost}
+% \chapter{LED PWM 控制器 (LEDC) [to be added later]}\label{mod:ledpwm}
+% \chapter{脉冲计数控制器 (PCNT) [to be added later]}\label{mod:pcnt}
+% \chapter{IO MUX 和 GPIO 交换矩阵 (GPIO, IO\_MUX) [to be added later]}\label{mod:iomuxgpio}
+% \chapter{中断矩阵 (INTERRUPT) [to be added later]}\label{mod:intmtrx}
+% \chapter{系统寄存器 (SYSREG) [to be added later]}\label{mod:sysreg}
+% \chapter{SPI 控制器 (SPI) [to be added later]}\label{mod:spi}
+% \chapter{片上传感器与模拟信号处理 [to be added later]}\label{mod:sensor}
+% \chapter{超低功耗协处理器 (ULP-FSM, ULP-RISC-V) [to be added later]}\label{mod:ulp}
+% \chapter{SHA 加速器 (SHA) [to be added later]}\label{mod:sha}
+% \chapter{低功耗管理 (RTC\_CNTL) [to be added later]}\label{mod:lowpowm}
+% \chapter{HMAC 加速器 (HMAC) [to be added later]}\label{mod:hmac}
+% \chapter{AES 加速器 (AES) [to be added later]}\label{mod:aes}
+% \chapter{RSA 加速器 (RSA) [to be added later]}\label{mod:rsa}
+% \chapter{双线汽车接口 (TWAI) [to be added later]}\label{mod:twai}
+% \chapter{片外存储器加密与解密 (XTS\_AES) [to be added later]}\label{mod:extmemencr}
+% \chapter{系统定时器 (SYSTIMER) [to be added later]}\label{mod:systimer}
+% \chapter{芯片 Boot 控制 (BOOTCTRL) [to be added later]}\label{mod:bootctrl}
+% \chapter{时钟毛刺检测 [to be added later]}\label{mod:glitch}
+% \chapter{XTAL32K 看门狗定时器 (XTWDT) [to be added later]}\label{mod:xtwdt}
+% \chapter{World 控制器 (WCTL) [to be added later]}\label{mod:wctrl}
+% \chapter{USB Serial/JTAG 控制器 (USB\_SERIAL\_JTAG) [to be added later]}\label{mod:usbserialjtag}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Custom Temporary Labels %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Before adding a custom temporary label, see
+% Readme, Chapter "Temporary (Missing) Labels"
+% for guidelines and examples
+
+%\chapter{Low-Power Management [to be added later]}\label{mod:lowpowm}
+    % Register:  RTC\_CNTL\_CLK\_CONF\_REG \label{regdesc:RTCCNTLCLKCONFREG}
+    %     Field: RTC\_CNTL\_DIG\_CLK20M\_EN \label{fielddesc:RTCCNTLREGDIGCLK20MEN}
+    %     RTC\_CNTL\_SW\_HW\_USB\_PHY\_SEL \label{fielddesc:RTCCNTLSWHWUSBPHYSEL}
+    %     RTC\_CNTL\_SW\_USB\_PHY\_SEL \label{fielddesc:RTCCNTLSWUSBPHYSEL}
+    % % Temporary labels in 13-WDT
+    % \label{fielddesc:RTCCNTLREGWDTEN}
+    % \label{fielddesc:RTCCNTLRTCWDTFEED}
+    % \label{fielddesc:RTCCNTLREGWDTSTG0HOLD}
+    % \label{regdesc:RTCCNTLWDTCONFIG0REG}
+    % \label{fielddesc:RTCCNTLREGWDTWKEY}
+    % \label{fielddesc:RTCCNTLREGWDTFLASHBOOTMODEN}
+    % \label{fielddesc:RTCCNTLREGSWDAUTOFEEDEN}
+    % \label{fielddesc:RTCCNTLRESETCAUSEPROCPU}
+    % \label{fielddesc:RTCCNTLREGSWDRSTFLAGCLR}
+    % \label{fielddesc:RTCCNTLREGSWDFEED}
+    % \label{fielddesc:RTCCNTLREGSWDWKEY}
+    % \chapter{寄存器列表}\label{sec:lowpowm-reg-summ}
+    % \label{fielddesc:RTCCNTLWDTSTG3}
+
+    % % Temporary labels in 31-XTWDT:
+    % \label{fielddesc:RTCCNTLREGXTAL32KWDTEN}
+    % \label{fielddesc:RTCCNTLREGXTAL32KWDTTIMEOUT}
+    % \label{fielddesc:RTCCNTLREGXTAL32KAUTOBACKUP}
+
+    % % Temporary labels in 30-GLITCH:
+    % \label{fielddesc:RTCCNTLGLITCHRSTEN}
+
+%\chapter{系统寄存器 (TBA)}\label{mod:sysreg}
+%    Register:   SYSTEM\_PERIP\_CLK\_EN1\_REG \label{regdesc:SYSTEMPERIPCLKEN1REG}
+%        Field: SYSTEM\_CRYPTO\_RSA\_CLK\_EN \label{fielddesc:SYSTEMCRYPTORSACLKEN}
+%    Register:   SYSTEM\_RSA\_PD\_CTRL\_REG \label{regdesc:SYSTEMRSAPDCTRLREG}
+%        Field: SYSTEM\_RSA\_MEM\_PD \label{fielddesc:SYSTEMRSAMEMPD}
+ % Temporary labels in 15-LEDPWM
+% SYSTEM\_LEDC\_CLK\_EN \label{fielddesc:SYSTEMLEDCCLKEN}
+% SYSTEM\_PERIP\_CLK\_EN0\_REG \label{regdesc:SYSTEMPERIPCLKEN0REG}
+% SYSTEM\_LEDC\_RST \label{fielddesc:SYSTEMLEDCRST}
+% SYSTEM\_PERIP\_RST\_EN0\_REG \label{regdesc:SYSTEMPERIPRSTEN0REG}
+ %\caption{内存功耗控制位}
+% \label{tab:sysreg-mem-controlling-bit}
+
+
+%\chapter{eFuse Controller (eFuse) [to be added later]}\label{mod:efuse}
+    % Temporary labels in 13-WDT
+%    \label{fielddesc:EFUSEWDTDELAYSEL}
+%    \label{regdesc:EFUSERDREPEATDATA1REG}
+
+
+%\chapter{GDMA Controller}
+    % Temporary labels in 12-UART
+    %\label{fielddesc:GDMAINLINKADDRCHN}
+    %\label{fielddesc:GDMAINLINKSTARTCHN}
+    %\label{fielddesc:GDMAOUTLINKADDRCHN}
+    %\label{fielddesc:GDMAOUTLINKSTARTCHN}
+
+%\chapter{Permission Control}
+%    \label{fielddesc:PMSEDMAPMSSPI2ATTR1}
+%    \label{fielddesc:PMSEDMAPMSSPI2ATTR2}
+%    \label{fielddesc:PMSEDMABOUNDARY0}
+%    \label{fielddesc:PMSEDMABOUNDARY1}
+%    \label{fielddesc:PMSEDMABOUNDARY2}
+
+\end{document}
