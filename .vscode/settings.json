@@ -1,0 +1,27 @@
+{
+  "latex-workshop.latex.outDir": "./out",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-cd",
+        "-r",
+        "./latexmkrc",
+        "-outdir=./out",
+        "-pdf",
+        "-shell-escape",
+        "%DOC%"
+      ],
+      "env": {}
+    }
+  ]
+}

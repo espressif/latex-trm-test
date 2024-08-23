@@ -1,0 +1,30 @@
+\phantomsection
+\chapter*{Interrupt Configuration Registers}\label{interrupt-config-registers}
+\markboth{\it{Interrupt Configuration Registers}}{\Navigation}
+\addcontentsline{toc}{chapter}{Interrupt Configuration Registers}
+
+Generally, the peripherals' internal interrupt sources can be configured by the following common set of registers:
+
+\begin{itemize}
+    \item \textbf{RAW} (Raw Interrupt Status) register: This register indicates the raw interrupt status. Each bit in the register represents a specific internal interrupt source. When an interrupt source triggers, its RAW bit is set to 1.
+
+    \item \textbf{ENA} (Enable) register: This register is used to enable or disable the internal interrupt sources. Each bit in the ENA register corresponds to an internal interrupt source.
+
+    By manipulating the ENA register, you can mask or unmask individual internal interrupt source as needed. When an internal interrupt source is masked (disabled), it will not generate an interrupt signal, but its value can still be read from the RAW register.
+
+    \item \textbf{ST} (Status) register: This register reflects the status of enabled interrupt sources. Each bit in the ST register corresponds to a specific internal interrupt source. The ST bit being 1 means that both the corresponding RAW bit and ENA bit are 1, indicating that the interrupt source is triggered and not masked. The other combinations of the RAW bit and ENA bit will result in the ST bit being 0.
+
+    The configuration of ENA/RAW/ST registers is shown in Table \ref{tab:int-raw-st-ena}.
+
+    \item \textbf{CLR} (Clear) register: The CLR register is responsible for clearing the internal interrupt sources. Writing 1 to the corresponding bit in the CLR register clears the interrupt source.
+\end{itemize}
+
+\begin{longtable}{ | l | l | l | }
+\caption{Configuration of ENA/RAW/ST Registers} \label{tab:int-raw-st-ena}
+\\ \hline
+\rowcolor{lightgray}
+\textbf{ENA Bit Value} & \textbf{RAW Bit Value}  &  \textbf{ST Bit Value}\\ \hline
+0 & Ignored & 0 \\ \hline
+\multirow{2}*{1} &  0 & 0 \\ \cline{2-3}
+ &  1 & 1 \\ \hline
+\end{longtable}

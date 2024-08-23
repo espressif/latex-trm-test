@@ -1,0 +1,557 @@
+\begin{register}{H}{I2S\_INT\_RAW\_REG}{0x{}000C}\label{regdesc:I2SINTRAWREG}
+\regfield{(reserved)}{28}{4}{0000000000000000000000000000}%
+\regfield{I2S\_TX\_HUNG\_INT\_RAW}{1}{3}{{0}}%
+\regfield{I2S\_RX\_HUNG\_INT\_RAW}{1}{2}{{0}}%
+\regfield{I2S\_TX\_DONE\_INT\_RAW}{1}{1}{{0}}%
+\regfield{I2S\_RX\_DONE\_INT\_RAW}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXDONEINTRAW}\item [I2S\_RX\_DONE\_INT\_RAW] \hyperref[int:I2STXHUNGINT]{I2S\_RX\_DONE\_INT} 中断的原始中断状态位。  (RO/WTC/SS)
+\label{fielddesc:I2STXDONEINTRAW}\item [I2S\_TX\_DONE\_INT\_RAW] \hyperref[int:I2STXHUNGINT]{I2S\_TX\_DONE\_INT} 中断的原始中断状态位。 (RO/WTC/SS)
+\label{fielddesc:I2SRXHUNGINTRAW}\item [I2S\_RX\_HUNG\_INT\_RAW] \hyperref[int:I2STXHUNGINT]{I2S\_RX\_HUNG\_INT} 中断的原始中断状态位。 (RO/WTC/SS)
+\label{fielddesc:I2STXHUNGINTRAW}\item [I2S\_TX\_HUNG\_INT\_RAW] \hyperref[int:I2STXHUNGINT]{I2S\_TX\_HUNG\_INT} 中断的原始中断状态位。 (RO/WTC/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_INT\_ST\_REG}{0x{}0010}\label{regdesc:I2SINTSTREG}
+\regfield{(reserved)}{28}{4}{0000000000000000000000000000}%
+\regfield{I2S\_TX\_HUNG\_INT\_ST}{1}{3}{{0}}%
+\regfield{I2S\_RX\_HUNG\_INT\_ST}{1}{2}{{0}}%
+\regfield{I2S\_TX\_DONE\_INT\_ST}{1}{1}{{0}}%
+\regfield{I2S\_RX\_DONE\_INT\_ST}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXDONEINTST}\item [I2S\_RX\_DONE\_INT\_ST]  \hyperref[int:I2STXHUNGINT]{I2S\_RX\_DONE\_INT} 中断的屏蔽中断状态位。 (RO)
+\label{fielddesc:I2STXDONEINTST}\item [I2S\_TX\_DONE\_INT\_ST] \hyperref[int:I2STXHUNGINT]{I2S\_TX\_DONE\_INT} 中断的屏蔽中断状态位。 (RO)
+\label{fielddesc:I2SRXHUNGINTST}\item [I2S\_RX\_HUNG\_INT\_ST] \hyperref[int:I2STXHUNGINT]{I2S\_RX\_HUNG\_INT} 中断的屏蔽中断状态位。 (RO)
+\label{fielddesc:I2STXHUNGINTST}\item [I2S\_TX\_HUNG\_INT\_ST] \hyperref[int:I2STXHUNGINT]{I2S\_TX\_HUNG\_INT} 中断的屏蔽中断状态位。 (RO)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_INT\_ENA\_REG}{0x{}0014}\label{regdesc:I2SINTENAREG}
+\regfield{(reserved)}{28}{4}{0000000000000000000000000000}%
+\regfield{I2S\_TX\_HUNG\_INT\_ENA}{1}{3}{{0}}%
+\regfield{I2S\_RX\_HUNG\_INT\_ENA}{1}{2}{{0}}%
+\regfield{I2S\_TX\_DONE\_INT\_ENA}{1}{1}{{0}}%
+\regfield{I2S\_RX\_DONE\_INT\_ENA}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXDONEINTENA}\item [I2S\_RX\_DONE\_INT\_ENA] \hyperref[int:I2STXHUNGINT]{I2S\_RX\_DONE\_INT} 的中断使能位。  (R/W)
+\label{fielddesc:I2STXDONEINTENA}\item [I2S\_TX\_DONE\_INT\_ENA]  \hyperref[int:I2STXHUNGINT]{I2S\_TX\_DONE\_INT} 的中断使能位。 (R/W)
+\label{fielddesc:I2SRXHUNGINTENA}\item [I2S\_RX\_HUNG\_INT\_ENA] \hyperref[int:I2STXHUNGINT]{I2S\_RX\_HUNG\_INT} 的中断使能位。 (R/W)
+\label{fielddesc:I2STXHUNGINTENA}\item [I2S\_TX\_HUNG\_INT\_ENA] \hyperref[int:I2STXHUNGINT]{I2S\_TX\_HUNG\_INT} 的中断使能位。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_INT\_CLR\_REG}{0x{}0018}\label{regdesc:I2SINTCLRREG}
+\regfield{(reserved)}{28}{4}{0000000000000000000000000000}%
+\regfield{I2S\_TX\_HUNG\_INT\_CLR}{1}{3}{{0}}%
+\regfield{I2S\_RX\_HUNG\_INT\_CLR}{1}{2}{{0}}%
+\regfield{I2S\_TX\_DONE\_INT\_CLR}{1}{1}{{0}}%
+\regfield{I2S\_RX\_DONE\_INT\_CLR}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXDONEINTCLR}\item [I2S\_RX\_DONE\_INT\_CLR] \hyperref[int:I2STXHUNGINT]{I2S\_RX\_DONE\_INT} 的中断清除位。 (WT)
+\label{fielddesc:I2STXDONEINTCLR}\item [I2S\_TX\_DONE\_INT\_CLR] \hyperref[int:I2STXHUNGINT]{I2S\_TX\_DONE\_INT} 的中断清除位。 (WT)
+\label{fielddesc:I2SRXHUNGINTCLR}\item [I2S\_RX\_HUNG\_INT\_CLR] \hyperref[int:I2STXHUNGINT]{I2S\_RX\_HUNG\_INT} 的中断清除位。 (WT)
+\label{fielddesc:I2STXHUNGINTCLR}\item [I2S\_TX\_HUNG\_INT\_CLR] \hyperref[int:I2STXHUNGINT]{I2S\_TX\_HUNG\_INT} 的中断清除位。 (WT)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{\textcolor{red}{I2S\_RX\_CONF\_REG}}{0x{}0020}\label{regdesc:I2SRXCONFREG}
+\regfield{(reserved)}{9}{23}{000000000}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_PDM\_SINC\_DSR\_16\_EN}}{1}{22}{{0}}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_PDM2PCM\_EN}}{1}{21}{{0}}%
+\regfield{I2S\_RX\_PDM\_EN}{1}{20}{{0}}%
+\regfield{I2S\_RX\_TDM\_EN}{1}{19}{{0}}%
+\regfield{I2S\_RX\_BIT\_ORDER}{1}{18}{{0}}%
+\regfield{I2S\_RX\_WS\_IDLE\_POL}{1}{17}{{0}}%
+\regfield{I2S\_RX\_24\_FILL\_EN}{1}{16}{{0}}%
+\regfield{I2S\_RX\_LEFT\_ALIGN}{1}{15}{{1}}%
+\regfield{I2S\_RX\_STOP\_MODE}{2}{13}{{0}}%
+\regfield{I2S\_RX\_PCM\_BYPASS}{1}{12}{{1}}%
+\regfield{I2S\_RX\_PCM\_CONF}{2}{10}{{0x{}1}}%
+\regfield{I2S\_RX\_MONO\_FST\_VLD}{1}{9}{{1}}%
+\regfield{I2S\_RX\_UPDATE}{1}{8}{{0}}%
+\regfield{I2S\_RX\_BIG\_ENDIAN}{1}{7}{{0}}%
+\regfield{(reserved)}{1}{6}{0}%
+\regfield{I2S\_RX\_MONO}{1}{5}{{0}}%
+\regfield{(reserved)}{1}{4}{0}%
+\regfield{I2S\_RX\_SLAVE\_MOD}{1}{3}{{0}}%
+\regfield{I2S\_RX\_START}{1}{2}{{0}}%
+\regfield{I2S\_RX\_FIFO\_RESET}{1}{1}{{0}}%
+\regfield{I2S\_RX\_RESET}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXRESET}\item [I2S\_RX\_RESET] 此位置 1，复位接收模块。 (WT)
+\label{fielddesc:I2SRXFIFORESET}\item [I2S\_RX\_FIFO\_RESET] 此位置 1，复位 RX FIFO。 (WT)
+\label{fielddesc:I2SRXSTART}\item [I2S\_RX\_START] 此位置 1，开始接收数据。 (R/W)
+\label{fielddesc:I2SRXSLAVEMOD}\item [I2S\_RX\_SLAVE\_MOD] 此位置 1，使能从机接收模式。 (R/W)
+\label{fielddesc:I2SRXMONO}\item [I2S\_RX\_MONO] 此位置 1，使能接收模块的单声道模式。 (R/W)
+\label{fielddesc:I2SRXBIGENDIAN}\item [I2S\_RX\_BIG\_ENDIAN] I2S RX 字节序。1：低字节数据写入高位地址；0：低字节数据写入低位地址。 (R/W)
+\label{fielddesc:I2SRXUPDATE}\item [I2S\_RX\_UPDATE] 写 1 将 I2S RX 寄存器从 APB 时钟域同步到 I2S RX 时钟域。寄存器更新完成后，此位将由硬件清除。 (R/W/SC)
+\label{fielddesc:I2SRXMONOFSTVLD}\item [I2S\_RX\_MONO\_FST\_VLD] 1：在 I2S RX 单声道模式下，第一个通道数据有效。   0：在 I2S RX 单声道模式下，第二个通道数据有效。 (R/W)
+\label{fielddesc:I2SRXPCMCONF}\item [I2S\_RX\_PCM\_CONF] I2S RX 压缩/解压缩配置位。0 (atol)：A 率解压缩；1 (ltoa)：A 率压缩；2 (utol)：$\mu$ 率解压缩；3 (ltou)：$\mu$ 率压缩。 (R/W)
+\label{fielddesc:I2SRXPCMBYPASS}\item [I2S\_RX\_PCM\_BYPASS] 置位此位，接收数据将绕过压缩/解压缩模块。 (R/W)
+\label{fielddesc:I2SRXSTOPMODE}\item [I2S\_RX\_STOP\_MODE] 0：只有在 I2S\_RX\_START 被清除时，I2S RX 才会停止工作；1：当 I2S\_RX\_START 为 0 或 in\_suc\_eof 为 1 时，I2S RX 停止工作；2：当 I2S\_RX\_STAR 为 0 或 RX FIFO 为满时，I2S RX 停止工作。 (R/W)
+\label{fielddesc:I2SRXLEFTALIGN}\item [I2S\_RX\_LEFT\_ALIGN] 1：使能 I2S RX 左对齐模式。0：使能 I2S RX 右对齐模式。 (R/W)
+\label{fielddesc:I2SRX24FILLEN}\item [I2S\_RX\_24\_FILL\_EN] 1：将 24 位通道数据位保存到 32 位储存数据（多余的位填充为 0）。1：将 24 位通道数据位保存到 24 位储存数据。 (R/W)
+\label{fielddesc:I2SRXWSIDLEPOL}\item [I2S\_RX\_WS\_IDLE\_POL] 0：WS 为 0 时，接收左通道数据；WS 为 1 时，接收右通道数据。1：WS 为 1 时，接收左通道数据；WS 为 0 时，接收右通道数据。 (R/W)
+\label{fielddesc:I2SRXBITORDER}\item [I2S\_RX\_BIT\_ORDER] I2S RX 位顺序。1：小端序，先接收最低位。0：大端序，先接收最高位。 (R/W)
+\item [见下页]
+\end{reglist}\end{regdesc}
+\end{register}
+
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{\textcolor{red}{I2S\_RX\_CONF\_REG}}{0x{}0020}
+\begin{regdesc}\begin{reglist}
+\item [接上页]
+\label{fielddesc:I2SRXTDMEN}\item [I2S\_RX\_TDM\_EN] 1：使能 I2S TDM RX 模式。0：禁用 I2S TDM RX 模式。 (R/W)
+\label{fielddesc:I2SRXPDMEN}\item [I2S\_RX\_PDM\_EN] 1：使能 I2S PDM RX 模式。0：禁用 I2S PDM RX 模式。 (R/W)
+\label{fielddesc:I2SRXPDM2PCMEN}\item [\textcolor{red}{I2S\_RX\_PDM2PCM\_EN （仅适用于 I2S0）}] 1：使能 PDM-to-PCM RX 模式。0：禁用 PDM-to-PCM RX 模式。 (R/W)
+\label{fielddesc:I2SRXPDMSINCDSR16EN}\item [\textcolor{red}{I2S\_RX\_PDM\_SINC\_DSR\_16\_EN （仅适用于 I2S0）}] 配置 PDM RX 滤波器组 1 模块的下采样率。1：下采样率为 128。0：下采样率为 64。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RX\_CONF1\_REG}{0x{}0028}\label{regdesc:I2SRXCONF1REG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_RX\_MSB\_SHIFT}{1}{29}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN\_BITS}{5}{24}{{0x{}f}}%
+\regfield{I2S\_RX\_HALF\_SAMPLE\_BITS}{6}{18}{{0x{}f}}%
+\regfield{I2S\_RX\_BITS\_MOD}{5}{13}{{0x{}f}}%
+\regfield{I2S\_RX\_BCK\_DIV\_NUM}{6}{7}{{6}}%
+\regfield{I2S\_RX\_TDM\_WS\_WIDTH}{7}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXTDMWSWIDTH}\item [I2S\_RX\_TDM\_WS\_WIDTH] 在 TDM 模式下，rx\_ws\_out（WS 默认电平）时长等于 (I2S\_RX\_TDM\_WS\_WIDTH + 1) * T\_BCK。 (R/W)
+\label{fielddesc:I2SRXBCKDIVNUM}\item [I2S\_RX\_BCK\_DIV\_NUM] 在 RX 模式下，配置 BCK 时钟的分频系数。注意，不可配置为 1。 (R/W)
+\label{fielddesc:I2SRXBITSMOD}\item [I2S\_RX\_BITS\_MOD] RX 模式下，配置接收通道的有效数据位长度。7：所有有效的通道数据均为 8 位模式。15：所有有效的通道数据均为 16 位模式。23：所有有效的通道数据均为 24 位模式。31：所有有效的通道数据均为 32 位模式。 (R/W)
+%Set the bits to configure the valid data bit length of I2S receiver channel. 7: all the valid channel data is in 8-bit-mode. 15: all the valid channel data is in 16-bit-mode. 23: all the valid channel data is in 24-bit-mode. 31:all the valid channel data is in 32-bit-mode. (R/W)
+\label{fielddesc:I2SRXHALFSAMPLEBITS}\item [I2S\_RX\_HALF\_SAMPLE\_BITS] I2S RX 单次采样比特数的一半。I2S\_TX\_HALF\_SAMPLE\_BITS x 2 等于在一个 WS 信号中，BCK 持续的周期长。 (R/W)
+\label{fielddesc:I2SRXTDMCHANBITS}\item [I2S\_RX\_TDM\_CHAN\_BITS] 在 TDM RX 模式下，每个通道的 RX 数据位等于该值 + 1。 (R/W)
+\label{fielddesc:I2SRXMSBSHIFT}\item [I2S\_RX\_MSB\_SHIFT] 控制 WS 和数据的 MSB 位之间的时序关系。1：相隔一个周期；0：上升沿对齐。  (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RX\_CLKM\_CONF\_REG}{0x{}0030}\label{regdesc:I2SRXCLKMCONFREG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_MCLK\_SEL}{1}{29}{{0}}%
+\regfield{I2S\_RX\_CLK\_SEL}{2}{27}{{0}}%
+\regfield{I2S\_RX\_CLK\_ACTIVE}{1}{26}{{0}}%
+\regfield{(reserved)}{18}{8}{000000000000000000}%
+\regfield{I2S\_RX\_CLKM\_DIV\_NUM}{8}{0}{{2}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXCLKMDIVNUM}\item [I2S\_RX\_CLKM\_DIV\_NUM] I2S RX 时钟分频器的整数值。 (R/W)
+\label{fielddesc:I2SRXCLKACTIVE}\item [I2S\_RX\_CLK\_ACTIVE] I2S RX 单元时钟使能信号。 (R/W)
+\label{fielddesc:I2SRXCLKSEL}\item [I2S\_RX\_CLK\_SEL] 选择 I2S RX 单元的时钟源。0：XTAL\_CLK；1：PLL\_D2\_CLK；2：PLL\_F160M\_CLK；3：I2S\_MCLK\_in。 (R/W)
+\label{fielddesc:I2SMCLKSEL}\item [I2S\_MCLK\_SEL] 0：使用 I2S TX 单元的时钟用作 I2S\_MCLK\_OUT。1：使用 I2S RX 单元的时钟用作 I2S\_MCLK\_OUT。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{\textcolor{red}{I2S\_TX\_PCM2PDM\_CONF\_REG （仅适用于 I2S0）}}{0x{}0040}\label{regdesc:I2STXPCM2PDMCONFREG}
+\regfield{(reserved)}{6}{26}{000000}%
+\regfield{I2S\_PCM2PDM\_CONV\_EN}{1}{25}{{0}}%
+\regfield{I2S\_TX\_PDM\_DAC\_MODE\_EN}{1}{24}{{0}}%
+\regfield{I2S\_TX\_PDM\_DAC\_2OUT\_EN}{1}{23}{{0}}%
+%\regfield{I2S\_TX\_PDM\_SIGMADELTA\_DITHER}{1}{22}{{1}}%
+%\regfield{I2S\_TX\_PDM\_SIGMADELTA\_DITHER2}{1}{21}{{0}}%
+%\regfield{I2S\_TX\_PDM\_SIGMADELTA\_IN\_SHIFT}{2}{19}{{0x{}1}}%
+%\regfield{I2S\_TX\_PDM\_SINC\_IN\_SHIFT}{2}{17}{{0x{}1}}%
+%\regfield{I2S\_TX\_PDM\_LP\_IN\_SHIFT}{2}{15}{{0x{}1}}%
+%\regfield{I2S\_TX\_PDM\_HP\_IN\_SHIFT}{2}{13}{{0x{}1}}%
+\regfield{I2S\_TX\_PDM\_PRESCALE}{18}{5}{{0x{}0}}%
+\regfield{I2S\_TX\_PDM\_SINC\_OSR2}{4}{1}{{0x{}2}}%
+\regfield{(reserved)}{1}{0}{0}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXPDMSINCOSR2}\item [I2S\_TX\_PDM\_SINC\_OSR2] I2S TX PDM OSR 的值。 (R/W)
+%\label{fielddesc:I2STXPDMPRESCALE}\item [I2S\_TX\_PDM\_PRESCALE] I2S TX PDM prescale for sigmadelta (R/W)
+%\label{fielddesc:I2STXPDMHPINSHIFT}\item [I2S\_TX\_PDM\_HP\_IN\_SHIFT] I2S TX PDM sigmadelta scale shift number:0:/2 , 1:x1 , 2:x2 , 3: x4 (R/W)
+%\label{fielddesc:I2STXPDMLPINSHIFT}\item [I2S\_TX\_PDM\_LP\_IN\_SHIFT] I2S TX PDM sigmadelta scale shift number:0:/2 , 1:x1 , 2:x2 , 3: x4 (R/W)
+%\label{fielddesc:I2STXPDMSINCINSHIFT}\item [I2S\_TX\_PDM\_SINC\_IN\_SHIFT] I2S TX PDM sigmadelta scale shift number:0:/2 , 1:x1 , 2:x2 , 3: x4 (R/W)
+%\label{fielddesc:I2STXPDMSIGMADELTAINSHIFT}\item [I2S\_TX\_PDM\_SIGMADELTA\_IN\_SHIFT] I2S TX PDM sigmadelta scale shift number:0:/2 , 1:x1 , 2:x2 , 3: x4 (R/W)
+%\label{fielddesc:I2STXPDMSIGMADELTADITHER2}\item [I2S\_TX\_PDM\_SIGMADELTA\_DITHER2] I2S TX PDM sigmadelta dither2 value (R/W)
+%\label{fielddesc:I2STXPDMSIGMADELTADITHER}\item [I2S\_TX\_PDM\_SIGMADELTA\_DITHER] I2S TX PDM sigmadelta dither value (R/W)
+\label{fielddesc:I2STXPDMDAC2OUTEN}\item [I2S\_TX\_PDM\_DAC\_2OUT\_EN] 0：1-line DAC 输出模式；1：2-line DAC 输出模式；仅在 I2S\_TX\_PDM\_DAC\_MODE\_EN 为 1 时有效。 (R/W)
+\label{fielddesc:I2STXPDMDACMODEEN}\item [I2S\_TX\_PDM\_DAC\_MODE\_EN] 0：1-line PDM 输出模式；1：DAC 输出模式。 (R/W)
+\label{fielddesc:I2SPCM2PDMCONVEN}\item [I2S\_PCM2PDM\_CONV\_EN] 使能 I2S TX PCM-to-PDM 转换器。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{\textcolor{red}{I2S\_TX\_PCM2PDM\_CONF1\_REG （仅适用于 I2S0）}}{0x{}0044}\label{regdesc:I2STXPCM2PDMCONF1REG}
+\regfield{(reserved)}{6}{26}{000000}%
+%\regfield{I2S\_TX\_IIR\_HP\_MULT12\_0}{3}{23}{{7}}%
+%\regfield{I2S\_TX\_IIR\_HP\_MULT12\_5}{3}{20}{{7}}%
+\regfield{I2S\_TX\_PDM\_FS}{10}{10}{{480}}%
+\regfield{(reserved)}{10}{0}{{960}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+%\label{fielddesc:I2STXPDMFP}\item [I2S\_TX\_PDM\_FP] I2S TX PDM Fp (R/W)
+\label{fielddesc:I2STXPDMFS}\item [I2S\_TX\_PDM\_FS] 配置 I2S TX PDM 上采样率。  (R/W)
+%\label{fielddesc:I2STXIIRHPMULT125}\item [I2S\_TX\_IIR\_HP\_MULT12\_5] The fourth parameter of PDM TX IIR\_HP filter stage 2 is (504 + I2S\_TX\_IIR\_HP\_MULT12\_5[2:0]) (R/W)
+%\label{fielddesc:I2STXIIRHPMULT120}\item [I2S\_TX\_IIR\_HP\_MULT12\_0] The fourth parameter of PDM TX IIR\_HP filter stage 1 is (504 + I2S\_TX\_IIR\_HP\_MULT12\_0[2:0]) (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RX\_TDM\_CTRL\_REG}{0x{}0050}\label{regdesc:I2SRXTDMCTRLREG}
+\regfield{(reserved)}{12}{20}{000000000000}%
+\regfield{I2S\_RX\_TDM\_TOT\_CHAN\_NUM}{4}{16}{{0x{}0}}%
+\regfield{I2S\_RX\_TDM\_CHAN15\_EN}{1}{15}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN14\_EN}{1}{14}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN13\_EN}{1}{13}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN12\_EN}{1}{12}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN11\_EN}{1}{11}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN10\_EN}{1}{10}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN9\_EN}{1}{9}{{1}}%
+\regfield{I2S\_RX\_TDM\_CHAN8\_EN}{1}{8}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN7\_EN}{1}{7}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN6\_EN}{1}{6}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN5\_EN}{1}{5}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN4\_EN}{1}{4}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN3\_EN}{1}{3}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN2\_EN}{1}{2}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN1\_EN}{1}{1}{{1}}%
+\regfield{I2S\_RX\_TDM\_PDM\_CHAN0\_EN}{1}{0}{{1}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXTDMPDMCHAN0EN}\item [I2S\_RX\_TDM\_PDM\_CHAN0\_EN]  1：使能 I2S TDM 或 PDM RX 通道 0 的有效输入数据。0：禁用该功能，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN1EN}\item [I2S\_RX\_TDM\_PDM\_CHAN1\_EN]  1：使能 I2S TDM 或 PDM RX 通道 1 的有效输入数据。0：禁用该功能，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN2EN}\item [I2S\_RX\_TDM\_PDM\_CHAN2\_EN]  1：使能 I2S TDM 或 PDM RX 通道 2 的有效输入数据。0：禁用该功能，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN3EN}\item [I2S\_RX\_TDM\_PDM\_CHAN3\_EN]  1：使能 I2S TDM 或 PDM RX 通道 3 的有效输入数据。0：禁用该功能，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN4EN}\item [I2S\_RX\_TDM\_PDM\_CHAN4\_EN]  1：使能 I2S TDM 或 PDM RX 通道 4 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN5EN}\item [I2S\_RX\_TDM\_PDM\_CHAN5\_EN]  1：使能 I2S TDM 或 PDM RX 通道 5 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN6EN}\item [I2S\_RX\_TDM\_PDM\_CHAN6\_EN]  1：使能 I2S TDM 或 PDM RX 通道 6 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMPDMCHAN7EN}\item [I2S\_RX\_TDM\_PDM\_CHAN7\_EN]  1：使能 I2S TDM 或 PDM RX 通道 7 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMCHAN8EN}\item [I2S\_RX\_TDM\_CHAN8\_EN]  1：使能 I2S TDM RX 通道 8 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMCHAN9EN}\item [I2S\_RX\_TDM\_CHAN9\_EN] 1：使能 I2S TDM RX 通道 9 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMCHAN10EN}\item [I2S\_RX\_TDM\_CHAN10\_EN] 1：使能 I2S TDM RX 通道 10 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMCHAN11EN}\item [I2S\_RX\_TDM\_CHAN11\_EN] 1：使能 I2S TDM RX 通道 11 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMCHAN12EN}\item [I2S\_RX\_TDM\_CHAN12\_EN] 1：使能 I2S TDM RX 通道 12 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMCHAN13EN}\item [I2S\_RX\_TDM\_CHAN13\_EN] 1：使能 I2S TDM RX 通道 13 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\item [见下页]
+\end{reglist}\end{regdesc}
+\end{register}
+
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{I2S\_RX\_TDM\_CTRL\_REG}{0x{}0050}
+\begin{regdesc}\begin{reglist}
+\item [接上页]
+\label{fielddesc:I2SRXTDMCHAN14EN}\item [I2S\_RX\_TDM\_CHAN14\_EN] 1：使能 I2S TDM RX 通道 14 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMCHAN15EN}\item [I2S\_RX\_TDM\_CHAN15\_EN] 1：使能 I2S TDM RX 通道 15 的有效输入数据。0：禁用该模式，在该通道中仅输入 0。 (R/W)
+\label{fielddesc:I2SRXTDMTOTCHANNUM}\item [I2S\_RX\_TDM\_TOT\_CHAN\_NUM] 在 I2S TDM RX 模式下，使用的通道总数 = 该值 + 1。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RXEOF\_NUM\_REG}{0x{}0064}\label{regdesc:I2SRXEOFNUMREG}
+\regfield{(reserved)}{20}{12}{00000000000000000000}%
+\regfield{I2S\_RX\_EOF\_NUM}{12}{0}{{0x{}40}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXEOFNUM}\item [I2S\_RX\_EOF\_NUM] 用于配置接收数据的长度。接收数据长度等于 (I2S\_RX\_BITS\_MOD + 1) * (I2S\_RX\_EOF\_NUM + 1)。如果接收数据的长度达到该值，则将在已配置的 DMA RX 通道中触发 in\_suc\_eof 中断。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_CONF\_REG}{0x{}0024}\label{regdesc:I2STXCONFREG}
+\regfield{(reserved)}{4}{28}{0000}%
+\regfield{I2S\_SIG\_LOOPBACK}{1}{27}{{0}}%
+\regfield{I2S\_TX\_CHAN\_MOD}{3}{24}{{0}}%
+\regfield{(reserved)}{3}{21}{000}%
+\regfield{I2S\_TX\_PDM\_EN}{1}{20}{{0}}%
+\regfield{I2S\_TX\_TDM\_EN}{1}{19}{{0}}%
+\regfield{I2S\_TX\_BIT\_ORDER}{1}{18}{{0}}%
+\regfield{I2S\_TX\_WS\_IDLE\_POL}{1}{17}{{0}}%
+\regfield{I2S\_TX\_24\_FILL\_EN}{1}{16}{{0}}%
+\regfield{I2S\_TX\_LEFT\_ALIGN}{1}{15}{{1}}%
+\regfield{(reserved)}{1}{14}{0}%
+\regfield{I2S\_TX\_STOP\_EN}{1}{13}{{1}}%
+\regfield{I2S\_TX\_PCM\_BYPASS}{1}{12}{{1}}%
+\regfield{I2S\_TX\_PCM\_CONF}{2}{10}{{0x{}0}}%
+\regfield{I2S\_TX\_MONO\_FST\_VLD}{1}{9}{{1}}%
+\regfield{I2S\_TX\_UPDATE}{1}{8}{{0}}%
+\regfield{I2S\_TX\_BIG\_ENDIAN}{1}{7}{{0}}%
+\regfield{I2S\_TX\_CHAN\_EQUAL}{1}{6}{{0}}%
+\regfield{I2S\_TX\_MONO}{1}{5}{{0}}%
+\regfield{(reserved)}{1}{4}{0}%
+\regfield{I2S\_TX\_SLAVE\_MOD}{1}{3}{{0}}%
+\regfield{I2S\_TX\_START}{1}{2}{{0}}%
+\regfield{I2S\_TX\_FIFO\_RESET}{1}{1}{{0}}%
+\regfield{I2S\_TX\_RESET}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXRESET}\item [I2S\_TX\_RESET] 此位置 1，复位发送单元。 (WT)
+\label{fielddesc:I2STXFIFORESET}\item [I2S\_TX\_FIFO\_RESET] 此位置 1，复位 TX FIFO。 (WT)
+\label{fielddesc:I2STXSTART}\item [I2S\_TX\_START] 此位置 1，开始发送数据。 (R/W)
+\label{fielddesc:I2STXSLAVEMOD}\item [I2S\_TX\_SLAVE\_MOD] 此位置 1，使能从机发送模式。 (R/W)
+\label{fielddesc:I2STXMONO}\item [I2S\_TX\_MONO] 此位置 1，使能发送单元的单声道模式。 (R/W)
+\label{fielddesc:I2STXCHANEQUAL}\item [I2S\_TX\_CHAN\_EQUAL] 1：在 I2S TX 单声道模式或 TDM 模式下，左声道数据等于右声道数据。0：在 I2S TX 单声道模式或 TDM 模式下，I2S\_SINGLE\_DATA 为无效的通道数据。 (R/W)
+\label{fielddesc:I2STXBIGENDIAN}\item [I2S\_TX\_BIG\_ENDIAN] I2S TX 字节序。1：低字节数据写入高位地址；0：低字节数据写入低位地址。 (R/W)
+\label{fielddesc:I2STXUPDATE}\item [I2S\_TX\_UPDATE] 写 1 将 I2S TX 寄存器从 APB 时钟域同步到 I2S TX 时钟域。寄存器更新完成后，此位将由硬件清除。 (R/W/SC)
+\label{fielddesc:I2STXMONOFSTVLD}\item [I2S\_TX\_MONO\_FST\_VLD] 1：在 I2S TX 单声道模式下，第一个通道数据有效。0：在 I2S TX 单声道模式下，第二个通道数据有效。 (R/W)
+\label{fielddesc:I2STXPCMCONF}\item [I2S\_TX\_PCM\_CONF] I2S TX 压缩/解压缩配置位。0 (atol)：A 率解压缩；1 (ltoa)：A 率压缩；2 (utol)：$\mu$ 率解压缩；3 (ltou)：$\mu$ 率压缩。 (R/W)
+\label{fielddesc:I2STXPCMBYPASS}\item [I2S\_TX\_PCM\_BYPASS] 置位此位，发送数据将绕过压缩/解压缩模块。 (R/W)
+\label{fielddesc:I2STXSTOPEN}\item [I2S\_TX\_STOP\_EN] 将此位置 1，当 TX FIFO 为空时，发送单元停止输出 BCK 和 WS 信号。 (R/W)
+\label{fielddesc:I2STXLEFTALIGN}\item [I2S\_TX\_LEFT\_ALIGN] 1：使能 I2S TX 左对齐模式。0：使能 I2S TX 右对齐模式。 (R/W)
+\label{fielddesc:I2STX24FILLEN}\item [I2S\_TX\_24\_FILL\_EN] 1：将 24 位数据以 32 位的格式发送出去（不足的位用 0 填充）；0：将 24 位数据以 24 位的格式发送出去。 (R/W)
+\label{fielddesc:I2STXWSIDLEPOL}\item [I2S\_TX\_WS\_IDLE\_POL] 0：WS 为 0 时，发送左通道数据；WS 为 1 时，发送右通道数据。1：WS 为 1 时，发送左通道数据；WS 为 0 时，发送右通道数据。 (R/W)
+\label{fielddesc:I2STXBITORDER}\item [I2S\_TX\_BIT\_ORDER] I2S TX 位顺序。1：小端序，先发送最低位。0：大端序，先发送最高位。 (R/W)
+\label{fielddesc:I2STXTDMEN}\item [I2S\_TX\_TDM\_EN] 1：使能 I2S TDM TX 模式。0：禁用 I2S TDM TX 模式。 (R/W)
+
+\item [见下页]
+\end{reglist}\end{regdesc}
+\end{register}
+
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{I2S\_TX\_CONF\_REG}{0x{}0024}
+\begin{regdesc}\begin{reglist}
+\item [接上页]
+
+\label{fielddesc:I2STXPDMEN}\item [I2S\_TX\_PDM\_EN] 1：使能 I2S PDM TX 模式。0：禁用 I2S PDM TX 模式。 (R/W)
+\label{fielddesc:I2STXCHANMOD}\item [I2S\_TX\_CHAN\_MOD] I2S TX 通道配置位。更多信息见表 \ref{table:TX_PDM_DATA}。 (R/W)
+\label{fielddesc:I2SSIGLOOPBACK}\item [I2S\_SIG\_LOOPBACK] 置 1 时，发送单元和接收单元共享 WS 和 BCK 信号。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_CONF1\_REG}{0x{}002C}\label{regdesc:I2STXCONF1REG}
+\regfield{(reserved)}{1}{31}{0}%
+\regfield{I2S\_TX\_BCK\_NO\_DLY}{1}{30}{{1}}%
+\regfield{I2S\_TX\_MSB\_SHIFT}{1}{29}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN\_BITS}{5}{24}{{0x{}f}}%
+\regfield{I2S\_TX\_HALF\_SAMPLE\_BITS}{6}{18}{{0x{}f}}%
+\regfield{I2S\_TX\_BITS\_MOD}{5}{13}{{0x{}f}}%
+\regfield{I2S\_TX\_BCK\_DIV\_NUM}{6}{7}{{6}}%
+\regfield{I2S\_TX\_TDM\_WS\_WIDTH}{7}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXTDMWSWIDTH}\item [I2S\_TX\_TDM\_WS\_WIDTH] 在 TDM 模式下，tx\_ws\_out（WS 默认电平）时长等于 (I2S\_TX\_TDM\_WS\_WIDTH + 1) * T\_BCK。 (R/W)
+\label{fielddesc:I2STXBCKDIVNUM}\item [I2S\_TX\_BCK\_DIV\_NUM] 在 TX 模式下，配置 BCK 时钟的分频系数。注意，不可配置为 1。 (R/W)
+\label{fielddesc:I2STXBITSMOD}\item [I2S\_TX\_BITS\_MOD] TX 模式下，配置发送通道的有效数据位长度。7：所有有效的通道数据均为 8 位模式。15：所有有效的通道数据均为 16 位模式。23：所有有效的通道数据均为 24 位模式。31：所有有效的通道数据均为 32 位模式。 (R/W)
+\label{fielddesc:I2STXHALFSAMPLEBITS}\item [I2S\_TX\_HALF\_SAMPLE\_BITS] TX 单次采样比特数的一半。I2S\_TX\_HALF\_SAMPLE\_BITS x 2 等于在一个 WS 信号中，BCK 持续的周期长。 (R/W)
+\label{fielddesc:I2STXTDMCHANBITS}\item [I2S\_TX\_TDM\_CHAN\_BITS] 在 TDM TX 模式下，每个通道的 TX 数据位等于该值 + 1。 (R/W)
+\label{fielddesc:I2STXMSBSHIFT}\item [I2S\_TX\_MSB\_SHIFT] 控制 WS 和数据的 MSB 位之间的时序关系。1：相隔一个周期；0：上升沿对齐。 (R/W)
+\label{fielddesc:I2STXBCKNODLY}\item [I2S\_TX\_BCK\_NO\_DLY] 1：在主机模式下，BCK 上升沿和下降沿没有延迟。0：在主机模式下，BCK 上升沿和下降沿有延迟。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_CLKM\_CONF\_REG}{0x{}0034}\label{regdesc:I2STXCLKMCONFREG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_CLK\_EN}{1}{29}{{0}}%
+\regfield{I2S\_TX\_CLK\_SEL}{2}{27}{{0}}%
+\regfield{I2S\_TX\_CLK\_ACTIVE}{1}{26}{{0}}%
+\regfield{(reserved)}{18}{8}{000000000000000000}%
+\regfield{I2S\_TX\_CLKM\_DIV\_NUM}{8}{0}{{2}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXCLKMDIVNUM}\item [I2S\_TX\_CLKM\_DIV\_NUM] I2S TX 时钟分频器的整数值。 (R/W)
+\label{fielddesc:I2STXCLKACTIVE}\item [I2S\_TX\_CLK\_ACTIVE] I2S TX 单元时钟使能信号。 (R/W)
+\label{fielddesc:I2STXCLKSEL}\item [I2S\_TX\_CLK\_SEL] 选择 I2S TX 单元的时钟源。0：XTAL\_CLK；1：PLL\_D2\_CLK；2：PLL\_F160M\_CLK；3：I2S\_MCLK\_in。 (R/W)
+\label{fielddesc:I2SCLKEN}\item [I2S\_CLK\_EN] 置位此位，使能时钟门控。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_TDM\_CTRL\_REG}{0x{}0054}\label{regdesc:I2STXTDMCTRLREG}
+\regfield{(reserved)}{11}{21}{00000000000}%
+\regfield{I2S\_TX\_TDM\_SKIP\_MSK\_EN}{1}{20}{{0}}%
+\regfield{I2S\_TX\_TDM\_TOT\_CHAN\_NUM}{4}{16}{{0x{}0}}%
+\regfield{I2S\_TX\_TDM\_CHAN15\_EN}{1}{15}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN14\_EN}{1}{14}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN13\_EN}{1}{13}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN12\_EN}{1}{12}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN11\_EN}{1}{11}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN10\_EN}{1}{10}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN9\_EN}{1}{9}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN8\_EN}{1}{8}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN7\_EN}{1}{7}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN6\_EN}{1}{6}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN5\_EN}{1}{5}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN4\_EN}{1}{4}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN3\_EN}{1}{3}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN2\_EN}{1}{2}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN1\_EN}{1}{1}{{1}}%
+\regfield{I2S\_TX\_TDM\_CHAN0\_EN}{1}{0}{{1}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXTDMCHAN0EN}\item [I2S\_TX\_TDM\_CHAN0\_EN] 1：使能 I2S TDM TX 通道 0 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN1EN}\item [I2S\_TX\_TDM\_CHAN1\_EN] 1：使能 I2S TDM TX 通道 1 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN2EN}\item [I2S\_TX\_TDM\_CHAN2\_EN] 1：使能 I2S TDM TX 通道 2 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN3EN}\item [I2S\_TX\_TDM\_CHAN3\_EN] 1：使能 I2S TDM TX 通道 3 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN4EN}\item [I2S\_TX\_TDM\_CHAN4\_EN] 1：使能 I2S TDM TX 通道 4 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN5EN}\item [I2S\_TX\_TDM\_CHAN5\_EN] 1：使能 I2S TDM TX 通道 5 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN6EN}\item [I2S\_TX\_TDM\_CHAN6\_EN] 1：使能 I2S TDM TX 通道 6 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN7EN}\item [I2S\_TX\_TDM\_CHAN7\_EN] 1：使能 I2S TDM TX 通道 7 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN8EN}\item [I2S\_TX\_TDM\_CHAN8\_EN] 1：使能 I2S TDM TX 通道 8 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN9EN}\item [I2S\_TX\_TDM\_CHAN9\_EN] 1：使能 I2S TDM TX 通道 9 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN10EN}\item [I2S\_TX\_TDM\_CHAN10\_EN] 1：使能 I2S TDM TX 通道 10 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN11EN}\item [I2S\_TX\_TDM\_CHAN11\_EN] 1：使能 I2S TDM TX 通道 11 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN12EN}\item [I2S\_TX\_TDM\_CHAN12\_EN] 1：使能 I2S TDM TX 通道 12 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN13EN}\item [I2S\_TX\_TDM\_CHAN13\_EN] 1：使能 I2S TDM TX 通道 13 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+
+\item [见下页]
+\end{reglist}\end{regdesc}
+\end{register}
+
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{I2S\_TX\_TDM\_CTRL\_REG}{0x{}0054}
+\begin{regdesc}\begin{reglist}
+\item [接上页]
+\label{fielddesc:I2STXTDMCHAN14EN}\item [I2S\_TX\_TDM\_CHAN14\_EN] 1：使能 I2S TDM TX 通道 14 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMCHAN15EN}\item [I2S\_TX\_TDM\_CHAN15\_EN] 1：使能 I2S TDM TX 通道 15 的有效输出数据。0：通道发送数据由 \hyperref[fielddesc:I2STXCHANEQUAL]{I2S\_TX\_CHAN\_EQUAL} 和 \hyperref[fielddesc:I2SSINGLEDATA]{I2S\_SINGLE\_DATA} 控制，参考章节 \ref{sec:tdm-channel-mode}。 (R/W)
+\label{fielddesc:I2STXTDMTOTCHANNUM}\item [I2S\_TX\_TDM\_TOT\_CHAN\_NUM] 在 I2S TDM TX 模式下，使用的通道总数等于该值 + 1。 (R/W)
+\label{fielddesc:I2STXTDMSKIPMSKEN}\item [I2S\_TX\_TDM\_SKIP\_MSK\_EN] 置位此位，则当 DMA TX buffer 存储了 (I2S\_TX\_TDM\_TOT\_CHAN\_NUM + 1) 个通道的数据时，仅有启用的通道的数据会被发送。清除此位，则 DMA TX buffer 中的所有数据都用于启用的通道。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_RX\_CLKM\_DIV\_CONF\_REG}{0x{}0038}\label{regdesc:I2SRXCLKMDIVCONFREG}
+\regfield{(reserved)}{4}{28}{0000}%
+\regfield{I2S\_RX\_CLKM\_DIV\_YN1}{1}{27}{{0}}%
+\regfield{I2S\_RX\_CLKM\_DIV\_X}{9}{18}{{0x{}0}}%
+\regfield{I2S\_RX\_CLKM\_DIV\_Y}{9}{9}{{0x{}1}}%
+\regfield{I2S\_RX\_CLKM\_DIV\_Z}{9}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXCLKMDIVZ}\item [I2S\_RX\_CLKM\_DIV\_Z] b <= a/2 时，I2S\_RX\_CLKM\_DIV\_Z 的值为 b。b > a/2 时，I2S\_RX\_CLKM\_DIV\_Z 的值为 a - b。 (R/W)
+\label{fielddesc:I2SRXCLKMDIVY}\item [I2S\_RX\_CLKM\_DIV\_Y] b <= a/2 时，I2S\_RX\_CLKM\_DIV\_Y 的值为 a\%b。b > a/2 时，I2S\_RX\_CLKM\_DIV\_Y 的值为 a\%(a-b)。 (R/W)
+\label{fielddesc:I2SRXCLKMDIVX}\item [I2S\_RX\_CLKM\_DIV\_X] b <= a/2 时，I2S\_RX\_CLKM\_DIV\_X 的值为 floor(a/b) - 1。b > a/2，I2S\_RX\_CLKM\_DIV\_X 的值为 floor(a/(a - b)) - 1。 (R/W)
+\label{fielddesc:I2SRXCLKMDIVYN1}\item [I2S\_RX\_CLKM\_DIV\_YN1] b <= a/2 时，I2S\_RX\_CLKM\_DIV\_YN1 的值为 0。b > a/2 时，I2S\_RX\_CLKM\_DIV\_YN1 的值为 1。 (R/W)
+\end{reglist}\end{regdesc}
+\vspace{-2em}
+\begin{tiplisting}
+上文所述的 ``a" 和 ``b" 分别为小数分频的分母部分和分子部分。更多信息，见第 \ref{The Clock of I2S Module} 小节。
+\end{tiplisting}
+\end{register}
+
+
+\begin{register}{H}{\textcolor{red}{I2S\_RX\_TIMING\_REG}}{0x{}0058}\label{regdesc:I2SRXTIMINGREG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_RX\_BCK\_IN\_DM}{2}{28}{{0x{}0}}%
+\regfield{(reserved)}{2}{26}{00}%
+\regfield{I2S\_RX\_WS\_IN\_DM}{2}{24}{{0x{}0}}%
+\regfield{(reserved)}{2}{22}{00}%
+\regfield{I2S\_RX\_BCK\_OUT\_DM}{2}{20}{{0x{}0}}%
+\regfield{(reserved)}{2}{18}{00}%
+\regfield{I2S\_RX\_WS\_OUT\_DM}{2}{16}{{0x{}0}}%
+\regfield{(reserved)}{2}{14}{00}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_SD3\_IN\_DM}}{2}{12}{{0x{}0}}%
+\regfield{(reserved)}{2}{10}{00}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_SD2\_IN\_DM}}{2}{8}{{0x{}0}}%
+\regfield{(reserved)}{2}{6}{00}%
+\regfield{(reserved)|\textcolor{red}{I2S\_RX\_SD1\_IN\_DM}}{2}{4}{{0x{}0}}%
+\regfield{(reserved)}{2}{2}{00}%
+\regfield{I2S\_RX\_SD\_IN\_DM}{2}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SRXSDINDM}\item [I2S\_RX\_SD\_IN\_DM] I2S RX SD 输入信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2SRXSD1INDM}\item [\textcolor{red}{I2S\_RX\_SD1\_IN\_DM （仅适用于 I2S0）}] I2S RX SD1 输入信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2SRXSD2INDM}\item [\textcolor{red}{I2S\_RX\_SD2\_IN\_DM （仅适用于 I2S0）}] I2S RX SD2 输入信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2SRXSD3INDM}\item [\textcolor{red}{I2S\_RX\_SD3\_IN\_DM （仅适用于 I2S0）}] I2S RX SD3 输入信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2SRXWSOUTDM}\item [I2S\_RX\_WS\_OUT\_DM] I2S RX WS 输出信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2SRXBCKOUTDM}\item [I2S\_RX\_BCK\_OUT\_DM] I2S RX BCK 输出信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2SRXWSINDM}\item [I2S\_RX\_WS\_IN\_DM] I2S RX WS 输入信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2SRXBCKINDM}\item [I2S\_RX\_BCK\_IN\_DM] I2S RX BCK 输入信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_CLKM\_DIV\_CONF\_REG}{0x{}003C}\label{regdesc:I2STXCLKMDIVCONFREG}
+\regfield{(reserved)}{4}{28}{0000}%
+\regfield{I2S\_TX\_CLKM\_DIV\_YN1}{1}{27}{{0}}%
+\regfield{I2S\_TX\_CLKM\_DIV\_X}{9}{18}{{0x{}0}}%
+\regfield{I2S\_TX\_CLKM\_DIV\_Y}{9}{9}{{0x{}1}}%
+\regfield{I2S\_TX\_CLKM\_DIV\_Z}{9}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXCLKMDIVZ}\item [I2S\_TX\_CLKM\_DIV\_Z] b <= a/2 时，I2S\_TX\_CLKM\_DIV\_Z 的值为 b。b > a/2 时，I2S\_TX\_CLKM\_DIV\_Z 的值为 a - b。 (R/W)
+\label{fielddesc:I2STXCLKMDIVY}\item [I2S\_TX\_CLKM\_DIV\_Y] b <= a/2 时，I2S\_TX\_CLKM\_DIV\_Y 的值为 a\%b。b > a/2 时，I2S\_TX\_CLKM\_DIV\_Y 的值为 a\%(a - b)。 (R/W)
+\label{fielddesc:I2STXCLKMDIVX}\item [I2S\_TX\_CLKM\_DIV\_X] b <= a/2 时，I2S\_TX\_CLKM\_DIV\_X 的值为 floor(a/b) - 1。b > a/2，I2S\_TX\_CLKM\_DIV\_X 的值为 floor(a/(a - b)) - 1。 (R/W)
+\label{fielddesc:I2STXCLKMDIVYN1}\item [I2S\_TX\_CLKM\_DIV\_YN1] b <= a/2 时，I2S\_TX\_CLKM\_DIV\_YN1 的值为 0。b > a/2 时，I2S\_TX\_CLKM\_DIV\_YN1 的值为 1。 (R/W)
+\end{reglist}\end{regdesc}
+\vspace{-2em}
+\begin{tiplisting}
+上文所述的 ``a" 和 ``b" 分别为小数分频的分母部分和分子部分。更多信息，见第 \ref{The Clock of I2S Module} 小节。
+\end{tiplisting}
+\end{register}
+
+
+\begin{register}{H}{I2S\_TX\_TIMING\_REG}{0x{}005C}\label{regdesc:I2STXTIMINGREG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2S\_TX\_BCK\_IN\_DM}{2}{28}{{0x{}0}}%
+\regfield{(reserved)}{2}{26}{00}%
+\regfield{I2S\_TX\_WS\_IN\_DM}{2}{24}{{0x{}0}}%
+\regfield{(reserved)}{2}{22}{00}%
+\regfield{I2S\_TX\_BCK\_OUT\_DM}{2}{20}{{0x{}0}}%
+\regfield{(reserved)}{2}{18}{00}%
+\regfield{I2S\_TX\_WS\_OUT\_DM}{2}{16}{{0x{}0}}%
+\regfield{(reserved)}{10}{6}{0000000000}%
+\regfield{I2S\_TX\_SD1\_OUT\_DM}{2}{4}{{0x{}0}}%
+\regfield{(reserved)}{2}{2}{00}%
+\regfield{I2S\_TX\_SD\_OUT\_DM}{2}{0}{{0x{}0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXSDOUTDM}\item [I2S\_TX\_SD\_OUT\_DM] I2S TX SD 输出信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2STXSD1OUTDM}\item [I2S\_TX\_SD1\_OUT\_DM] I2S TX SD1 输出信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2STXWSOUTDM}\item [I2S\_TX\_WS\_OUT\_DM] I2S TX WS 输出信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2STXBCKOUTDM}\item [I2S\_TX\_BCK\_OUT\_DM] I2S TX BCK 输出信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2STXWSINDM}\item [I2S\_TX\_WS\_IN\_DM] I2S TX WS 输入信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\label{fielddesc:I2STXBCKINDM}\item [I2S\_TX\_BCK\_IN\_DM] I2S TX BCK 输入信号的延迟模式。0：旁路。1：上升沿延迟。2：下降沿延迟。3：不使用该功能。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_LC\_HUNG\_CONF\_REG}{0x{}0060}\label{regdesc:I2SLCHUNGCONFREG}
+\regfield{(reserved)}{20}{12}{00000000000000000000}%
+\regfield{I2S\_LC\_FIFO\_TIMEOUT\_ENA}{1}{11}{{1}}%
+\regfield{I2S\_LC\_FIFO\_TIMEOUT\_SHIFT}{3}{8}{{0}}%
+\regfield{I2S\_LC\_FIFO\_TIMEOUT}{8}{0}{{0x{}10}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SLCFIFOTIMEOUT}\item [I2S\_LC\_FIFO\_TIMEOUT] FIFO Hung 计数器等于该值时，将触发 I2S\_TX\_HUNG\_INT 中断或 I2S\_RX\_HUNG\_INT 中断。 (R/W)
+\label{fielddesc:I2SLCFIFOTIMEOUTSHIFT}\item [I2S\_LC\_FIFO\_TIMEOUT\_SHIFT] 用于分频滴答计数器的阈值。计数器值大于等于 88000/2$^{I2S\_LC\_FIFO\_TIMEOUT\_SHIFT}$ 时，复位滴答计数器。 (R/W)
+\label{fielddesc:I2SLCFIFOTIMEOUTENA}\item [I2S\_LC\_FIFO\_TIMEOUT\_ENA] FIFO 超时使能位。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_CONF\_SIGLE\_DATA\_REG}{0x{}0068}\label{regdesc:I2SCONFSIGLEDATAREG}
+\regfield{I2S\_SINGLE\_DATA}{32}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SSINGLEDATA}\item [I2S\_SINGLE\_DATA] 配置用于发送的通道常量数据。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_STATE\_REG}{0x{}006C}\label{regdesc:I2SSTATEREG}
+\regfield{(reserved)}{31}{1}{0000000000000000000000000000000}%
+\regfield{I2S\_TX\_IDLE}{1}{0}{{1}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2STXIDLE}\item [I2S\_TX\_IDLE] 1：I2S TX 单元处于空闲状态。0：I2S TX 单元 处于工作状态。 (RO)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2S\_DATE\_REG}{0x{}0080}\label{regdesc:I2SDATEREG}
+\regfield{(reserved)}{4}{28}{0000}%
+\regfield{I2S\_DATE}{28}{0}{{0x{}2009070}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2SDATE}\item [I2S\_DATE] 版本控制寄存器。 (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+

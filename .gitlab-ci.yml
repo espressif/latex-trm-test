@@ -1,0 +1,240 @@
+stages:
+    - prepare
+    - build
+    - deploy
+
+
+prepare image:
+    stage: prepare
+    tags: [dind]
+    image: docker:19.03.12
+    services:
+        # We need a Docker service running
+        - docker:19.03.12-dind
+    rules:
+        # Build Docker image by manually triggering a pipeline with $BUILD_DOCKER_IMMGE variable set.
+        # Inspired by https://www.youtube.com/watch?v=7I6tHw68DMQ
+        - if: $BUILD_DOCKER_IMAGE == "Y"
+    script:
+        # Get password from stdin to avoid warnings
+        - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
+        # Build the Docker image and push it to GitLab's registry
+        - docker build -t $CI_REGISTRY_IMAGE .devcontainer
+        - docker push $CI_REGISTRY_IMAGE
+
+
+build PDFs:
+    stage: build
+    tags: [host_test]
+    image: $CI_REGISTRY_IMAGE
+    rules:
+        # Run for all changes to a merge request's source branch
+        - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+        # Run for all changes to the default branch
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    script:
+        - echo "MR labels=$CI_MERGE_REQUEST_LABELS"
+        - python extract-labels.py
+        # Load MODULE_LABELS and CHIP_LABELS from extract-labels.py
+        - source ./labels.env
+        - |
+            # Initialize index to 0
+            index=0
+            # Now, use MODULE_LABELS and CHIP_LABELS as needed to build the PDFs.
+            echo "Before PDF building loop: module labels=$MODULE_LABELS and chip labels=$CHIP_LABELS"
+            for CHIP_SERIES in */; do
+                # Remove the trailing slash from CHIP_SERIES
+                CHIP_SERIES=$(echo "$CHIP_SERIES" | sed 's/\/$//')
+                echo "Folder currently being processed: $CHIP_SERIES"
+                if [[ "$CHIP_LABELS" == *"$CHIP_SERIES"* ]]; then
+                    for MODULE_NAME in ${MODULE_LABELS//,/ }; do
+                        # Now build the PDF for the CHIP_SERIES, MODULE_NAME, and LANGUAGE.
+                        echo "Building PDF for $MODULE_NAME in $CHIP_SERIES, $LANGUAGE"
+                        python build-pdf.py -c "$CHIP_SERIES" -m "$MODULE_NAME" -l "$LANGUAGE"
+                        # Prepare the document path and URL for the artifact.
+                        echo "Inside PDF building loop: module labels=$MODULE_LABELS"
+                        # Load DOCUMENT_PATH from build-pdf.py
+                        source ./doc_path.env
+                        echo "Document path=$DOCUMENT_PATH"
+                        ARTIFACT_URL="$CI_JOB_URL/artifacts/file/$DOCUMENT_PATH"
+                        # Increment the index for each iteration
+                        ((index += 1))
+                        # Prepare the log file name.
+                        LOG_FILE="doc-url-3-$CI_JOB_ID-$index.txt"
+                        echo "Document preview $ARTIFACT_URL"
+                        echo -e "$CHIP_SERIES \t $MODULE_NAME \t $LANGUAGE \t $ARTIFACT_URL" > logs/$LOG_FILE
+                    done
+                fi
+            done
+        - rm -f ./labels.env ./doc_path.env
+        - ls -l logs
+    parallel:
+        matrix:
+            - LANGUAGE: [EN, CN]
+    artifacts:
+        when: always
+        paths:
+            - ./*/out/*.pdf
+            - ./*/out/*.log
+            - ./logs/doc-url-*.txt
+        expire_in: 1 week
+
+
+post links:
+    stage: deploy
+    tags: [host_test]
+    image: $CI_REGISTRY_IMAGE
+    needs:
+        - build PDFs
+    rules:
+        # Run for all changes to a merge request's source branch
+        - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    script:
+        - ls -l logs
+        - python post-mr-note.py $GITLAB_MR_NOTE_TOKEN $CI_PROJECT_PATH $CI_MERGE_REQUEST_IID --url https://${CI_SERVER_HOST}:${CI_SERVER_PORT}
+
+
+generate DMFs:
+    stage: deploy
+    tags: [host_test]
+    image: $CI_REGISTRY_IMAGE
+    rules:
+        # Run for MRs labeled with "Release"
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_LABELS =~ /(^|,)Release(,|$)/'
+        # To Do: Only run this job when the MR is merged to master
+        # - if: $CI_MERGE_REQUEST_TARGET_BRANCH == "master"
+    variables:
+        MR_BASE_URL: " $CI_MERGE_REQUEST_PROJECT_URL/-/merge_requests"
+    script:
+        - git config --global credential.helper store
+        # Pass GitLab credentials
+        - echo "https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}:${CI_SERVER_PORT}/documentation" >> ~/.git-credentials
+        - echo "Auto-publishing to CDP"
+        - TOOLS_URL="${CI_SERVER_PROTOCOL}://project_${CI_PROJECT_ID}_bot:${BOT_TOKEN}@${CI_SERVER_HOST}:${CI_SERVER_PORT}/documentation/documentation-tools.git"
+        - echo $TOOLS_URL
+        - git clone "${TOOLS_URL}"
+        - ls -al # debugging
+        - cd documentation-tools
+        - git checkout feature/add_dmf_tool
+        # Read labels from MR
+        -   |
+            if [ -z "$CI_MERGE_REQUEST_LABELS" ]; then
+                # If MR has no assigned labels, substitute all chip series in the repo.
+                # To Do: optimize generate-dmf.py to accept a list of chip series. 1. If no MR labels, generate DMF files for all chip series in the repo. 2. If only one MR label, only generate DMF files for this chip series. 3. If multiple MR labels, generate DMF files for all chip series in the MR labels.
+                PRODUCT_NAME=$CHIP_LIST;
+            else
+                # Filter out the "Release" label
+                FILTERED_LABELS=$(echo "$CI_MERGE_REQUEST_LABELS" | tr ',' '\n' | grep -v 'Release' | tr '\n' ',' | sed 's/,$//')
+                # Check if there are any labels left after filtering
+                if [ -z "$FILTERED_LABELS" ]; then
+                    PRODUCT_NAME=$CHIP_LIST;
+                else
+                    PRODUCT_NAME=$FILTERED_LABELS;
+                fi
+            fi
+            echo "PRODUCT_NAME: $PRODUCT_NAME"
+        - cd ..
+        - python documentation-tools/dmf-tool/generate-dmf.py -p . -t documentation-tools/dmf-tool/dmf-template.yml -n $PRODUCT_NAME
+        - mv *.yml logs/
+        - echo "$CI_MERGE_REQUEST_IID"
+        - echo "$CI_MERGE_REQUEST_PROJECT_URL"
+        - |
+            for file in logs/*.yml; do
+                echo "tracking_reference:$MR_BASE_URL/$CI_MERGE_REQUEST_IID" >> $file
+            done
+    artifacts:
+        when: always
+        paths:
+            - 'logs/*.yml'
+        expire_in: 1 week
+
+
+prepare attachments for CDP:
+    stage: deploy
+    tags: [host_test]
+    image: $CI_REGISTRY_IMAGE
+    needs:
+        - build PDFs
+        - generate DMFs
+    rules:
+        # Run for MRs labeled with "Release"
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_LABELS =~ /(^|,)Release(,|$)/'
+    script:
+        - git config --global credential.helper store
+        # Pass GitLab credentials
+        - echo "https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}:${CI_SERVER_PORT}/documentation" >> ~/.git-credentials
+        - echo "Auto-publishing to CDP"
+        - TOOLS_URL="${CI_SERVER_PROTOCOL}://project_${CI_PROJECT_ID}_bot:${BOT_TOKEN}@${CI_SERVER_HOST}:${CI_SERVER_PORT}/documentation/documentation-tools.git"
+        - echo $TOOLS_URL
+        - git clone "${TOOLS_URL}"
+        - ls -al # debugging
+        - cd documentation-tools
+        - git checkout feature/add_dmf_tool
+        -   |
+            if [ -z "$CI_MERGE_REQUEST_LABELS" ]; then
+                # If MR has no assigned labels, substitute all chip series in the repo.
+                PRODUCT_NAME=$CHIP_LIST;
+            else
+                # Filter out the "Release" label
+                FILTERED_LABELS=$(echo "$CI_MERGE_REQUEST_LABELS" | tr ',' '\n' | grep -v 'Release' | tr '\n' ',' | sed 's/,$//')
+                # Check if there are any labels left after filtering
+                if [ -z "$FILTERED_LABELS" ]; then
+                    PRODUCT_NAME=$CHIP_LIST;
+                else
+                    PRODUCT_NAME=$FILTERED_LABELS;
+                fi
+            fi
+            echo "PRODUCT_NAME: $PRODUCT_NAME"
+        - cd ..
+        - python documentation-tools/dmf-tool/prepare-attachment.py $PRODUCT_NAME $LANGUAGE
+        - cd logs
+        - ls -al # debugging
+    parallel:
+        matrix:
+            - LANGUAGE: [en, cn]
+    artifacts:
+        when: always
+        paths:
+            - 'logs/*/*.pdf'
+            - 'logs/*/*.yml'
+        expire_in: 1 week
+
+
+publish on CDP:
+    stage: deploy
+    tags: [host_test]
+    image: $CI_REGISTRY_IMAGE
+    needs:
+        - prepare attachments for CDP
+    rules:
+        # Run for MRs labeled with "Release"
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_LABELS =~ /(^|,)Release(,|$)/'
+    script:
+        - export AUTHOR="author=$GITLAB_USER_EMAIL"
+        - export YAML_FILE_PATH_RAW=$(find $CI_PROJECT_DIR/logs -maxdepth 2 -type f -name "*_$LANGUAGE.yml" -print -quit)
+        - echo $YAML_FILE_PATH_RAW
+        - export YAML_FILE_PATH_WITH_QUOTES="\"$YAML_FILE_PATH_RAW\""
+        - echo $YAML_FILE_PATH_WITH_QUOTES
+        - export YAML_FILE_PATH="yamlFile=@$YAML_FILE_PATH_WITH_QUOTES"
+        - echo $YAML_FILE_PATH
+        - export PDF_FILE_PATH_RAW=$(find $CI_PROJECT_DIR/logs -maxdepth 2 -type f -name "*_$LANGUAGE.pdf" -print -quit)
+        - echo $PDF_FILE_PATH_RAW
+        - export PDF_FILE_PATH_WITH_QUOTES="\"$PDF_FILE_PATH_RAW\""
+        - echo $PDF_FILE_PATH_WITH_QUOTES
+        - export PDF_FILE_PATH="docFile=@$PDF_FILE_PATH_WITH_QUOTES"
+        - echo $PDF_FILE_PATH
+        -   |
+            response=$(curl -X POST --location "$CDP_API_ENDPOINT" --header "$CDP_API_AUTHORIZATION" --form $AUTHOR --form $YAML_FILE_PATH --form $PDF_FILE_PATH)
+            echo "Response: $response"
+            # Parse the response to get the value of "success"
+            success=$(echo "$response" | grep -o '"success":[^,]*' | awk -F: '{print $2}' | tr -d ' ')
+            # Check if "success" is false
+            if [ "$success" = "false" ]; then
+                echo "API call failed:$response"
+                exit 1  # Exit with a non-zero status to indicate failure
+            else
+                echo "API call succeeded:$response"
+            fi
+    parallel:
+        matrix:
+            - LANGUAGE: [en, cn]

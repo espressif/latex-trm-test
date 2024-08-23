@@ -1,0 +1,125 @@
+%%% Abbreviations Related to Registers %%%
+
+\phantomsection
+\section*{寄存器相关缩写}\label{glossary-abbr-reg}
+\addcontentsline{toc}{section}{寄存器相关缩写}
+
+\begin{longtable}[c]{ R{3cm} p{12cm} }
+
+REG     & \textbf{寄存器}。 \\
+SYSREG  & \textbf{系统寄存器}是一组控制系统复位、存储器、时钟、软件中断、电源管理、时钟门控等的寄存器。 \\
+ISO     & \textbf{隔离}。如果外设或其他芯片组件断电，其输出信号的管脚（若有）将会浮空。ISO 寄存器会隔离上述引脚并令其保持在某个确定值，以使连接到这些引脚的其他非断电外设/设备免受影响。 \\
+NMI     & \textbf{非屏蔽中断}是一种 CPU 指令无法禁用或忽略的硬件中断。出现此类中断说明发生严重错误。 \\
+W1TS    & 添加到寄存器/字段名称中的缩写，表示此类寄存器/字段用于置位名称相似寄存器中的相应字段。例如，寄存器 \texttt{GPIO\_ENABLE\_W1TS\_REG} 用于置位寄存器 \texttt{GPIO\_ENABLE\_REG} 中的相应字段。 \\
+W1TC    & 与 \textit{W1TS} 相同，但用于清除相应寄存器中的字段。 \\
+% FPU   &
+% FPD   &
+% PLLA  &
+% BBPLL &
+
+\end{longtable}
+
+
+%%% Access Types for Registers %%%
+
+% \clearpage
+\phantomsection
+\section*{寄存器的访问类型}\label{glossary-access-types}
+\addcontentsline{toc}{section}{寄存器的访问类型}
+
+TRM 章节\ 寄存器列表\ 和\ 寄存器\ 详述了寄存器及其字段的访问类型。
+
+常用访问类型及组合如下：
+
+\begin{multicols}{4}
+  \begin{itemize}
+    \item RO
+    \item WO
+    \item WT
+    \item R/W
+    \item WL
+    \item R/W/SC
+    \item R/W/SS
+    \item R/W/SS/SC
+    \item R/WC/SS
+    \item R/WC/SC
+    \item R/WC/SS/SC
+    \item R/WS/SC
+    \item R/WS/SS
+    \item R/WS/SS/SC
+    \item R/SS/WTC
+    \item R/SC/WTC
+    \item R/SS/SC/WTC
+    \item RF/WF
+    \item R/SS/RC
+    \item varies
+  \end{itemize}
+\end{multicols}
+
+下文提供了所有访问类型的具体描述。
+
+
+\begin{longtable}[c]{ R{1cm} p{13cm} }
+
+% table contents
+R & \textbf{软件可读。} 
+	用户软件可以读取此寄存器/字段；通常与其他访问类型结合使用。 \\
+RO & \textbf{软件只读。} 
+	用户软件只可读取此寄存器/字段。 \\
+HRO & \textbf{硬件只读。} 
+	仅硬件可以读取此寄存器/字段；用于存储变量参数的默认设置。 \\
+W & \textbf{软件可写。} 
+	用户软件可以写入此寄存器/字段；通常与其他访问类型结合使用。 \\
+WO & \textbf{软件只写。} 
+	用户软件只可写入此寄存器/字段。 \\
+
+SS & \textbf{硬件置位。} 
+	在指定事件中，硬件自动将 1 写入此寄存器/字段；与一位字段一同使用。 \\
+SC & \textbf{硬件清零。} 
+	在指定事件中，硬件自动将 0 写入此寄存器/字段；与一位和多位字段一同使用。 \\
+SM & \textbf{硬件修改。} 
+	在指定事件中，硬件自动将指定值写入此寄存器/字段；与多位字段一同使用。 \\
+SU & \textbf{硬件更新。} 
+	在指定事件中，硬件自动更新此寄存器/字段；与多位字段一同使用。 \\
+
+RS & \textbf{软件读置位。} 
+	如果用户软件读取此寄存器/字段，硬件会自动写 1。 \\
+RC & \textbf{软件读清零。} 
+	如果用户软件读取此寄存器/字段，硬件会自动写 0。 \\
+RF & \textbf{软件读 FIFO。} 
+	如果用户软件将新数据写入 FIFO，寄存器/字段会自动读取。 \\
+
+WF & \textbf{软件写 FIFO。} 
+	如果用户软件将新数据写入此寄存器/字段，寄存器/字段会自动通过 APB 总线将数据传递到 FIFO。 \\
+
+WS & \textbf{软件写置位。} 
+	如果用户软件写入此寄存器/字段，硬件会自动置位此寄存器/字段。 \\
+W1S & \textbf{软件写 1 置位。} 
+	如果用户软件将 1 写入此寄存器/字段，硬件会自动置位此寄存器/字段。 \\
+W0S & \textbf{软件写 0 置位。} 
+	如果用户软件将 0 写入此寄存器/字段，硬件会自动置位此寄存器/字段。 \\
+
+WC & \textbf{软件写清零。} 
+	如果用户软件写入此寄存器/字段，硬件会自动清零此寄存器/字段。 \\
+W1C & \textbf{软件写 1 清零。} 
+	如果用户软件将 1 写入此寄存器/字段，硬件会自动清零此寄存器/字段。 \\
+W0C & \textbf{软件写 0 清零。} 
+	如果用户软件将 0 写入此寄存器/字段，硬件会自动清零此寄存器/字段。 \\
+
+WT & \textbf{软件写产生边沿触发信号。} 
+	如果用户软件将 1 写入此字段，将会产生边沿触发信号（APB 总线中的脉冲）或清除相应的 WTC 字段（详见 WTC）。 \\
+WTC & \textbf{软件写其他寄存器位清零本寄存器位。} 
+	如果用户软件将 1 写入相应的 WT 字段，硬件会自动清除此字段（详见 WT）。 \\
+
+W1T & \textbf{软件写 1 取反。} 
+	如果用户软件将 1 写入此字段，硬件会自动取反相应字段，否则不会取反。 \\
+W0T & \textbf{软件写 0 取反。} 
+	如果用户软件将 0 写入此字段，硬件会自动取反相应字段，否则不会取反。 \\
+
+WL & \textbf{软件仅在锁禁用时写。} 
+	如果锁被禁用，用户软件可以写入此寄存器/字段。 \\
+
+varies & \textbf{访问类型不定。} 
+	此寄存器中的不同字段访问类型可能不同。 \\
+
+\end{longtable}

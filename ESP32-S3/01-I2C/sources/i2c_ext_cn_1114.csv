@@ -1,0 +1,425 @@
+Address;RegName;Clk;Rst;Port;NonReg;Public;Signal;BitPos;Default;SW(R/W);HW(W);MCU(W);MISC;Description;Enum_Name;Enum_Value;Min_Value;Max_Value;RegName_Chg_0;RepeatName;RepeatNum;GroupName;CSV_Version
+0x0000;I2C_SCL_LOW_PERIOD_REG;pclk;reset_n;;;;;;;;;;;配置 SCL 的低电平宽度;;;;;;;;时序寄存器;1.1
+;;;;;;;;[31:14];18'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_low_period;[13:0];14'h0;读/写;;;;用于配置 SCL 低电平的保持时间，以 I2C 模块时钟周期数为单位。;;;;;I2C_SCL_LOW_PERIOD;;;;
+0x0004;I2C_CTR_REG;pclk;reset_n;;;;;;;;;;;传输设置;;;;;;;;配置寄存器;
+;;;;;;;;[31:12];20'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_ref_always_on;[11];1'h1;读/写;;;;用于控制 REF_TICK。;;;;;I2C_REF_ALWAYS_ON;;;;
+;;;;;;;reg_fsm_rst;[10];1'h0;读/写;fsm_rst_pos/1'h0;;;用于复位 SCL_FSM。;;;;;I2C_FSM_RST;;;;
+;;;;;;;reg_arbitration_en;[9];1'h1;读/写;;;;I2C 总线仲裁的使能位。;;;;;I2C_ARBITRATION_EN;;;;
+;;;;Not;;;reg_clk_en;[8];1'h0;读/写;;;;保留;;;;;I2C_CLK_EN;;;;
+;;;;;;;reg_rx_lsb_first;[7];1'h0;读/写;;;;"用于控制接收数据的存储模式。
+
+1： 从最低有效位开始接收数据；
+
+0： 从最高有效位开始接收数据。";;;;;I2C_RX_LSB_FIRST;;;
+;;;;;;;reg_tx_lsb_first;[6];1'h0;读/写;;;;"用于控制待发送数据的发送模式。
+
+1： 从最低有效位开始发送数据；
+
+0： 从最高有效位开始发送数据。";;;;;I2C_TX_LSB_FIRST;;;
+;;;;;;;reg_trans_start;[5];1'h0;读/写;trans_start_pos/1'h0;;;置位此位，开始发送 TX FIFO 中的数据。;;;;;I2C_TRANS_START;;;;
+;;;;;;;reg_ms_mode;[4];1'h0;读/写;;;;"置位此位，将模块配置为 I2C 主机。 清零此位，将模块配置为 I2C 从机。
+
+";;;;;I2C_MS_MODE;;;
+;;;;;;;reg_rx_full_ack_level;[3];1'h1;读/写;;;;用于配置主机在 rx_fifo_cnt 达到阈值时需发送的 ACK 电平值。;;;;;I2C_RX_FULL_ACK_LEVEL;;;;
+;;;;;;;reg_sample_scl_level;[2];1'h0;读/写;;;;"用于选择采样模式。
+
+1： SCL 为低电平时采样 SDA 数据。
+
+0： SCL 为高电平时采样 SDA 数据。";;;;;I2C_SAMPLE_SCL_LEVEL;;;
+;;;;;;;reg_scl_force_out;[1];1'h1;读/写;;;;0： 直接输出；1： 漏极开路输出。;;;;;I2C_SCL_FORCE_OUT;;;;
+;;;;;;;reg_sda_force_out;[0];1'h1;读/写;;;;0： 直接输出；1： 漏极开路输出。;;;;;I2C_SDA_FORCE_OUT;;;;
+0x0008;I2C_SR_REG;pclk;reset_n;;;;;;;;;;;描述 I2C 的工作状态;;;;;;;;状态寄存器;
+;;;;;;;;[31];1'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_state_last;[30:28];3'h0;只读;;;;"该字段为生成 SCL 的状态机状态。
+
+0： 空闲状态；1： 开始；2： 下降沿；3： 低电平；4： 上升沿；5： 高电平；6： 停止";;;;;I2C_SCL_STATE_LAST;;;
+;;;;;;;;[27];1'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_main_state_last;[26:24];3'h0;只读;;;;"该字段为 I2C 模块状态机的状态。
+
+0： 空闲；1： 地址转换；2： ACK 地址；3： 接收数据；4： 发送数据；5： 发送 ACK；6： 等待 ACK";;;;;I2C_SCL_MAIN_STATE_LAST;;;
+;;;;;;;reg_txfifo_cnt;[23:18];6'h0;只读;;;;该字段存储 RAM 接收数据的字节数。;;;;;I2C_TXFIFO_CNT;;;;
+;;;;;;;;[17:16];2'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_stretch_cause;[15:14];2'h0;只读;;;;从机模式下延长 SCL 低电平时间的原因。 0：  I2C 开始读取数据时延长 SCL 的低电平时间。 1： 从机模式下 TX FIFO 为空时延长 SCL 的低电平时间。 2： 从机模式下 RX FIFO 为满时延长 SCL 的低电平时间。;;;;;I2C_STRETCH_CAUSE;;;;
+;;;;;;;reg_rxfifo_cnt;[13:8];6'h0;只读;;;;该字段为需发送数据的字节数。;;;;;I2C_RXFIFO_CNT;;;;
+;;;;;;;;[7];1'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_byte_trans;[6];1'h0;只读;;;;传输一个字节后，该字段变为 1。;;;;;I2C_BYTE_TRANS;;;;
+;;;;;;;reg_slave_addressed;[5];1'h0;只读;;;;"配置成 I2C 从机、且主机发送地址
+
+与从机地址匹配时，该位翻转为高电平。";;;;;I2C_SLAVE_ADDRESSED;;;
+;;;;;;;reg_bus_busy;[4];1'h0;只读;;;;1： I2C 总线正在传输数据；0： I2C 总线处于空闲状态。;;;;;I2C_BUS_BUSY;;;;
+;;;;;;;reg_arb_lost;[3];1'h0;只读;;;;I2C 控制器不控制 SCL 线时，该寄存器变为 1 。;;;;;I2C_ARB_LOST;;;;
+;;;;Not;;;reg_time_out;[2];1'h0;只读;;;;"I2C 控制器接收一位数据的时间超过 I2C_TIME_OUT 周期时，
+
+该字段变为 1。";;;;;I2C_TIME_OUT;;;
+;;;;;;;reg_slave_rw;[1];1'h0;只读;;;;从机模式下，1： 主机读取从机数据；0： 主机向从机写入数据。;;;;;I2C_SLAVE_RW;;;;
+;;;;;;;reg_resp_rec;[0];1'h0;只读;;;;主机模式或从机模式下接收的 ACK 电平值。 0： ACK，1： NACK。;;;;;I2C_RESP_REC;;;;
+0x000c;I2C_TO_REG;pclk;reset_n;;;;;;;;;;;设置接收数据超时控制;;;;;;;;配置寄存器;
+;;;;;;;;[31:25];7'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_time_out_en;[24];1'h0;读/写;;;;超时控制使能位。;;;;;I2C_TIME_OUT_EN;;;;
+;;;;;;;reg_time_out_value;[23:0];24'h0;读/写;;;;"用于配置接收一位数据的超时时间，以 APB
+
+时钟周期为单位。 ";;;;;I2C_TIME_OUT_VALUE;;;
+0x0010;I2C_SLAVE_ADDR_REG;pclk;reset_n;;;;;;;;;;;本地从机地址设置;;;;;;;;配置寄存器;
+;;;;;;;reg_addr_10bit_en;[31];1'h0;读/写;;;;用于在主机模式下使能从机的 10 位寻址模式。;;;;;I2C_ADDR_10BIT_EN;;;;
+;;;;;;;;[30:15];16'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_slave_addr;[14:0];15'h0;读/写;;;;配置为 Slave 时，该字段用于配置从机地址。;;;;;I2C_SLAVE_ADDR;;;;
+0x0014;I2C_FIFO_ST_REG;pclk;reset_n;;;;;;;;;;;FIFO 状态寄存器;;;;;;;;状态寄存器;
+;;;;;;;;[31:30];2'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_slave_rw_point;[29:22];8'h0;只读;;;;从机模式下接收的数据。;;;;;I2C_SLAVE_RW_POINT;;;;
+;;;;;;;reg_tx_update;[21];1'h0;只写;;;;在 I2C_TX_UPDATE 上写 0 或 1，更新 I2C_TXFIFO_END_ADDR 和 I2C_TXFIFO_START_ADDR 的值。;;;;;I2C_TX_UPDATE;;;;
+;;;;;;;reg_rx_update;[20];1'h0;只写;;;;在 I2C_RX_UPDATE 上写 0 或 1，更新 I2C_RXFIFO_END_ADDR 和 I2C_RXFIFO_START_ADDR 的值。;;;;;I2C_RX_UPDATE;;;;
+;;;;;;;reg_txfifo_end_addr;[19:15];5'h0;只读;;;;"最后发送数据的偏移地址，如寄存器 I2C_NONFIFO_TX_THRES 所述。
+
+该值在 I2C_TX_SEND_EMPTY_INT 中断或 I2C_TRANS_COMPLETE_INT 中断产生时更新。";;;;;I2C_TXFIFO_END_ADDR;;;
+;;;;;;;reg_txfifo_start_addr;[14:10];5'h0;只读;;;;最先发送数据的偏移地址，如寄存器 I2C_NONFIFO_TX_THRES 所述。;;;;;I2C_TXFIFO_START_ADDR;;;;
+;;;;;;;reg_rxfifo_end_addr;[9:5];5'h0;只读;;;;最后接收数据的偏移地址，如寄存器 I2C_NONFIFO_RX_THRES 所述。 该值在 I2C_RX_REC_FULL_INT 中断或 I2C_TRANS_COMPLETE_INT 中断产生时更新。;;;;;I2C_RXFIFO_END_ADDR;;;;
+;;;;;;;reg_rxfifo_start_addr;[4:0];5'h0;只读;;;;最后接收数据的偏移地址，如寄存器 I2C_NONFIFO_RX_THRES 所述。;;;;;I2C_RXFIFO_START_ADDR;;;;
+0x0018;I2C_FIFO_CONF_REG;pclk;reset_n;;;;;;;;;;;FIFO 配置寄存器;;;;;;;;配置寄存器;
+;;;;;;;;[31:27];5'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_reg_fifo_prt_en;[26];1'h1;读/写;;;;non-FIFO 访问模式下 FIFO 指针的控制使能位。 该位控制 TX FIFO 和 RX FIFO 溢出、下溢、为满、为空时的有效位和中断。;;;;;I2C_FIFO_PRT_EN;;;;
+;;;;;;;reg_nonfifo_tx_thres;[25:20];6'h15;读/写;;;;"I2C 发送的数据超过 I2C_NONFIFO_TX_THRES 个字节时，
+
+生成 I2C_TXFIFO_OVF_INT 中断，更新发送数据的当前偏移地址。 ";;;;;I2C_NONFIFO_TX_THRES;;;
+;;;;;;;reg_nonfifo_rx_thres;[19:14];6'h15;读/写;;;;I2C 接收的数据超过 I2C_NONFIFO_TX_THRES 字节时，生成 I2C_RXFIFO_UDF_INT 中断，更新接收数据的当前偏移地址。;;;;;I2C_NONFIFO_RX_THRES;;;;
+;;;;;;;reg_tx_fifo_rst;[13];1'h0;读/写;;;;置位此位，复位 TX FIFO 。;;;;;I2C_TX_FIFO_RST;;;;
+;;;;;;;reg_rx_fifo_rst;[12];1'h0;读/写;;;;置位此位，复位 RX FIFO 。;;;;;I2C_RX_FIFO_RST;;;;
+;;;;;;;reg_fifo_addr_cfg_en;[11];1'h0;读/写;;;;此位置 1 时，从机接收地址字节的后一个字节为从机 RAM 中的偏移地址。;;;;;I2C_FIFO_ADDR_CFG_EN;;;;
+;;;;;;;reg_nonfifo_en;[10];1'h0;读/写;;;;置位此位，使能 APB non-FIFO 访问。;;;;;I2C_NONFIFO_EN;;;;
+;;;;;;;reg_txfifo_wm_thrhd;[9:5];5'h4;读/写;;;;non-FIFO 访问模式下，TX FIFO 的水标阈值。I2C_FIFO_PRT_EN 为 1 且 TX FIFO 计数值小于 I2C_TXFIFO_WM_THRHD[4:0] 时，I2C_TXFIFO_WM_INT_RAW 位有效。;;;;;I2C_TXFIFO_WM_THRHD;;;;
+;;;;;;;reg_rxfifo_wm_thrhd;[4:0];5'hb;读/写;;;;non-FIFO 访问模式下，RX FIFO 的水标阈值。I2C_FIFO_PRT_EN 为 1 且 RX FIFO 计数值大于 I2C_TXFIFO_WM_THRHD[4:0] 时，I2C_TXFIFO_WM_INT_RAW 位有效。;;;;;I2C_RXFIFO_WM_THRHD;;;;
+0x001c;I2C_DATA_REG;pclk;reset_n;;;;;;;;;;;RX FIFO 读取数据;;;;;;;;状态寄存器;
+;;;;;;;;[31:8];24'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_fifo_rdata;[7:0];8'h0;只读;;;;RX FIFO 读取数据的值。;;;;;I2C_FIFO_RDATA;;;;
+0x0020;I2C_INT_RAW_REG;pclk;reset_n;;;;;;;;;;;原始中断状态;;;;;;;;中断寄存器;
+;;;;;;;;[31:17];15'h0;只读;;;INT_RAW;保留;;;;;;;;;
+;;;;Not;;;reg_slave_stretch_int_raw;[16];1'h0;只读;slave_stretch/1'h1;slave_stretch_int_clr/1'h0;;I2C_SLAVE_STRETCH_INT 的原始中断位。;;;;;I2C_SLAVE_STRETCH_INT_RAW;;;;
+;;;;Not;;;reg_det_start_int_raw;[15];1'h0;只读;det_start_pls/1'h1;det_start_int_clr/1'h0;;I2C_DET_START_INT 的原始中断位。;;;;;I2C_DET_START_INT_RAW;;;;
+;;;;Not;;;reg_scl_main_st_to_int_raw;[14];1'h0;只读;scl_main_st_to/1'h1;scl_main_st_to_int_clr/1'h0;;I2C_SCL_MAIN_ST_TO_INT 的原始中断位。;;;;;I2C_SCL_MAIN_ST_TO_INT_RAW;;;;
+;;;;Not;;;reg_scl_st_to_int_raw;[13];1'h0;只读;scl_st_to/1'h1;scl_st_to_int_clr/1'h0;;I2C_SCL_ST_TO_INT 的原始中断位。;;;;;I2C_SCL_ST_TO_INT_RAW;;;;
+;;;;Not;;;reg_rxfifo_udf_int_raw;[12];1'h0;只读;rxfifo_udf/1'h1;rxfifo_udf_int_clr/1'h0;;I2C_RXFIFO_UDF_INT 的原始中断位。;;;;;I2C_RXFIFO_UDF_INT_RAW;;;;
+;;;;Not;;;reg_txfifo_ovf_int_raw;[11];1'h0;只读;txfifo_ovf/1'h1;txfifo_ovf_int_clr/1'h0;;I2C_TXFIFO_OVF_INT 的原始中断位。;;;;;I2C_TXFIFO_OVF_INT_RAW;;;;
+;;;;Not;;;reg_nack_int_raw;[10];1'h0;只读;nack_in_bus/1'h1;nack_int_clr/1'h0;;I2C_SLAVE_STRETCH_INT 的原始中断位。;;;;;I2C_NACK_INT_RAW;;;;
+;;;;Not;;;reg_trans_start_int_raw;[9];1'h0;只读;trans_start_pos/1'h1;trans_start_int_clr/1'h0;;I2C_TRANS_START_INT 的原始中断位。;;;;;I2C_TRANS_START_INT_RAW;;;;
+;;;;Not;;;reg_time_out_int_raw;[8];1'h0;只读;time_out/1'h1;time_out_int_clr/1'h0;;I2C_TIME_OUT_INT 的原始中断位。;;;;;I2C_TIME_OUT_INT_RAW;;;;
+;;;;Not;;;reg_trans_complete_int_raw;[7];1'h0;只读;trans_complete/1'h1;trans_complete_int_clr/1'h0;;I2C_TRANS_COMPLETE_INT 的原始中断位。;;;;;I2C_TRANS_COMPLETE_INT_RAW;;;;
+;;;;Not;;;reg_mst_txfifo_udf_int_raw;[6];1'h0;只读;mst_txfifo_udf/1'h1;mst_txfifo_udf_int_clr/1'h0;;I2C_TRANS_COMPLETE_INT 的原始中断位。;;;;;I2C_MST_TXFIFO_UDF_INT_RAW;;;;
+;;;;Not;;;reg_arbitration_lost_int_raw;[5];1'h0;只读;arbitration_lost_pos/1'h1;arbitration_lost_int_clr/1'h0;;I2C_ARBITRATION_LOST_INT 的原始中断位。;;;;;I2C_ARBITRATION_LOST_INT_RAW;;;;
+;;;;Not;;;reg_byte_trans_done_int_raw;[4];1'h0;只读;byte_trans_done/1'h1;byte_trans_done_int_clr/1'h0;;I2C_END_DETECT_INT 的原始中断位。;;;;;I2C_BYTE_TRANS_DONE_INT_RAW;;;;
+;;;;Not;;;reg_end_detect_int_raw;[3];1'h0;只读;end_detect/1'h1;end_detect_int_clr/1'h0;;I2C_END_DETECT_INT 的原始中断位。;;;;;I2C_END_DETECT_INT_RAW;;;;
+;;;;Not;;;reg_rxfifo_ovf_int_raw;[2];1'h0;只读;rxfifo_ovf/1'h1;rxfifo_ovf_int_clr/1'h0;;I2C_RXFIFO_OVF_INT 的原始中断位。;;;;;I2C_RXFIFO_OVF_INT_RAW;;;;
+;;;;Not;;;reg_txfifo_wm_int_raw;[1];1'h0;只读;txfifo_wm_int/1'h1;txfifo_wm_int_clr/1'h0;;I2C_TXFIFO_WM_INT 的原始中断位。;;;;;I2C_TXFIFO_WM_INT_RAW;;;;
+;;;;Not;;;reg_rxfifo_wm_int_raw;[0];1'h0;只读;rxfifo_wm_int/1'h1;rxfifo_wm_int_clr/1'h0;;I2C_RXFIFO_WM_INT 的原始中断位。;;;;;I2C_RXFIFO_WM_INT_RAW;;;;
+0x0024;I2C_INT_CLR_REG;pclk;reset_n;;;;;;;;;;INT_CLR;中断清除位;;;;;;;;中断寄存器;
+;;;;;;;;[31:17];15'h0;只读;;;;保留;;;;;;;;;
+;;;;Not;;;reg_slave_stretch_int_clr;[16];1'h0;只写;;;;置位此位，清除 I2C_SLAVE_STRETCH_INT 中断。;;;;;I2C_SLAVE_STRETCH_INT_CLR;;;;
+;;;;Not;;;reg_det_start_int_clr;[15];1'h0;只写;;;;置位此位，清除 I2C_DET_START_INT 中断。;;;;;I2C_DET_START_INT_CLR;;;;
+;;;;Not;;;reg_scl_main_st_to_int_clr;[14];1'h0;只写;;;;置位此位，清除 I2C_SCL_MAIN_ST_TO_INT 中断。;;;;;I2C_SCL_MAIN_ST_TO_INT_CLR;;;;
+;;;;Not;;;reg_scl_st_to_int_clr;[13];1'h0;只写;;;;置位此位，清除 I2C_SCL_ST_TO_INT 中断。;;;;;I2C_SCL_ST_TO_INT_CLR;;;;
+;;;;Not;;;reg_rxfifo_udf_int_clr;[12];1'h0;只写;;;;置位此位，清除 I2C_RXFIFO_UDF_INT 中断。;;;;;I2C_RXFIFO_UDF_INT_CLR;;;;
+;;;;Not;;;reg_txfifo_ovf_int_clr;[11];1'h0;只写;;;;置位此位，清除 I2C_TXFIFO_OVF_INT 中断。;;;;;I2C_TXFIFO_OVF_INT_CLR;;;;
+;;;;Not;;;reg_nack_int_clr;[10];1'h0;只写;;;;置位此位，清除 I2C_SLAVE_STRETCH_INT 中断。;;;;;I2C_NACK_INT_CLR;;;;
+;;;;Not;;;reg_trans_start_int_clr;[9];1'h0;只写;;;;置位此位，清除 I2C_TRANS_START_INT 中断。;;;;;I2C_TRANS_START_INT_CLR;;;;
+;;;;Not;;;reg_time_out_int_clr;[8];1'h0;只写;;;;置位此位，清除 I2C_TIME_OUT_INT 中断。;;;;;I2C_TIME_OUT_INT_CLR;;;;
+;;;;Not;;;reg_trans_complete_int_clr;[7];1'h0;只写;;;;置位此位，清除 I2C_TRANS_COMPLETE_INT 中断。;;;;;I2C_TRANS_COMPLETE_INT_CLR;;;;
+;;;;Not;;;reg_mst_txfifo_udf_int_clr;[6];1'h0;只写;;;;置位此位，清除 I2C_TRANS_COMPLETE_INT 中断。;;;;;I2C_MST_TXFIFO_UDF_INT_CLR;;;;
+;;;;Not;;;reg_arbitration_lost_int_clr;[5];1'h0;只写;;;;置位此位，清除 I2C_ARBITRATION_LOST_INT 中断。;;;;;I2C_ARBITRATION_LOST_INT_CLR;;;;
+;;;;Not;;;reg_byte_trans_done_int_clr;[4];1'h0;只写;;;;置位此位，清除 I2C_END_DETECT_INT 中断。;;;;;I2C_BYTE_TRANS_DONE_INT_CLR;;;;
+;;;;Not;;;reg_end_detect_int_clr;[3];1'h0;只写;;;;置位此位，清除 I2C_END_DETECT_INT 中断。;;;;;I2C_END_DETECT_INT_CLR;;;;
+;;;;Not;;;reg_rxfifo_ovf_int_clr;[2];1'h0;只写;;;;置位此位，清除 I2C_RXFIFO_OVF_INT 中断。;;;;;I2C_RXFIFO_OVF_INT_CLR;;;;
+;;;;Not;;;reg_txfifo_wm_int_clr;[1];1'h0;只写;;;;置位此位，清除 I2C_TXFIFO_WM_INT 中断。;;;;;I2C_TXFIFO_WM_INT_CLR;;;;
+;;;;Not;;;reg_rxfifo_wm_int_clr;[0];1'h0;只写;;;;置位此位，清除 I2C_RXFIFO_WM_INT 中断。;;;;;I2C_RXFIFO_WM_INT_CLR;;;;
+0x0028;I2C_INT_ENA_REG;pclk;reset_n;;;;;;;;;;INT_ENA;中断使能位;;;;;;;;中断寄存器;
+;;;;;;;;[31:17];15'h0;只读;;;;保留;;;;;;;;;
+;;;;Not;;;reg_slave_stretch_int_ena;[16];1'h0;读/写;;;;I2C_SLAVE_STRETCH_INT 的原始中断位。;;;;;I2C_SLAVE_STRETCH_INT_ENA;;;;
+;;;;Not;;;reg_det_start_int_ena;[15];1'h0;读/写;;;;I2C_DET_START_INT 的原始中断位。;;;;;I2C_DET_START_INT_ENA;;;;
+;;;;Not;;;reg_scl_main_st_to_int_ena;[14];1'h0;读/写;;;;I2C_SCL_MAIN_ST_TO_INT 的原始中断位。;;;;;I2C_SCL_MAIN_ST_TO_INT_ENA;;;;
+;;;;Not;;;reg_scl_st_to_int_ena;[13];1'h0;读/写;;;;I2C_SCL_ST_TO_INT 的原始中断位。;;;;;I2C_SCL_ST_TO_INT_ENA;;;;
+;;;;Not;;;reg_rxfifo_udf_int_ena;[12];1'h0;读/写;;;;I2C_RXFIFO_UDF_INT 的原始中断位。;;;;;I2C_RXFIFO_UDF_INT_ENA;;;;
+;;;;Not;;;reg_txfifo_ovf_int_ena;[11];1'h0;读/写;;;;I2C_TXFIFO_OVF_INT 的原始中断位。;;;;;I2C_TXFIFO_OVF_INT_ENA;;;;
+;;;;Not;;;reg_nack_int_ena;[10];1'h0;读/写;;;;I2C_SLAVE_STRETCH_INT 的原始中断位。;;;;;I2C_NACK_INT_ENA;;;;
+;;;;Not;;;reg_trans_start_int_ena;[9];1'h0;读/写;;;;I2C_TRANS_START_INT 的原始中断位。;;;;;I2C_TRANS_START_INT_ENA;;;;
+;;;;Not;;;reg_time_out_int_ena;[8];1'h0;读/写;;;;I2C_TIME_OUT_INT 的原始中断位。;;;;;I2C_TIME_OUT_INT_ENA;;;;
+;;;;Not;;;reg_trans_complete_int_ena;[7];1'h0;读/写;;;;I2C_TRANS_COMPLETE_INT 的原始中断位。;;;;;I2C_TRANS_COMPLETE_INT_ENA;;;;
+;;;;Not;;;reg_mst_txfifo_udf_int_ena;[6];1'h0;读/写;;;;I2C_TRANS_COMPLETE_INT 的原始中断位。;;;;;I2C_MST_TXFIFO_UDF_INT_ENA;;;;
+;;;;Not;;;reg_arbitration_lost_int_ena;[5];1'h0;读/写;;;;I2C_ARBITRATION_LOST_INT 的原始中断位。;;;;;I2C_ARBITRATION_LOST_INT_ENA;;;;
+;;;;Not;;;reg_byte_trans_done_int_ena;[4];1'h0;读/写;;;;I2C_END_DETECT_INT 的原始中断位。;;;;;I2C_BYTE_TRANS_DONE_INT_ENA;;;;
+;;;;Not;;;reg_end_detect_int_ena;[3];1'h0;读/写;;;;I2C_END_DETECT_INT 的原始中断位。;;;;;I2C_END_DETECT_INT_ENA;;;;
+;;;;Not;;;reg_rxfifo_ovf_int_ena;[2];1'h0;读/写;;;;I2C_RXFIFO_OVF_INT 的原始中断位。;;;;;I2C_RXFIFO_OVF_INT_ENA;;;;
+;;;;Not;;;reg_txfifo_wm_int_ena;[1];1'h0;读/写;;;;I2C_TXFIFO_WM_INT 的原始中断位。;;;;;I2C_TXFIFO_WM_INT_ENA;;;;
+;;;;Not;;;reg_rxfifo_wm_int_ena;[0];1'h0;读/写;;;;I2C_RXFIFO_WM_INT 的原始中断位。;;;;;I2C_RXFIFO_WM_INT_ENA;;;;
+0x002c;I2C_INT_STATUS_REG;pclk;reset_n;;;;;;;;;;;捕捉 I2C 通信事件的状态;;;;;;;;中断寄存器;
+;;;;;;;;[31:17];15'h0;只读;;;INT_ST;保留;;;;;;;;;
+;;;;Not;;;reg_slave_stretch_int_st;[16];1'h0;只读;;;;I2C_SLAVE_STRETCH_INT 的屏蔽中断状态位。;;;;;I2C_SLAVE_STRETCH_INT_ST;;;;
+;;;;Not;;;reg_det_start_int_st;[15];1'h0;只读;;;;I2C_DET_START_INT 的屏蔽中断状态位。;;;;;I2C_DET_START_INT_ST;;;;
+;;;;Not;;;reg_scl_main_st_to_int_st;[14];1'h0;只读;;;;I2C_SCL_MAIN_ST_TO_INT 的屏蔽中断状态位。;;;;;I2C_SCL_MAIN_ST_TO_INT_ST;;;;
+;;;;Not;;;reg_scl_st_to_int_st;[13];1'h0;只读;;;;I2C_SCL_ST_TO_INT 的屏蔽中断状态位。;;;;;I2C_SCL_ST_TO_INT_ST;;;;
+;;;;Not;;;reg_rxfifo_udf_int_st;[12];1'h0;只读;;;;I2C_RXFIFO_UDF_INT 的屏蔽中断状态位。;;;;;I2C_RXFIFO_UDF_INT_ST;;;;
+;;;;Not;;;reg_txfifo_ovf_int_st;[11];1'h0;只读;;;;I2C_TXFIFO_OVF_INT 的屏蔽中断状态位。;;;;;I2C_TXFIFO_OVF_INT_ST;;;;
+;;;;Not;;;reg_nack_int_st;[10];1'h0;只读;;;;I2C_SLAVE_STRETCH_INT 的屏蔽中断状态位。;;;;;I2C_NACK_INT_ST;;;;
+;;;;Not;;;reg_trans_start_int_st;[9];1'h0;只读;;;;I2C_TRANS_START_INT 的屏蔽中断状态位。;;;;;I2C_TRANS_START_INT_ST;;;;
+;;;;Not;;;reg_time_out_int_st;[8];1'h0;只读;;;;I2C_TIME_OUT_INT 的屏蔽中断状态位。;;;;;I2C_TIME_OUT_INT_ST;;;;
+;;;;Not;;;reg_trans_complete_int_st;[7];1'h0;只读;;;;I2C_TRANS_COMPLETE_INT 的屏蔽中断状态位。;;;;;I2C_TRANS_COMPLETE_INT_ST;;;;
+;;;;Not;;;reg_mst_txfifo_udf_int_st;[6];1'h0;只读;;;;I2C_TRANS_COMPLETE_INT 的屏蔽中断状态位。;;;;;I2C_MST_TXFIFO_UDF_INT_ST;;;;
+;;;;Not;;;reg_arbitration_lost_int_st;[5];1'h0;只读;;;;I2C_ARBITRATION_LOST_INT 的屏蔽中断状态位。;;;;;I2C_ARBITRATION_LOST_INT_ST;;;;
+;;;;Not;;;reg_byte_trans_done_int_st;[4];1'h0;只读;;;;I2C_END_DETECT_INT 的屏蔽中断状态位。;;;;;I2C_BYTE_TRANS_DONE_INT_ST;;;;
+;;;;Not;;;reg_end_detect_int_st;[3];1'h0;只读;;;;I2C_END_DETECT_INT 的屏蔽中断状态位。;;;;;I2C_END_DETECT_INT_ST;;;;
+;;;;Not;;;reg_rxfifo_ovf_int_st;[2];1'h0;只读;;;;I2C_RXFIFO_OVF_INT 的屏蔽中断状态位。;;;;;I2C_RXFIFO_OVF_INT_ST;;;;
+;;;;Not;;;reg_txfifo_wm_int_st;[1];1'h0;只读;;;;I2C_TXFIFO_WM_INT 的屏蔽中断状态位。;;;;;I2C_TXFIFO_WM_INT_ST;;;;
+;;;;Not;;;reg_rxfifo_wm_int_st;[0];1'h0;只读;;;;I2C_RXFIFO_WM_INT 的屏蔽中断状态位。;;;;;I2C_RXFIFO_WM_INT_ST;;;;
+0x0030;I2C_SDA_HOLD_REG;pclk;reset_n;;;;;;;;;;;配置 SCL 下降沿后的保持时间;;;;;;;;时序寄存器;
+;;;;;;;;[31:10];22'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_sda_hold_time;[9:0];10'h0;读/写;;;;用于配置 SCL 下降沿后的数据保持时间，以 I2C 模块时钟周期数为单位。;;;;;I2C_SDA_HOLD_TIME;;;;
+0x0034;I2C_SDA_SAMPLE_REG;pclk;reset_n;;;;;;;;;;;配置 SCL 上升沿后的采样时间;;;;;;;;时序寄存器;
+;;;;;;;;[31:10];22'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_sda_sample_time;[9:0];10'h0;读/写;;;;用于配置采样 SDA 的时间，以 I2C 模块时钟周期数为单位。;;;;;I2C_SDA_SAMPLE_TIME;;;;
+0x0038;I2C_SCL_HIGH_PERIOD_REG;pclk;reset_n;;;;;;;;;;;配置 SCL 时钟的高电平宽度;;;;;;;;时序寄存器;
+;;;;;;;;[31:28];4'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_wait_high_period;[27:14];14'h0;读/写;;;;用于配置 SCL_FSM 等待 SCL 在主机模式下翻转至高电平的时间，以 I2C 模块时钟周期数为单位。;;;;;I2C_SCL_WAIT_HIGH_PERIOD;;;;
+;;;;;;;reg_scl_high_period;[13:0];14'h0;读/写;;;;用于配置 SCL 在主机模式下保持高电平的时间，以 I2C 模块时钟周期数为单位。;;;;;I2C_SCL_HIGH_PERIOD;;;;
+0x0040;I2C_SCL_START_HOLD_REG;pclk;reset_n;;;;;;;;;;;配置 START 命令产生时 SDA 下降沿和 SCL 下降沿之间的间隔时间;;;;;;;;时序寄存器;
+;;;;;;;;[31:10];22'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_start_hold_time;[9:0];10'b1000;读/写;;;;配置 START 命令产生时 SDA 下降沿 和 SCL 下降沿的间隔时间，以 I2C 模块时钟周期数为单位。;;;;;I2C_SCL_START_HOLD_TIME;;;;
+0x0044;I2C_SCL_RSTART_SETUP_REG;pclk;reset_n;;;;;;;;;;;配置 SCL 上升沿和 SDA 下降沿之间的延迟;;;;;;;;时序寄存器;
+;;;;;;;;[31:10];22'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_rstart_setup_time;[9:0];10'b1000;读/写;;;;配置 RESTART 命令产生时 SCL 上升沿和 SDA 下降沿的间隔时间，以 I2C 模块的时钟周期数为单位。;;;;;I2C_SCL_RSTART_SETUP_TIME;;;;
+0x0048;I2C_SCL_STOP_HOLD_REG;pclk;reset_n;;;;;;;;;;;配置 STOP 命令生成时 SCL 边沿的延迟;;;;;;;;时序寄存器;
+;;;;;;;;[31:14];18'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_stop_hold_time;[13:0];14'h0;读/写;;;;配置 STOP 命令后的延迟，以 I2C 模块时钟周期数为单位。;;;;;I2C_SCL_STOP_HOLD_TIME;;;;
+0x004C;I2C_SCL_STOP_SETUP_REG;pclk;reset_n;;;;;;;;;;;配置 STOP 命令生成时 SDA 和 SCL 上升沿之间的间隔时间;;;;;;;;时序寄存器;
+;;;;;;;;[31:10];22'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_stop_setup_time;[9:0];10'h0;读/写;;;;配置 SCL 上升沿和 SDA 上升沿的间隔时间，以 I2C 模块时钟周期数为单位。;;;;;I2C_SCL_STOP_SETUP_TIME;;;;
+0x0050;I2C_SCL_FILTER_CFG_REG;pclk;reset_n;;;;;;;;;;;SCL 滤波配置寄存器;;;;;;;;滤波寄存器;
+;;;;;;;;[31:5];27'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_filter_en;[4];1'h1;读/写;;;;SCL 的滤波使能位。;;;;;I2C_SCL_FILTER_EN;;;;
+;;;;;;;reg_scl_filter_thres;[3:0];4'h0;读/写;;;;"SCL 输入信号的脉冲宽度小于该寄存器
+
+的值时，I2C 控制器忽略此脉冲。该寄存器的值以 I2C 模块时钟周期数为单位。 ";;;;;I2C_SCL_FILTER_THRES;;;
+0x0054;I2C_SDA_FILTER_CFG_REG;pclk;reset_n;;;;;;;;;;;SDA 滤波配置寄存器;;;;;;;;滤波寄存器;
+;;;;;;;;[31:5];27'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_sda_filter_en;[4];1'h1;读/写;;;;SDA 的滤波使能位。;;;;;I2C_SDA_FILTER_EN;;;;
+;;;;;;;reg_sda_filter_thres;[3:0];4'h0;读/写;;;;"SDA 输入信号的脉冲宽度小于该寄存器
+
+的值时，I2C 控制器忽略此脉冲。该寄存器的值以 I2C 模块时钟周期数为单位。 ";;;;;I2C_SDA_FILTER_THRES;;;
+0x0058;I2C_COMD0_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 0;;;;;;;;命令寄存器;
+;;;;;;;reg_command0_done;[31];1'h0;读/写;cmd0_done/1'h1;;;"在 I2C 主机模式下完成命令 0 时，该位翻转为高
+
+电平。 ";;;;;I2C_COMMAND0_DONE;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command0;[13:0];14'h0;读/写;;;;"命令 0 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND0;;;
+0x005C;I2C_COMD1_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 1;;;;;;;;命令寄存器;
+;;;;;;;reg_command1_done;[31];1'h0;读/写;cmd1_done/1'h1;;;"在 I2C 主机模式下完成命令 1 时，该位翻转为高
+
+电平。 ";;;;;I2C_COMMAND1_DONE;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command1;[13:0];14'h0;读/写;;;;"命令 1 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND1;;;
+0x0060;I2C_COMD2_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 2;;;;;;;;命令寄存器;
+;;;;;;;reg_command2_done;[31];1'h0;读/写;cmd2_done/1'h1;;;"在 I2C 主机模式下完成命令 2 时，该位翻转为高
+
+电平。";;;;;I2C_COMMAND2_DONE;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command2;[13:0];14'h0;读/写;;;;"命令 2 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND2;;;
+0x0064;I2C_COMD3_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 3;;;;;;;;命令寄存器;
+;;;;;;;reg_command3_done;[31];1'h0;读/写;cmd3_done/1'h1;;;"在 I2C 主机模式下完成命令 3 时，该位翻转为高
+
+电平。 ";;;;;I2C_COMMAND3_DONE;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command3;[13:0];14'h0;读/写;;;;"命令 3 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND3;;;
+0x0068;I2C_COMD4_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 4;;;;;;;;命令寄存器;
+;;;;;;;reg_command4_done;[31];1'h0;读/写;cmd4_done/1'h1;;;"在 I2C 主机模式下完成命令 4 时，该位翻转为高
+
+电平。 ";;;;;I2C_COMMAND4_DONE;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command4;[13:0];14'h0;读/写;;;;"命令 4 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND4;;;
+0x006C;I2C_COMD5_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 5;;;;;;;;命令寄存器;
+;;;;;;;reg_command5_done;[31];1'h0;读/写;cmd5_done/1'h1;;;在 I2C 主机模式下完成命令 5 时，该位翻转为高电平。;;;;;I2C_COMMAND5_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command5;[13:0];14'h0;读/写;;;;"命令 5 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND5;;;
+0x0070;I2C_COMD6_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 6;;;;;;;;命令寄存器;
+;;;;;;;reg_command6_done;[31];1'h0;读/写;cmd6_done/1'h1;;;在 I2C 主机模式下完成命令 6 时，该位翻转为高电平。;;;;;I2C_COMMAND6_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command6;[13:0];14'h0;读/写;;;;"命令 6 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND6;;;
+0x0074;I2C_COMD7_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 7;;;;;;;;命令寄存器;
+;;;;;;;reg_command7_done;[31];1'h0;读/写;cmd7_done/1'h1;;;在 I2C 主机模式下完成命令 7 时，该位翻转为高电平。;;;;;I2C_COMMAND7_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command7;[13:0];14'h0;读/写;;;;"命令 7 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND7;;;
+0x0078;I2C_COMD8_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 8;;;;;;;;命令寄存器;
+;;;;;;;reg_command8_done;[31];1'h0;读/写;cmd8_done/1'h1;;;在 I2C 主机模式下完成命令 8 时，该位翻转为高电平。;;;;;I2C_COMMAND8_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command8;[13:0];14'h0;读/写;;;;"命令 8 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND8;;;
+0x007C;I2C_COMD9_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 9;;;;;;;;命令寄存器;
+;;;;;;;reg_command9_done;[31];1'h0;读/写;cmd9_done/1'h1;;;在 I2C 主机模式下完成命令 9 时，该位翻转为高电平。;;;;;I2C_COMMAND9_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command9;[13:0];14'h0;读/写;;;;"命令 9 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND9;;;
+0x0080;I2C_COMD10_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 10;;;;;;;;命令寄存器;
+;;;;;;;reg_command10_done;[31];1'h0;读/写;cmd10_done/1'h1;;;在 I2C 主机模式下完成命令 10 时，该位翻转为高电平。;;;;;I2C_COMMAND10_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command10;[13:0];14'h0;读/写;;;;"命令 10 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND10;;;
+0x0084;I2C_COMD11_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 11;;;;;;;;命令寄存器;
+;;;;;;;reg_command11_done;[31];1'h0;读/写;cmd11_done/1'h1;;;在 I2C 主机模式下完成命令 11 时，该位翻转为高电平。;;;;;I2C_COMMAND11_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command11;[13:0];14'h0;读/写;;;;"命令 11 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND11;;;
+0x0088;I2C_COMD12_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 12;;;;;;;;命令寄存器;
+;;;;;;;reg_command12_done;[31];1'h0;读/写;cmd12_done/1'h1;;;在 I2C 主机模式下完成命令 12 时，该位翻转为高电平。;;;;;I2C_COMMAND12_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command12;[13:0];14'h0;读/写;;;;"命令 12 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND12;;;
+0x008C;I2C_COMD13_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 13;;;;;;;;命令寄存器;
+;;;;;;;reg_command13_done;[31];1'h0;读/写;cmd13_done/1'h1;;;在 I2C 主机模式下完成命令 13 时，该位翻转为高电平。;;;;;I2C_COMMAND13_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command13;[13:0];14'h0;读/写;;;;"命令 13 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND13;;;
+0x0090;I2C_COMD14_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 14;;;;;;;;命令寄存器;
+;;;;;;;reg_command14_done;[31];1'h0;读/写;cmd14_done/1'h1;;;在 I2C 主机模式下完成命令 14 时，该位翻转为高电平。;;;;;I2C_COMMAND14_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command14;[13:0];14'h0;读/写;;;;"命令 14 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND14;;;
+0x0094;I2C_COMD15_REG;pclk;reset_n;;;;;;;;;;;I2C 命令寄存器 15;;;;;;;;命令寄存器;
+;;;;;;;reg_command15_done;[31];1'h0;读/写;cmd15_done/1'h1;;;在 I2C 主机模式下完成命令 15 时，该位翻转为高电平。;;;;;I2C_COMMAND15_DONE;;;;
+;;;;;;;;[30:14];17'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_command15;[13:0];14'h0;读/写;;;;"命令 15 的内容。 该命令包括三个部分：
+
+op_code 为命令，0：START；1：WRITE；2：READ；3：STOP；4：END。
+
+byte_num 表示需发送或接收的字节数。
+
+ack_check_en、ack_exp 和 ack 用于控制 ACK 位。 参阅 I2C cmd 结构获取更多
+
+信息。";;;;;I2C_COMMAND15;;;
+0x0098;I2C_SCL_ST_TIME_OUT_REG;pclk;reset_n;;;;;;;;;;;SCL 状态超时寄存器;;;;;;;;时序寄存器;
+;;;;;;;;[31:24];8'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_st_to;[23:0];24'h100;读/写;;;;SCL_FSM 状态不变的阈值。;;;;;I2C_SCL_ST_TO;;;;
+0x009c;I2C_SCL_MAIN_ST_TIME_OUT_REG;pclk;reset_n;;;;;;;;;;;SCL 主要状态超时寄存器;;;;;;;;时序寄存器;
+;;;;;;;;[31:24];8'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_scl_main_st_to;[23:0];24'h100;读/写;;;;SCL_MAIN_FSM 状态不变的阈值。;;;;;I2C_SCL_MAIN_ST_TO;;;;
+0x00a0;I2C_SCL_SP_CONF_REG;pclk;reset_n;;;;;;;;;;;电源配置寄存器;;;;;;;;配置寄存器;
+;;;;;;;;[31:8];24'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_sda_pd_en;[7];1'h0;读/写;;;;降低 I2C SDA 输出功耗的使能位。 1： 不工作，降低功耗。 0： 正常工作。 将 I2C_SDA_FORCE_OUT 和 I2C_SDA_PD_EN 置 1 延长 SDA 的低电平时间。;;;;;I2C_SDA_PD_EN;;;;
+;;;;;;;reg_scl_pd_en;[6];1'h0;读/写;;;;降低 I2C SCL 输出功耗的使能位。 1： 不工作，降低功耗。 0： 正常工作。 将 I2C_SCL_FORCE_OUT 和 I2C_SCL_PD_EN 置 1 延长 SCL 的低电平时间。;;;;;I2C_SCL_PD_EN;;;;
+;;;;;;;reg_scl_rst_slv_num;[5:1];5'h0;读/写;;;;配置主机模式下生成的 SCL 脉冲。I2C_SCL_RST_SLV_EN 为 1 时有效。;;;;;I2C_SCL_RST_SLV_NUM;;;;
+;;;;;;;reg_scl_rst_slv_en;[0];1'h0;读/写;scl_rst_slv_clr/1'h0;;;I2C 主机处于空闲状态时，置位此位发送 SCL 脉冲。 脉冲数量为 I2C_SCL_RST_SLV_NUM[4:0]。;;;;;I2C_SCL_RST_SLV_EN;;;;
+0x00a4;I2C_SCL_STRETCH_CONF_REG;pclk;reset_n;;;;;;;;;;;配置 I2C 从机 SCL 延展传输;;;;;;;;配置寄存器;
+;;;;;;;;[31:12];20'h0;只读;;;;保留;;;;;;;;;
+;;;;;;;reg_slave_scl_stretch_clr;[11];1'h0;只写;;;;置位此位，清除 I2C 从机的 SCL 延展传输功能。;;;;;I2C_SLAVE_SCL_STRETCH_CLR;;;;
+;;;;;;;reg_slave_scl_stretch_en;[10];1'h0;读/写;;;;从机 SCL 延展传输功能的使能位。 1： 使能。 0： 关闭。I2C_SLAVE_SCL_STRETCH_EN 为 1 时延展时钟，延长 SCL 输出线的低电平时间。 延展传输的原因可见 I2C_STRETCH_CAUSE。;;;;;I2C_SLAVE_SCL_STRETCH_EN;;;;
+;;;;;;;reg_stretch_protect_num;[9:0];10'h0;读/写;;;;配置 I2C 从机延长 SCL 低电平时间，以时钟周期为单位。;;;;;I2C_STRETCH_PROTECT_NUM;;;;
+0x00F8;I2C_DATE_REG;pclk;reset_n;;;;;;;;;;;版本控制寄存器;;;;;;;;版本寄存器;
+;;;;Not;;;reg_date;[31:0];32'h19052000;读/写;;;;版本控制寄存器。;;;;;I2C_DATE;;;;

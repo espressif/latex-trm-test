@@ -1,0 +1,225 @@
+\phantomsection
+\chapter*{修订历史}\label{revision-history}
+\markboth{\it{修订历史}}{\Navigation}
+\addcontentsline{toc}{chapter}{修订历史}
+
+\begin{longtable}[l]{ | m{2cm} | m{1.5cm} | m{12cm} | }\hline
+
+    \rowcolor{lightgray}
+    日期 & 版本 & \hypertarget{Release notes}{发布说明}\\\hline
+    \endfirsthead
+
+    \multicolumn{3}{c}{\bfseries 接上页}\\\hline
+    \rowcolor{lightgray}
+    日期 & 版本 & 发布说明\\\hline
+    \endhead
+
+    \multicolumn{3}{r}{\textbf{见下页}}\\
+    \endfoot
+
+    \endlastfoot
+
+    % % table contents
+    % 2022-xx-xx     & v1.1  &
+    % 更新以下章节：
+    % \begin{itemize}
+    %     \item 章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}
+    %     \item 章节 \ref{mod:usbotg} \textit{\nameref{mod:usbotg}}
+    % \end{itemize}
+    % \\\hline
+    2024- & v1.6 &
+    更新以下章节：
+        \begin{itemize}
+            \item 章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}：
+                \begin{itemize}
+                \item 更新预设功耗模式相关的描述 %TRMC6-42193
+                \item 增加表 \ref{tab:lpm-wakeup-source} 下方有关 EXT1 的说明 %DOC-8414
+                \end{itemize}
+            \item 章节 \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}}：更新 Hold 特性相关的描述 %DOC-7326
+            \item 章节 \ref{mod:sensor} \textit{\nameref{mod:sensor}}：删除 SAR ADC2 测量内部电压/信号的相关描述 %DOC-7966
+        \end{itemize}
+    \\\hline
+    2024-4-18 & v1.5 &
+    更新以下章节：
+        \begin{itemize}
+            \item 章节 \ref{mod:dma} \textit{\nameref{mod:dma}}：更新 suc\_eof 和 EOF 标志的相关描述 %DOC-5478
+            \item 章节 \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}}：更新 GPIO17 和 GPIO18 的驱动强度 %DOC-7383
+            \item 章节 \ref{mod:digsig} \textit{\nameref{mod:digsig}}和章节 \ref{mod:bootctrl} \textit{\nameref{mod:bootctrl}}：修正笔误 %DOC-7472 %DOC-7629
+            \item 章节 \ref{mod:uart} \textit{\nameref{mod:uart}}：更新清除 wake\_up 的说明 %DOC-7076
+            \item 章节 \ref{mod:ledpwm} \textit{\nameref{mod:ledpwm}}：更新表 \ref{tab:ledc-common-freq-res} 中的最低精度  %DOC-7304
+        \end{itemize}
+    \\\hline
+    2024-01-30     & v1.4  &
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:pie} \textit{\nameref{mod:pie}}：在章节 \ref{chp:pie_instruction_simple_introduction} 增加数据交换指令列表；增加 LD.QR、ST.QR、以及 MV.QR 指令的描述；修正一处笔误 %DOC-6202；%DOC-5679
+        \item 章节 \ref{mod:efuse} \textit{\nameref{mod:efuse}}：修改 \hyperref[fielddesc:EFUSEPINPOWERSELECTION]{EFUSE\_PIN\_POWER\_SELECTION} 寄存器的描述 % DOC-5591
+        \item 章节 \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}}：从表格 \ref{tab:sysmem-base-address} 中删除辅助调试；更新章节 \ref{PadHold} 和表 \ref{tab:io_mux_reg_summary} 中的描述 %DOC-5892 %DOC-6733 %DOC-6563
+        \item 章节 \ref{mod:bootctrl} \textit{\nameref{mod:bootctrl}}：在小节 \ref{sec:boot-mode-control} 中添加 SPI Download Boot 相关信息，并将 Download Boot 重命名为 Joint Download Boot；新增 EFUSE\_DIS\_FORCE\_DOWNLOAD 和 EFUSE\_DIS\_DOWNLOAD\_MODE 对芯片 Boot 控制的细节描述 %DOC-5923 %DOC-5912
+        \item 章节 \ref{mod:intmtrx} \textit{\nameref{mod:intmtrx}}：删除 ASSIST\_DEBUG\_INTR 中断源 %DOC-6562
+        \item 章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}：更新寄存器 \hyperref[fielddesc:RTCCNTLWDTWKEY]{RTC\_CNTL\_WDT\_WKEY} 的描述 %DOC-6760
+        \item 章节 \ref{mod:timg} \textit{\nameref{mod:timg}}：更新 \hyperref[fielddesc:TIMGWDTCLKPRESCALE]{TIMG\_WDT\_CLK\_PRESCALE} 的描述 %DOC-5697
+        \item 章节 \ref{mod:permctrl} \textit{\nameref{mod:permctrl}}：删除 Debug Assist 的访问权限配置  %DOC-6562
+        \item 章节 \ref{mod:sysreg} \textit{\nameref{mod:sysreg}}：优化 \hyperref[fielddesc:SYSTEMCONTROLCORE1MESSAGE]{SYSTEM\_CONTROL\_CORE\_1\_MESSAGE} 寄存器域的描述 % DOC-5769
+        \item 章节 \ref{mod:uart} \textit{\nameref{mod:uart}}：更新产生 wake\_up 所需的上升沿个数 %DOC-7076
+        \item 章节 \ref{mod:i2c} \textit{\nameref{mod:i2c}}：更新 \hyperref[regdesc:I2CCOMD0REG]{I2C\_COMD0\_REG}、\hyperref[fielddesc:I2CSDAFORCEOUT]{I2C\_SDA\_FORCE\_OUT} 和 \hyperref[fielddesc:I2CSCLFORCEOUT]{I2C\_SCL\_FORCE\_OUT} 的描述 %DOC-6428, DOC-6511
+        \item 章节 \ref{mod:mcpwm} \textit{\nameref{mod:mcpwm}}：增加递增递减模式下相关配置的说明 %DOC-7080
+    \end{itemize}
+    新增章节 \hyperref[interrupt-config-registers]{\textit{中断配置寄存器}}
+    \\\hline
+    2023-07-04 & v1.3 &
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:ulp} \textit{\nameref{mod:ulp}}：增加 RTC I2C op\_code 的描述；在 \hyperref[regdesc:SENSSARI2CCTRLREG]{SENS\_SAR\_I2C\_CTRL\_REG} 寄存器中增加一些域；增加章节 “中断处理” %DOC-4933 DOC-5089
+        \item 章节 \ref{mod:dma} \textit{\nameref{mod:dma}}：更新 GDMA\_IN\_SUC\_EOF\_CH\regindex{n}\_INT 中断和 GDMA\_INLINK\_DSCR\_ADDR\_CH\regindex{n} 字段的描述 % DOC-4730
+        \item 章节 \ref{mod:sysmem} \textit{\nameref{mod:sysmem}}：更新表 \ref{tab:sysmem-base-address} 和图 \ref{fig:sysmem-address-mapping_structure} %DOC-5109
+        \item 章节 \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}}：更新对 \hyperref[fielddesc:IOMUXPADPOWERCTRL]{IO\_MUX\_PAD\_POWER\_CTRL} 的描述 %DOC-5593
+        \item 章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}：更新一处错误链接 %DOC-5116
+        \item 章节 \ref{mod:permctrl} \textit{\nameref{mod:permctrl}} 和 \ref{mod:sysreg} \textit{\nameref{mod:sysreg}}：更新寄存器前缀 APB\_CTRL 为 SYSCON % DOC-5455
+        \item 章节 \ref{mod:uart} \textit{\nameref{mod:uart}}：更新图 \nameref{fig:uart-arch-overview}、图 \nameref{fig:one-uart-structure}、图 \nameref{fig:uart-flow-control}；更新停止位最大位数和相关描述 %DOC-4826
+        \item 章节 \ref{mod:usbotg} \textit{\nameref{mod:usbotg}}：增加对 USB OTG 寄存器获取方式的说明
+        \item 章节 \ref{mod:usbserialjtag} \textit{\nameref{mod:usbserialjtag}}：在 \hyperref[fielddesc:USBSERIALJTAGPULLUPVALUE]{USB\_SERIAL\_JTAG\_PULLUP\_VALUE} 位的描述中增加具体的配置上拉电阻值
+        \item 章节 \ref{mod:sensor} \textit{\nameref{mod:sensor}}：更新图 \ref{fig:pattern-tab-1} 和图 \ref{fig:pattern-tab-2} 的样式表编号
+    \end{itemize}
+    新增章节 \hyperref[programming-reserved-field]{\textit{如何配置寄存器的保留域}}
+    \\\hline
+    2023-03-02         & v1.2  &
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:sysmem} \textit{\nameref{mod:sysmem}}：更新章节 \ref{other:sysmem-internal-ROM-1} \textit{\nameref{other:sysmem-internal-ROM-1}} 中 Internal ROM 1 的描述
+        \item 章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}：删除 UART 作为拒绝睡眠原因 %DOC-4335 %DOC-3662
+        \item 章节 \ref{mod:timg} \textit{\nameref{mod:timg}}：更新读取定时器值的步骤 %DOC-3634 %DOC-3480
+        \item 章节 \ref{mod:sysreg} \textit{\nameref{mod:sysreg}}：更新寄存器 \newline \hyperref[regdesc:SYSTEMPERIPRSTEN0REG]{SYSTEM\_PERIP\_RST\_EN0\_REG} 和 \hyperref[regdesc:SYSTEMPERIPCLKEN0REG]{SYSTEM\_PERIP\_CLK\_EN0\_REG} 的描述 %DOC-4548
+        \item 章节 \ref{mod:uart} \textit{\nameref{mod:uart}}：新增终止状态 (break condition) 的相关描述 %DOC-3633
+        \item 章节 \ref{mod:usbserialjtag} \textit{\nameref{mod:usbserialjtag}}：新增 USB-OTG Download 下载模式下 IO 焊盘状态变化相关描述 %doc-4373
+        \item 章节 \ref{mod:ledpwm} \textit{\nameref{mod:ledpwm}}：新增占空比精度计算公式和表 \textit{\nameref{tab:ledc-common-freq-res}}
+        \item 章节 \ref{mod:sensor} \textit{\nameref{mod:sensor}}：\newline 新增 \hyperref[regdesc:APBSARADCAPBSARADC1DATASTATUSREG]{APB\_SARADC\_APB\_SARADC1\_DATA\_STATUS\_REG} 寄存器相关描述，更新 \hyperref[fielddesc:SENSFORCEXPDSAR]{SENS\_FORCE\_XPD\_SAR} 相关描述，并新增关于触摸传感器限制的说明
+    \end{itemize}
+    其他微小改动
+    \\\hline
+    2022-10-31         & v1.1  &
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:pie} \textit{\nameref{mod:pie}}
+        \item 章节 \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+        \item 章节 \ref{mod:sensor} \textit{\nameref{mod:sensor}}%DOC-3564
+    \end{itemize}
+    更新 \hyperref[glossary]{词汇列表} 小节
+    \\\hline
+    2022-09-08         & v1.0  &
+    新增以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:pie} \textit{\nameref{mod:pie}}
+    \end{itemize}
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:intmtrx} \textit{\nameref{mod:intmtrx}}
+        \item 章节 \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+        \item 章节 \ref{mod:rng} \textit{\nameref{mod:rng}}
+        \item 章节 \ref{mod:usbotg} \textit{\nameref{mod:usbotg}}
+        \item 章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}
+    \end{itemize}
+    \\\hline
+    2022-08-04     & v0.8  &
+    新增以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:i2s} \textit{\nameref{mod:i2s}}
+        \item 章节 \ref{mod:spi} \textit{\nameref{mod:spi}}
+    \end{itemize}
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:efuse} \textit{\nameref{mod:efuse}} %doc-3121
+        \item 章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}} %register description about w1ts/w1tc
+    \end{itemize}
+    \\\hline
+    2022-06-30     & v0.7  &
+    新增以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:sensor} \textit{\nameref{mod:sensor}}
+        \item 章节 \ref{mod:lowpowm} \textit{\nameref{mod:lowpowm}}
+    \end{itemize}
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:sysmem} \textit{\nameref{mod:sysmem}}
+        \item 更新时钟名称：
+        \begin{itemize}
+        \item FOSC\_CLK 更新为 RC\_FAST\_CLK
+        \item FOSC\_DIV\_CLK 更新为 RC\_FAST\_DIV\_CLK
+        \item RTC\_CLK 更新为 RC\_SLOW\_CLK
+        \item SLOW\_CLK 更新为 RTC\_SLOW\_CLK
+        \item FAST\_CLK 更新为 RTC\_FAST\_CLK
+        \item PLL\_80M\_CLK 更新为 PLL\_F80M\_CLK
+        \item PLL\_160M\_CLK 更新为 PLL\_F160M\_CLK
+        \item PLL\_240M\_CLK 更新为 PLL\_D2\_CLK
+    \end{itemize}%doc-3141
+    \end{itemize}
+    \\\hline
+    2022-06-01     & v0.6  &
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:dma} \textit{\nameref{mod:dma}}
+        \item 章节 \ref{mod:efuse} \textit{\nameref{mod:efuse}} %DOC-2901
+        \item 章节 \ref{mod:bootctrl} \textit{\nameref{mod:bootctrl}}
+    \end{itemize}
+    \\\hline
+    2022-04-06     & v0.5  &
+    新增以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:permctrl} \textit{\nameref{mod:permctrl}}
+        \item 章节 \ref{mod:wctrl} \textit{\nameref{mod:wctrl}}
+    \end{itemize}
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:sysmem} \textit{\nameref{mod:sysmem}}
+    \end{itemize}
+    \\\hline
+    2022-02-24     & v0.4  &
+    新增章节 \ref{mod:camlcdctrl} \textit{\nameref{mod:camlcdctrl}}
+    更新以下章节：
+    \begin{itemize}
+        \item 章节 \ref{mod:ulp} \textit{\nameref{mod:ulp}} %DOC-2517, DOC-2516, DOC-2710, DOC-2611
+        \item 章节 \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+        \item 章节 \ref{mod:iomuxgpio} \textit{\nameref{mod:iomuxgpio}} %DOC-2730
+        \item 章节 \ref{mod:resclk} \textit{\nameref{mod:resclk}}
+        \item 章节 \ref{mod:bootctrl} \textit{\nameref{mod:bootctrl}} %DOC-2569
+        \item 章节 \ref{mod:usbotg} \textit{\nameref{mod:usbotg}}
+    \end{itemize}
+    \\\hline
+    2021-12-16 & v0.3 &
+    新增以下章节：
+        \begin{itemize}
+            \item 章节 \ref{mod:ulp} \textit{\nameref{mod:ulp}}
+            \item 章节 \ref{mod:dma} \textit{\nameref{mod:dma}}
+            \item 章节 \ref{mod:systimer} \textit{\nameref{mod:systimer}}
+            \item 章节 \ref{mod:glitch} \textit{\nameref{mod:glitch}}
+            \item 章节 \ref{mod:i2c} \textit{\nameref{mod:i2c}}
+            \item 章节 \ref{mod:mcpwm} \textit{\nameref{mod:mcpwm}}
+            \item 章节 \ref{mod:rmt} \textit{\nameref{mod:rmt}}
+        \end{itemize}
+    更新以下章节：
+        \begin{itemize}
+            \item 章节 \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+            \item 章节 \ref{mod:rsa} \textit{\nameref{mod:rsa}}
+            \item 章节 \ref{mod:hmac} \textit{\nameref{mod:hmac}}
+            \item 章节 \ref{mod:digsig} \textit{\nameref{mod:digsig}}
+        \end{itemize}
+    \\\hline
+    2021-09-30      & v0.2 &
+        新增以下章节：
+            \begin{itemize}
+                \item 章节 \ref{mod:sysreg} \textit{\nameref{mod:sysreg}}
+                \item 章节 \ref{mod:hmac} \textit{\nameref{mod:hmac}}
+                \item 章节 \ref{mod:extmemencr} \textit{\nameref{mod:extmemencr}}
+                \item 章节 \ref{mod:uart} \textit{\nameref{mod:uart}}
+                \item 章节 \ref{mod:usbserialjtag} \textit{\nameref{mod:usbserialjtag}}
+            \end{itemize}
+
+    更新以下章节：
+            \begin{itemize}
+                \item 章节 \ref{mod:efuse} \textit{\nameref{mod:efuse}}
+                \item 章节 \ref{mod:twai} \textit{\nameref{mod:twai}}
+            \end{itemize}
+            \\\hline
+    2021-07-09 & v0.1 & 首次预发布\\\hline
+
+\end{longtable}

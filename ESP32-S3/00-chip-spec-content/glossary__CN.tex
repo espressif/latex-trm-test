@@ -1,0 +1,68 @@
+\phantomsection
+\chapter*{词汇列表}\label{glossary}
+\markboth{\it{词汇列表}}{\Navigation}
+\addcontentsline{toc}{chapter}{词汇列表}
+
+\phantomsection
+\section*{外设相关词汇}
+\addcontentsline{toc}{section}{外设相关词汇}
+
+\begin{longtable}[c]{p{3cm}p{12cm} }
+
+AES & AES 加速器 \\ % 7
+BOOTCTRL & 芯片 Boot 控制 \\ %新增
+DS & 数字签名 \\ %新增
+DMA & DMA 控制器 \\
+eFuse & eFuse 控制器 \\
+% EMAC & 以太网 MAC
+HMAC & HMAC 加速器 \\ %新增
+I2C & I2C 控制器 \\
+I2S & I2S 控制器 \\
+LEDC & LED 控制 PWM \\
+MCPWM & 电机控制 PWM \\
+% MMU & 存储器管理单元
+% MPU & 存储器保护单元
+PCNT & 脉冲计数器控制器 \\
+% PERI & 外设
+% PID & 进程号
+RMT & 红外遥控 \\
+RNG & 随机数生成器 \\
+RSA & RSA 加速器 \\
+% RTC & 实时控制器。SOC 中的一组电路，在任何芯片模式下都能随时保持工作
+SDHOST & SD/MMC 主机控制器 \\
+SHA & SHA 加速器 \\
+SPI & SPI 控制器 \\
+SYSTIMER & 系统定时器  \\ %新增
+TIMG & 定时器组 \\
+TWAI & 双线汽车接口 \\ %新增
+UART & UART 控制器 \\
+ULP 协处理器 & 超低功耗协处理器\\
+USB OTG & USB On-The-Go \\ %新增
+WDT & 看门狗定时器 \\ 
+%XTWDT & XTAL32 看门狗 \\ %新增
+
+\end{longtable}
+
+%%% Registers %%%
+
+% Include sections
+% - Abbreviations Related to Registers
+% - Access Types for Registers
+
+\input{glossary-reg__CN}
+
+% \subsection*{寄存器相关词汇}
+% \phantomsection
+% \addcontentsline{toc}{subsection}{寄存器相关词汇}
+
+% \begin{longtable}[c]{p{3cm}p{12cm} }
+% ISO & 隔离。当模块断电时，其输出的引脚将处于未知状态（某些中间电压）。“ISO” 寄存器将使其输出引脚隔离在一个确定的电压，从而不会影响其他未掉电的工作模块的状态。\\
+% NMI & 不可屏蔽中断。 \\
+% REG & 寄存器。\\
+% R/W & 读/写，软件可读写这些位。 \\
+% RO & 只读，软件只能读这些位。 \\
+% SYSREG & 系统寄存器。 \\ %新增
+% WO & 只写，软件只能写这些位。\\
+
+
+% \end{longtable}

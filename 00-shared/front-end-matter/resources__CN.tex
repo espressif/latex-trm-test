@@ -1,0 +1,232 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% For complete instructions:                                         %%%
+%%% 1. Go to https://www.overleaf.com/project/60e2ed1aefb70e595778b04b %%%
+%%% 2. Compile readme-general.tex                                      %%%
+%%% 3. See Section "Add Section Related Documentation and Resources"   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% >>> Add chip name here <<<
+% Always add '%' after the last chip name below (before the line '}')
+\newcommand\definedchipnames{%
+ESP32,
+ESP32-S2,
+ESP32-S3,
+ESP32-C3,
+ESP32-H2,
+ESP8685,
+ESP8684,
+ESP32-C6,
+ESP32-PICO,
+ESP32-S3-PICO-1,
+ESP8686,
+ESP32-P4,
+ESP32-C5,
+ESP32-C61/ESP32-C31,
+ESP-Shelly-C38F,
+XMCC3ESP-FH%
+}
+
+
+% Code needed for the Introduced variable \definedchipnames
+% to define all chip names in one place
+% See https://tex.stackexchange.com/questions/642211/using-a-macro-to-pass-parameters-to-a-command/
+% replace \docsvlist in \iftagged with \xdocsvlist
+\patchcmd{\iftagged}{\docsvlist}{\xdocsvlist}{}{}
+\patchcmd{\tagged}{\docsvlist}{\xdocsvlist}{}{}
+\patchcmd{\untagged}{\docsvlist}{\xdocsvlist}{}{}
+% \xdocsvlist fully expands its argument before passing it to \docsvlist
+\newcommand{\xdocsvlist}[1]{%
+  \expandafter\docsvlist\expandafter{\expanded{#1}}%
+}
+
+\phantomsection
+\chapter*{相关文档和资源}\label{sec:resources}
+\markboth{\it{相关文档和资源}}{\Navigation}
+\addcontentsline{toc}{chapter}{相关文档和资源}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Warning for projects with undefined chips %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Show content below if undefined chip name encountered
+\untagged{\definedchipnames}
+{%
+    \begin{tiplisting}
+        Assign a defined chip name in your preamble > variable "chipseries"
+    
+	    Otherwise, define chip in 
+	    \begin{itemize}
+	        \item \texttt{resources-link-defs}
+	        \item \texttt{resources-[doc-type]\_\_EN}
+	        \item \texttt{resources-[doc-type]\_\_CN}
+	    \end{itemize}
+    \end{tiplisting}
+}% \untagged{\definedchipnames}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Content for projects with defined chips %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Show content below if defined chip name encountered
+\tagged{\definedchipnames}
+{%
+
+%%% Related Documentation %%%
+
+\vspace{-0.5em}
+\begin{minipage}{\textwidth}
+
+\section*{相关文档}
+
+\begin{itemize}
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchipdatasheetCN\endcsname%
+    % Exclude this link if this section is added to a chip datasheet project
+    \ifthenelse{\equal{\docprojtype}{chip-datasheet}}{}%
+    {%
+      \item \href{\linkprefix\linkchipdatasheetCN}{《\chipseries{} 技术规格书》} --
+        {\small 提供 \chipseries{} 芯片的硬件技术规格。}%
+    }%
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchiptrmCN\endcsname%
+    % Exclude this link if this section is added to a TRM project
+    \ifthenelse{\equal{\docprojtype}{trm}}{}%
+    {%
+      \item \href{\linkprefix\linkchiptrmCN}{《\chipseries{} 技术参考手册》} --
+        {\small 提供 \chipseries{} 芯片的存储器和外设的详细使用说明。}%
+    }%
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchiphwdesignCN\endcsname%
+    % Exclude this link if this section is added to a hardware design guidelines project
+    \ifthenelse{\equal{\docprojtype}{hdg}}{}%
+    {%
+      \item \href{\linkprefix\linkchiphwdesignCN}{《\chipseries{} 硬件设计指南》} --
+        {\small 提供基于 \chipseries{} 芯片的产品设计规范。}%
+    }%
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchipecoCN\endcsname%
+    \item \href{\linkprefix\linkchipecoCN}{《\chipseries{} 勘误表及解决办法》} --
+        {\small 提供关于 \chipseries{} 芯片的设计问题的说明和解决方案。}
+  \fi%
+  
+% Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchiperrataCN\endcsname%
+   % Exclude this link if this section is added to an errata project
+    \ifthenelse{\equal{\docprojtype}{errata}}{}%
+    {%
+    \item \href{\linkprefix\linkchiperrataCN}{《\chipseries{} 系列芯片勘误表》} --
+        {\small 描述 \chipseries{} 系列芯片的已知错误。}
+    }%
+  \fi%
+
+  % If the variable \productcertificates is defined in a target project
+  % append it to the link to filter available certificates
+  \ifcsname productcertificates\endcsname%
+    \item 证书\\
+        \href{\linkprefix\linkcertificatesCN\productcertificates}{\linkprefix\linkcertificatesCN}
+  \else
+    \PackageWarning{Related Documentation and Resources}{Link extension for certificates not defined}
+    \item 证书\\
+        \href{\linkprefix\linkcertificatesCN}{\linkprefix\linkcertificatesCN}
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkpcnCN\endcsname%
+    \item \chipseries{} 产品/工艺变更通知 (PCN)\\
+        \href{\linkprefix\linkpcnCN}{\linkprefix\linkpcnCN}
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkadvisoryCN\endcsname%
+    \item \chipseries{} 公告 --
+        {\small 提供有关安全、bug、兼容性、器件可靠性的信息}\\
+        \href{\linkprefix\linkadvisoryCN}{\linkprefix\linkadvisoryCN}
+  \fi%
+
+    \item 文档更新和订阅通知\\
+        \href{\linkprefix\linkrecentlyupdatedCN}{\linkprefix\linkrecentlyupdatedCN}
+
+\end{itemize}
+
+\end{minipage}
+
+
+%%% Developer Zone %%%
+
+\begin{minipage}{\textwidth}
+
+\section*{开发者社区}
+
+\begin{itemize}
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkidfprogguideCN\endcsname%
+    \item \href{\linkprefix\linkidfprogguideCN}{《\chipseries{} ESP-IDF 编程指南》} --
+        {\small ESP-IDF 开发框架的文档中心。}
+  \fi%
+
+    \item ESP-IDF 及 GitHub 上的其它开发框架\\
+        \href{\linkprefix\linkgithub}{\linkprefix\linkgithub}
+
+    \item ESP32 论坛 --
+        {\small 工程师对工程师 (E2E) 的社区，您可以在这里提出问题、解决问题、分享知识、探索观点。}\\
+        \href{\linkprefix\linkespforum}{\linkprefix\linkespforum}
+        
+    \item \textit{The ESP Journal} --
+        {\small 分享乐鑫工程师的最佳实践、技术文章和工作随笔。}\\
+        \href{\linkprefix\linkespjournal}{\linkprefix\linkespjournal}
+
+    \item SDK 和演示、App、工具、AT 等下载资源\\
+        \href{\linkprefix\linksdkdemoCN}{\linkprefix\linksdkdemoCN}
+\end{itemize}
+
+\end{minipage}
+
+
+%%% Products %%%
+
+\begin{minipage}{\textwidth}
+
+\section*{产品}
+
+\begin{itemize}
+    \item \chipseries{} 系列芯片 --
+        {\small \chipseries{} 全系列芯片。}\\
+        \href{\linkprefix\linkespsocsCN?id=\chipseries}{\linkprefix\linkespsocsCN?id=\chipseries}
+    \item \chipseries{} 系列模组 --
+        {\small \chipseries{} 全系列模组。}\\
+        \href{\linkprefix\linkespmodulesCN?id=\chipseries}{\linkprefix\linkespmodulesCN?id=\chipseries}
+    \item \chipseries{} 系列开发板 --
+        {\small \chipseries{} 全系列开发板。}\\
+        \href{\linkprefix\linkespdevkitsCN?id=\chipseries}{\linkprefix\linkespdevkitsCN?id=\chipseries}
+    \item ESP Product Selector（乐鑫产品选型工具）--
+        {\small 通过筛选性能参数、进行产品对比快速定位您所需要的产品。}\\
+        \href{\linkprefix\linkespproductselectorCN}{\linkprefix\linkespproductselectorCN}
+\end{itemize}
+
+\end{minipage}
+
+
+%%% Contact Us %%%
+
+\begin{minipage}{\textwidth}
+
+\section*{联系我们}
+
+\begin{itemize}
+    \item 商务问题、技术支持、电路原理图 \& PCB 设计审阅、购买样品（线上商店）、成为供应商、意见与建议\\
+        \href{\linkprefix\linksalesCN}{\linkprefix\linksalesCN}
+\end{itemize}
+
+\end{minipage}
+
+}% \tagged{\definedchipnames}

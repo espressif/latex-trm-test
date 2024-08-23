@@ -1,0 +1,45 @@
+\begin{longtable}{  | m{5.7cm} | m{7cm} | m{1.3cm} | m{1.5cm} | }
+\hline\rowcolor{lightgray}
+名称 & 描述 &  地址 & 访问 \\ \hline
+\endhead
+\multicolumn{4}{|l|}{\textbf{时序寄存器}} \\ \hline
+\hyperref[regdesc:I2CSCLLOWPERIODREG]{I2C\_SCL\_LOW\_PERIOD\_REG} & 配置 SCL 的低电平宽度 & 0x{}0000 & R/W \\ \hline
+\hyperref[regdesc:I2CSDAHOLDREG]{I2C\_SDA\_HOLD\_REG} & 配置 SCL 下降沿后的保持时间 & 0x{}0030 & R/W \\ \hline
+\hyperref[regdesc:I2CSDASAMPLEREG]{I2C\_SDA\_SAMPLE\_REG} & 配置 SCL 上升沿后的采样时间 & 0x{}0034 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLHIGHPERIODREG]{I2C\_SCL\_HIGH\_PERIOD\_REG} & 配置 SCL 时钟的高电平宽度 & 0x{}0038 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSTARTHOLDREG]{I2C\_SCL\_START\_HOLD\_REG} & 配置 START 命令产生时 SDA 下降沿和 SCL 下降沿之间的间隔时间 & 0x{}0040 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLRSTARTSETUPREG]{I2C\_SCL\_RSTART\_SETUP\_REG} & 配置 SCL 上升沿和 SDA 下降沿之间的延迟 & 0x{}0044 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSTOPHOLDREG]{I2C\_SCL\_STOP\_HOLD\_REG} & 配置 STOP 命令生成时 SCL 边沿的延迟 & 0x{}0048 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSTOPSETUPREG]{I2C\_SCL\_STOP\_SETUP\_REG} & 配置 STOP 命令生成时 SDA 和 SCL 上升沿之间的间隔时间 & 0x{}004C & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSTTIMEOUTREG]{I2C\_SCL\_ST\_TIME\_OUT\_REG} & SCL 状态超时寄存器 & 0x{}0078 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLMAINSTTIMEOUTREG]{I2C\_SCL\_MAIN\_ST\_TIME\_OUT\_REG} & SCL 主要状态超时寄存器 & 0x{}007C & R/W \\ \hline
+\multicolumn{4}{|l|}{\textbf{配置寄存器}} \\ \hline
+\hyperref[regdesc:I2CCTRREG]{I2C\_CTR\_REG} & 传输配置寄存器 & 0x{}0004 & varies \\ \hline
+\hyperref[regdesc:I2CTOREG]{I2C\_TO\_REG} & 超时控制寄存器 & 0x{}000C & R/W \\ \hline
+\hyperref[regdesc:I2CSLAVEADDRREG]{I2C\_SLAVE\_ADDR\_REG} & 从机地址配置寄存器 & 0x{}0010 & R/W \\ \hline
+\hyperref[regdesc:I2CFIFOCONFREG]{I2C\_FIFO\_CONF\_REG} & FIFO 配置寄存器 & 0x{}0018 & R/W \\ \hline
+\hyperref[regdesc:I2CFILTERCFGREG]{I2C\_FILTER\_CFG\_REG} & SCL 和 SDA 滤波配置寄存器 & 0x{}0050 & R/W \\ \hline
+\hyperref[regdesc:I2CCLKCONFREG]{I2C\_CLK\_CONF\_REG} & I2C 时钟配置寄存器 & 0x{}0054 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSPCONFREG]{I2C\_SCL\_SP\_CONF\_REG} & 电源配置寄存器 & 0x{}0080 & varies \\ \hline
+\hyperref[regdesc:I2CSCLSTRETCHCONFREG]{I2C\_SCL\_STRETCH\_CONF\_REG} & 配置 I2C 从机 SCL 时钟拉伸 & 0x{}0084 & varies \\ \hline
+\multicolumn{4}{|l|}{\textbf{状态寄存器}} \\ \hline
+\hyperref[regdesc:I2CSRREG]{I2C\_SR\_REG} & 描述 I2C 的工作状态 & 0x{}0008 & RO \\ \hline
+\hyperref[regdesc:I2CFIFOSTREG]{I2C\_FIFO\_ST\_REG} & FIFO 状态寄存器 & 0x{}0014 & RO \\ \hline
+\hyperref[regdesc:I2CDATAREG]{I2C\_DATA\_REG} & 读/写 FIFO 寄存器 & 0x{}001C & R/W \\ \hline
+\multicolumn{4}{|l|}{\textbf{中断寄存器}} \\ \hline
+\hyperref[regdesc:I2CINTRAWREG]{I2C\_INT\_RAW\_REG} & 原始中断状态 & 0x{}0020 & R/SS/WTC \\ \hline
+\hyperref[regdesc:I2CINTCLRREG]{I2C\_INT\_CLR\_REG} & 中断清除位 & 0x{}0024 & WT \\ \hline
+\hyperref[regdesc:I2CINTENAREG]{I2C\_INT\_ENA\_REG} & 中断使能位 & 0x{}0028 & R/W \\ \hline
+\hyperref[regdesc:I2CINTSTATUSREG]{I2C\_INT\_STATUS\_REG} & 捕捉 I2C 通信事件的状态 & 0x{}002C & RO \\ \hline
+\multicolumn{4}{|l|}{\textbf{命令寄存器}} \\ \hline
+\hyperref[regdesc:I2CCOMD0REG]{I2C\_COMD0\_REG} & I2C 命令寄存器 0 & 0x{}0058 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD1REG]{I2C\_COMD1\_REG} & I2C 命令寄存器 1 & 0x{}005C & varies \\ \hline
+\hyperref[regdesc:I2CCOMD2REG]{I2C\_COMD2\_REG} & I2C 命令寄存器 2 & 0x{}0060 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD3REG]{I2C\_COMD3\_REG} & I2C 命令寄存器 3 & 0x{}0064 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD4REG]{I2C\_COMD4\_REG} & I2C 命令寄存器 4 & 0x{}0068 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD5REG]{I2C\_COMD5\_REG} & I2C 命令寄存器 5 & 0x{}006C & varies \\ \hline
+\hyperref[regdesc:I2CCOMD6REG]{I2C\_COMD6\_REG} & I2C 命令寄存器 6 & 0x{}0070 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD7REG]{I2C\_COMD7\_REG} & I2C 命令寄存器 7 & 0x{}0074 & varies \\ \hline
+\multicolumn{4}{|l|}{\textbf{版本寄存器}} \\ \hline
+\hyperref[regdesc:I2CDATEREG]{I2C\_DATE\_REG} & 版本控制寄存器 & 0x{}00F8 & R/W \\ \hline
+\end{longtable}

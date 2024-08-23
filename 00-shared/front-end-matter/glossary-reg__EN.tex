@@ -1,0 +1,125 @@
+%%% Abbreviations Related to Registers %%%
+
+\phantomsection
+\section*{Abbreviations Related to Registers}\label{glossary-abbr-reg}
+\addcontentsline{toc}{section}{Abbreviations Related to Registers}
+
+\begin{longtable}[c]{ R{3cm} p{12cm} }
+
+REG     & \textbf{Register}. \\
+SYSREG  & \textbf{System registers} are a group of registers that control system reset, memory, clocks, software interrupts, power management, clock gating, etc. \\
+ISO     & \textbf{Isolation}. If a peripheral or other chip component is powered down, the pins, if any, to which its output signals are routed will go into a floating state. ISO registers isolate such pins and keep them at a certain determined value, so that the other non-powered-down peripherals/devices attached to these pins are not affected. \\
+NMI     & \textbf{Non-maskable interrupt} is a hardware interrupt that cannot be disabled or ignored by the CPU instructions. Such interrupts exist to signal the occurrence of a critical error. \\
+W1TS    & Abbreviation added to names of registers/fields to indicate that such register/field should be used to set a field in a corresponding register with a similar name. For example, the register \texttt{GPIO\_ENABLE\_W1TS\_REG} should be used to set the corresponding fields in the register \texttt{GPIO\_ENABLE\_REG}. \\
+W1TC    & Same as \textit{W1TS}, but used to clear a field in a corresponding register. \\
+% FPU   &
+% FPD   &
+% PLLA  &
+% BBPLL &
+
+\end{longtable}
+
+
+%%% Access Types for Registers %%%
+
+% \clearpage
+\phantomsection
+\section*{Access Types for Registers}\label{glossary-access-types}
+\addcontentsline{toc}{section}{Access Types for Registers}
+
+Sections \textit{Register Summary} and \textit{Register Description} in TRM chapters specify access types for registers and their fields.
+
+Most frequently used access types and their combinations are as follows:
+
+\begin{multicols}{4}
+  \begin{itemize}
+    \item RO
+    \item WO
+    \item WT
+    \item R/W
+    \item WL
+    \item R/W/SC
+    \item R/W/SS
+    \item R/W/SS/SC
+    \item R/WC/SS
+    \item R/WC/SC
+    \item R/WC/SS/SC
+    \item R/WS/SC
+    \item R/WS/SS
+    \item R/WS/SS/SC
+    \item R/SS/WTC
+    \item R/SC/WTC
+    \item R/SS/SC/WTC
+    \item RF/WF
+    \item R/SS/RC
+    \item varies
+  \end{itemize}
+\end{multicols}
+
+Descriptions of all access types are provided below.
+
+
+\begin{longtable}[c]{ R{1cm} p{13cm} }
+
+% table contents
+R & \textbf{Read.} 
+	User application can read from this register/field; usually combined with other access types. \\
+RO & \textbf{Read only.} 
+	User application can only read from this register/field. \\
+HRO & \textbf{Hardware Read Only.} 
+	Only hardware can read from this register/field; used for storing default settings for variable parameters. \\
+W & \textbf{Write.} 
+	User application can write to this register/field; usually combined with other access types. \\
+WO & \textbf{Write only.} 
+	User application can only write to this register/field. \\
+
+SS & \textbf{Self set.} 
+	On a specified event, hardware automatically writes 1 to this register/field; used with 1-bit fields. \\
+SC & \textbf{Self clear.} 
+	On a specified event, hardware automatically writes 0 to this register/field; used with 1-bit and multi-bit fields. \\
+SM & \textbf{Self modify.} 
+	On a specified event, hardware automatically writes a specified value to this register/field; used with multi-bit fields. \\
+SU & \textbf{Self update.} 
+	On a specified event, hardware automatically updates this register/field; used with multi-bit fields. \\
+
+RS & \textbf{Read to set.} 
+	If user application reads from this register/field, hardware automatically writes 1 to it. \\
+RC & \textbf{Read to clear.} 
+	If user application reads from this register/field, hardware automatically writes 0 to it. \\
+RF & \textbf{Read from FIFO.} 
+	If user application writes new data to FIFO, the register/field automatically reads it. \\
+
+WF & \textbf{Write to FIFO.} 
+	If user application writes new data to this register/field, it automatically passes the data to FIFO via APB bus. \\
+
+WS & \textbf{Write any value to set.} 
+	If user application writes to this register/field, hardware automatically sets this register/field. \\
+W1S & \textbf{Write 1 to set.} 
+	If user application writes 1 to this register/field, hardware automatically sets this register/field. \\
+W0S & \textbf{Write 0 to set.} 
+	If user application writes 0 to this register/field, hardware automatically sets this register/field. \\
+
+WC & \textbf{Write any value to clear.} 
+	If user application writes to this register/field, hardware automatically clears this register/field. \\
+W1C & \textbf{Write 1 to clear.} 
+	If user application writes 1 to this register/field, hardware automatically clears this register/field. \\
+W0C & \textbf{Write 0 to clear.} 
+	If user application writes 0 to this register/field, hardware automatically clears this register/field. \\
+
+WT & \textbf{Write 1 to trigger an event.} 
+	If user application writes 1 to this field, this action triggers an event (pulse in the APB bus) or clears a corresponding WTC field (see WTC). \\
+WTC & \textbf{Write to clear.} 
+	Hardware automatically clears this field if user application writes 1 to the corresponding WT field (see WT). \\
+
+W1T & \textbf{Write 1 to toggle.} 
+	If user application writes 1 to this field, hardware automatically inverts the corresponding field; otherwise - no effect. \\
+W0T & \textbf{Write 0 to toggle.} 
+	If user application writes 0 to this field, hardware automatically inverts the corresponding field; otherwise - no effect. \\
+
+WL & \textbf{Write if a lock is deactivated.} 
+	If the lock is deactivated, user application can write to this register/field. \\
+
+varies & \textbf{The access type varies.} 
+	 Different fields of this register might have different access types. \\
+
+\end{longtable}

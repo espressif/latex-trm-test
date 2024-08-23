@@ -1,0 +1,9 @@
+{
+	"name": "TeX Live base",
+	"dockerFile": "Dockerfile",
+    "extensions": [
+        "james-yu.latex-workshop",
+        "valentjn.vscode-ltex"
+    ]
+
+}

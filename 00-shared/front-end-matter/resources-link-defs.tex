@@ -1,0 +1,945 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Related Documentation and Resources %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% How to add links for a new chip
+% - Make a copy of an existing link block for a chip
+% - Update chipname in \tagged
+% - Update links, but DO NOT FORGET:
+%     - Link to docs should start with https://espressif.com/documentation/...
+%     - Escape all special chars in URLs, such as \_, \#, \?, etc.
+% - Add % at the end of each link to avoid possible errors
+% - Add new chipname to \definedchipnames in
+%     - resources-[doc-type]__EN
+%     - resources-[doc-type]__CN
+
+% For complete instructions, go to
+% https://www.overleaf.com/project/60e2ed1aefb70e595778b04b
+% > Compile readme-general.tex
+% > see "Add Section Related Documentation and Resources"
+
+
+% Link Prefix added to links separately and, if needed, can
+% be easily changed to https:// or http://www. globally
+\newcommand\linkprefix{https://}
+
+
+%%%%%%%%%%%%%%%%%
+%%% Hypertext %%%
+%%%%%%%%%%%%%%%%%
+
+% Hypertext for chip datasheet link in English
+\newcommand\hypertextchipdatasheetEN{%
+\chipseries{} Series Datasheet%
+}
+% Hypertext for chip datasheet link in Chinese
+\newcommand\hypertextchipdatasheetCN{%
+《\chipseries{} 系列芯片技术规格书》%
+}
+
+% Hypertext for chip HDG link in English
+\newcommand\hypertextchiphwdesignEN{%
+\chipseries{} Hardware Design Guidelines%
+}
+% Hypertext for chip HDG link in Chinese
+\newcommand\hypertextchiphwdesignCN{%
+《\chipseries{} 硬件设计指南》%
+}
+
+% Hypertext for chip TRM link in English
+\newcommand\hypertextchiptrmEN{%
+\chipseries{} Technical Reference Manual%
+}
+% Hypertext for chip TRM link in Chinese
+\newcommand\hypertextchiptrmCN{%
+《\chipseries{} 技术参考手册》%
+}
+
+% Hypertext for chip errata link in English
+\newcommand\hypertextchiperrataEN{%
+\chipseries{} Errata%
+}
+% Hypertext for chip TRM link in Chinese
+\newcommand\hypertextchiperrataCN{%
+《\chipseries{} 勘误表》%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Macros for Doc Links %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% See any "...-Instructions" Overleaf project > Chapter "Add Links to Related Documents"
+
+% Examples
+% \doclinkcdEN{}
+% \doclinktrmCN{i2c-reg-summ}
+
+% cd -- Chip Datasheet
+
+\newcommand{\doclinkcdEN}[1]{%
+  \href{\linkprefix\linkchipdatasheetEN\##1}{\it{\hypertextchipdatasheetEN{}}}%
+}
+
+\newcommand{\doclinkcdCN}[1]{%
+  \href{\linkprefix\linkchipdatasheetCN\##1}{\hypertextchipdatasheetCN{}}%
+}
+
+% hdg -- Hardware Design Guidelines
+\newcommand{\doclinkhdgEN}[1]{%
+  \href{\linkprefix\linkchiphwdesignEN\##1}{\it{\hypertextchiphwdesignEN{}}}%
+}
+
+\newcommand{\doclinkhdgCN}[1]{%
+  \href{\linkprefix\linkchiphwdesignCN\##1}{\hypertextchiphwdesignCN{}}%
+}
+
+% trm -- Technical Reference Manual
+\newcommand{\doclinktrmEN}[1]{%
+  \href{\linkprefix\linkchiptrmEN\##1}{\it{\hypertextchiptrmEN{}}}%
+}
+
+\newcommand{\doclinktrmCN}[1]{%
+  \href{\linkprefix\linkchiptrmCN\##1}{\hypertextchiptrmCN{}}%
+}
+
+% errata -- Chip Errata
+\newcommand{\doclinkerrataEN}[1]{%
+  \href{\linkprefix\linkchiperrataEN\##1}{\it{\hypertextchiperrataEN{}}}%
+}
+
+\newcommand{\doclinkerrataCN}[1]{%
+  \href{\linkprefix\linkchiperrataCN\##1}{\hypertextchiperrataCN{}}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%%% Common Links %%%
+%%%%%%%%%%%%%%%%%%%%
+
+% Link to Certificates (page in English)
+\newcommand\linkcertificatesEN{%
+    espressif.com/en/support/documents/certificates%
+}
+% Link to Certificates (page in Chinese)
+\newcommand\linkcertificatesCN{%
+    espressif.com/zh-hans/support/documents/certificates%
+}
+% Link to Recently Updated Documents (page in English)
+\newcommand\linkrecentlyupdatedEN{%
+    espressif.com/en/support/download/documents%
+}
+% Link to Recently Updated Documents (page in Chinese)
+\newcommand\linkrecentlyupdatedCN{%
+    espressif.com/zh-hans/support/download/documents%
+}
+
+% Link to GitHub
+\newcommand\linkgithub{%
+    github.com/espressif%
+}
+% Link to SDKs and demos in English
+\newcommand\linksdkdemoEN{%
+    espressif.com/en/support/download/sdks-demos%
+}
+% Link to SDKs and demos in English
+\newcommand\linksdkdemoCN{%
+    espressif.com/zh-hans/support/download/sdks-demos%
+}
+% Link to ESP32 BBS Forum in English
+\newcommand\linkespforum{%
+    esp32.com/%
+}
+% Link to the ESP Journal in English
+\newcommand\linkespjournal{%
+    blog.espressif.com/%
+}
+
+% Link to SoCs (page in English)
+\newcommand\linkespsocsEN{%
+    espressif.com/en/products/socs%
+}
+% Link to SoCs (page in Chinese)
+\newcommand\linkespsocsCN{%
+    espressif.com/zh-hans/products/socs%
+}
+% Link to modules (page in English)
+\newcommand\linkespmodulesEN{%
+    espressif.com/en/products/modules%
+}
+% Link to modules (page in Chinese)
+\newcommand\linkespmodulesCN{%
+    espressif.com/zh-hans/products/modules%
+}
+% Link to DevKits (page in English)
+\newcommand\linkespdevkitsEN{%
+    espressif.com/en/products/devkits%
+}
+% Link to DevKits (page in Chinese)
+\newcommand\linkespdevkitsCN{%
+    espressif.com/zh-hans/products/devkits%
+}
+% Link to ESP Product Selector (page in English)
+\newcommand\linkespproductselectorEN{%
+    products.espressif.com/\#/product-selector?language=en%
+}
+% Link to ESP Product Selector (page in Chinese)
+\newcommand\linkespproductselectorCN{%
+    products.espressif.com/\#/product-selector?language=zh%
+}
+
+% Link to Sales Questions in English
+\newcommand\linksalesEN{%
+    espressif.com/en/contact-us/sales-questions%
+}
+% Link to Sales Questions in Chinese
+\newcommand\linksalesCN{%
+    espressif.com/zh-hans/contact-us/sales-questions%
+}
+
+
+%%%%%%%%%%%%%
+%%% ESP32 %%%
+%%%%%%%%%%%%%
+
+\tagged{ESP32}
+{%
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp32\_technical\_reference\_manual\_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp32\_technical\_reference\_manual\_cn.pdf%
+	}
+
+	% Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp32\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp32\_datasheet\_cn.pdf%
+	}
+
+	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp32\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp32\_hardware\_design\_guidelines\_cn.pdf%
+	}
+
+	% Link to chip errata in English
+	\newcommand\linkchiperrataEN{%
+	    espressif.com/sites/default/files/documentation/esp32\_errata\_en.pdf%
+	}
+	% Link to chip errata in Chinese
+	\newcommand\linkchiperrataCN{%
+	    espressif.com/sites/default/files/documentation/esp32\_errata\_cn.pdf%
+	}
+ 
+	% Link to chip ECO and workarounds in English
+	\newcommand\linkchipecoEN{%
+	    espressif.com/documentation/eco\_and_workarounds\_for\_bugs\_in\_esp32\_en.pdf%
+	}
+	% Link to chip ECO and workarounds in Chinese
+	\newcommand\linkchipecoCN{%
+	    espressif.com/documentation/eco\_and\_workarounds\_for\_bugs\_in\_esp32\_cn.pdf%
+	}
+
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32/get-started/index.html%
+	}
+	
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+        espressif.com/en/support/documents/pcns%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+        espressif.com/zh-hans/support/documents/pcns%
+    }
+
+	% Link to Advisories (page in English)
+    \newcommand\linkadvisoryEN{%
+        espressif.com/en/support/documents/advisories%
+    }
+	% Link to Advisories (page in Chinese)
+    \newcommand\linkadvisoryCN{%
+        espressif.com/zh-hans/support/documents/advisories%
+    }
+}% tagged{ESP32}
+
+
+%%%%%%%%%%%%%%%%
+%%% ESP32-S2 %%%
+%%%%%%%%%%%%%%%%
+
+\tagged{ESP32-S2}
+{%
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp32-s2\_technical\_reference\_manual\_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp32-s2\_technical\_reference\_manual\_cn.pdf%
+	}
+
+    % \ifrevisionzero
+	% Link to chip revision v0.0 datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp32-s2\_datasheet\_en.pdf%
+	}
+	% Link to chip revision v0.0 datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp32-s2\_datasheet\_cn.pdf%
+	}
+    % \fi %\ifrevisionzero
+
+ %    \ifrevisionone
+ % 	% Link to chip revision v1.0 datasheet in English
+	% \newcommand\linkchipdatasheetEN{%
+	%     espressif.com/documentation/esp32-s2\_datasheet\_en.pdf%
+	% }
+	% % Link to chip revision v1.0 datasheet in Chinese
+	% \newcommand\linkchipdatasheetCN{%
+	%     espressif.com/documentation/esp32-s2\_datasheet\_cn.pdf%
+	% }
+	% \fi %\ifrevisionone
+
+	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp32-s2\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp32-s2\_hardware\_design\_guidelines\_cn.pdf%
+	}
+
+	% Link to chip errata in English
+	\newcommand\linkchiperrataEN{%
+	    espressif.com/documentation/esp32-s2\_errata\_en.pdf%
+	}
+	% Link to chip errata in Chinese
+	\newcommand\linkchiperrataCN{%
+	    espressif.com/documentation/esp32-s2\_errata\_cn.pdf%
+	}
+	
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32s2/get-started/index.html%
+	}
+
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+    espressif.com/en/support/documents/pcns?keys=ESP32-S2%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+    espressif.com/zh-hans/support/documents/pcns?keys=ESP32-S2%
+    }
+
+	% Link to Advisories (page in English)
+    \newcommand\linkadvisoryEN{%
+    espressif.com/en/support/documents/advisories?keys=ESP32-S2%
+    }
+	% Link to Advisories (page in Chinese)
+    \newcommand\linkadvisoryCN{%
+    espressif.com/zh-hans/support/documents/advisories?keys=ESP32-S2%
+    }
+}% tagged{ESP32-S2}
+
+
+%%%%%%%%%%%%%%%%
+%%% ESP32-S3 %%%
+%%%%%%%%%%%%%%%%
+
+\tagged{ESP32-S3}
+{%
+	% Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp32-s3\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp32-s3\_datasheet\_cn.pdf%
+	}
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp32-s3_technical_reference_manual_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp32-s3_technical_reference_manual_cn.pdf%
+	}
+	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp32-s3\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp32-s3\_hardware\_design\_guidelines\_cn.pdf%
+	}	    
+	
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32s3/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32s3/get-started/index.html%
+	}
+	
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+    espressif.com/en/support/documents/pcns?keys=ESP32-S3%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+    espressif.com/zh-hans/support/documents/pcns?keys=ESP32-S3%
+    }
+    
+	% Link to Advisories (page in English)
+    \newcommand\linkadvisoryEN{%
+    espressif.com/en/support/documents/advisories?keys=ESP32-S3%
+    }
+	% Link to Advisories (page in Chinese)
+    \newcommand\linkadvisoryCN{%
+    espressif.com/zh-hans/support/documents/advisories?keys=ESP32-S3%
+    }
+    
+    	% Link to chip errata in English
+	\newcommand\linkchiperrataEN{%
+	    espressif.com/sites/default/files/documentation/esp32-s3\_errata\_en.pdf%
+	}
+	% Link to chip errata in Chinese
+	\newcommand\linkchiperrataCN{%
+	    espressif.com/sites/default/files/documentation/esp32-s3\_errata\_cn.pdf%
+	}
+}% tagged{ESP32-S3}
+
+
+%%%%%%%%%%%%%%%%
+%%% ESP32-C3 %%%
+%%%%%%%%%%%%%%%%
+
+\tagged{ESP32-C3,ESP-Shelly-C38F,XMCC3ESP-FH}
+{%
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp32-c3\_technical\_reference\_manual\_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp32-c3\_technical\_reference\_manual\_cn.pdf%
+	}
+
+	% Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp32-c3\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp32-c3\_datasheet\_cn.pdf%
+	}
+
+	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp32-c3\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp32-c3\_hardware\_design\_guidelines\_cn.pdf%
+	 }
+	 
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32c3/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32c3/get-started/index.html%
+	}
+	
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+    espressif.com/en/support/documents/pcns?keys=ESP32-C3%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+    espressif.com/zh-hans/support/documents/pcns?keys=ESP32-C3%
+    }
+    
+	% Link to Advisories (page in English)
+    \newcommand\linkadvisoryEN{%
+    espressif.com/en/support/documents/advisories?keys=ESP32-C3%
+    }
+	% Link to Advisories (page in Chinese)
+    \newcommand\linkadvisoryCN{%
+    espressif.com/zh-hans/support/documents/advisories?keys=ESP32-C3%
+    }
+    
+    % Link to chip errata in English
+	\newcommand\linkchiperrataEN{%
+	    espressif.com/sites/default/files/documentation/esp32-c3\_errata\_en.pdf%
+	}
+	% Link to chip errata in Chinese
+	\newcommand\linkchiperrataCN{%
+	    espressif.com/sites/default/files/documentation/esp32-c3\_errata\_cn.pdf%
+	}
+}% tagged{ESP32-C3}
+
+
+%%%%%%%%%%%%%%%
+%%% ESP8685 %%%
+%%%%%%%%%%%%%%%
+
+\tagged{ESP8685}
+{%
+    % Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp8685\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp8685\_datasheet\_cn.pdf%
+	}
+	
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32c3/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32c3/get-started/index.html%
+	}
+    
+}% tagged{ESP8685}
+
+
+%%%%%%%%%%%%%%%
+%%% ESP8684 %%%
+%%%%%%%%%%%%%%%
+
+\tagged{ESP8684}
+{%
+
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp8684\_technical\_reference\_manual\_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp8684\_technical\_reference\_manual\_cn.pdf%
+	}
+	
+    % Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp8684\_datasheet\_en.pdf%
+	}
+ 	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp8684\_datasheet\_cn.pdf%
+	}
+    
+	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp8684\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp8684\_hardware\_design\_guidelines\_cn.pdf%
+	}	    
+	
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+    espressif.com/en/support/documents/pcns?keys=ESP8684%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+    espressif.com/zh-hans/support/documents/pcns?keys=ESP8684%
+    }
+
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32c2/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32c2/get-started/index.html%
+	}
+
+    % Link to chip errata in English
+	\newcommand\linkchiperrataEN{%
+	    espressif.com/sites/default/files/documentation/esp8684\_errata\_en.pdf%
+	}
+	% Link to chip errata in Chinese
+	\newcommand\linkchiperrataCN{%
+	    espressif.com/sites/default/files/documentation/esp8684\_errata\_cn.pdf%
+	}
+}% tagged{ESP8684}
+
+
+%%%%%%%%%%%%%%%%
+%%% ESP32-C6 %%%
+%%%%%%%%%%%%%%%%
+
+\tagged{ESP32-C6}
+{%
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp32-c6\_technical\_reference\_manual\_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp32-c6\_technical\_reference\_manual\_cn.pdf%
+	}
+
+	% Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp32-c6\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp32-c6\_datasheet\_cn.pdf%
+	}
+
+	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp32-c6\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp32-c6\_hardware\_design\_guidelines\_cn.pdf%
+	}
+
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32c6/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32c6/get-started/index.html%
+    }
+
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+    espressif.com/en/support/documents/pcns?keys=ESP32-C6%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+    espressif.com/zh-hans/support/documents/pcns?keys=ESP32-C6%
+    }
+    % No other resources available yet
+
+}% tagged{ESP32-C6}
+
+%%%%%%%%%%%%%%%%
+%%% ESP32-H2 %%%
+%%%%%%%%%%%%%%%%
+
+\tagged{ESP32-H2}
+{%
+
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp32-h2\_technical\_reference\_manual\_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp32-h2\_technical\_reference\_manual\_cn.pdf%
+	}
+ 
+	% Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp32-h2\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp32-h2\_datasheet\_cn.pdf%
+	}
+
+ 	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp32-h2\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp32-h2\_hardware\_design\_guidelines\_cn.pdf%
+	}
+
+	% Link to chip errata in English
+	\newcommand\linkchiperrataEN{%
+	    espressif.com/sites/default/files/documentation/esp32-h2\_errata\_en.pdf%
+	}
+	% Link to chip errata in Chinese
+	\newcommand\linkchiperrataCN{%
+	    espressif.com/sites/default/files/documentation/esp32-h2\_errata\_cn.pdf%
+	}
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+    espressif.com/en/support/documents/pcns?keys=ESP32-H2%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+    espressif.com/zh-hans/support/documents/pcns?keys=ESP32-H2%
+    }
+    
+	% Link to Advisories (page in English)
+    \newcommand\linkadvisoryEN{%
+    espressif.com/en/support/documents/advisories?keys=ESP32-H2%
+    }
+	% Link to Advisories (page in Chinese)
+    \newcommand\linkadvisoryCN{%
+    espressif.com/zh-hans/support/documents/advisories?keys=ESP32-H2%
+    }
+
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32h2/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32h2/get-started/index.html%
+	}
+    
+%    No other resources available yet
+
+}% tagged{ESP32-H2}
+
+
+%%%%%%%%%%%%%%%
+%%% ESP8686 %%%
+%%%%%%%%%%%%%%%
+
+\tagged{ESP8686}
+{%
+
+    % Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp8686\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp8686\_datasheet\_cn.pdf%
+	}
+	
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32c3/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32c3/get-started/index.html%
+	}
+    
+}% tagged{ESP8686}
+
+
+%%%%%%%%%%%%%%%%
+%%% ESP32-P4 %%%
+%%%%%%%%%%%%%%%%
+
+\tagged{ESP32-P4}
+{%
+
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp32-p4\_technical\_reference\_manual\_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp32-p4\_technical\_reference\_manual\_cn.pdf%
+	}
+ 
+	% Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp32-p4\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp32-p4\_datasheet\_cn.pdf%
+	}
+
+ 	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp32-p4\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp32-p4\_hardware\_design\_guidelines\_cn.pdf%
+	}
+
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+    espressif.com/en/support/documents/pcns?keys=ESP32-P4%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+    espressif.com/zh-hans/support/documents/pcns?keys=ESP32-P4%
+    }
+    
+	% Link to Advisories (page in English)
+    \newcommand\linkadvisoryEN{%
+    espressif.com/en/support/documents/advisories?keys=ESP32-P4%
+    }
+	% Link to Advisories (page in Chinese)
+    \newcommand\linkadvisoryCN{%
+    espressif.com/zh-hans/support/documents/advisories?keys=ESP32-P4%
+    }
+
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32p4/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32p4/get-started/index.html%
+	}
+    
+%    No other resources available yet
+
+}% tagged{ESP32-P4}
+
+
+%%%%%%%%%%%%%%%%
+%%% ESP32-C5 %%%
+%%%%%%%%%%%%%%%%
+
+\tagged{ESP32-C5}
+{%
+
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp32-c5\_technical\_reference\_manual\_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp32-c5\_technical\_reference\_manual\_cn.pdf%
+	}
+ 
+	% Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp32-c5\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp32-c5\_datasheet\_cn.pdf%
+	}
+
+ 	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp32-c5\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp32-c5\_hardware\_design\_guidelines\_cn.pdf%
+	}
+
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+    espressif.com/en/support/documents/pcns?keys=ESP32-C5%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+    espressif.com/zh-hans/support/documents/pcns?keys=ESP32-C5%
+    }
+    
+	% Link to Advisories (page in English)
+    \newcommand\linkadvisoryEN{%
+    espressif.com/en/support/documents/advisories?keys=ESP32-C5%
+    }
+	% Link to Advisories (page in Chinese)
+    \newcommand\linkadvisoryCN{%
+    espressif.com/zh-hans/support/documents/advisories?keys=ESP32-C5%
+    }
+
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32c5/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32c5/get-started/index.html%
+	}
+    
+%    No other resources available yet
+
+}% tagged{ESP32-C5}
+
+
+%%%%%%%%%%%%%%%%
+%%% ESP32-C61/ESP32-C31 %%%
+%%%%%%%%%%%%%%%%
+
+\tagged{ESP32-C61/ESP32-C31}
+{%
+
+	% Link to chip TRM in English
+	\newcommand\linkchiptrmEN{%
+	    espressif.com/documentation/esp32-c61\_technical\_reference\_manual\_en.pdf%
+	}
+	% Link to chip TRM in Chinese
+	\newcommand\linkchiptrmCN{%
+	    espressif.com/documentation/esp32-c61\_technical\_reference\_manual\_cn.pdf%
+	}
+ 
+	% Link to chip datasheet in English
+	\newcommand\linkchipdatasheetEN{%
+	    espressif.com/documentation/esp32-c61\_datasheet\_en.pdf%
+	}
+	% Link to chip datasheet in Chinese
+	\newcommand\linkchipdatasheetCN{%
+	    espressif.com/documentation/esp32-c61\_datasheet\_cn.pdf%
+	}
+
+ 	% Link to chip hardware design guidelines in English
+	\newcommand\linkchiphwdesignEN{%
+	    espressif.com/documentation/esp32-c61\_hardware\_design\_guidelines\_en.pdf%
+	}
+	% Link to chip hardware design guidelines in Chinese
+	\newcommand\linkchiphwdesignCN{%
+	    espressif.com/documentation/esp32-c61\_hardware\_design\_guidelines\_cn.pdf%
+	}
+
+	% Link to PCNs (page in English)
+    \newcommand\linkpcnEN{%
+    espressif.com/en/support/documents/pcns?keys=ESP32-C61%
+    }
+	% Link to PCNs (page in Chinese)
+    \newcommand\linkpcnCN{%
+    espressif.com/zh-hans/support/documents/pcns?keys=ESP32-C61%
+    }
+    
+	% Link to Advisories (page in English)
+    \newcommand\linkadvisoryEN{%
+    espressif.com/en/support/documents/advisories?keys=ESP32-C61%
+    }
+	% Link to Advisories (page in Chinese)
+    \newcommand\linkadvisoryCN{%
+    espressif.com/zh-hans/support/documents/advisories?keys=ESP32-C61%
+    }
+
+	% Link to ESP-IDF Programming Guide in English
+	\newcommand\linkidfprogguideEN{%
+	    docs.espressif.com/projects/esp-idf/en/latest/esp32c61/get-started/index.html%
+	}
+	% Link to ESP-IDF Programming Guide in Chinese
+	\newcommand\linkidfprogguideCN{%
+	    docs.espressif.com/projects/esp-idf/zh\_CN/latest/esp32c61/get-started/index.html%
+	}
+    
+%    No other resources available yet
+
+}% tagged{ESP32-C61}

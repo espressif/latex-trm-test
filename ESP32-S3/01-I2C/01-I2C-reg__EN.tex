@@ -1,0 +1,638 @@
+\begin{register}{H}{I2C\_SCL\_LOW\_PERIOD\_REG}{0x{}0000}\label{regdesc:I2CSCLLOWPERIODREG}
+\regfield{(reserved)}{23}{9}{00000000000000000000000}%
+\regfield{I2C\_SCL\_LOW\_PERIOD}{9}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLLOWPERIOD}\item [I2C\_SCL\_LOW\_PERIOD] This field is used to configure how long SCL remains low in master mode, in I2C module clock cycles. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SDA\_HOLD\_REG}{0x{}0030}\label{regdesc:I2CSDAHOLDREG}
+\regfield{(reserved)}{23}{9}{00000000000000000000000}%
+\regfield{I2C\_SDA\_HOLD\_TIME}{9}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSDAHOLDTIME}\item [I2C\_SDA\_HOLD\_TIME] This field is used to configure the time to hold the data after the falling
+edge of SCL, in I2C module clock cycles. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SDA\_SAMPLE\_REG}{0x{}0034}\label{regdesc:I2CSDASAMPLEREG}
+\regfield{(reserved)}{23}{9}{00000000000000000000000}%
+\regfield{I2C\_SDA\_SAMPLE\_TIME}{9}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSDASAMPLETIME}\item [I2C\_SDA\_SAMPLE\_TIME] This field is used to configure how long SDA is sampled, in I2C module clock cycles. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SCL\_HIGH\_PERIOD\_REG}{0x{}0038}\label{regdesc:I2CSCLHIGHPERIODREG}
+\regfield{(reserved)}{16}{16}{0000000000000000}%
+\regfield{I2C\_SCL\_WAIT\_HIGH\_PERIOD}{7}{9}{{0}}%
+\regfield{I2C\_SCL\_HIGH\_PERIOD}{9}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLHIGHPERIOD}\item [I2C\_SCL\_HIGH\_PERIOD] This field is used to configure how long SCL remains high in master mode, in I2C module clock cycles. (R/W)
+\label{fielddesc:I2CSCLWAITHIGHPERIOD}\item [I2C\_SCL\_WAIT\_HIGH\_PERIOD] This field is used to configure the SCL\_FSM's waiting period for SCL high level in master mode, in I2C module clock cycles. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SCL\_START\_HOLD\_REG}{0x{}0040}\label{regdesc:I2CSCLSTARTHOLDREG}
+\regfield{(reserved)}{23}{9}{00000000000000000000000}%
+\regfield{I2C\_SCL\_START\_HOLD\_TIME}{9}{0}{{8}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLSTARTHOLDTIME}\item [I2C\_SCL\_START\_HOLD\_TIME] This field is used to configure the time between the falling edge
+of SDA and the falling edge of SCL for a START condition, in I2C module clock cycles. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SCL\_RSTART\_SETUP\_REG}{0x{}0044}\label{regdesc:I2CSCLRSTARTSETUPREG}
+\regfield{(reserved)}{23}{9}{00000000000000000000000}%
+\regfield{I2C\_SCL\_RSTART\_SETUP\_TIME}{9}{0}{{8}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLRSTARTSETUPTIME}\item [I2C\_SCL\_RSTART\_SETUP\_TIME] This field is used to configure the time between the rising
+edge of SCL and the falling edge of SDA for a RSTART condition, in I2C module clock cycles. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SCL\_STOP\_HOLD\_REG}{0x{}0048}\label{regdesc:I2CSCLSTOPHOLDREG}
+\regfield{(reserved)}{23}{9}{00000000000000000000000}%
+\regfield{I2C\_SCL\_STOP\_HOLD\_TIME}{9}{0}{{8}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLSTOPHOLDTIME}\item [I2C\_SCL\_STOP\_HOLD\_TIME] This field is used to configure the delay after the STOP condition,
+in I2C module clock cycles. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SCL\_STOP\_SETUP\_REG}{0x{}004C}\label{regdesc:I2CSCLSTOPSETUPREG}
+\regfield{(reserved)}{23}{9}{00000000000000000000000}%
+\regfield{I2C\_SCL\_STOP\_SETUP\_TIME}{9}{0}{{8}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLSTOPSETUPTIME}\item [I2C\_SCL\_STOP\_SETUP\_TIME] This field is used to configure the time between the rising edge
+of SCL and the rising edge of SDA, in I2C module clock cycles. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SCL\_ST\_TIME\_OUT\_REG}{0x{}0078}\label{regdesc:I2CSCLSTTIMEOUTREG}
+\regfield{(reserved)}{27}{5}{000000000000000000000000000}%
+\regfield{I2C\_SCL\_ST\_TO\_I2C}{5}{0}{{0x{}10}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLSTTOI2C}\item [I2C\_SCL\_ST\_TO\_I2C] The maximum time that SCL\_FSM remains unchanged. It should be no more than 23. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SCL\_MAIN\_ST\_TIME\_OUT\_REG}{0x{}007C}\label{regdesc:I2CSCLMAINSTTIMEOUTREG}
+\regfield{(reserved)}{27}{5}{000000000000000000000000000}%
+\regfield{I2C\_SCL\_MAIN\_ST\_TO\_I2C}{5}{0}{{0x{}10}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLMAINSTTOI2C}\item [I2C\_SCL\_MAIN\_ST\_TO\_I2C] The maximum time that SCL\_MAIN\_FSM remains unchanged. It should be no more than 23. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_CTR\_REG}{0x{}0004}\label{regdesc:I2CCTRREG}
+\regfield{(reserved)}{17}{15}{00000000000000000}%
+\regfield{I2C\_ADDR\_BROADCASTING\_EN}{1}{14}{{0}}%
+\regfield{I2C\_ADDR\_10BIT\_RW\_CHECK\_EN}{1}{13}{{0}}%
+\regfield{I2C\_SLV\_TX\_AUTO\_START\_EN}{1}{12}{{0}}%
+\regfield{I2C\_CONF\_UPGATE}{1}{11}{{0}}%
+\regfield{I2C\_FSM\_RST}{1}{10}{{0}}%
+\regfield{I2C\_ARBITRATION\_EN}{1}{9}{{1}}%
+\regfield{I2C\_CLK\_EN}{1}{8}{{0}}%
+\regfield{I2C\_RX\_LSB\_FIRST}{1}{7}{{0}}%
+\regfield{I2C\_TX\_LSB\_FIRST}{1}{6}{{0}}%
+\regfield{I2C\_TRANS\_START}{1}{5}{{0}}%
+\regfield{I2C\_MS\_MODE}{1}{4}{{0}}%
+\regfield{I2C\_RX\_FULL\_ACK\_LEVEL}{1}{3}{{1}}%
+\regfield{I2C\_SAMPLE\_SCL\_LEVEL}{1}{2}{{0}}%
+\regfield{I2C\_SCL\_FORCE\_OUT}{1}{1}{{1}}%
+\regfield{I2C\_SDA\_FORCE\_OUT}{1}{0}{{1}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSDAFORCEOUT}\item [I2C\_SDA\_FORCE\_OUT] Configures the SDA output mode.\\
+0: Open drain output \\ 
+1: Direct output \\ (R/W)
+\label{fielddesc:I2CSCLFORCEOUT}\item [I2C\_SCL\_FORCE\_OUT] Configures the SDL output mode.\\
+0: Open drain output \\ 
+1: Direct output \\ (R/W)
+\label{fielddesc:I2CSAMPLESCLLEVEL}\item [I2C\_SAMPLE\_SCL\_LEVEL] This bit is used to select the sampling mode.
+0: samples SDA data on the SCL high level;
+1: samples SDA data on the SCL low level. (R/W)
+\label{fielddesc:I2CRXFULLACKLEVEL}\item [I2C\_RX\_FULL\_ACK\_LEVEL] This bit is used to configure the ACK value that need to be sent by master when I2C\_RXFIFO\_CNT has reached the threshold. (R/W)
+\label{fielddesc:I2CMSMODE}\item [I2C\_MS\_MODE] Set this bit to configure the I2C controller as an I2C Master. Clear this bit to configure the I2C controller as a slave. (R/W)
+\label{fielddesc:I2CTRANSSTART}\item [I2C\_TRANS\_START] Set this bit to start sending the data in TX FIFO. (WT)
+\label{fielddesc:I2CTXLSBFIRST}\item [I2C\_TX\_LSB\_FIRST] This bit is used to control the order to send data. 
+0: sends data from the most significant bit;
+1: sends data from the least significant bit. (R/W)
+\label{fielddesc:I2CRXLSBFIRST}\item [I2C\_RX\_LSB\_FIRST] This bit is used to control the order to receive data.
+0: receives data from the most significant bit;
+1: receives data from the least significant bit. (R/W)
+\label{fielddesc:I2CCLKEN}\item [I2C\_CLK\_EN] This field controls APB\_CLK clock gating. 0: APB\_CLK is gated to save power; 1: APB\_CLK is always on. (R/W)
+\label{fielddesc:I2CARBITRATIONEN}\item [I2C\_ARBITRATION\_EN] This is the enable bit for I2C bus arbitration function. (R/W)
+\label{fielddesc:I2CFSMRST}\item [I2C\_FSM\_RST] This bit is used to reset the SCL\_FSM. (WT)
+\label{fielddesc:I2CCONFUPGATE}\item [I2C\_CONF\_UPGATE] Synchronization bit. (WT)
+\label{fielddesc:I2CSLVTXAUTOSTARTEN}\item [I2C\_SLV\_TX\_AUTO\_START\_EN] This is the enable bit for slave to send data automatically. (R/W)
+\label{fielddesc:I2CADDR10BITRWCHECKEN}\item [I2C\_ADDR\_10BIT\_RW\_CHECK\_EN] This is the enable bit to check if the R/W bit of 10-bit addressing is consistent with the I2C protocol. (R/W)
+\label{fielddesc:I2CADDRBROADCASTINGEN}\item [I2C\_ADDR\_BROADCASTING\_EN] This is the enable bit for 7-bit general call addressing. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_TO\_REG}{0x{}000C}\label{regdesc:I2CTOREG}
+\regfield{(reserved)}{26}{6}{00000000000000000000000000}%
+\regfield{I2C\_TIME\_OUT\_EN}{1}{5}{{0}}%
+\regfield{I2C\_TIME\_OUT\_VALUE}{5}{0}{{0x{}10}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CTIMEOUTVALUE}\item [I2C\_TIME\_OUT\_VALUE] This field is used to configure the timeout value for receiving a data bit in I2C\_SCLK clock cycles. The configured timeout value equals 2$^{I2C\_TIME\_OUT\_VALUE}$ clock cycles. (R/W)
+\label{fielddesc:I2CTIMEOUTEN}\item [I2C\_TIME\_OUT\_EN] This is the enable bit for timeout control. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SLAVE\_ADDR\_REG}{0x{}0010}\label{regdesc:I2CSLAVEADDRREG}
+\regfield{I2C\_ADDR\_10BIT\_EN}{1}{31}{{0}}%
+\regfield{(reserved)}{16}{15}{0000000000000000}%
+\regfield{I2C\_SLAVE\_ADDR}{15}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSLAVEADDR}\item [I2C\_SLAVE\_ADDR] When the I2C controller is in slave mode, this field is used to configure the slave address. (R/W)
+\label{fielddesc:I2CADDR10BITEN}\item [I2C\_ADDR\_10BIT\_EN] This field is used to enable the 10-bit addressing mode in master mode. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_FIFO\_CONF\_REG}{0x{}0018}\label{regdesc:I2CFIFOCONFREG}
+\regfield{(reserved)}{17}{15}{00000000000000000}%
+\regfield{I2C\_FIFO\_PRT\_EN}{1}{14}{{1}}%
+\regfield{I2C\_TX\_FIFO\_RST}{1}{13}{{0}}%
+\regfield{I2C\_RX\_FIFO\_RST}{1}{12}{{0}}%
+\regfield{I2C\_FIFO\_ADDR\_CFG\_EN}{1}{11}{{0}}%
+\regfield{I2C\_NONFIFO\_EN}{1}{10}{{0}}%
+\regfield{I2C\_TXFIFO\_WM\_THRHD}{5}{5}{{0x{}4}}%
+\regfield{I2C\_RXFIFO\_WM\_THRHD}{5}{0}{{0x{}b}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CRXFIFOWMTHRHD}\item [I2C\_RXFIFO\_WM\_THRHD] The watermark threshold of RX FIFO in non-FIFO mode. When I2C\_FIFO\_PRT\_EN is 1 and RX FIFO counter is bigger than I2C\_RXFIFO\_WM\_THRHD[4:0], I2C\_RXFIFO\_WM\_INT\_RAW bit is valid. (R/W)
+\label{fielddesc:I2CTXFIFOWMTHRHD}\item [I2C\_TXFIFO\_WM\_THRHD] The watermark threshold of TX FIFO in non-FIFO mode. When I2C\_FIFO\_PRT\_EN is 1 and TX FIFO counter is smaller than I2C\_TXFIFO\_WM\_THRHD[4:0], I2C\_TXFIFO\_WM\_INT\_RAW bit is valid. (R/W)
+\label{fielddesc:I2CNONFIFOEN}\item [I2C\_NONFIFO\_EN] Set this bit to enable APB non-FIFO mode. (R/W)
+\label{fielddesc:I2CFIFOADDRCFGEN}\item [I2C\_FIFO\_ADDR\_CFG\_EN] When this bit is set to 1, the byte received after the I2C address byte represents the offset address in the I2C Slave RAM. (R/W)
+\label{fielddesc:I2CRXFIFORST}\item [I2C\_RX\_FIFO\_RST] Set this bit to reset RX FIFO. (R/W)
+\label{fielddesc:I2CTXFIFORST}\item [I2C\_TX\_FIFO\_RST] Set this bit to reset TX FIFO. (R/W)
+\label{fielddesc:I2CFIFOPRTEN}\item [I2C\_FIFO\_PRT\_EN] The control enable bit of FIFO pointer in non-FIFO mode. This bit controls the valid bits and TX/RX FIFO overflow, underflow, full and empty interrupts. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_FILTER\_CFG\_REG}{0x{}0050}\label{regdesc:I2CFILTERCFGREG}
+\regfield{(reserved)}{22}{10}{0000000000000000000000}%
+\regfield{I2C\_SDA\_FILTER\_EN}{1}{9}{{1}}%
+\regfield{I2C\_SCL\_FILTER\_EN}{1}{8}{{1}}%
+\regfield{I2C\_SDA\_FILTER\_THRES}{4}{4}{{0}}%
+\regfield{I2C\_SCL\_FILTER\_THRES}{4}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLFILTERTHRES}\item [I2C\_SCL\_FILTER\_THRES] When a pulse on the SCL input has smaller width than the value of this field in I2C module clock cycles, the I2C controller ignores that pulse. (R/W)
+\label{fielddesc:I2CSDAFILTERTHRES}\item [I2C\_SDA\_FILTER\_THRES] When a pulse on the SDA input has smaller width than the value of this field in I2C module clock cycles, the I2C controller ignores that pulse. (R/W)
+\label{fielddesc:I2CSCLFILTEREN}\item [I2C\_SCL\_FILTER\_EN] This is the filter enable bit for SCL. (R/W)
+\label{fielddesc:I2CSDAFILTEREN}\item [I2C\_SDA\_FILTER\_EN] This is the filter enable bit for SDA. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_CLK\_CONF\_REG}{0x{}0054}\label{regdesc:I2CCLKCONFREG}
+\regfield{(reserved)}{10}{22}{0000000000}%
+\regfield{I2C\_SCLK\_ACTIVE}{1}{21}{{1}}%
+\regfield{I2C\_SCLK\_SEL}{1}{20}{{0}}%
+\regfield{I2C\_SCLK\_DIV\_B}{6}{14}{{0}}%
+\regfield{I2C\_SCLK\_DIV\_A}{6}{8}{{0}}%
+\regfield{I2C\_SCLK\_DIV\_NUM}{8}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLKDIVNUM}\item [I2C\_SCLK\_DIV\_NUM] The integral part of the divisor. (R/W)
+\label{fielddesc:I2CSCLKDIVA}\item [I2C\_SCLK\_DIV\_A] The numerator of the divisor's fractional part. (R/W)
+\label{fielddesc:I2CSCLKDIVB}\item [I2C\_SCLK\_DIV\_B] The denominator of the divisor's fractional part. (R/W)
+\label{fielddesc:I2CSCLKSEL}\item [I2C\_SCLK\_SEL] The clock selection bit for the I2C controller. 0: XTAL\_CLK; 1: RC\_FAST\_CLK. (R/W)
+\label{fielddesc:I2CSCLKACTIVE}\item [I2C\_SCLK\_ACTIVE] The clock switch bit for the I2C controller. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SCL\_SP\_CONF\_REG}{0x{}0080}\label{regdesc:I2CSCLSPCONFREG}
+\regfield{(reserved)}{24}{8}{000000000000000000000000}%
+\regfield{I2C\_SDA\_PD\_EN}{1}{7}{{0}}%
+\regfield{I2C\_SCL\_PD\_EN}{1}{6}{{0}}%
+\regfield{I2C\_SCL\_RST\_SLV\_NUM}{5}{1}{{0}}%
+\regfield{I2C\_SCL\_RST\_SLV\_EN}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSCLRSTSLVEN}\item [I2C\_SCL\_RST\_SLV\_EN] When the master is idle, set this bit to send out SCL pulses. The number of pulses equals to I2C\_SCL\_RST\_SLV\_NUM[4:0]. (R/W/SC)
+\label{fielddesc:I2CSCLRSTSLVNUM}\item [I2C\_SCL\_RST\_SLV\_NUM] Configures the pulses of SCL generated in master mode. Valid when I2C\_SCL\_RST\_SLV\_EN is 1. (R/W)
+\label{fielddesc:I2CSCLPDEN}\item [I2C\_SCL\_PD\_EN] The power down enable bit for the I2C output SCL line. 0: Not power down; 1: Power down. Set I2C\_SCL\_FORCE\_OUT and I2C\_SCL\_PD\_EN to 1 to stretch SCL low. (R/W)
+\label{fielddesc:I2CSDAPDEN}\item [I2C\_SDA\_PD\_EN] The power down enable bit for the I2C output SDA line. 0: Not power down; 1: Power down. Set I2C\_SDA\_FORCE\_OUT and I2C\_SDA\_PD\_EN to 1 to stretch SDA low. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SCL\_STRETCH\_CONF\_REG}{0x{}0084}\label{regdesc:I2CSCLSTRETCHCONFREG}
+\regfield{(reserved)}{18}{14}{000000000000000000}%
+\regfield{I2C\_SLAVE\_BYTE\_ACK\_LVL}{1}{13}{{0}}%
+\regfield{I2C\_SLAVE\_BYTE\_ACK\_CTL\_EN}{1}{12}{{0}}%
+\regfield{I2C\_SLAVE\_SCL\_STRETCH\_CLR}{1}{11}{{0}}%
+\regfield{I2C\_SLAVE\_SCL\_STRETCH\_EN}{1}{10}{{0}}%
+\regfield{I2C\_STRETCH\_PROTECT\_NUM}{10}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CSTRETCHPROTECTNUM}\item [I2C\_STRETCH\_PROTECT\_NUM] Configures the time period to release the SCL line from stretching to avoid timing violation. Usually it should be larger than the SDA steup time. (R/W)
+\label{fielddesc:I2CSLAVESCLSTRETCHEN}\item [I2C\_SLAVE\_SCL\_STRETCH\_EN] The enable bit for SCL clock stretching. 0: Disable; 1: Enable. The SCL output line will be stretched low when I2C\_SLAVE\_SCL\_STRETCH\_EN is 1 and one of the four stretching events occurs. The cause of stretching can be seen in I2C\_STRETCH\_CAUSE. (R/W)
+\label{fielddesc:I2CSLAVESCLSTRETCHCLR}\item [I2C\_SLAVE\_SCL\_STRETCH\_CLR] Set this bit to clear SCL clock stretching. (WT)
+\label{fielddesc:I2CSLAVEBYTEACKCTLEN}\item [I2C\_SLAVE\_BYTE\_ACK\_CTL\_EN] The enable bit for slave to control the level of the ACK bit. (R/W)
+\label{fielddesc:I2CSLAVEBYTEACKLVL}\item [I2C\_SLAVE\_BYTE\_ACK\_LVL] Set the level of the ACK bit when I2C\_SLAVE\_BYTE\_ACK\_CTL\_EN is set. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_SR\_REG}{0x{}0008}\label{regdesc:I2CSRREG}
+\regfield{(reserved)}{1}{31}{0}%
+\regfield{I2C\_SCL\_STATE\_LAST}{3}{28}{{0}}%
+\regfield{(reserved)}{1}{27}{0}%
+\regfield{I2C\_SCL\_MAIN\_STATE\_LAST}{3}{24}{{0}}%
+\regfield{I2C\_TXFIFO\_CNT}{6}{18}{{0}}%
+\regfield{(reserved)}{2}{16}{00}%
+\regfield{I2C\_STRETCH\_CAUSE}{2}{14}{{0x{}3}}%
+\regfield{I2C\_RXFIFO\_CNT}{6}{8}{{0}}%
+\regfield{(reserved)}{2}{6}{00}%
+\regfield{I2C\_SLAVE\_ADDRESSED}{1}{5}{{0}}%
+\regfield{I2C\_BUS\_BUSY}{1}{4}{{0}}%
+\regfield{I2C\_ARB\_LOST}{1}{3}{{0}}%
+\regfield{(reserved)}{1}{2}{0}%
+\regfield{I2C\_SLAVE\_RW}{1}{1}{{0}}%
+\regfield{I2C\_RESP\_REC}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CRESPREC}\item [I2C\_RESP\_REC] The received ACK value in master mode or slave mode. 0: ACK; 1: NACK. (RO)
+\label{fielddesc:I2CSLAVERW}\item [I2C\_SLAVE\_RW] When in slave mode, 0: master writes to slave; 1: master reads from slave. (RO)
+\label{fielddesc:I2CARBLOST}\item [I2C\_ARB\_LOST] When the I2C controller loses control of the SCL line, this bit changes to 1. (RO)
+\label{fielddesc:I2CBUSBUSY}\item [I2C\_BUS\_BUSY] 0: the I2C bus is in idle state; 1: the I2C bus is busy transferring data. (RO)
+\label{fielddesc:I2CSLAVEADDRESSED}\item [I2C\_SLAVE\_ADDRESSED] When the I2C controller is in slave mode, and the address sent by the master matches the address of the slave, this bit is at high level. (RO)
+\label{fielddesc:I2CRXFIFOCNT}\item [I2C\_RXFIFO\_CNT] This field represents the number of data bytes to be sent. (RO)
+\label{fielddesc:I2CSTRETCHCAUSE}\item [I2C\_STRETCH\_CAUSE] The cause of SCL clock stretching in slave mode. 0:  stretching SCL low when the master starts to read data; 1: stretching SCL low when TX FIFO is empty in slave mode; 2: stretching SCL low when RX FIFO is full in slave mode. (RO)
+\label{fielddesc:I2CTXFIFOCNT}\item [I2C\_TXFIFO\_CNT] This field stores the number of data bytes received in RAM. (RO)
+\label{fielddesc:I2CSCLMAINSTATELAST}\item [I2C\_SCL\_MAIN\_STATE\_LAST] This field indicates the status of the state machine. 
+0: idle; 1: address shift; 2: ACK address; 3: receive data; 4: transmit data; 5: send ACK; 6: wait for ACK. (RO)
+\label{fielddesc:I2CSCLSTATELAST}\item [I2C\_SCL\_STATE\_LAST] This field indicates the status of the state machine used to produce SCL.
+0: idle; 1: start; 2: falling edge; 3: low; 4: rising edge; 5: high; 6: stop. (RO)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_FIFO\_ST\_REG}{0x{}0014}\label{regdesc:I2CFIFOSTREG}
+\regfield{(reserved)}{2}{30}{00}%
+\regfield{I2C\_SLAVE\_RW\_POINT}{8}{22}{{0}}%
+\regfield{(reserved)}{2}{20}{00}%
+\regfield{I2C\_TXFIFO\_WADDR}{5}{15}{{0}}%
+\regfield{I2C\_TXFIFO\_RADDR}{5}{10}{{0}}%
+\regfield{I2C\_RXFIFO\_WADDR}{5}{5}{{0}}%
+\regfield{I2C\_RXFIFO\_RADDR}{5}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CRXFIFORADDR}\item [I2C\_RXFIFO\_RADDR] This is the offset address of the APB reading from RX FIFO. (RO)
+\label{fielddesc:I2CRXFIFOWADDR}\item [I2C\_RXFIFO\_WADDR] This is the offset address of the I2C controller receiving data and writing to RX FIFO. (RO)
+\label{fielddesc:I2CTXFIFORADDR}\item [I2C\_TXFIFO\_RADDR] This is the offset address of the I2C controller reading from TX FIFO. (RO)
+\label{fielddesc:I2CTXFIFOWADDR}\item [I2C\_TXFIFO\_WADDR] This is the offset address of APB bus writing to TX FIFO. (RO)
+\label{fielddesc:I2CSLAVERWPOINT}\item [I2C\_SLAVE\_RW\_POINT] The received data in I2C slave mode. (RO)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_DATA\_REG}{0x{}001C}\label{regdesc:I2CDATAREG}
+\regfield{(reserved)}{24}{8}{000000000000000000000000}%
+\regfield{I2C\_FIFO\_RDATA}{8}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CFIFORDATA}\item [I2C\_FIFO\_RDATA] This field is used to read data from RX FIFO, or write data to TX FIFO. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_INT\_RAW\_REG}{0x{}0020}\label{regdesc:I2CINTRAWREG}
+\regfield{(reserved)}{14}{18}{00000000000000}%
+\regfield{I2C\_GENERAL\_CALL\_INT\_RAW}{1}{17}{{0}}%
+\regfield{I2C\_SLAVE\_STRETCH\_INT\_RAW}{1}{16}{{0}}%
+\regfield{I2C\_DET\_START\_INT\_RAW}{1}{15}{{0}}%
+\regfield{I2C\_SCL\_MAIN\_ST\_TO\_INT\_RAW}{1}{14}{{0}}%
+\regfield{I2C\_SCL\_ST\_TO\_INT\_RAW}{1}{13}{{0}}%
+\regfield{I2C\_RXFIFO\_UDF\_INT\_RAW}{1}{12}{{0}}%
+\regfield{I2C\_TXFIFO\_OVF\_INT\_RAW}{1}{11}{{0}}%
+\regfield{I2C\_NACK\_INT\_RAW}{1}{10}{{0}}%
+\regfield{I2C\_TRANS\_START\_INT\_RAW}{1}{9}{{0}}%
+\regfield{I2C\_TIME\_OUT\_INT\_RAW}{1}{8}{{0}}%
+\regfield{I2C\_TRANS\_COMPLETE\_INT\_RAW}{1}{7}{{0}}%
+\regfield{I2C\_MST\_TXFIFO\_UDF\_INT\_RAW}{1}{6}{{0}}%
+\regfield{I2C\_ARBITRATION\_LOST\_INT\_RAW}{1}{5}{{0}}%
+\regfield{I2C\_BYTE\_TRANS\_DONE\_INT\_RAW}{1}{4}{{0}}%
+\regfield{I2C\_END\_DETECT\_INT\_RAW}{1}{3}{{0}}%
+\regfield{I2C\_RXFIFO\_OVF\_INT\_RAW}{1}{2}{{0}}%
+\regfield{I2C\_TXFIFO\_WM\_INT\_RAW}{1}{1}{{1}}%
+\regfield{I2C\_RXFIFO\_WM\_INT\_RAW}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CRXFIFOWMINTRAW}\item [I2C\_RXFIFO\_WM\_INT\_RAW] The raw interrupt bit for the I2C\_RXFIFO\_WM\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CTXFIFOWMINTRAW}\item [I2C\_TXFIFO\_WM\_INT\_RAW] The raw interrupt bit for the I2C\_TXFIFO\_WM\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CRXFIFOOVFINTRAW}\item [I2C\_RXFIFO\_OVF\_INT\_RAW] The raw interrupt bit for the I2C\_RXFIFO\_OVF\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CENDDETECTINTRAW}\item [I2C\_END\_DETECT\_INT\_RAW] The raw interrupt bit for the I2C\_END\_DETECT\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CBYTETRANSDONEINTRAW}\item [I2C\_BYTE\_TRANS\_DONE\_INT\_RAW] The raw interrupt bit for the I2C\_BYTE\_TRANS\_DONE\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CARBITRATIONLOSTINTRAW}\item [I2C\_ARBITRATION\_LOST\_INT\_RAW] The raw interrupt bit for the I2C\_ARBITRATION\_LOST\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CMSTTXFIFOUDFINTRAW}\item [I2C\_MST\_TXFIFO\_UDF\_INT\_RAW] The raw interrupt bit for the I2C\_MST\_TXFIFO\_UDF\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CTRANSCOMPLETEINTRAW}\item [I2C\_TRANS\_COMPLETE\_INT\_RAW] The raw interrupt bit for the I2C\_TRANS\_COMPLETE\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CTIMEOUTINTRAW}\item [I2C\_TIME\_OUT\_INT\_RAW] The raw interrupt bit for the I2C\_TIME\_OUT\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CTRANSSTARTINTRAW}\item [I2C\_TRANS\_START\_INT\_RAW] The raw interrupt bit for the I2C\_TRANS\_START\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CNACKINTRAW}\item [I2C\_NACK\_INT\_RAW] The raw interrupt bit for the I2C\_NACK\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CTXFIFOOVFINTRAW}\item [I2C\_TXFIFO\_OVF\_INT\_RAW] The raw interrupt bit for the I2C\_TXFIFO\_OVF\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CRXFIFOUDFINTRAW}\item [I2C\_RXFIFO\_UDF\_INT\_RAW] The raw interrupt bit for the I2C\_RXFIFO\_UDF\_INT  interrupt. (R/SS/WTC)
+
+\item [Continued on the next page...]
+\end{reglist}\end{regdesc}
+\end{register}
+
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{I2C\_INT\_RAW\_REG}{0x{}0020}
+\begin{regdesc}\begin{reglist}
+\item [Continued from the previous page...]
+
+\label{fielddesc:I2CSCLSTTOINTRAW}\item [I2C\_SCL\_ST\_TO\_INT\_RAW] The raw interrupt bit for the I2C\_SCL\_ST\_TO\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CSCLMAINSTTOINTRAW}\item [I2C\_SCL\_MAIN\_ST\_TO\_INT\_RAW] The raw interrupt bit for the I2C\_SCL\_MAIN\_ST\_TO\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CDETSTARTINTRAW}\item [I2C\_DET\_START\_INT\_RAW] The raw interrupt bit for the I2C\_DET\_START\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CSLAVESTRETCHINTRAW}\item [I2C\_SLAVE\_STRETCH\_INT\_RAW] The raw interrupt bit for the I2C\_SLAVE\_STRETCH\_INT interrupt. (R/SS/WTC)
+\label{fielddesc:I2CGENERALCALLINTRAW}\item [I2C\_GENERAL\_CALL\_INT\_RAW] The raw interrupt bit for the I2C\_GENARAL\_CALL\_INT interrupt. (R/SS/WTC)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_INT\_CLR\_REG}{0x{}0024}\label{regdesc:I2CINTCLRREG}
+\regfield{(reserved)}{14}{18}{00000000000000}%
+\regfield{I2C\_GENERAL\_CALL\_INT\_CLR}{1}{17}{{0}}%
+\regfield{I2C\_SLAVE\_STRETCH\_INT\_CLR}{1}{16}{{0}}%
+\regfield{I2C\_DET\_START\_INT\_CLR}{1}{15}{{0}}%
+\regfield{I2C\_SCL\_MAIN\_ST\_TO\_INT\_CLR}{1}{14}{{0}}%
+\regfield{I2C\_SCL\_ST\_TO\_INT\_CLR}{1}{13}{{0}}%
+\regfield{I2C\_RXFIFO\_UDF\_INT\_CLR}{1}{12}{{0}}%
+\regfield{I2C\_TXFIFO\_OVF\_INT\_CLR}{1}{11}{{0}}%
+\regfield{I2C\_NACK\_INT\_CLR}{1}{10}{{0}}%
+\regfield{I2C\_TRANS\_START\_INT\_CLR}{1}{9}{{0}}%
+\regfield{I2C\_TIME\_OUT\_INT\_CLR}{1}{8}{{0}}%
+\regfield{I2C\_TRANS\_COMPLETE\_INT\_CLR}{1}{7}{{0}}%
+\regfield{I2C\_MST\_TXFIFO\_UDF\_INT\_CLR}{1}{6}{{0}}%
+\regfield{I2C\_ARBITRATION\_LOST\_INT\_CLR}{1}{5}{{0}}%
+\regfield{I2C\_BYTE\_TRANS\_DONE\_INT\_CLR}{1}{4}{{0}}%
+\regfield{I2C\_END\_DETECT\_INT\_CLR}{1}{3}{{0}}%
+\regfield{I2C\_RXFIFO\_OVF\_INT\_CLR}{1}{2}{{0}}%
+\regfield{I2C\_TXFIFO\_WM\_INT\_CLR}{1}{1}{{0}}%
+\regfield{I2C\_RXFIFO\_WM\_INT\_CLR}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CRXFIFOWMINTCLR}\item [I2C\_RXFIFO\_WM\_INT\_CLR] Set this bit to clear the I2C\_RXFIFO\_WM\_INT interrupt. (WT)
+\label{fielddesc:I2CTXFIFOWMINTCLR}\item [I2C\_TXFIFO\_WM\_INT\_CLR] Set this bit to clear the I2C\_TXFIFO\_WM\_INT interrupt. (WT)
+\label{fielddesc:I2CRXFIFOOVFINTCLR}\item [I2C\_RXFIFO\_OVF\_INT\_CLR] Set this bit to clear the I2C\_RXFIFO\_OVF\_INT interrupt. (WT)
+\label{fielddesc:I2CENDDETECTINTCLR}\item [I2C\_END\_DETECT\_INT\_CLR] Set this bit to clear the I2C\_END\_DETECT\_INT interrupt. (WT)
+\label{fielddesc:I2CBYTETRANSDONEINTCLR}\item [I2C\_BYTE\_TRANS\_DONE\_INT\_CLR] Set this bit to clear the I2C\_BYTE\_TRANS\_DONE\_INT interrupt. (WT)
+\label{fielddesc:I2CARBITRATIONLOSTINTCLR}\item [I2C\_ARBITRATION\_LOST\_INT\_CLR] Set this bit to clear the I2C\_ARBITRATION\_LOST\_INT interrupt. (WT)
+\label{fielddesc:I2CMSTTXFIFOUDFINTCLR}\item [I2C\_MST\_TXFIFO\_UDF\_INT\_CLR] Set this bit to clear the I2C\_MST\_TXFIFO\_UDF\_INT interrupt. (WT)
+\label{fielddesc:I2CTRANSCOMPLETEINTCLR}\item [I2C\_TRANS\_COMPLETE\_INT\_CLR] Set this bit to clear the I2C\_TRANS\_COMPLETE\_INT interrupt. (WT)
+\label{fielddesc:I2CTIMEOUTINTCLR}\item [I2C\_TIME\_OUT\_INT\_CLR] Set this bit to clear the I2C\_TIME\_OUT\_INT interrupt. (WT)
+\label{fielddesc:I2CTRANSSTARTINTCLR}\item [I2C\_TRANS\_START\_INT\_CLR] Set this bit to clear the I2C\_TRANS\_START\_INT interrupt. (WT)
+\label{fielddesc:I2CNACKINTCLR}\item [I2C\_NACK\_INT\_CLR] Set this bit to clear the I2C\_NACK\_INT interrupt. (WT)
+\label{fielddesc:I2CTXFIFOOVFINTCLR}\item [I2C\_TXFIFO\_OVF\_INT\_CLR] Set this bit to clear the I2C\_TXFIFO\_OVF\_INT interrupt. (WT)
+\label{fielddesc:I2CRXFIFOUDFINTCLR}\item [I2C\_RXFIFO\_UDF\_INT\_CLR] Set this bit to clear the I2C\_RXFIFO\_UDF\_INT  interrupt. (WT)
+\label{fielddesc:I2CSCLSTTOINTCLR}\item [I2C\_SCL\_ST\_TO\_INT\_CLR] Set this bit to clear the I2C\_SCL\_ST\_TO\_INT interrupt. (WT)
+\label{fielddesc:I2CSCLMAINSTTOINTCLR}\item [I2C\_SCL\_MAIN\_ST\_TO\_INT\_CLR] Set this bit to clear the I2C\_SCL\_MAIN\_ST\_TO\_INT interrupt. (WT)
+\label{fielddesc:I2CDETSTARTINTCLR}\item [I2C\_DET\_START\_INT\_CLR] Set this bit to clear the I2C\_DET\_START\_INT interrupt. (WT)
+\label{fielddesc:I2CSLAVESTRETCHINTCLR}\item [I2C\_SLAVE\_STRETCH\_INT\_CLR] Set this bit to clear the I2C\_SLAVE\_STRETCH\_INT interrupt. (WT)
+\label{fielddesc:I2CGENERALCALLINTCLR}\item [I2C\_GENERAL\_CALL\_INT\_CLR] Set this bit for the I2C\_GENARAL\_CALL\_INT interrupt. (WT)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_INT\_ENA\_REG}{0x{}0028}\label{regdesc:I2CINTENAREG}
+\regfield{(reserved)}{14}{18}{00000000000000}%
+\regfield{I2C\_GENERAL\_CALL\_INT\_ENA}{1}{17}{{0}}%
+\regfield{I2C\_SLAVE\_STRETCH\_INT\_ENA}{1}{16}{{0}}%
+\regfield{I2C\_DET\_START\_INT\_ENA}{1}{15}{{0}}%
+\regfield{I2C\_SCL\_MAIN\_ST\_TO\_INT\_ENA}{1}{14}{{0}}%
+\regfield{I2C\_SCL\_ST\_TO\_INT\_ENA}{1}{13}{{0}}%
+\regfield{I2C\_RXFIFO\_UDF\_INT\_ENA}{1}{12}{{0}}%
+\regfield{I2C\_TXFIFO\_OVF\_INT\_ENA}{1}{11}{{0}}%
+\regfield{I2C\_NACK\_INT\_ENA}{1}{10}{{0}}%
+\regfield{I2C\_TRANS\_START\_INT\_ENA}{1}{9}{{0}}%
+\regfield{I2C\_TIME\_OUT\_INT\_ENA}{1}{8}{{0}}%
+\regfield{I2C\_TRANS\_COMPLETE\_INT\_ENA}{1}{7}{{0}}%
+\regfield{I2C\_MST\_TXFIFO\_UDF\_INT\_ENA}{1}{6}{{0}}%
+\regfield{I2C\_ARBITRATION\_LOST\_INT\_ENA}{1}{5}{{0}}%
+\regfield{I2C\_BYTE\_TRANS\_DONE\_INT\_ENA}{1}{4}{{0}}%
+\regfield{I2C\_END\_DETECT\_INT\_ENA}{1}{3}{{0}}%
+\regfield{I2C\_RXFIFO\_OVF\_INT\_ENA}{1}{2}{{0}}%
+\regfield{I2C\_TXFIFO\_WM\_INT\_ENA}{1}{1}{{0}}%
+\regfield{I2C\_RXFIFO\_WM\_INT\_ENA}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CRXFIFOWMINTENA}\item [I2C\_RXFIFO\_WM\_INT\_ENA] The interrupt enable bit for the I2C\_RXFIFO\_WM\_INT interrupt. (R/W)
+\label{fielddesc:I2CTXFIFOWMINTENA}\item [I2C\_TXFIFO\_WM\_INT\_ENA] The interrupt enable bit for the I2C\_TXFIFO\_WM\_INT interrupt. (R/W)
+\label{fielddesc:I2CRXFIFOOVFINTENA}\item [I2C\_RXFIFO\_OVF\_INT\_ENA] The interrupt enable bit for the I2C\_RXFIFO\_OVF\_INT interrupt. (R/W)
+\label{fielddesc:I2CENDDETECTINTENA}\item [I2C\_END\_DETECT\_INT\_ENA] The interrupt enable bit for the I2C\_END\_DETECT\_INT interrupt. (R/W)
+\label{fielddesc:I2CBYTETRANSDONEINTENA}\item [I2C\_BYTE\_TRANS\_DONE\_INT\_ENA] The interrupt enable bit for the I2C\_BYTE\_TRANS\_DONE\_INT interrupt. (R/W)
+\label{fielddesc:I2CARBITRATIONLOSTINTENA}\item [I2C\_ARBITRATION\_LOST\_INT\_ENA] The interrupt enable bit for the I2C\_ARBITRATION\_LOST\_INT interrupt. (R/W)
+\label{fielddesc:I2CMSTTXFIFOUDFINTENA}\item [I2C\_MST\_TXFIFO\_UDF\_INT\_ENA] The interrupt enable bit for the I2C\_MST\_TXFIFO\_UDF\_INT interrupt. (R/W)
+\label{fielddesc:I2CTRANSCOMPLETEINTENA}\item [I2C\_TRANS\_COMPLETE\_INT\_ENA] The interrupt enable bit for the I2C\_TRANS\_COMPLETE\_INT interrupt. (R/W)
+\label{fielddesc:I2CTIMEOUTINTENA}\item [I2C\_TIME\_OUT\_INT\_ENA] The interrupt enable bit for the I2C\_TIME\_OUT\_INT interrupt. (R/W)
+\label{fielddesc:I2CTRANSSTARTINTENA}\item [I2C\_TRANS\_START\_INT\_ENA] The interrupt enable bit for the I2C\_TRANS\_START\_INT interrupt. (R/W)
+\label{fielddesc:I2CNACKINTENA}\item [I2C\_NACK\_INT\_ENA] The interrupt enable bit for the I2C\_NACK\_INT interrupt. (R/W)
+\label{fielddesc:I2CTXFIFOOVFINTENA}\item [I2C\_TXFIFO\_OVF\_INT\_ENA] The interrupt enable bit for the I2C\_TXFIFO\_OVF\_INT interrupt. (R/W)
+\label{fielddesc:I2CRXFIFOUDFINTENA}\item [I2C\_RXFIFO\_UDF\_INT\_ENA] The interrupt enable bit for the I2C\_RXFIFO\_UDF\_INT  interrupt. (R/W)
+\label{fielddesc:I2CSCLSTTOINTENA}\item [I2C\_SCL\_ST\_TO\_INT\_ENA] The interrupt enable bit for the I2C\_SCL\_ST\_TO\_INT interrupt. (R/W)
+\label{fielddesc:I2CSCLMAINSTTOINTENA}\item [I2C\_SCL\_MAIN\_ST\_TO\_INT\_ENA] The interrupt enable bit for the I2C\_SCL\_MAIN\_ST\_TO\_INT interrupt. (R/W)
+\label{fielddesc:I2CDETSTARTINTENA}\item [I2C\_DET\_START\_INT\_ENA] The interrupt enable bit for the I2C\_DET\_START\_INT interrupt. (R/W)
+\label{fielddesc:I2CSLAVESTRETCHINTENA}\item [I2C\_SLAVE\_STRETCH\_INT\_ENA] The interrupt enable bit for the I2C\_SLAVE\_STRETCH\_INT interrupt. (R/W)
+\label{fielddesc:I2CGENERALCALLINTENA}\item [I2C\_GENERAL\_CALL\_INT\_ENA] The interrupt enable bit for the I2C\_GENARAL\_CALL\_INT interrupt. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_INT\_STATUS\_REG}{0x{}002C}\label{regdesc:I2CINTSTATUSREG}
+\regfield{(reserved)}{14}{18}{00000000000000}%
+\regfield{I2C\_GENERAL\_CALL\_INT\_ST}{1}{17}{{0}}%
+\regfield{I2C\_SLAVE\_STRETCH\_INT\_ST}{1}{16}{{0}}%
+\regfield{I2C\_DET\_START\_INT\_ST}{1}{15}{{0}}%
+\regfield{I2C\_SCL\_MAIN\_ST\_TO\_INT\_ST}{1}{14}{{0}}%
+\regfield{I2C\_SCL\_ST\_TO\_INT\_ST}{1}{13}{{0}}%
+\regfield{I2C\_RXFIFO\_UDF\_INT\_ST}{1}{12}{{0}}%
+\regfield{I2C\_TXFIFO\_OVF\_INT\_ST}{1}{11}{{0}}%
+\regfield{I2C\_NACK\_INT\_ST}{1}{10}{{0}}%
+\regfield{I2C\_TRANS\_START\_INT\_ST}{1}{9}{{0}}%
+\regfield{I2C\_TIME\_OUT\_INT\_ST}{1}{8}{{0}}%
+\regfield{I2C\_TRANS\_COMPLETE\_INT\_ST}{1}{7}{{0}}%
+\regfield{I2C\_MST\_TXFIFO\_UDF\_INT\_ST}{1}{6}{{0}}%
+\regfield{I2C\_ARBITRATION\_LOST\_INT\_ST}{1}{5}{{0}}%
+\regfield{I2C\_BYTE\_TRANS\_DONE\_INT\_ST}{1}{4}{{0}}%
+\regfield{I2C\_END\_DETECT\_INT\_ST}{1}{3}{{0}}%
+\regfield{I2C\_RXFIFO\_OVF\_INT\_ST}{1}{2}{{0}}%
+\regfield{I2C\_TXFIFO\_WM\_INT\_ST}{1}{1}{{0}}%
+\regfield{I2C\_RXFIFO\_WM\_INT\_ST}{1}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CRXFIFOWMINTST}\item [I2C\_RXFIFO\_WM\_INT\_ST] The masked interrupt status bit for the I2C\_RXFIFO\_WM\_INT interrupt. (RO)
+\label{fielddesc:I2CTXFIFOWMINTST}\item [I2C\_TXFIFO\_WM\_INT\_ST] The masked interrupt status bit for the I2C\_TXFIFO\_WM\_INT interrupt. (RO)
+\label{fielddesc:I2CRXFIFOOVFINTST}\item [I2C\_RXFIFO\_OVF\_INT\_ST] The masked interrupt status bit for the I2C\_RXFIFO\_OVF\_INT interrupt. (RO)
+\label{fielddesc:I2CENDDETECTINTST}\item [I2C\_END\_DETECT\_INT\_ST] The masked interrupt status bit for the I2C\_END\_DETECT\_INT interrupt. (RO)
+\label{fielddesc:I2CBYTETRANSDONEINTST}\item [I2C\_BYTE\_TRANS\_DONE\_INT\_ST] The masked interrupt status bit for the I2C\_BYTE\_TRANS\_DONE\_INT interrupt. (RO)
+\label{fielddesc:I2CARBITRATIONLOSTINTST}\item [I2C\_ARBITRATION\_LOST\_INT\_ST] The masked interrupt status bit for the I2C\_ARBITRATION\_LOST\_INT interrupt. (RO)
+\label{fielddesc:I2CMSTTXFIFOUDFINTST}\item [I2C\_MST\_TXFIFO\_UDF\_INT\_ST] The masked interrupt status bit for the I2C\_MST\_TXFIFO\_UDF\_INT interrupt. (RO)
+\label{fielddesc:I2CTRANSCOMPLETEINTST}\item [I2C\_TRANS\_COMPLETE\_INT\_ST] The masked interrupt status bit for the I2C\_TRANS\_COMPLETE\_INT interrupt. (RO)
+\label{fielddesc:I2CTIMEOUTINTST}\item [I2C\_TIME\_OUT\_INT\_ST] The masked interrupt status bit for the I2C\_TIME\_OUT\_INT interrupt. (RO)
+\label{fielddesc:I2CTRANSSTARTINTST}\item [I2C\_TRANS\_START\_INT\_ST] The masked interrupt status bit for the I2C\_TRANS\_START\_INT interrupt. (RO)
+\label{fielddesc:I2CNACKINTST}\item [I2C\_NACK\_INT\_ST] The masked interrupt status bit for the I2C\_NACK\_INT interrupt. (RO)
+\label{fielddesc:I2CTXFIFOOVFINTST}\item [I2C\_TXFIFO\_OVF\_INT\_ST] The masked interrupt status bit for the I2C\_TXFIFO\_OVF\_INT interrupt. (RO)
+\label{fielddesc:I2CRXFIFOUDFINTST}\item [I2C\_RXFIFO\_UDF\_INT\_ST] The masked interrupt status bit for the I2C\_RXFIFO\_UDF\_INT  interrupt. (RO)
+
+\item [Continued on the next page...]
+\end{reglist}\end{regdesc}
+\end{register}
+
+\addtocounter{Regfloat}{-1}
+\begin{register}{H}{I2C\_INT\_STATUS\_REG}{0x{}002C}
+\begin{regdesc}\begin{reglist}
+\item [Continued from the previous page...]
+
+\label{fielddesc:I2CSCLSTTOINTST}\item [I2C\_SCL\_ST\_TO\_INT\_ST] The masked interrupt status bit for the I2C\_SCL\_ST\_TO\_INT interrupt. (RO)
+\label{fielddesc:I2CSCLMAINSTTOINTST}\item [I2C\_SCL\_MAIN\_ST\_TO\_INT\_ST] The masked interrupt status bit for the I2C\_SCL\_MAIN\_ST\_TO\_INT interrupt. (RO)
+\label{fielddesc:I2CDETSTARTINTST}\item [I2C\_DET\_START\_INT\_ST] The masked interrupt status bit for the I2C\_DET\_START\_INT interrupt. (RO)
+\label{fielddesc:I2CSLAVESTRETCHINTST}\item [I2C\_SLAVE\_STRETCH\_INT\_ST] The masked interrupt status bit for the I2C\_SLAVE\_STRETCH\_INT interrupt. (RO)
+\label{fielddesc:I2CGENERALCALLINTST}\item [I2C\_GENERAL\_CALL\_INT\_ST] The masked interrupt status bit for the I2C\_GENARAL\_CALL\_INT interrupt. (RO)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_COMD0\_REG}{0x{}0058}\label{regdesc:I2CCOMD0REG}
+\regfield{I2C\_COMMAND0\_DONE}{1}{31}{{0}}%
+\regfield{(reserved)}{17}{14}{00000000000000000}%
+\regfield{I2C\_COMMAND0}{14}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CCOMMAND0}\item [I2C\_COMMAND0] This is the content of command register 0. It consists of three parts: 
+\begin{itemize}
+    \item op\_code is the command. 1: WRITE; 2: STOP; 3: READ; 4: END; 6: RSTART.
+    \item Byte\_num represents the number of bytes that need to be sent or received.
+    \item ack\_check\_en, ack\_exp and ack are used to control the ACK bit. For more information, see Section \ref{sec:i2c-func-descr-cmd-controller}.
+\end{itemize} (R/W)
+\label{fielddesc:I2CCOMMAND0DONE}\item [I2C\_COMMAND0\_DONE] When command 0 has been executed in master mode, this bit changes to high level. (R/W/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_COMD1\_REG}{0x{}005C}\label{regdesc:I2CCOMD1REG}
+\regfield{I2C\_COMMAND1\_DONE}{1}{31}{{0}}%
+\regfield{(reserved)}{17}{14}{00000000000000000}%
+\regfield{I2C\_COMMAND1}{14}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CCOMMAND1}\item [I2C\_COMMAND1] This is the content of command register 1. It is the same as that of \hyperref[fielddesc:I2CCOMMAND0]{I2C\_COMMAND0}. (R/W)
+\label{fielddesc:I2CCOMMAND1DONE}\item [I2C\_COMMAND1\_DONE] When command 1 has been executed in master mode, this bit changes to high
+level. (R/W/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_COMD2\_REG}{0x{}0060}\label{regdesc:I2CCOMD2REG}
+\regfield{I2C\_COMMAND2\_DONE}{1}{31}{{0}}%
+\regfield{(reserved)}{17}{14}{00000000000000000}%
+\regfield{I2C\_COMMAND2}{14}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CCOMMAND2}\item [I2C\_COMMAND2] This is the content of command register 2. It is the same as that of \hyperref[fielddesc:I2CCOMMAND0]{I2C\_COMMAND0}. (R/W)
+\label{fielddesc:I2CCOMMAND2DONE}\item [I2C\_COMMAND2\_DONE] When command 2 has been executed in master mode, this bit changes to high
+Level. (R/W/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_COMD3\_REG}{0x{}0064}\label{regdesc:I2CCOMD3REG}
+\regfield{I2C\_COMMAND3\_DONE}{1}{31}{{0}}%
+\regfield{(reserved)}{17}{14}{00000000000000000}%
+\regfield{I2C\_COMMAND3}{14}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CCOMMAND3}\item [I2C\_COMMAND3] This is the content of command register 3. It is the same as that of \hyperref[fielddesc:I2CCOMMAND0]{I2C\_COMMAND0}. (R/W)
+\label{fielddesc:I2CCOMMAND3DONE}\item [I2C\_COMMAND3\_DONE] When command 3 has been executed in master mode, this bit changes to high level. (R/W/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_COMD4\_REG}{0x{}0068}\label{regdesc:I2CCOMD4REG}
+\regfield{I2C\_COMMAND4\_DONE}{1}{31}{{0}}%
+\regfield{(reserved)}{17}{14}{00000000000000000}%
+\regfield{I2C\_COMMAND4}{14}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CCOMMAND4}\item [I2C\_COMMAND4] This is the content of command register 4. It is the same as that of \hyperref[fielddesc:I2CCOMMAND0]{I2C\_COMMAND0}. (R/W)
+\label{fielddesc:I2CCOMMAND4DONE}\item [I2C\_COMMAND4\_DONE] When command 4 has been executed in master mode, this bit changes to high level. (R/W/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_COMD5\_REG}{0x{}006C}\label{regdesc:I2CCOMD5REG}
+\regfield{I2C\_COMMAND5\_DONE}{1}{31}{{0}}%
+\regfield{(reserved)}{17}{14}{00000000000000000}%
+\regfield{I2C\_COMMAND5}{14}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CCOMMAND5}\item [I2C\_COMMAND5] This is the content of command register 5. It is the same as that of \hyperref[fielddesc:I2CCOMMAND0]{I2C\_COMMAND0}. (R/W)
+\label{fielddesc:I2CCOMMAND5DONE}\item [I2C\_COMMAND5\_DONE] When command 5 has been executed in master mode, this bit changes to high level. (R/W/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_COMD6\_REG}{0x{}0070}\label{regdesc:I2CCOMD6REG}
+\regfield{I2C\_COMMAND6\_DONE}{1}{31}{{0}}%
+\regfield{(reserved)}{17}{14}{00000000000000000}%
+\regfield{I2C\_COMMAND6}{14}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CCOMMAND6}\item [I2C\_COMMAND6] This is the content of command register 6. It is the same as that of \hyperref[fielddesc:I2CCOMMAND0]{I2C\_COMMAND0}. (R/W)
+\label{fielddesc:I2CCOMMAND6DONE}\item [I2C\_COMMAND6\_DONE] When command 6 has been executed in master mode, this bit changes to high level. (R/W/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_COMD7\_REG}{0x{}0074}\label{regdesc:I2CCOMD7REG}
+\regfield{I2C\_COMMAND7\_DONE}{1}{31}{{0}}%
+\regfield{(reserved)}{17}{14}{00000000000000000}%
+\regfield{I2C\_COMMAND7}{14}{0}{{0}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CCOMMAND7}\item [I2C\_COMMAND7] This is the content of command register 7. It is the same as that of \hyperref[fielddesc:I2CCOMMAND0]{I2C\_COMMAND0}. (R/W)
+\label{fielddesc:I2CCOMMAND7DONE}\item [I2C\_COMMAND7\_DONE] When command 7 has been executed in master mode, this bit changes to high level. (R/W/SS)
+\end{reglist}\end{regdesc}
+\end{register}
+
+
+\begin{register}{H}{I2C\_DATE\_REG}{0x{}00F8}\label{regdesc:I2CDATEREG}
+\regfield{I2C\_DATE}{32}{0}{{0x{}20070201}}%
+\reglabel{Reset}\regnewline%
+\begin{regdesc}\begin{reglist}
+\label{fielddesc:I2CDATE}\item [I2C\_DATE] This is the version control register. (R/W)
+\end{reglist}\end{regdesc}
+\end{register}

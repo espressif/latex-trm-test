@@ -1,0 +1,45 @@
+\begin{longtable}{ | m{5.7cm} | m{7cm} | m{1.3cm} | m{1.5cm} | }
+\hline\rowcolor{lightgray}
+Name & Description &  Address & Access \\ \hline
+\endhead
+\multicolumn{4}{|l|}{\textbf{Timing registers}} \\ \hline
+\hyperref[regdesc:I2CSCLLOWPERIODREG]{I2C\_SCL\_LOW\_PERIOD\_REG} & Configures the low level width of SCL & 0x{}0000 & R/W \\ \hline
+\hyperref[regdesc:I2CSDAHOLDREG]{I2C\_SDA\_HOLD\_REG} & Configures the hold time after a negative SCL edge & 0x{}0030 & R/W \\ \hline
+\hyperref[regdesc:I2CSDASAMPLEREG]{I2C\_SDA\_SAMPLE\_REG} & Configures the sample time after a positive SCL edge & 0x{}0034 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLHIGHPERIODREG]{I2C\_SCL\_HIGH\_PERIOD\_REG} & Configures the high level width of SCL & 0x{}0038 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSTARTHOLDREG]{I2C\_SCL\_START\_HOLD\_REG} & Configures the delay between the SDA and SCL negative edge for a START condition & 0x{}0040 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLRSTARTSETUPREG]{I2C\_SCL\_RSTART\_SETUP\_REG} & Configures the delay between the positive edge of SCL and the negative edge of SDA & 0x{}0044 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSTOPHOLDREG]{I2C\_SCL\_STOP\_HOLD\_REG} & Configures the delay after the SCL clock edge for a STOP condition & 0x{}0048 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSTOPSETUPREG]{I2C\_SCL\_STOP\_SETUP\_REG} & Configures the delay between the SDA and SCL positive edge for a STOP condition & 0x{}004C & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSTTIMEOUTREG]{I2C\_SCL\_ST\_TIME\_OUT\_REG} & SCL status timeout register & 0x{}0078 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLMAINSTTIMEOUTREG]{I2C\_SCL\_MAIN\_ST\_TIME\_OUT\_REG} & SCL main status timeout register & 0x{}007C & R/W \\ \hline
+\multicolumn{4}{|l|}{\textbf{Configuration registers}} \\ \hline
+\hyperref[regdesc:I2CCTRREG]{I2C\_CTR\_REG} & Transmission configuration register & 0x{}0004 & varies \\ \hline
+\hyperref[regdesc:I2CTOREG]{I2C\_TO\_REG} & Timeout control register & 0x{}000C & R/W \\ \hline
+\hyperref[regdesc:I2CSLAVEADDRREG]{I2C\_SLAVE\_ADDR\_REG} & Slave address configuration register & 0x{}0010 & R/W \\ \hline
+\hyperref[regdesc:I2CFIFOCONFREG]{I2C\_FIFO\_CONF\_REG} & FIFO configuration register & 0x{}0018 & R/W \\ \hline
+\hyperref[regdesc:I2CFILTERCFGREG]{I2C\_FILTER\_CFG\_REG} & SCL and SDA filter configuration register & 0x{}0050 & R/W \\ \hline
+\hyperref[regdesc:I2CCLKCONFREG]{I2C\_CLK\_CONF\_REG} & I2C clock configuration register & 0x{}0054 & R/W \\ \hline
+\hyperref[regdesc:I2CSCLSPCONFREG]{I2C\_SCL\_SP\_CONF\_REG} & Power configuration register & 0x{}0080 & varies \\ \hline
+\hyperref[regdesc:I2CSCLSTRETCHCONFREG]{I2C\_SCL\_STRETCH\_CONF\_REG} & Configures SCL clock stretching & 0x{}0084 & varies \\ \hline
+\multicolumn{4}{|l|}{\textbf{Status registers}} \\ \hline
+\hyperref[regdesc:I2CSRREG]{I2C\_SR\_REG} & Describes I2C work status & 0x{}0008 & RO \\ \hline
+\hyperref[regdesc:I2CFIFOSTREG]{I2C\_FIFO\_ST\_REG} & FIFO status register & 0x{}0014 & RO \\ \hline
+\hyperref[regdesc:I2CDATAREG]{I2C\_DATA\_REG} & Read/write FIFO register & 0x{}001C & R/W \\ \hline
+\multicolumn{4}{|l|}{\textbf{Interrupt registers}} \\ \hline
+\hyperref[regdesc:I2CINTRAWREG]{I2C\_INT\_RAW\_REG} & Raw interrupt status & 0x{}0020 & R/SS/WTC \\ \hline
+\hyperref[regdesc:I2CINTCLRREG]{I2C\_INT\_CLR\_REG} & Interrupt clear bits & 0x{}0024 & WT \\ \hline
+\hyperref[regdesc:I2CINTENAREG]{I2C\_INT\_ENA\_REG} & Interrupt enable bits & 0x{}0028 & R/W \\ \hline
+\hyperref[regdesc:I2CINTSTATUSREG]{I2C\_INT\_STATUS\_REG} & Status of captured I2C communication events & 0x{}002C & RO \\ \hline
+\multicolumn{4}{|l|}{\textbf{Command registers}} \\ \hline
+\hyperref[regdesc:I2CCOMD0REG]{I2C\_COMD0\_REG} & I2C command register 0 & 0x{}0058 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD1REG]{I2C\_COMD1\_REG} & I2C command register 1 & 0x{}005C & varies \\ \hline
+\hyperref[regdesc:I2CCOMD2REG]{I2C\_COMD2\_REG} & I2C command register 2 & 0x{}0060 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD3REG]{I2C\_COMD3\_REG} & I2C command register 3 & 0x{}0064 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD4REG]{I2C\_COMD4\_REG} & I2C command register 4 & 0x{}0068 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD5REG]{I2C\_COMD5\_REG} & I2C command register 5 & 0x{}006C & varies \\ \hline
+\hyperref[regdesc:I2CCOMD6REG]{I2C\_COMD6\_REG} & I2C command register 6 & 0x{}0070 & varies \\ \hline
+\hyperref[regdesc:I2CCOMD7REG]{I2C\_COMD7\_REG} & I2C command register 7 & 0x{}0074 & varies \\ \hline
+\multicolumn{4}{|l|}{\textbf{Version register}} \\ \hline
+\hyperref[regdesc:I2CDATEREG]{I2C\_DATE\_REG} & Version control register & 0x{}00F8 & R/W \\ \hline
+\end{longtable}

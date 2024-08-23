@@ -1,0 +1,233 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% For complete instructions:                                         %%%
+%%% 1. Go to https://www.overleaf.com/project/60e2ed1aefb70e595778b04b %%%
+%%% 2. Compile readme-general.tex                                      %%%
+%%% 3. See Section "Add Section Related Documentation and Resources"   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% >>> Add chip name here <<<
+% Always add '%' after the last chip name below (before the line '}')
+\newcommand\definedchipnames{%
+ESP32,
+ESP32-S2,
+ESP32-S3,
+ESP32-C3,
+ESP32-H2,
+ESP8685,
+ESP8684,
+ESP32-C6,
+ESP32-PICO,
+ESP32-S3-PICO-1,
+ESP8686,
+ESP32-P4,
+ESP32-C5,
+ESP32-C61/ESP32-C31,
+ESP-Shelly-C38F,
+XMCC3ESP-FH%
+}
+
+
+% Code needed for the Introduced variable \definedchipnames
+% to define all chip names in one place
+% See https://tex.stackexchange.com/questions/642211/using-a-macro-to-pass-parameters-to-a-command/
+% replace \docsvlist in \iftagged with \xdocsvlist
+\patchcmd{\iftagged}{\docsvlist}{\xdocsvlist}{}{}
+\patchcmd{\tagged}{\docsvlist}{\xdocsvlist}{}{}
+\patchcmd{\untagged}{\docsvlist}{\xdocsvlist}{}{}
+% \xdocsvlist fully expands its argument before passing it to \docsvlist
+\newcommand{\xdocsvlist}[1]{%
+  \expandafter\docsvlist\expandafter{\expanded{#1}}%
+}
+
+
+\phantomsection
+\chapter*{Related Documentation and Resources}\label{sec:resources}
+\markboth{\it{Related Documentation and Resources}}{\Navigation}
+\addcontentsline{toc}{chapter}{Related Documentation and Resources} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Warning for projects with undefined chips %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Show content below if undefined chip name encountered
+\untagged{\definedchipnames}
+{%
+    \begin{tiplisting}
+        Assign a defined chip name in your preamble > variable "chipseries"
+    
+	    Otherwise, define chip in 
+	    \begin{itemize}
+	        \item \texttt{resources-link-defs}
+	        \item \texttt{resources-[doc-type]\_\_EN}
+	        \item \texttt{resources-[doc-type]\_\_CN}
+	    \end{itemize}
+    \end{tiplisting}
+}% \untagged{\definedchipnames}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Content for projects with defined chips %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Show content below if defined chip name encountered
+\tagged{\definedchipnames}
+{%
+
+%%% Related Documentation %%%
+
+\vspace{-0.5em}
+\begin{minipage}{\textwidth}
+
+\section*{Related Documentation}
+
+\begin{itemize}
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchipdatasheetEN\endcsname%
+    % Exclude this link if this section is added to a chip datasheet project
+    \ifthenelse{\equal{\docprojtype}{chip-datasheet}}{}%
+    {%
+      \item \href{\linkprefix\linkchipdatasheetEN}{\chipseries{} Series Datasheet} --
+        {\small Specifications of the \chipseries{} hardware.}%
+    }%
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchiptrmEN\endcsname%
+    % Exclude this link if this section is added to a TRM project
+    \ifthenelse{\equal{\docprojtype}{trm}}{}%
+    {%
+      \item \href{\linkprefix\linkchiptrmEN}{\chipseries{} Technical Reference Manual} --
+        {\small Detailed information on how to use the \chipseries{} memory and peripherals.}%
+    }%
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchiphwdesignEN\endcsname%
+    % Exclude this link if this section is added to a hardware design guidelines project
+    \ifthenelse{\equal{\docprojtype}{hdg}}{}%
+    {%
+      \item \href{\linkprefix\linkchiphwdesignEN}{\chipseries{} Hardware Design Guidelines} --
+        {\small Guidelines on how to integrate the \chipseries{} into your hardware product.}%
+    }%
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchipecoEN\endcsname%
+    \item \href{\linkprefix\linkchipecoEN}{\chipseries{} ECO and Workarounds for Bugs} --
+        {\small Correction of \chipseries{} design errors.}
+  \fi%
+  
+    % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkchiperrataEN\endcsname%
+   % Exclude this link if this section is added to an errata project
+    \ifthenelse{\equal{\docprojtype}{errata}}{}%
+    {%
+    \item \href{\linkprefix\linkchiperrataEN}{\chipseries{} Series SoC Errata} --
+        {\small Descriptions of known errors in \chipseries{} series of SoCs.}
+        }%
+  \fi%
+  
+  % If the variable \productcertificates is defined in a target project
+  % append it to the link to filter available certificates
+  \ifcsname productcertificates\endcsname%
+    \item \textit{Certificates}\\
+        \href{\linkprefix\linkcertificatesEN\productcertificates}{\linkprefix\linkcertificatesEN}
+  \else
+    \PackageWarning{Related Documentation and Resources}{Link extension for certificates not defined}
+    \item \textit{Certificates}\\
+        \href{\linkprefix\linkcertificatesEN}{\linkprefix\linkcertificatesEN}
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkpcnEN\endcsname%
+    \item \textit{\chipseries{} Product/Process Change Notifications (PCN)}\\
+        \href{\linkprefix\linkpcnEN}{\linkprefix\linkpcnEN}
+  \fi%
+
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkadvisoryEN\endcsname%
+    \item \textit{\chipseries{} Advisories} --
+        {\small Information on security, bugs, compatibility, component reliability.}\\
+        \href{\linkprefix\linkadvisoryEN}{\linkprefix\linkadvisoryEN}
+  \fi%
+
+    \item \textit{Documentation Updates and Update Notification Subscription}\\
+        \href{\linkprefix\linkrecentlyupdatedEN}{\linkprefix\linkrecentlyupdatedEN}
+
+\end{itemize}
+
+\end{minipage}
+
+
+%%% Developer Zone %%%
+
+\begin{minipage}{\textwidth}
+
+\section*{Developer Zone}
+
+\begin{itemize}
+  % Include this link only if it is defined in resources-link-defs.tex
+  \ifcsname linkidfprogguideEN\endcsname%
+    \item \href{\linkprefix\linkidfprogguideEN}{ESP-IDF Programming Guide for \chipseries{}} --
+        {\small Extensive documentation for the ESP-IDF development framework.}
+  \fi%
+
+    \item \textit{ESP-IDF} and other development frameworks on GitHub.\\
+        \href{\linkprefix\linkgithub}{\linkprefix\linkgithub}
+
+    \item \textit{ESP32 BBS Forum} --
+        {\small Engineer-to-Engineer (E2E) Community for Espressif products where you can post questions, share knowledge, explore ideas, and help solve problems with fellow engineers.}\\
+        \href{\linkprefix\linkespforum}{\linkprefix\linkespforum}
+        
+    \item \textit{The ESP Journal} --
+        {\small Best Practices, Articles, and Notes from Espressif folks.}\\
+        \href{\linkprefix\linkespjournal}{\linkprefix\linkespjournal}
+
+    \item See the tabs \textit{SDKs and Demos}, \textit{Apps}, \textit{Tools}, \textit{AT Firmware}.\\
+        \href{\linkprefix\linksdkdemoEN}{\linkprefix\linksdkdemoEN}
+\end{itemize}
+
+\end{minipage}
+
+
+%%% Products %%%
+
+\begin{minipage}{\textwidth}
+
+\section*{Products}
+
+\begin{itemize}
+    \item \textit{\chipseries{} Series SoCs} --
+        {\small Browse through all \chipseries{} SoCs.}\\
+        \href{\linkprefix\linkespsocsEN?id=\chipseries}{\linkprefix\linkespsocsEN?id=\chipseries}
+    \item \textit{\chipseries{} Series Modules} --
+        {\small Browse through all \chipseries{}-based modules.}\\
+        \href{\linkprefix\linkespmodulesEN?id=\chipseries}{\linkprefix\linkespmodulesEN?id=\chipseries}
+    \item \textit{\chipseries{} Series DevKits} --
+        {\small Browse through all \chipseries{}-based devkits.}\\
+        \href{\linkprefix\linkespdevkitsEN?id=\chipseries}{\linkprefix\linkespdevkitsEN?id=\chipseries}
+    \item \textit{ESP Product Selector} --
+        {\small Find an Espressif hardware product suitable for your needs by comparing or applying filters.}\\
+        \href{\linkprefix\linkespproductselectorEN}{\linkprefix\linkespproductselectorEN}
+\end{itemize}
+
+\end{minipage}
+
+
+%%% Contact Us %%%
+
+\begin{minipage}{\textwidth}
+
+\section*{Contact Us}
+
+\begin{itemize}
+    \item See the tabs \textit{Sales Questions}, \textit{Technical Enquiries}, \textit{Circuit Schematic \& PCB Design Review}, \textit{Get Samples} (Online stores), \textit{Become Our Supplier}, \textit{Comments \& Suggestions}.\\
+        \href{\linkprefix\linksalesEN}{\linkprefix\linksalesEN}
+\end{itemize}
+
+\end{minipage}
+
+}% \tagged{\definedchipnames}

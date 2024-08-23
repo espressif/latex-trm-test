@@ -1,0 +1,41 @@
+\phantomsection
+\chapter*{Programming Reserved Register Field}\label{programming-reserved-field}
+\markboth{\it{Programming Reserved Register Field}}{\Navigation}
+\addcontentsline{toc}{chapter}{Programming Reserved Register Field}
+
+\phantomsection
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+A field in a register is reserved if the field is not open to users, or produces unpredictable results if configured to values other than defaults.
+
+\phantomsection
+\section*{Programming Reserved Register Field}
+\addcontentsline{toc}{section}{Programming Reserved Register Field}
+
+The reserved fields should not be modified. It is not possible to write only part of a register since registers must always be written as a whole. As a result, to write an entire register that contains reserved fields, you can choose one of the following two options:
+
+\begin{enumerate}
+    \item Read the value of the register, modify only the fields you want to configure and then write back the value so that reserved fields are untouched.
+
+\noindent OR
+
+\item Modify only the fields you want to configure and write back the default value of the reserved fields. The default value of a field is provided in the "Reset" line of a register diagram. For example, the default value of Field\_A in \hyperref[fig:registerX]{Register X} is 1.
+\end{enumerate}
+
+\begin{register}{H}{Register X}{Address}\label{fig:registerX}
+\regfield{(reserved)}{12}{20}{000000000000}%
+\regfield{Field\_C}{4}{16}{{0000}}%
+\regfield{(reserved)}{14}{2}{00000000000000}%
+\regfield{Field\_B}{1}{1}{{0}}%
+\regfield{Field\_A}{1}{0}{{1}}%
+\reglabel{Reset}\regnewline%
+
+\end{register}
+
+Suppose you want to set Field\_A, Field\_B, and Field\_C of \hyperref[fig:registerX]{Register X} to 0x0, 0x1, and 0x2, you can:
+
+\begin{itemize}
+    \item Use option 1 and fill in the reserved fields with the value you have just read. Suppose the register reads as 0x0000\_0003. Then, you can modify the fields you want to configure, thus writing 0x0002\_0002 to the register.
+    \item Use option 2 and fill in the reserved fields with their defaults, thus writing 0x0002\_0002 to the register.
+\end{itemize}

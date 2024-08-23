@@ -1,0 +1,69 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% For complete instructions:                                         %%%
+%%% 1. Go to https://www.overleaf.com/project/60e2ed1aefb70e595778b04b %%%
+%%% 2. Compile readme-general.tex                                      %%%
+%%% 3. See Section "Updating Disclaimer and Copyright Notice"          %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+\thispagestyle{empty}
+
+\newcommand*{\myhref}[2]{%
+\hypersetup{urlcolor=myred}\href{#1}{#2}}
+
+\makeatletter
+\setlength{\@fpbot}{0pt}
+\makeatother
+
+\newcolumntype{M}{@{}>{\columncolor{white}[0pt][0pt]}c}
+
+\begin{table}
+\def\arraystretch{1.2}
+\begin{tabular}{c}
+\setlength{\extrarowheight}{7pt}
+
+\begin{minipage}[c]{16.7cm}
+    \begin{tabular}{c}
+        \hspace{-0.35cm}
+        \includegraphics[width=6cm,valign=b,clip]{esp-logo-standard-horizontal.pdf}
+        \vspace{0.6cm}
+    \end{tabular}
+\end{minipage} \\
+
+\begin{minipage}[l]{16.7cm}
+    \linespread{1.2}
+    \hyphenpenalty=10000
+    \hbadness=10000
+
+    \textbf{\large Disclaimer and Copyright Notice}
+    \vspace{0.3em}
+    
+    \footnotesize
+    
+    Information in this document, including URL references, is subject to change without notice.
+    \vspace{0.3em}
+    
+    ALL THIRD PARTY'S INFORMATION IN THIS DOCUMENT IS PROVIDED AS IS WITH NO WARRANTIES TO ITS AUTHENTICITY AND \\ACCURACY.
+    \vspace{0.3em}
+    
+    NO WARRANTY IS PROVIDED TO THIS DOCUMENT FOR ITS MERCHANTABILITY, NON-INFRINGEMENT, FITNESS FOR ANY PARTICULAR PURPOSE, NOR DOES ANY WARRANTY OTHERWISE ARISING OUT OF ANY PROPOSAL, SPECIFICATION OR SAMPLE.
+    \vspace{0.3em}
+    
+    All liability, including liability for infringement of any proprietary rights, relating to use of information in this document is disclaimed. No licenses express or implied, by estoppel or otherwise, to any intellectual property rights are granted herein.
+    \vspace{0.3em}
+    
+    The Wi-Fi Alliance Member logo is a trademark of the Wi-Fi Alliance. The Bluetooth logo is a registered trademark of Bluetooth SIG.
+    \vspace{0.3em}
+    
+    All trade names, trademarks and registered trademarks mentioned in this document are property of their respective owners, and are hereby acknowledged.
+    \vspace{0.3em}
+    
+    \textbf{Copyright © \the\year{} Espressif Systems (Shanghai) Co., Ltd. All rights reserved.}
+    \vspace{0.3em}
+
+    \textbf{\myhref{https://www.espressif.com/}{www.espressif.com}}
+\end{minipage}
+
+\end{tabular}
+\end{table}
